@@ -105,10 +105,25 @@
   border: 1px solid var(--border-strong);
   border-radius: 14px;
   background: var(--surface-raised);
+  overflow: hidden;
 }
 
-.preview svg {
-  width: min(100%, 240px);
+.characterPreview {
+  width: min(100%, 260px);
+  max-height: 330px;
+}
+
+.skinLayer,
+.hairLayer {
+  pointer-events: none;
+}
+
+.skinLayer {
+  opacity: .96;
+}
+
+.hairLayer {
+  filter: drop-shadow(0 2px 0 rgb(20 17 13 / .24));
 }
 
 .preview span {
