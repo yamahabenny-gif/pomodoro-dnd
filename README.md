@@ -5,7 +5,7 @@
 > 5-stelligen Code, bei der alle dieselbe Uhr sehen.
 
 **Ziel-Domain:** `pomodoro.lang-jamin.de`
-**Status:** 🎨 Konzept-Abgleich — 9 Konflikte offen, davon 2 auf Eigentümer-Ebene
+**Status:** ✅ Konzept vollständig — alle Konflikte mit Konzept V1 entschieden, M1 kann starten
 **Visueller Draft:** [alle elf Screens als Canvas](https://claude.ai/code/artifact/671894a8-8452-4e21-a32d-c48e88dea90e) · Quellen unter [`design/`](design/)
 **Owner:** @yamahabenny-gif · **Freigabe:** Release Team (`#release`)
 
@@ -71,14 +71,15 @@ Mitglied ist sofort synchron.
 
 | | |
 |---|---|
-| [`content/quests.de.json`](content/quests.de.json) | **100 Quests** in acht Regionen, 398 Wegabschnitte |
-| [`content/regions.de.json`](content/regions.de.json) | Die acht Regionen mit Kulissen-Paletten |
+| [`content/quests.de.json`](content/quests.de.json) | **126 Quests** in elf Regionen, 514 Wegabschnitte, davon 10 epische |
+| [`content/regions.de.json`](content/regions.de.json) | Elf Regionen mit Themenwelt, Ton und Kulissen-Palette |
+| [`content/items.de.json`](content/items.de.json) | **336 Gegenstände** in 16 Töpfen, mit Sammlungssets |
 | [`lib/quests/`](lib/quests/) | Auswahl und Wegabschnitte — reine Funktionen, getestet |
 | [`lib/loot/`](lib/loot/) | Der Item-Baukasten: 576 Gegenstände aus 26 Teilen |
 | [`lib/timer/journey.ts`](lib/timer/journey.ts) | Die Wanderung als abgeleiteter Zustand |
 
 ```bash
-npm test        # 33 Tests über Questpool, Items und Wanderung
+npm test        # 77 Tests über Questpool, Katalog, Ziehung und Wanderung
 npm run typecheck
 ```
 

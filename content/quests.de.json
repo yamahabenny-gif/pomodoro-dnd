@@ -1196,5 +1196,336 @@
       "Danach kennt der Fuß den Weg besser als das Auge.",
       "Unten brennt Licht, und zwar für dich."
     ]
+  },
+  {
+    "id": "wd-01",
+    "title": "Was der Sand freigibt",
+    "region": "wanderduenen",
+    "length": "kurz",
+    "beats": [
+      "Über Nacht ist ein Dach freigeweht.",
+      "Bis Mittag ist die Hälfte wieder zu.",
+      "Du arbeitest von der Windseite her.",
+      "Am Abend hast du drei Räume kartiert."
+    ]
+  },
+  {
+    "id": "wd-02",
+    "title": "Die Kammlinie",
+    "region": "wanderduenen",
+    "length": "kundschaft",
+    "beats": [
+      "Auf dem Kamm geht es leichter als im Tal.",
+      "Der Kamm läuft nach Süden, du willst nach Osten.",
+      "Du bleibst trotzdem oben, so lange es geht."
+    ]
+  },
+  {
+    "id": "wd-03",
+    "title": "Der Brunnen von gestern",
+    "region": "wanderduenen",
+    "length": "mittel",
+    "beats": [
+      "Der Brunnen aus der Karte ist nicht da.",
+      "Die Karte ist zwei Jahre alt, die Düne wandert.",
+      "Du rechnest um, wie weit sie in zwei Jahren kommt.",
+      "Achtzig Schritt weiter westlich steht die Mauer.",
+      "Das Wasser darin ist brackig, aber es ist Wasser."
+    ]
+  },
+  {
+    "id": "wd-04",
+    "title": "Schatten teilen",
+    "region": "wanderduenen",
+    "length": "kurz",
+    "beats": [
+      "Zwischen zehn und drei geht hier niemand.",
+      "Du sitzt an der Nordseite und arbeitest im Sitzen.",
+      "Die Karte wird ordentlicher als sonst.",
+      "Um vier stehst du auf und gehst weiter."
+    ]
+  },
+  {
+    "id": "wd-05",
+    "title": "Spuren im Morgen",
+    "region": "wanderduenen",
+    "length": "kundschaft",
+    "beats": [
+      "Frische Spuren, drei Personen, mit Last.",
+      "Sie führen nach Norden, wo nichts ist.",
+      "Du merkst dir die Richtung und gehst deine."
+    ]
+  },
+  {
+    "id": "wd-06",
+    "title": "Die Steinreihe",
+    "region": "wanderduenen",
+    "length": "kurz",
+    "beats": [
+      "Steine in einer Linie, alle gleich hoch.",
+      "Sie stehen aufrecht, also hat sie jemand gestellt.",
+      "Du folgst der Linie, bis der Sand sie schluckt.",
+      "Auf der anderen Seite der Düne geht sie weiter."
+    ]
+  },
+  {
+    "id": "wd-07",
+    "title": "Nachts nach Norden",
+    "region": "wanderduenen",
+    "length": "mittel",
+    "beats": [
+      "Tagsüber ist es unmöglich, nachts nur schwer.",
+      "Der Sand hält die Wärme bis Mitternacht.",
+      "Danach wird es kalt genug zum Gehen.",
+      "Der Nordstern steht, wo er stehen soll.",
+      "Bei Sonnenaufgang bist du am Rand des Felds."
+    ]
+  },
+  {
+    "id": "kg-01",
+    "title": "Vierzig blaue Türen",
+    "region": "kesselgrund",
+    "length": "kurz",
+    "beats": [
+      "Jede Tür im Ort hat dieselbe Farbe.",
+      "Nicht ähnlich — dieselbe, aus derselben Anmischung.",
+      "Also hat sie einer gestrichen, an einem Tag.",
+      "Niemand, den du fragst, weiß noch wann."
+    ]
+  },
+  {
+    "id": "kg-02",
+    "title": "Der Laden am Platz",
+    "region": "kesselgrund",
+    "length": "kundschaft",
+    "beats": [
+      "Offen, besetzt, gut sortiert.",
+      "Auf dem Regal steht Ware, die niemand mehr macht.",
+      "Du kaufst etwas Kleines und fragst nichts."
+    ]
+  },
+  {
+    "id": "kg-03",
+    "title": "Das Läuten um vier",
+    "region": "kesselgrund",
+    "length": "mittel",
+    "beats": [
+      "Um vier läutet es, jeden Nachmittag.",
+      "Es ist kein Gottesdienst und kein Feierabend.",
+      "Du sitzt drei Tage lang um vier auf dem Platz.",
+      "Jedes Mal gehen dieselben elf Menschen nach Hause.",
+      "Am vierten Tag sind es zwölf, und einer davon bist du."
+    ]
+  },
+  {
+    "id": "kg-04",
+    "title": "Die Chronik",
+    "region": "kesselgrund",
+    "length": "kurz",
+    "beats": [
+      "Im Rathaus liegt eine Chronik, sauber geführt.",
+      "Ein Jahr fehlt, herausgetrennt, nicht überschrieben.",
+      "Die Seiten davor und danach erwähnen es nicht.",
+      "Du liest beide Ränder sehr genau."
+    ]
+  },
+  {
+    "id": "kg-05",
+    "title": "Wege zählen",
+    "region": "kesselgrund",
+    "length": "kundschaft",
+    "beats": [
+      "Vier Wege führen hinein.",
+      "Auf der Karte sind es drei.",
+      "Du gehst den vierten, so weit du kommst."
+    ]
+  },
+  {
+    "id": "kg-06",
+    "title": "Gastfreundschaft",
+    "region": "kesselgrund",
+    "length": "kurz",
+    "beats": [
+      "Man setzt dir vor, ohne dass du fragst.",
+      "Man fragt auch nicht, woher du kommst.",
+      "Das ist entweder Höflichkeit oder Übung.",
+      "Du bleibst eine Nacht und schläfst gut."
+    ]
+  },
+  {
+    "id": "kg-07",
+    "title": "Der Kessel selbst",
+    "region": "kesselgrund",
+    "length": "mittel",
+    "beats": [
+      "Der Ort liegt in einer Senke, fast rund.",
+      "Zu rund für Wasser und zu flach für einen Krater.",
+      "Du gehst den Rand ab, ganz herum.",
+      "Es sind zweitausend Schritt, gleichmäßig.",
+      "Wer das gegraben hat, hat es gewollt."
+    ]
+  },
+  {
+    "id": "dk-01",
+    "title": "Der Aufstieg zur Klamm",
+    "region": "drachenklamm",
+    "length": "episch",
+    "beats": [
+      "Der Pfad wird schmal und der Wind kommt von oben.",
+      "Auf halber Höhe liegt ein Flügelknochen quer im Weg.",
+      "Am Kessel sammelt ihr euch. Von hier führt nur noch eine Richtung.",
+      "Der Fels über euch ist warm — von innen.",
+      "Sie kommt aus der Klamm, und der Grat verschwindet in ihrem Schatten.",
+      "Es wird eng, laut und sehr kurz. Dann steht ihr noch."
+    ]
+  },
+  {
+    "id": "dk-02",
+    "title": "Der Hort unter dem Riss",
+    "region": "drachenklamm",
+    "length": "episch",
+    "beats": [
+      "Der Eingang ist eine Wunde im Fels, mannshoch.",
+      "Innen wird es weit, und der Boden gibt unter Metall nach.",
+      "Ihr macht Licht und seht, wie tief das geht.",
+      "Etwas verlagert sein Gewicht, sehr weit hinten.",
+      "Der Hort gehört ihr, und sie schläft nicht mehr.",
+      "Ihr nehmt eine Sache mit und lauft. Eine reicht."
+    ]
+  },
+  {
+    "id": "dk-03",
+    "title": "Die Brut in der Nordwand",
+    "region": "drachenklamm",
+    "length": "episch",
+    "beats": [
+      "Drei Nester, übereinander, alle bewohnt.",
+      "Ihr steigt zwischen ihnen durch, ohne den Fels zu berühren.",
+      "Auf dem Absatz haltet ihr an und atmet.",
+      "Von oben fällt Schatten, und er wandert nicht weiter.",
+      "Die Alte kommt von hinten, wie sie es immer tut.",
+      "Der Grat hält euch. Sie dreht ab und ihr steht."
+    ]
+  },
+  {
+    "id": "dk-04",
+    "title": "Was den Riss gemacht hat",
+    "region": "drachenklamm",
+    "length": "episch",
+    "beats": [
+      "Die Klamm war einmal ein Berg, und etwas hat ihn geteilt.",
+      "Auf beiden Seiten passen die Schichten aufeinander.",
+      "Ihr messt den Versatz und rechnet zurück.",
+      "Was das konnte, ist größer als alles, was hier nistet.",
+      "Am Grund liegt es, und es hat euch schon gehört.",
+      "Ihr kommt heraus. Ihr wisst jetzt, warum niemand hier baut."
+    ]
+  },
+  {
+    "id": "hs-e1",
+    "title": "Das vierte Stockwerk",
+    "region": "hohle-stadt",
+    "length": "episch",
+    "beats": [
+      "Drei Stockwerke sind kartiert. Ihr steigt in das vierte.",
+      "Die Treppe hört auf und wird zu einer Rampe.",
+      "Unten ist es warm und die Luft bewegt sich.",
+      "Etwas hält hier unten die Zisternen offen. Absichtlich.",
+      "Es kommt aus dem Wasser, und es ist die Stadt selbst.",
+      "Ihr seid oben, bevor das Licht ausgeht."
+    ]
+  },
+  {
+    "id": "nk-e1",
+    "title": "Der Grat im Sturm",
+    "region": "nebelklippen",
+    "length": "episch",
+    "beats": [
+      "Der Sturm steht seit drei Tagen und dreht nicht ab.",
+      "Ihr geht trotzdem, weil er nicht abdrehen wird.",
+      "Auf dem Sattel bindet ihr euch zusammen.",
+      "Über euch reißt der Nebel und es ist nicht der Wind.",
+      "Es kommt zweimal, und beim zweiten Mal seid ihr bereit.",
+      "Drüben ist windstill, und niemand fehlt."
+    ]
+  },
+  {
+    "id": "tb-e1",
+    "title": "Was hinter den Regalen liest",
+    "region": "tiefe-bibliothek",
+    "length": "episch",
+    "beats": [
+      "Hinter den Regalen geht Licht durch, und das tut es seit Jahren.",
+      "Ihr räumt, was jemand mit Absicht zugestellt hat.",
+      "Dahinter ein Saal, in dem alles noch steht.",
+      "Und alles ist in Benutzung, obwohl niemand da ist.",
+      "Was hier liest, hat lange auf Gesellschaft gewartet.",
+      "Ihr geht rückwärts hinaus und stellt die Regale zurück."
+    ]
+  },
+  {
+    "id": "rm-e1",
+    "title": "Der Kiel und was darunter liegt",
+    "region": "rostmoor",
+    "length": "episch",
+    "beats": [
+      "Der Kiel ist zu groß für ein Schiff und liegt zu tief.",
+      "Ihr grabt an drei Stellen und trefft überall auf Eisen.",
+      "In der Nacht sackt der Boden an einer davon nach.",
+      "Was unter dem Kiel liegt, ist nicht der Grund.",
+      "Es hebt sich, und das Moor läuft in die Grube nach.",
+      "Ihr seid auf festem Boden, als es sich wieder legt."
+    ]
+  },
+  {
+    "id": "bg-e1",
+    "title": "Der Mittelpunkt der Schmelze",
+    "region": "bruchglastal",
+    "length": "episch",
+    "beats": [
+      "Der Fleck, an dem das Glas geflossen ist, hat eine Mitte.",
+      "Ihr geht darauf zu, und das Knirschen hört auf.",
+      "In der Mitte steht etwas aufrecht, und es wirft keinen Schatten.",
+      "Es ist zu heiß zum Anfassen und war es immer.",
+      "Was es hält, will nicht gehalten werden.",
+      "Draußen ist es Abend. Ihr habt es dagelassen, wo es steht."
+    ]
+  },
+  {
+    "id": "sw-e1",
+    "title": "Die Nacht, für die sie gebaut wurde",
+    "region": "sternwarte",
+    "length": "episch",
+    "beats": [
+      "Einmal im Jahr steht alles so, wie die Skala es meint.",
+      "Ihr richtet den Spiegel und wartet auf Dunkelheit.",
+      "Um zehn ist der Himmel klar bis zum Rand.",
+      "Was ihr seht, steht in keinem der vierzig Bände.",
+      "Und es sieht zurück — das ist keine Redensart, es steht in der Optik.",
+      "Ihr schreibt auf, was ihr gesehen habt. Der einundvierzigste Band."
+    ]
+  },
+  {
+    "id": "wd-08",
+    "title": "Die Karawanenrast",
+    "region": "wanderduenen",
+    "length": "kurz",
+    "beats": [
+      "Eine Mauer, mannshoch, ohne Dach.",
+      "Innen Feuerstellen, eine neben der anderen.",
+      "Die jüngste ist ein paar Wochen alt.",
+      "Du legst deine daneben und schläfst früh."
+    ]
+  },
+  {
+    "id": "kg-08",
+    "title": "Der Weg hinaus",
+    "region": "kesselgrund",
+    "length": "kundschaft",
+    "beats": [
+      "Hinaus geht es steiler als hinein.",
+      "Auf halber Höhe drehst du dich noch einmal um.",
+      "Vierzig blaue Türen, und keine steht offen."
+    ]
   }
 ]

@@ -18,49 +18,49 @@
     },
     {
       "file": "Charakter.dc.html",
-      "title": "3 · Charakter",
+      "title": "3 · Charakter anlegen",
       "x": 2640,
       "y": 0,
       "w": 1120,
       "h": 800
     },
     {
-      "file": "Main.dc.html",
-      "title": "4 · Quest",
+      "file": "Lager.dc.html",
+      "title": "4 · Das Lager",
       "x": 0,
+      "y": 1140,
+      "w": 1280,
+      "h": 860
+    },
+    {
+      "file": "Main.dc.html",
+      "title": "5 · Quest",
+      "x": 1400,
       "y": 1140,
       "w": 1120,
       "h": 760
     },
     {
       "file": "Rast.dc.html",
-      "title": "5 · Rast",
-      "x": 1240,
+      "title": "6 · Rast",
+      "x": 2640,
       "y": 1140,
       "w": 1120,
       "h": 760
     },
     {
       "file": "Truhe.dc.html",
-      "title": "6 · Truhe",
-      "x": 2480,
-      "y": 1140,
-      "w": 1120,
-      "h": 760
-    },
-    {
-      "file": "PartyHub.dc.html",
-      "title": "7 · Party-Hub",
+      "title": "7 · Truhe",
       "x": 0,
-      "y": 2040,
+      "y": 2140,
       "w": 1120,
       "h": 760
     },
     {
       "file": "PartyQuest.dc.html",
-      "title": "8 · Party-Quest",
+      "title": "8 · Gemeinsame Quest",
       "x": 1240,
-      "y": 2040,
+      "y": 2140,
       "w": 1120,
       "h": 760
     },
@@ -68,7 +68,7 @@
       "file": "Charakterbogen.dc.html",
       "title": "9 · Charakterbogen",
       "x": 2480,
-      "y": 2040,
+      "y": 2140,
       "w": 1120,
       "h": 880
     },
@@ -76,7 +76,7 @@
       "file": "Einstellungen.dc.html",
       "title": "10 · Einstellungen",
       "x": 0,
-      "y": 2940,
+      "y": 3060,
       "w": 1120,
       "h": 880
     },
@@ -84,7 +84,7 @@
       "file": "Designsystem.dc.html",
       "title": "Design-System",
       "x": 1240,
-      "y": 2940,
+      "y": 3060,
       "w": 1280,
       "h": 820
     }
@@ -95,28 +95,28 @@
       "x": 0,
       "y": -220,
       "w": 620,
-      "text": "POMODORO D&D — Draft nach dem Abgleich mit Konzept V1\n\nÜbernommen: Völker statt Klassen (die Dauer hängt an der Quest), kein Gastzugang, Bereitschaftsprüfung statt Dungeon Master.\n\nNoch offen und deshalb noch nicht gezeichnet: das Lager als Hub (#29), der Ton der Quests (#31). Der Wortmarken-Text ist weiterhin ein Platzhalter."
+      "text": "POMODORO D&D — Draft nach allen Entscheidungen zu Konzept V1\n\nDas Lager ist der Hub: die Welt ist das Menü. Jedes Objekt darin ist ein echter Knopf mit Namen, und die konventionelle Navigation steht gleichwertig daneben.\n\nÜbernommen: Völker statt Klassen, kein Gastzugang, Bereitschaftsprüfung statt Dungeon Master, epische Quest als Bogen aus 3 × 25.\n\nDer Wortmarken-Text ist weiterhin ein Platzhalter."
     },
     {
       "id": "sync-note",
-      "x": 1240,
-      "y": 1980,
+      "x": 1400,
+      "y": 2080,
       "w": 460,
       "text": "Beide Party-Screens zeigen dieselbe Zahl (18:42) wie der Solo-Timer. Genau das ist der Punkt: eine Uhr, aus einem Server-Zeitstempel berechnet, nicht n Countdowns."
     },
     {
       "id": "state-note",
       "x": 2480,
-      "y": 1980,
+      "y": 2080,
       "w": 440,
       "text": "Absicht: Der Truhen-Screen ist der eine gestaltete Moment des Produkts. Unter prefers-reduced-motion bekommt er eine zweite Fassung, keine Abschaltung."
     },
     {
-      "id": "lager-fehlt",
+      "id": "a11y-note",
       "x": 0,
-      "y": 3860,
-      "w": 640,
-      "text": "FEHLT NOCH: Das Lager.\n\nKonzept V1 §2 macht es zum Hub — Home-Screen, Menü und Fortschrittsanzeige in einem, mit diegetischer Navigation über Abenteuerbuch, Rucksack und Signalhorn.\n\nEs ersetzt Party-Hub, Charakterbogen und Teile der Einstellungen. Gezeichnet wird es, sobald #31 (Ton) entschieden ist — beide hängen am selben Material."
+      "y": 1020,
+      "w": 600,
+      "text": "Die Bedingung, unter der die diegetische Navigation ausgeliefert werden darf:\n\nJedes Objekt ist ein <button> mit aria-label, in sinnvoller Tabulator-Reihenfolge, mit sichtbarem Fokusring — und die konventionelle Navigation oben ist gleichwertig, nicht versteckt.\n\nDie Fantasy-Welt ist die Darstellung, nicht die Struktur."
     }
   ],
   "launch": {

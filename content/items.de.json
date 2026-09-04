@@ -1,0 +1,2365 @@
+[
+  {
+    "id": "cha-gew-wollmantel",
+    "category": "charakter",
+    "rarity": "gewoehnlich",
+    "name": "Wollmantel",
+    "blurb": "Abgetragen, aber verlässlich"
+  },
+  {
+    "id": "cha-gew-lederhaube",
+    "category": "charakter",
+    "rarity": "gewoehnlich",
+    "name": "Lederhaube",
+    "blurb": "Abgetragen, aber verlässlich"
+  },
+  {
+    "id": "cha-gew-wanderstiefel",
+    "category": "charakter",
+    "rarity": "gewoehnlich",
+    "name": "Wanderstiefel",
+    "blurb": "Abgetragen, aber verlässlich"
+  },
+  {
+    "id": "cha-gew-segeltuchgurt",
+    "category": "charakter",
+    "rarity": "gewoehnlich",
+    "name": "Segeltuchgurt",
+    "blurb": "Abgetragen, aber verlässlich"
+  },
+  {
+    "id": "cha-gew-filzkappe",
+    "category": "charakter",
+    "rarity": "gewoehnlich",
+    "name": "Filzkappe",
+    "blurb": "Abgetragen, aber verlässlich"
+  },
+  {
+    "id": "cha-gew-reisemantel",
+    "category": "charakter",
+    "rarity": "gewoehnlich",
+    "name": "Reisemantel",
+    "blurb": "Abgetragen, aber verlässlich"
+  },
+  {
+    "id": "cha-gew-fausthandschuh",
+    "category": "charakter",
+    "rarity": "gewoehnlich",
+    "name": "Fausthandschuh",
+    "blurb": "Abgetragen, aber verlässlich"
+  },
+  {
+    "id": "cha-gew-hanfscharpe",
+    "category": "charakter",
+    "rarity": "gewoehnlich",
+    "name": "Hanfschärpe",
+    "blurb": "Abgetragen, aber verlässlich"
+  },
+  {
+    "id": "cha-gew-holzschild",
+    "category": "charakter",
+    "rarity": "gewoehnlich",
+    "name": "Holzschild",
+    "blurb": "Abgetragen, aber verlässlich"
+  },
+  {
+    "id": "cha-gew-wanderstab",
+    "category": "charakter",
+    "rarity": "gewoehnlich",
+    "name": "Wanderstab",
+    "blurb": "Abgetragen, aber verlässlich"
+  },
+  {
+    "id": "cha-gew-kupferring",
+    "category": "charakter",
+    "rarity": "gewoehnlich",
+    "name": "Kupferring",
+    "blurb": "Abgetragen, aber verlässlich"
+  },
+  {
+    "id": "cha-gew-beinwickel",
+    "category": "charakter",
+    "rarity": "gewoehnlich",
+    "name": "Beinwickel",
+    "blurb": "Abgetragen, aber verlässlich"
+  },
+  {
+    "id": "cha-gew-lederweste",
+    "category": "charakter",
+    "rarity": "gewoehnlich",
+    "name": "Lederweste",
+    "blurb": "Abgetragen, aber verlässlich"
+  },
+  {
+    "id": "cha-gew-kohlestift-etui",
+    "category": "charakter",
+    "rarity": "gewoehnlich",
+    "name": "Kohlestift-Etui",
+    "blurb": "Abgetragen, aber verlässlich"
+  },
+  {
+    "id": "cha-gew-schnurtasche",
+    "category": "charakter",
+    "rarity": "gewoehnlich",
+    "name": "Schnürtasche",
+    "blurb": "Abgetragen, aber verlässlich"
+  },
+  {
+    "id": "cha-gew-rindenamulett",
+    "category": "charakter",
+    "rarity": "gewoehnlich",
+    "name": "Rindenamulett",
+    "blurb": "Abgetragen, aber verlässlich"
+  },
+  {
+    "id": "cha-gew-astklinge",
+    "category": "charakter",
+    "rarity": "gewoehnlich",
+    "name": "Astklinge",
+    "blurb": "Abgetragen, aber verlässlich"
+  },
+  {
+    "id": "cha-gew-segeltuchhut",
+    "category": "charakter",
+    "rarity": "gewoehnlich",
+    "name": "Segeltuchhut",
+    "blurb": "Abgetragen, aber verlässlich"
+  },
+  {
+    "id": "cha-gew-nietengurt",
+    "category": "charakter",
+    "rarity": "gewoehnlich",
+    "name": "Nietengurt",
+    "blurb": "Abgetragen, aber verlässlich"
+  },
+  {
+    "id": "cha-gew-wollstulpen",
+    "category": "charakter",
+    "rarity": "gewoehnlich",
+    "name": "Wollstulpen",
+    "blurb": "Abgetragen, aber verlässlich"
+  },
+  {
+    "id": "cha-gew-riemengurt",
+    "category": "charakter",
+    "rarity": "gewoehnlich",
+    "name": "Riemengurt",
+    "blurb": "Abgetragen, aber verlässlich"
+  },
+  {
+    "id": "cha-gew-lederkappe",
+    "category": "charakter",
+    "rarity": "gewoehnlich",
+    "name": "Lederkappe",
+    "blurb": "Abgetragen, aber verlässlich"
+  },
+  {
+    "id": "cha-gew-schnurweste",
+    "category": "charakter",
+    "rarity": "gewoehnlich",
+    "name": "Schnürweste",
+    "blurb": "Abgetragen, aber verlässlich"
+  },
+  {
+    "id": "cha-gew-reisehandschuh",
+    "category": "charakter",
+    "rarity": "gewoehnlich",
+    "name": "Reisehandschuh",
+    "blurb": "Abgetragen, aber verlässlich"
+  },
+  {
+    "id": "cha-gew-wollschal",
+    "category": "charakter",
+    "rarity": "gewoehnlich",
+    "name": "Wollschal",
+    "blurb": "Abgetragen, aber verlässlich"
+  },
+  {
+    "id": "cha-gew-segeltuchhose",
+    "category": "charakter",
+    "rarity": "gewoehnlich",
+    "name": "Segeltuchhose",
+    "blurb": "Abgetragen, aber verlässlich"
+  },
+  {
+    "id": "cha-gew-kordelgurtel",
+    "category": "charakter",
+    "rarity": "gewoehnlich",
+    "name": "Kordelgürtel",
+    "blurb": "Abgetragen, aber verlässlich"
+  },
+  {
+    "id": "cha-gew-hanfumhang",
+    "category": "charakter",
+    "rarity": "gewoehnlich",
+    "name": "Hanfumhang",
+    "blurb": "Abgetragen, aber verlässlich"
+  },
+  {
+    "id": "cha-gew-astschild",
+    "category": "charakter",
+    "rarity": "gewoehnlich",
+    "name": "Astschild",
+    "blurb": "Abgetragen, aber verlässlich"
+  },
+  {
+    "id": "cha-gew-wanderfibel",
+    "category": "charakter",
+    "rarity": "gewoehnlich",
+    "name": "Wanderfibel",
+    "blurb": "Abgetragen, aber verlässlich"
+  },
+  {
+    "id": "cha-gew-zinnring",
+    "category": "charakter",
+    "rarity": "gewoehnlich",
+    "name": "Zinnring",
+    "blurb": "Abgetragen, aber verlässlich"
+  },
+  {
+    "id": "cha-gew-knieschoner",
+    "category": "charakter",
+    "rarity": "gewoehnlich",
+    "name": "Knieschoner",
+    "blurb": "Abgetragen, aber verlässlich"
+  },
+  {
+    "id": "cha-gew-rindenweste",
+    "category": "charakter",
+    "rarity": "gewoehnlich",
+    "name": "Rindenweste",
+    "blurb": "Abgetragen, aber verlässlich"
+  },
+  {
+    "id": "cha-gew-nadelkissen",
+    "category": "charakter",
+    "rarity": "gewoehnlich",
+    "name": "Nadelkissen",
+    "blurb": "Abgetragen, aber verlässlich"
+  },
+  {
+    "id": "cha-gew-riemenbeutel",
+    "category": "charakter",
+    "rarity": "gewoehnlich",
+    "name": "Riemenbeutel",
+    "blurb": "Abgetragen, aber verlässlich"
+  },
+  {
+    "id": "cha-gew-knochenamulett",
+    "category": "charakter",
+    "rarity": "gewoehnlich",
+    "name": "Knochenamulett",
+    "blurb": "Abgetragen, aber verlässlich"
+  },
+  {
+    "id": "cha-gew-kerbklinge",
+    "category": "charakter",
+    "rarity": "gewoehnlich",
+    "name": "Kerbklinge",
+    "blurb": "Abgetragen, aber verlässlich"
+  },
+  {
+    "id": "cha-gew-regenkappe",
+    "category": "charakter",
+    "rarity": "gewoehnlich",
+    "name": "Regenkappe",
+    "blurb": "Abgetragen, aber verlässlich"
+  },
+  {
+    "id": "cha-gew-lederscharpe",
+    "category": "charakter",
+    "rarity": "gewoehnlich",
+    "name": "Lederschärpe",
+    "blurb": "Abgetragen, aber verlässlich"
+  },
+  {
+    "id": "cha-gew-armwickel",
+    "category": "charakter",
+    "rarity": "gewoehnlich",
+    "name": "Armwickel",
+    "blurb": "Abgetragen, aber verlässlich"
+  },
+  {
+    "id": "cha-sel-zunftmantel",
+    "category": "charakter",
+    "rarity": "selten",
+    "name": "Zunftmantel",
+    "blurb": "Von jemandem gemacht, der es konnte"
+  },
+  {
+    "id": "cha-sel-kettenhaube",
+    "category": "charakter",
+    "rarity": "selten",
+    "name": "Kettenhaube",
+    "blurb": "Von jemandem gemacht, der es konnte"
+  },
+  {
+    "id": "cha-sel-marschstiefel",
+    "category": "charakter",
+    "rarity": "selten",
+    "name": "Marschstiefel",
+    "blurb": "Von jemandem gemacht, der es konnte"
+  },
+  {
+    "id": "cha-sel-silbergurt",
+    "category": "charakter",
+    "rarity": "selten",
+    "name": "Silbergurt",
+    "blurb": "Von jemandem gemacht, der es konnte"
+  },
+  {
+    "id": "cha-sel-reiherfeder-kappe",
+    "category": "charakter",
+    "rarity": "selten",
+    "name": "Reiherfeder-Kappe",
+    "blurb": "Von jemandem gemacht, der es konnte"
+  },
+  {
+    "id": "cha-sel-regenumhang",
+    "category": "charakter",
+    "rarity": "selten",
+    "name": "Regenumhang",
+    "blurb": "Von jemandem gemacht, der es konnte"
+  },
+  {
+    "id": "cha-sel-panzerhandschuh",
+    "category": "charakter",
+    "rarity": "selten",
+    "name": "Panzerhandschuh",
+    "blurb": "Von jemandem gemacht, der es konnte"
+  },
+  {
+    "id": "cha-sel-leinenscharpe",
+    "category": "charakter",
+    "rarity": "selten",
+    "name": "Leinenschärpe",
+    "blurb": "Von jemandem gemacht, der es konnte"
+  },
+  {
+    "id": "cha-sel-buckelschild",
+    "category": "charakter",
+    "rarity": "selten",
+    "name": "Buckelschild",
+    "blurb": "Von jemandem gemacht, der es konnte"
+  },
+  {
+    "id": "cha-sel-eibenstab",
+    "category": "charakter",
+    "rarity": "selten",
+    "name": "Eibenstab",
+    "blurb": "Von jemandem gemacht, der es konnte"
+  },
+  {
+    "id": "cha-sel-silberring",
+    "category": "charakter",
+    "rarity": "selten",
+    "name": "Silberring",
+    "blurb": "Von jemandem gemacht, der es konnte"
+  },
+  {
+    "id": "cha-sel-schienbeinschutz",
+    "category": "charakter",
+    "rarity": "selten",
+    "name": "Schienbeinschutz",
+    "blurb": "Von jemandem gemacht, der es konnte"
+  },
+  {
+    "id": "cha-sel-brustharnisch",
+    "category": "charakter",
+    "rarity": "selten",
+    "name": "Brustharnisch",
+    "blurb": "Von jemandem gemacht, der es konnte"
+  },
+  {
+    "id": "cha-sel-kartenrolle",
+    "category": "charakter",
+    "rarity": "selten",
+    "name": "Kartenrolle",
+    "blurb": "Von jemandem gemacht, der es konnte"
+  },
+  {
+    "id": "cha-sel-gurteltasche",
+    "category": "charakter",
+    "rarity": "selten",
+    "name": "Gürteltasche",
+    "blurb": "Von jemandem gemacht, der es konnte"
+  },
+  {
+    "id": "cha-sel-bernsteinamulett",
+    "category": "charakter",
+    "rarity": "selten",
+    "name": "Bernsteinamulett",
+    "blurb": "Von jemandem gemacht, der es konnte"
+  },
+  {
+    "id": "cha-sel-zunftklinge",
+    "category": "charakter",
+    "rarity": "selten",
+    "name": "Zunftklinge",
+    "blurb": "Von jemandem gemacht, der es konnte"
+  },
+  {
+    "id": "cha-sel-kapuzenhut",
+    "category": "charakter",
+    "rarity": "selten",
+    "name": "Kapuzenhut",
+    "blurb": "Von jemandem gemacht, der es konnte"
+  },
+  {
+    "id": "cha-sel-schuppengurt",
+    "category": "charakter",
+    "rarity": "selten",
+    "name": "Schuppengurt",
+    "blurb": "Von jemandem gemacht, der es konnte"
+  },
+  {
+    "id": "cha-sel-armschienen",
+    "category": "charakter",
+    "rarity": "selten",
+    "name": "Armschienen",
+    "blurb": "Von jemandem gemacht, der es konnte"
+  },
+  {
+    "id": "cha-epi-zwielichtmantel",
+    "category": "charakter",
+    "rarity": "episch",
+    "name": "Zwielichtmantel",
+    "blurb": "Trägt eine Geschichte, die nicht deine ist"
+  },
+  {
+    "id": "cha-epi-mondsteinhelm",
+    "category": "charakter",
+    "rarity": "episch",
+    "name": "Mondsteinhelm",
+    "blurb": "Trägt eine Geschichte, die nicht deine ist"
+  },
+  {
+    "id": "cha-epi-nebelganger",
+    "category": "charakter",
+    "rarity": "episch",
+    "name": "Nebelgänger",
+    "blurb": "Trägt eine Geschichte, die nicht deine ist"
+  },
+  {
+    "id": "cha-epi-sternengurt",
+    "category": "charakter",
+    "rarity": "episch",
+    "name": "Sternengurt",
+    "blurb": "Trägt eine Geschichte, die nicht deine ist"
+  },
+  {
+    "id": "cha-epi-schwingenkappe",
+    "category": "charakter",
+    "rarity": "episch",
+    "name": "Schwingenkappe",
+    "blurb": "Trägt eine Geschichte, die nicht deine ist"
+  },
+  {
+    "id": "cha-epi-aschenumhang",
+    "category": "charakter",
+    "rarity": "episch",
+    "name": "Aschenumhang",
+    "blurb": "Trägt eine Geschichte, die nicht deine ist"
+  },
+  {
+    "id": "cha-epi-frostgriff",
+    "category": "charakter",
+    "rarity": "episch",
+    "name": "Frostgriff",
+    "blurb": "Trägt eine Geschichte, die nicht deine ist"
+  },
+  {
+    "id": "cha-epi-glutscharpe",
+    "category": "charakter",
+    "rarity": "episch",
+    "name": "Glutschärpe",
+    "blurb": "Trägt eine Geschichte, die nicht deine ist"
+  },
+  {
+    "id": "cha-epi-rissschild",
+    "category": "charakter",
+    "rarity": "episch",
+    "name": "Rissschild",
+    "blurb": "Trägt eine Geschichte, die nicht deine ist"
+  },
+  {
+    "id": "cha-epi-klammstab",
+    "category": "charakter",
+    "rarity": "episch",
+    "name": "Klammstab",
+    "blurb": "Trägt eine Geschichte, die nicht deine ist",
+    "set": "klamm"
+  },
+  {
+    "id": "cha-epi-klammring",
+    "category": "charakter",
+    "rarity": "episch",
+    "name": "Klammring",
+    "blurb": "Trägt eine Geschichte, die nicht deine ist",
+    "set": "klamm"
+  },
+  {
+    "id": "cha-epi-klammschienen",
+    "category": "charakter",
+    "rarity": "episch",
+    "name": "Klammschienen",
+    "blurb": "Trägt eine Geschichte, die nicht deine ist",
+    "set": "klamm"
+  },
+  {
+    "id": "cha-leg-aschenkrone-der-ersten-nachtwache",
+    "category": "charakter",
+    "rarity": "legendaer",
+    "name": "Aschenkrone der ersten Nachtwache",
+    "blurb": "Es gibt genau eines davon",
+    "set": "nachtwache"
+  },
+  {
+    "id": "cha-leg-mantel-des-stillen-turms",
+    "category": "charakter",
+    "rarity": "legendaer",
+    "name": "Mantel des stillen Turms",
+    "blurb": "Es gibt genau eines davon"
+  },
+  {
+    "id": "cha-leg-schritte-des-vierten-stockwerks",
+    "category": "charakter",
+    "rarity": "legendaer",
+    "name": "Schritte des vierten Stockwerks",
+    "blurb": "Es gibt genau eines davon"
+  },
+  {
+    "id": "cha-leg-gurt-der-geteilten-klamm",
+    "category": "charakter",
+    "rarity": "legendaer",
+    "name": "Gurt der geteilten Klamm",
+    "blurb": "Es gibt genau eines davon"
+  },
+  {
+    "id": "cha-leg-krone-des-einundvierzigsten-bandes",
+    "category": "charakter",
+    "rarity": "legendaer",
+    "name": "Krone des einundvierzigsten Bandes",
+    "blurb": "Es gibt genau eines davon"
+  },
+  {
+    "id": "cha-leg-umhang-der-langen-ebbe",
+    "category": "charakter",
+    "rarity": "legendaer",
+    "name": "Umhang der langen Ebbe",
+    "blurb": "Es gibt genau eines davon"
+  },
+  {
+    "id": "cha-leg-griff-aus-dem-schmelzpunkt",
+    "category": "charakter",
+    "rarity": "legendaer",
+    "name": "Griff aus dem Schmelzpunkt",
+    "blurb": "Es gibt genau eines davon"
+  },
+  {
+    "id": "cha-leg-scharpe-der-zwolf-fundstucke",
+    "category": "charakter",
+    "rarity": "legendaer",
+    "name": "Schärpe der zwölf Fundstücke",
+    "blurb": "Es gibt genau eines davon"
+  },
+  {
+    "id": "cha-leg-schild-aus-dem-kiel",
+    "category": "charakter",
+    "rarity": "legendaer",
+    "name": "Schild aus dem Kiel",
+    "blurb": "Es gibt genau eines davon"
+  },
+  {
+    "id": "cha-leg-stab-der-wetterstange",
+    "category": "charakter",
+    "rarity": "legendaer",
+    "name": "Stab der Wetterstange",
+    "blurb": "Es gibt genau eines davon"
+  },
+  {
+    "id": "cha-leg-siegel-des-stillen-turms",
+    "category": "charakter",
+    "rarity": "legendaer",
+    "name": "Siegel des stillen Turms",
+    "blurb": "Es gibt genau eines davon"
+  },
+  {
+    "id": "cha-leg-schienen-vom-grat-im-sturm",
+    "category": "charakter",
+    "rarity": "legendaer",
+    "name": "Schienen vom Grat im Sturm",
+    "blurb": "Es gibt genau eines davon"
+  },
+  {
+    "id": "lag-gew-feldkessel",
+    "category": "lager",
+    "rarity": "gewoehnlich",
+    "name": "Feldkessel",
+    "blurb": "Steht da und tut, was es soll"
+  },
+  {
+    "id": "lag-gew-wolldecke",
+    "category": "lager",
+    "rarity": "gewoehnlich",
+    "name": "Wolldecke",
+    "blurb": "Steht da und tut, was es soll"
+  },
+  {
+    "id": "lag-gew-astbundel",
+    "category": "lager",
+    "rarity": "gewoehnlich",
+    "name": "Astbündel",
+    "blurb": "Steht da und tut, was es soll"
+  },
+  {
+    "id": "lag-gew-zunderdose",
+    "category": "lager",
+    "rarity": "gewoehnlich",
+    "name": "Zunderdose",
+    "blurb": "Steht da und tut, was es soll"
+  },
+  {
+    "id": "lag-gew-holzhocker",
+    "category": "lager",
+    "rarity": "gewoehnlich",
+    "name": "Holzhocker",
+    "blurb": "Steht da und tut, was es soll"
+  },
+  {
+    "id": "lag-gew-segeltuchplane",
+    "category": "lager",
+    "rarity": "gewoehnlich",
+    "name": "Segeltuchplane",
+    "blurb": "Steht da und tut, was es soll"
+  },
+  {
+    "id": "lag-gew-tonbecher",
+    "category": "lager",
+    "rarity": "gewoehnlich",
+    "name": "Tonbecher",
+    "blurb": "Steht da und tut, was es soll"
+  },
+  {
+    "id": "lag-gew-kochdreibein",
+    "category": "lager",
+    "rarity": "gewoehnlich",
+    "name": "Kochdreibein",
+    "blurb": "Steht da und tut, was es soll"
+  },
+  {
+    "id": "lag-gew-reisigbesen",
+    "category": "lager",
+    "rarity": "gewoehnlich",
+    "name": "Reisigbesen",
+    "blurb": "Steht da und tut, was es soll"
+  },
+  {
+    "id": "lag-gew-talglicht",
+    "category": "lager",
+    "rarity": "gewoehnlich",
+    "name": "Talglicht",
+    "blurb": "Steht da und tut, was es soll"
+  },
+  {
+    "id": "lag-gew-stoffwimpel",
+    "category": "lager",
+    "rarity": "gewoehnlich",
+    "name": "Stoffwimpel",
+    "blurb": "Steht da und tut, was es soll"
+  },
+  {
+    "id": "lag-gew-wasserbalg",
+    "category": "lager",
+    "rarity": "gewoehnlich",
+    "name": "Wasserbalg",
+    "blurb": "Steht da und tut, was es soll"
+  },
+  {
+    "id": "lag-gew-holzkiste",
+    "category": "lager",
+    "rarity": "gewoehnlich",
+    "name": "Holzkiste",
+    "blurb": "Steht da und tut, was es soll"
+  },
+  {
+    "id": "lag-gew-schnurhaspel",
+    "category": "lager",
+    "rarity": "gewoehnlich",
+    "name": "Schnurhaspel",
+    "blurb": "Steht da und tut, was es soll"
+  },
+  {
+    "id": "lag-gew-feuerhaken",
+    "category": "lager",
+    "rarity": "gewoehnlich",
+    "name": "Feuerhaken",
+    "blurb": "Steht da und tut, was es soll",
+    "set": "wachfeuer"
+  },
+  {
+    "id": "lag-gew-strohmatte",
+    "category": "lager",
+    "rarity": "gewoehnlich",
+    "name": "Strohmatte",
+    "blurb": "Steht da und tut, was es soll"
+  },
+  {
+    "id": "lag-gew-kerbholz",
+    "category": "lager",
+    "rarity": "gewoehnlich",
+    "name": "Kerbholz",
+    "blurb": "Steht da und tut, was es soll"
+  },
+  {
+    "id": "lag-gew-hanfseil",
+    "category": "lager",
+    "rarity": "gewoehnlich",
+    "name": "Hanfseil",
+    "blurb": "Steht da und tut, was es soll"
+  },
+  {
+    "id": "lag-gew-blechlaterne",
+    "category": "lager",
+    "rarity": "gewoehnlich",
+    "name": "Blechlaterne",
+    "blurb": "Steht da und tut, was es soll"
+  },
+  {
+    "id": "lag-gew-astgabel",
+    "category": "lager",
+    "rarity": "gewoehnlich",
+    "name": "Astgabel",
+    "blurb": "Steht da und tut, was es soll"
+  },
+  {
+    "id": "lag-gew-blechtopf",
+    "category": "lager",
+    "rarity": "gewoehnlich",
+    "name": "Blechtopf",
+    "blurb": "Steht da und tut, was es soll"
+  },
+  {
+    "id": "lag-gew-strohsack",
+    "category": "lager",
+    "rarity": "gewoehnlich",
+    "name": "Strohsack",
+    "blurb": "Steht da und tut, was es soll"
+  },
+  {
+    "id": "lag-gew-reisigbundel",
+    "category": "lager",
+    "rarity": "gewoehnlich",
+    "name": "Reisigbündel",
+    "blurb": "Steht da und tut, was es soll"
+  },
+  {
+    "id": "lag-gew-feuerstein",
+    "category": "lager",
+    "rarity": "gewoehnlich",
+    "name": "Feuerstein",
+    "blurb": "Steht da und tut, was es soll"
+  },
+  {
+    "id": "lag-gew-astbank",
+    "category": "lager",
+    "rarity": "gewoehnlich",
+    "name": "Astbank",
+    "blurb": "Steht da und tut, was es soll"
+  },
+  {
+    "id": "lag-gew-leinenplane",
+    "category": "lager",
+    "rarity": "gewoehnlich",
+    "name": "Leinenplane",
+    "blurb": "Steht da und tut, was es soll"
+  },
+  {
+    "id": "lag-gew-holzschale",
+    "category": "lager",
+    "rarity": "gewoehnlich",
+    "name": "Holzschale",
+    "blurb": "Steht da und tut, was es soll"
+  },
+  {
+    "id": "lag-gew-kochgabel",
+    "category": "lager",
+    "rarity": "gewoehnlich",
+    "name": "Kochgabel",
+    "blurb": "Steht da und tut, was es soll"
+  },
+  {
+    "id": "lag-gew-kehrbesen",
+    "category": "lager",
+    "rarity": "gewoehnlich",
+    "name": "Kehrbesen",
+    "blurb": "Steht da und tut, was es soll"
+  },
+  {
+    "id": "lag-gew-fettlampe",
+    "category": "lager",
+    "rarity": "gewoehnlich",
+    "name": "Fettlampe",
+    "blurb": "Steht da und tut, was es soll"
+  },
+  {
+    "id": "lag-gew-stoffbanner",
+    "category": "lager",
+    "rarity": "gewoehnlich",
+    "name": "Stoffbanner",
+    "blurb": "Steht da und tut, was es soll"
+  },
+  {
+    "id": "lag-gew-lederbeutel",
+    "category": "lager",
+    "rarity": "gewoehnlich",
+    "name": "Lederbeutel",
+    "blurb": "Steht da und tut, was es soll"
+  },
+  {
+    "id": "lag-gew-vorratskorb",
+    "category": "lager",
+    "rarity": "gewoehnlich",
+    "name": "Vorratskorb",
+    "blurb": "Steht da und tut, was es soll"
+  },
+  {
+    "id": "lag-gew-zwirnrolle",
+    "category": "lager",
+    "rarity": "gewoehnlich",
+    "name": "Zwirnrolle",
+    "blurb": "Steht da und tut, was es soll"
+  },
+  {
+    "id": "lag-gew-schurhaken",
+    "category": "lager",
+    "rarity": "gewoehnlich",
+    "name": "Schürhaken",
+    "blurb": "Steht da und tut, was es soll"
+  },
+  {
+    "id": "lag-gew-binsenteppich",
+    "category": "lager",
+    "rarity": "gewoehnlich",
+    "name": "Binsenteppich",
+    "blurb": "Steht da und tut, was es soll"
+  },
+  {
+    "id": "lag-gew-zahlstab",
+    "category": "lager",
+    "rarity": "gewoehnlich",
+    "name": "Zählstab",
+    "blurb": "Steht da und tut, was es soll"
+  },
+  {
+    "id": "lag-gew-flachsseil",
+    "category": "lager",
+    "rarity": "gewoehnlich",
+    "name": "Flachsseil",
+    "blurb": "Steht da und tut, was es soll"
+  },
+  {
+    "id": "lag-gew-hornlaterne",
+    "category": "lager",
+    "rarity": "gewoehnlich",
+    "name": "Hornlaterne",
+    "blurb": "Steht da und tut, was es soll"
+  },
+  {
+    "id": "lag-gew-zeltpflock",
+    "category": "lager",
+    "rarity": "gewoehnlich",
+    "name": "Zeltpflock",
+    "blurb": "Steht da und tut, was es soll"
+  },
+  {
+    "id": "lag-sel-messingkessel",
+    "category": "lager",
+    "rarity": "selten",
+    "name": "Messingkessel",
+    "blurb": "Jemand hat sich Mühe gegeben"
+  },
+  {
+    "id": "lag-sel-wollteppich",
+    "category": "lager",
+    "rarity": "selten",
+    "name": "Wollteppich",
+    "blurb": "Jemand hat sich Mühe gegeben"
+  },
+  {
+    "id": "lag-sel-wetterzelt",
+    "category": "lager",
+    "rarity": "selten",
+    "name": "Wetterzelt",
+    "blurb": "Jemand hat sich Mühe gegeben"
+  },
+  {
+    "id": "lag-sel-zinnobertopf",
+    "category": "lager",
+    "rarity": "selten",
+    "name": "Zinnobertopf",
+    "blurb": "Jemand hat sich Mühe gegeben"
+  },
+  {
+    "id": "lag-sel-schnitzhocker",
+    "category": "lager",
+    "rarity": "selten",
+    "name": "Schnitzhocker",
+    "blurb": "Jemand hat sich Mühe gegeben"
+  },
+  {
+    "id": "lag-sel-olplane",
+    "category": "lager",
+    "rarity": "selten",
+    "name": "Ölplane",
+    "blurb": "Jemand hat sich Mühe gegeben"
+  },
+  {
+    "id": "lag-sel-steingutkrug",
+    "category": "lager",
+    "rarity": "selten",
+    "name": "Steingutkrug",
+    "blurb": "Jemand hat sich Mühe gegeben"
+  },
+  {
+    "id": "lag-sel-schmiededreibein",
+    "category": "lager",
+    "rarity": "selten",
+    "name": "Schmiededreibein",
+    "blurb": "Jemand hat sich Mühe gegeben"
+  },
+  {
+    "id": "lag-sel-reisebesen",
+    "category": "lager",
+    "rarity": "selten",
+    "name": "Reisebesen",
+    "blurb": "Jemand hat sich Mühe gegeben"
+  },
+  {
+    "id": "lag-sel-wachskerze",
+    "category": "lager",
+    "rarity": "selten",
+    "name": "Wachskerze",
+    "blurb": "Jemand hat sich Mühe gegeben"
+  },
+  {
+    "id": "lag-sel-zunftbanner",
+    "category": "lager",
+    "rarity": "selten",
+    "name": "Zunftbanner",
+    "blurb": "Jemand hat sich Mühe gegeben"
+  },
+  {
+    "id": "lag-sel-lederbalg",
+    "category": "lager",
+    "rarity": "selten",
+    "name": "Lederbalg",
+    "blurb": "Jemand hat sich Mühe gegeben"
+  },
+  {
+    "id": "lag-sel-beschlagene-truhe",
+    "category": "lager",
+    "rarity": "selten",
+    "name": "Beschlagene Truhe",
+    "blurb": "Jemand hat sich Mühe gegeben"
+  },
+  {
+    "id": "lag-sel-garnwinde",
+    "category": "lager",
+    "rarity": "selten",
+    "name": "Garnwinde",
+    "blurb": "Jemand hat sich Mühe gegeben"
+  },
+  {
+    "id": "lag-sel-schmiedehaken",
+    "category": "lager",
+    "rarity": "selten",
+    "name": "Schmiedehaken",
+    "blurb": "Jemand hat sich Mühe gegeben"
+  },
+  {
+    "id": "lag-sel-binsenmatte",
+    "category": "lager",
+    "rarity": "selten",
+    "name": "Binsenmatte",
+    "blurb": "Jemand hat sich Mühe gegeben"
+  },
+  {
+    "id": "lag-sel-rechenbrett",
+    "category": "lager",
+    "rarity": "selten",
+    "name": "Rechenbrett",
+    "blurb": "Jemand hat sich Mühe gegeben"
+  },
+  {
+    "id": "lag-sel-kernseil",
+    "category": "lager",
+    "rarity": "selten",
+    "name": "Kernseil",
+    "blurb": "Jemand hat sich Mühe gegeben"
+  },
+  {
+    "id": "lag-sel-messinglaterne",
+    "category": "lager",
+    "rarity": "selten",
+    "name": "Messinglaterne",
+    "blurb": "Jemand hat sich Mühe gegeben"
+  },
+  {
+    "id": "lag-sel-wetterfahne",
+    "category": "lager",
+    "rarity": "selten",
+    "name": "Wetterfahne",
+    "blurb": "Jemand hat sich Mühe gegeben"
+  },
+  {
+    "id": "lag-epi-nebelfeuerstelle",
+    "category": "lager",
+    "rarity": "episch",
+    "name": "Nebelfeuerstelle",
+    "blurb": "Wirft Licht, das nicht ganz stimmt"
+  },
+  {
+    "id": "lag-epi-sternenteppich",
+    "category": "lager",
+    "rarity": "episch",
+    "name": "Sternenteppich",
+    "blurb": "Wirft Licht, das nicht ganz stimmt"
+  },
+  {
+    "id": "lag-epi-klammzelt",
+    "category": "lager",
+    "rarity": "episch",
+    "name": "Klammzelt",
+    "blurb": "Wirft Licht, das nicht ganz stimmt",
+    "set": "klamm"
+  },
+  {
+    "id": "lag-epi-glutkessel",
+    "category": "lager",
+    "rarity": "episch",
+    "name": "Glutkessel",
+    "blurb": "Wirft Licht, das nicht ganz stimmt"
+  },
+  {
+    "id": "lag-epi-aschenbanner",
+    "category": "lager",
+    "rarity": "episch",
+    "name": "Aschenbanner",
+    "blurb": "Wirft Licht, das nicht ganz stimmt"
+  },
+  {
+    "id": "lag-epi-mondsteinlaterne",
+    "category": "lager",
+    "rarity": "episch",
+    "name": "Mondsteinlaterne",
+    "blurb": "Wirft Licht, das nicht ganz stimmt"
+  },
+  {
+    "id": "lag-epi-rissbeschlag",
+    "category": "lager",
+    "rarity": "episch",
+    "name": "Rissbeschlag",
+    "blurb": "Wirft Licht, das nicht ganz stimmt"
+  },
+  {
+    "id": "lag-epi-frostkrug",
+    "category": "lager",
+    "rarity": "episch",
+    "name": "Frostkrug",
+    "blurb": "Wirft Licht, das nicht ganz stimmt"
+  },
+  {
+    "id": "lag-epi-schwingenwimpel",
+    "category": "lager",
+    "rarity": "episch",
+    "name": "Schwingenwimpel",
+    "blurb": "Wirft Licht, das nicht ganz stimmt"
+  },
+  {
+    "id": "lag-epi-wachfeuerschale",
+    "category": "lager",
+    "rarity": "episch",
+    "name": "Wachfeuerschale",
+    "blurb": "Wirft Licht, das nicht ganz stimmt",
+    "set": "wachfeuer"
+  },
+  {
+    "id": "lag-epi-wachfeuerbock",
+    "category": "lager",
+    "rarity": "episch",
+    "name": "Wachfeuerbock",
+    "blurb": "Wirft Licht, das nicht ganz stimmt",
+    "set": "wachfeuer"
+  },
+  {
+    "id": "lag-epi-wachfeuerkette",
+    "category": "lager",
+    "rarity": "episch",
+    "name": "Wachfeuerkette",
+    "blurb": "Wirft Licht, das nicht ganz stimmt",
+    "set": "wachfeuer"
+  },
+  {
+    "id": "lag-leg-feuerstelle-der-langen-rast",
+    "category": "lager",
+    "rarity": "legendaer",
+    "name": "Feuerstelle der langen Rast",
+    "blurb": "Der Mittelpunkt eines Lagers"
+  },
+  {
+    "id": "lag-leg-banner-der-zwolf-gefahrten",
+    "category": "lager",
+    "rarity": "legendaer",
+    "name": "Banner der zwölf Gefährten",
+    "blurb": "Der Mittelpunkt eines Lagers"
+  },
+  {
+    "id": "lag-leg-zelt-aus-dem-sturmsattel",
+    "category": "lager",
+    "rarity": "legendaer",
+    "name": "Zelt aus dem Sturmsattel",
+    "blurb": "Der Mittelpunkt eines Lagers"
+  },
+  {
+    "id": "lag-leg-kessel-vom-vierten-stockwerk",
+    "category": "lager",
+    "rarity": "legendaer",
+    "name": "Kessel vom vierten Stockwerk",
+    "blurb": "Der Mittelpunkt eines Lagers"
+  },
+  {
+    "id": "lag-leg-laterne-aus-dem-hort",
+    "category": "lager",
+    "rarity": "legendaer",
+    "name": "Laterne aus dem Hort",
+    "blurb": "Der Mittelpunkt eines Lagers"
+  },
+  {
+    "id": "lag-leg-teppich-der-vierzig-turen",
+    "category": "lager",
+    "rarity": "legendaer",
+    "name": "Teppich der vierzig Türen",
+    "blurb": "Der Mittelpunkt eines Lagers"
+  },
+  {
+    "id": "lag-leg-truhe-ohne-boden",
+    "category": "lager",
+    "rarity": "legendaer",
+    "name": "Truhe ohne Boden",
+    "blurb": "Der Mittelpunkt eines Lagers"
+  },
+  {
+    "id": "lag-leg-kette-aus-der-nordwand",
+    "category": "lager",
+    "rarity": "legendaer",
+    "name": "Kette aus der Nordwand",
+    "blurb": "Der Mittelpunkt eines Lagers"
+  },
+  {
+    "id": "lag-leg-schale-der-ersten-nacht",
+    "category": "lager",
+    "rarity": "legendaer",
+    "name": "Schale der ersten Nacht",
+    "blurb": "Der Mittelpunkt eines Lagers",
+    "set": "nachtwache"
+  },
+  {
+    "id": "lag-leg-bock-aus-dem-kiel",
+    "category": "lager",
+    "rarity": "legendaer",
+    "name": "Bock aus dem Kiel",
+    "blurb": "Der Mittelpunkt eines Lagers"
+  },
+  {
+    "id": "lag-leg-wetterfahne-vom-grat",
+    "category": "lager",
+    "rarity": "legendaer",
+    "name": "Wetterfahne vom Grat",
+    "blurb": "Der Mittelpunkt eines Lagers"
+  },
+  {
+    "id": "lag-leg-glocke-ohne-kloppel",
+    "category": "lager",
+    "rarity": "legendaer",
+    "name": "Glocke ohne Klöppel",
+    "blurb": "Der Mittelpunkt eines Lagers"
+  },
+  {
+    "id": "beg-gew-feldmaus",
+    "category": "begleiter",
+    "rarity": "gewoehnlich",
+    "name": "Feldmaus",
+    "blurb": "Kleiner Begleiter, große Ausdauer"
+  },
+  {
+    "id": "beg-gew-grauspatz",
+    "category": "begleiter",
+    "rarity": "gewoehnlich",
+    "name": "Grauspatz",
+    "blurb": "Kleiner Begleiter, große Ausdauer"
+  },
+  {
+    "id": "beg-gew-wanderkafer",
+    "category": "begleiter",
+    "rarity": "gewoehnlich",
+    "name": "Wanderkäfer",
+    "blurb": "Kleiner Begleiter, große Ausdauer"
+  },
+  {
+    "id": "beg-gew-moosschnecke",
+    "category": "begleiter",
+    "rarity": "gewoehnlich",
+    "name": "Moosschnecke",
+    "blurb": "Kleiner Begleiter, große Ausdauer"
+  },
+  {
+    "id": "beg-gew-torfkrote",
+    "category": "begleiter",
+    "rarity": "gewoehnlich",
+    "name": "Torfkröte",
+    "blurb": "Kleiner Begleiter, große Ausdauer"
+  },
+  {
+    "id": "beg-gew-russfink",
+    "category": "begleiter",
+    "rarity": "gewoehnlich",
+    "name": "Rußfink",
+    "blurb": "Kleiner Begleiter, große Ausdauer"
+  },
+  {
+    "id": "beg-gew-heuhupfer",
+    "category": "begleiter",
+    "rarity": "gewoehnlich",
+    "name": "Heuhüpfer",
+    "blurb": "Kleiner Begleiter, große Ausdauer"
+  },
+  {
+    "id": "beg-gew-dunenechse",
+    "category": "begleiter",
+    "rarity": "gewoehnlich",
+    "name": "Dünenechse",
+    "blurb": "Kleiner Begleiter, große Ausdauer"
+  },
+  {
+    "id": "beg-gew-kesselkatze",
+    "category": "begleiter",
+    "rarity": "gewoehnlich",
+    "name": "Kesselkatze",
+    "blurb": "Kleiner Begleiter, große Ausdauer"
+  },
+  {
+    "id": "beg-gew-salzkrabbe",
+    "category": "begleiter",
+    "rarity": "gewoehnlich",
+    "name": "Salzkrabbe",
+    "blurb": "Kleiner Begleiter, große Ausdauer"
+  },
+  {
+    "id": "beg-gew-rindenfalter",
+    "category": "begleiter",
+    "rarity": "gewoehnlich",
+    "name": "Rindenfalter",
+    "blurb": "Kleiner Begleiter, große Ausdauer"
+  },
+  {
+    "id": "beg-gew-aschengrille",
+    "category": "begleiter",
+    "rarity": "gewoehnlich",
+    "name": "Aschengrille",
+    "blurb": "Kleiner Begleiter, große Ausdauer"
+  },
+  {
+    "id": "beg-gew-hohlspinne",
+    "category": "begleiter",
+    "rarity": "gewoehnlich",
+    "name": "Hohlspinne",
+    "blurb": "Kleiner Begleiter, große Ausdauer"
+  },
+  {
+    "id": "beg-gew-nebelmotte",
+    "category": "begleiter",
+    "rarity": "gewoehnlich",
+    "name": "Nebelmotte",
+    "blurb": "Kleiner Begleiter, große Ausdauer"
+  },
+  {
+    "id": "beg-gew-glasameise",
+    "category": "begleiter",
+    "rarity": "gewoehnlich",
+    "name": "Glasameise",
+    "blurb": "Kleiner Begleiter, große Ausdauer"
+  },
+  {
+    "id": "beg-gew-marschfrosch",
+    "category": "begleiter",
+    "rarity": "gewoehnlich",
+    "name": "Marschfrosch",
+    "blurb": "Kleiner Begleiter, große Ausdauer"
+  },
+  {
+    "id": "beg-gew-rostmilbe",
+    "category": "begleiter",
+    "rarity": "gewoehnlich",
+    "name": "Rostmilbe",
+    "blurb": "Kleiner Begleiter, große Ausdauer"
+  },
+  {
+    "id": "beg-gew-sternfalter",
+    "category": "begleiter",
+    "rarity": "gewoehnlich",
+    "name": "Sternfalter",
+    "blurb": "Kleiner Begleiter, große Ausdauer"
+  },
+  {
+    "id": "beg-gew-wustenmaus",
+    "category": "begleiter",
+    "rarity": "gewoehnlich",
+    "name": "Wüstenmaus",
+    "blurb": "Kleiner Begleiter, große Ausdauer"
+  },
+  {
+    "id": "beg-gew-dorfhund",
+    "category": "begleiter",
+    "rarity": "gewoehnlich",
+    "name": "Dorfhund",
+    "blurb": "Kleiner Begleiter, große Ausdauer"
+  },
+  {
+    "id": "beg-gew-sandfloh",
+    "category": "begleiter",
+    "rarity": "gewoehnlich",
+    "name": "Sandfloh",
+    "blurb": "Kleiner Begleiter, große Ausdauer"
+  },
+  {
+    "id": "beg-gew-uferschnepfe",
+    "category": "begleiter",
+    "rarity": "gewoehnlich",
+    "name": "Uferschnepfe",
+    "blurb": "Kleiner Begleiter, große Ausdauer"
+  },
+  {
+    "id": "beg-gew-russmaus",
+    "category": "begleiter",
+    "rarity": "gewoehnlich",
+    "name": "Rußmaus",
+    "blurb": "Kleiner Begleiter, große Ausdauer"
+  },
+  {
+    "id": "beg-gew-torfwurm",
+    "category": "begleiter",
+    "rarity": "gewoehnlich",
+    "name": "Torfwurm",
+    "blurb": "Kleiner Begleiter, große Ausdauer"
+  },
+  {
+    "id": "beg-gew-hallgrille",
+    "category": "begleiter",
+    "rarity": "gewoehnlich",
+    "name": "Hallgrille",
+    "blurb": "Kleiner Begleiter, große Ausdauer"
+  },
+  {
+    "id": "beg-gew-kalkschnecke",
+    "category": "begleiter",
+    "rarity": "gewoehnlich",
+    "name": "Kalkschnecke",
+    "blurb": "Kleiner Begleiter, große Ausdauer"
+  },
+  {
+    "id": "beg-gew-dunenkafer",
+    "category": "begleiter",
+    "rarity": "gewoehnlich",
+    "name": "Dünenkäfer",
+    "blurb": "Kleiner Begleiter, große Ausdauer"
+  },
+  {
+    "id": "beg-gew-marschmucke",
+    "category": "begleiter",
+    "rarity": "gewoehnlich",
+    "name": "Marschmücke",
+    "blurb": "Kleiner Begleiter, große Ausdauer"
+  },
+  {
+    "id": "beg-gew-aschenspinne",
+    "category": "begleiter",
+    "rarity": "gewoehnlich",
+    "name": "Aschenspinne",
+    "blurb": "Kleiner Begleiter, große Ausdauer"
+  },
+  {
+    "id": "beg-gew-glasfliege",
+    "category": "begleiter",
+    "rarity": "gewoehnlich",
+    "name": "Glasfliege",
+    "blurb": "Kleiner Begleiter, große Ausdauer"
+  },
+  {
+    "id": "beg-gew-rostwanze",
+    "category": "begleiter",
+    "rarity": "gewoehnlich",
+    "name": "Rostwanze",
+    "blurb": "Kleiner Begleiter, große Ausdauer"
+  },
+  {
+    "id": "beg-gew-nebelfalter",
+    "category": "begleiter",
+    "rarity": "gewoehnlich",
+    "name": "Nebelfalter",
+    "blurb": "Kleiner Begleiter, große Ausdauer"
+  },
+  {
+    "id": "beg-gew-klammlaus",
+    "category": "begleiter",
+    "rarity": "gewoehnlich",
+    "name": "Klammlaus",
+    "blurb": "Kleiner Begleiter, große Ausdauer"
+  },
+  {
+    "id": "beg-gew-sternschnecke",
+    "category": "begleiter",
+    "rarity": "gewoehnlich",
+    "name": "Sternschnecke",
+    "blurb": "Kleiner Begleiter, große Ausdauer"
+  },
+  {
+    "id": "beg-gew-dorfkatze",
+    "category": "begleiter",
+    "rarity": "gewoehnlich",
+    "name": "Dorfkatze",
+    "blurb": "Kleiner Begleiter, große Ausdauer"
+  },
+  {
+    "id": "beg-gew-feldhase",
+    "category": "begleiter",
+    "rarity": "gewoehnlich",
+    "name": "Feldhase",
+    "blurb": "Kleiner Begleiter, große Ausdauer"
+  },
+  {
+    "id": "beg-gew-kieselkrebs",
+    "category": "begleiter",
+    "rarity": "gewoehnlich",
+    "name": "Kieselkrebs",
+    "blurb": "Kleiner Begleiter, große Ausdauer"
+  },
+  {
+    "id": "beg-gew-moosmilbe",
+    "category": "begleiter",
+    "rarity": "gewoehnlich",
+    "name": "Moosmilbe",
+    "blurb": "Kleiner Begleiter, große Ausdauer"
+  },
+  {
+    "id": "beg-gew-wustenskink",
+    "category": "begleiter",
+    "rarity": "gewoehnlich",
+    "name": "Wüstenskink",
+    "blurb": "Kleiner Begleiter, große Ausdauer"
+  },
+  {
+    "id": "beg-gew-kesselkrote",
+    "category": "begleiter",
+    "rarity": "gewoehnlich",
+    "name": "Kesselkröte",
+    "blurb": "Kleiner Begleiter, große Ausdauer"
+  },
+  {
+    "id": "beg-sel-rabe",
+    "category": "begleiter",
+    "rarity": "selten",
+    "name": "Rabe",
+    "blurb": "Kommt wieder, wenn du ihn lässt"
+  },
+  {
+    "id": "beg-sel-fuchs",
+    "category": "begleiter",
+    "rarity": "selten",
+    "name": "Fuchs",
+    "blurb": "Kommt wieder, wenn du ihn lässt"
+  },
+  {
+    "id": "beg-sel-steinmarder",
+    "category": "begleiter",
+    "rarity": "selten",
+    "name": "Steinmarder",
+    "blurb": "Kommt wieder, wenn du ihn lässt"
+  },
+  {
+    "id": "beg-sel-uhu",
+    "category": "begleiter",
+    "rarity": "selten",
+    "name": "Uhu",
+    "blurb": "Kommt wieder, wenn du ihn lässt"
+  },
+  {
+    "id": "beg-sel-wanderfalke",
+    "category": "begleiter",
+    "rarity": "selten",
+    "name": "Wanderfalke",
+    "blurb": "Kommt wieder, wenn du ihn lässt"
+  },
+  {
+    "id": "beg-sel-dachs",
+    "category": "begleiter",
+    "rarity": "selten",
+    "name": "Dachs",
+    "blurb": "Kommt wieder, wenn du ihn lässt"
+  },
+  {
+    "id": "beg-sel-schneehase",
+    "category": "begleiter",
+    "rarity": "selten",
+    "name": "Schneehase",
+    "blurb": "Kommt wieder, wenn du ihn lässt"
+  },
+  {
+    "id": "beg-sel-wustenfuchs",
+    "category": "begleiter",
+    "rarity": "selten",
+    "name": "Wüstenfuchs",
+    "blurb": "Kommt wieder, wenn du ihn lässt"
+  },
+  {
+    "id": "beg-sel-fischotter",
+    "category": "begleiter",
+    "rarity": "selten",
+    "name": "Fischotter",
+    "blurb": "Kommt wieder, wenn du ihn lässt"
+  },
+  {
+    "id": "beg-sel-bergziege",
+    "category": "begleiter",
+    "rarity": "selten",
+    "name": "Bergziege",
+    "blurb": "Kommt wieder, wenn du ihn lässt"
+  },
+  {
+    "id": "beg-sel-nachtreiher",
+    "category": "begleiter",
+    "rarity": "selten",
+    "name": "Nachtreiher",
+    "blurb": "Kommt wieder, wenn du ihn lässt"
+  },
+  {
+    "id": "beg-sel-luchskatzchen",
+    "category": "begleiter",
+    "rarity": "selten",
+    "name": "Luchskätzchen",
+    "blurb": "Kommt wieder, wenn du ihn lässt"
+  },
+  {
+    "id": "beg-sel-wolfswelpe",
+    "category": "begleiter",
+    "rarity": "selten",
+    "name": "Wolfswelpe",
+    "blurb": "Kommt wieder, wenn du ihn lässt"
+  },
+  {
+    "id": "beg-sel-kolkrabe",
+    "category": "begleiter",
+    "rarity": "selten",
+    "name": "Kolkrabe",
+    "blurb": "Kommt wieder, wenn du ihn lässt"
+  },
+  {
+    "id": "beg-sel-seeadler",
+    "category": "begleiter",
+    "rarity": "selten",
+    "name": "Seeadler",
+    "blurb": "Kommt wieder, wenn du ihn lässt"
+  },
+  {
+    "id": "beg-sel-waldkauz",
+    "category": "begleiter",
+    "rarity": "selten",
+    "name": "Waldkauz",
+    "blurb": "Kommt wieder, wenn du ihn lässt"
+  },
+  {
+    "id": "beg-sel-iltis",
+    "category": "begleiter",
+    "rarity": "selten",
+    "name": "Iltis",
+    "blurb": "Kommt wieder, wenn du ihn lässt"
+  },
+  {
+    "id": "beg-sel-wiesel",
+    "category": "begleiter",
+    "rarity": "selten",
+    "name": "Wiesel",
+    "blurb": "Kommt wieder, wenn du ihn lässt"
+  },
+  {
+    "id": "beg-sel-baummarder",
+    "category": "begleiter",
+    "rarity": "selten",
+    "name": "Baummarder",
+    "blurb": "Kommt wieder, wenn du ihn lässt"
+  },
+  {
+    "id": "beg-sel-turmfalke",
+    "category": "begleiter",
+    "rarity": "selten",
+    "name": "Turmfalke",
+    "blurb": "Kommt wieder, wenn du ihn lässt"
+  },
+  {
+    "id": "beg-epi-nebelrabe",
+    "category": "begleiter",
+    "rarity": "episch",
+    "name": "Nebelrabe",
+    "blurb": "Sieht Dinge, bevor du sie siehst"
+  },
+  {
+    "id": "beg-epi-glutfuchs",
+    "category": "begleiter",
+    "rarity": "episch",
+    "name": "Glutfuchs",
+    "blurb": "Sieht Dinge, bevor du sie siehst"
+  },
+  {
+    "id": "beg-epi-frostuhu",
+    "category": "begleiter",
+    "rarity": "episch",
+    "name": "Frostuhu",
+    "blurb": "Sieht Dinge, bevor du sie siehst"
+  },
+  {
+    "id": "beg-epi-aschenluchs",
+    "category": "begleiter",
+    "rarity": "episch",
+    "name": "Aschenluchs",
+    "blurb": "Sieht Dinge, bevor du sie siehst"
+  },
+  {
+    "id": "beg-epi-sternenreiher",
+    "category": "begleiter",
+    "rarity": "episch",
+    "name": "Sternenreiher",
+    "blurb": "Sieht Dinge, bevor du sie siehst"
+  },
+  {
+    "id": "beg-epi-rissmarder",
+    "category": "begleiter",
+    "rarity": "episch",
+    "name": "Rissmarder",
+    "blurb": "Sieht Dinge, bevor du sie siehst"
+  },
+  {
+    "id": "beg-epi-klammfalke",
+    "category": "begleiter",
+    "rarity": "episch",
+    "name": "Klammfalke",
+    "blurb": "Sieht Dinge, bevor du sie siehst"
+  },
+  {
+    "id": "beg-epi-mondsteineule",
+    "category": "begleiter",
+    "rarity": "episch",
+    "name": "Mondsteineule",
+    "blurb": "Sieht Dinge, bevor du sie siehst"
+  },
+  {
+    "id": "beg-epi-schwingenwiesel",
+    "category": "begleiter",
+    "rarity": "episch",
+    "name": "Schwingenwiesel",
+    "blurb": "Sieht Dinge, bevor du sie siehst"
+  },
+  {
+    "id": "beg-epi-wachfeuerhund",
+    "category": "begleiter",
+    "rarity": "episch",
+    "name": "Wachfeuerhund",
+    "blurb": "Sieht Dinge, bevor du sie siehst"
+  },
+  {
+    "id": "beg-epi-salzotter",
+    "category": "begleiter",
+    "rarity": "episch",
+    "name": "Salzotter",
+    "blurb": "Sieht Dinge, bevor du sie siehst"
+  },
+  {
+    "id": "beg-epi-dunenluchs",
+    "category": "begleiter",
+    "rarity": "episch",
+    "name": "Dünenluchs",
+    "blurb": "Sieht Dinge, bevor du sie siehst"
+  },
+  {
+    "id": "beg-leg-kleiner-drache",
+    "category": "begleiter",
+    "rarity": "legendaer",
+    "name": "Kleiner Drache",
+    "blurb": "Es hat sich entschieden, dir zu folgen"
+  },
+  {
+    "id": "beg-leg-der-einundvierzigste-rabe",
+    "category": "begleiter",
+    "rarity": "legendaer",
+    "name": "Der einundvierzigste Rabe",
+    "blurb": "Es hat sich entschieden, dir zu folgen"
+  },
+  {
+    "id": "beg-leg-fuchs-aus-dem-flusterwald",
+    "category": "begleiter",
+    "rarity": "legendaer",
+    "name": "Fuchs aus dem Flüsterwald",
+    "blurb": "Es hat sich entschieden, dir zu folgen"
+  },
+  {
+    "id": "beg-leg-warter-der-hohlen-stadt",
+    "category": "begleiter",
+    "rarity": "legendaer",
+    "name": "Wärter der Hohlen Stadt",
+    "blurb": "Es hat sich entschieden, dir zu folgen"
+  },
+  {
+    "id": "beg-leg-uhu-vom-grat",
+    "category": "begleiter",
+    "rarity": "legendaer",
+    "name": "Uhu vom Grat",
+    "blurb": "Es hat sich entschieden, dir zu folgen"
+  },
+  {
+    "id": "beg-leg-brut-aus-der-nordwand",
+    "category": "begleiter",
+    "rarity": "legendaer",
+    "name": "Brut aus der Nordwand",
+    "blurb": "Es hat sich entschieden, dir zu folgen"
+  },
+  {
+    "id": "beg-leg-otter-aus-der-zisterne",
+    "category": "begleiter",
+    "rarity": "legendaer",
+    "name": "Otter aus der Zisterne",
+    "blurb": "Es hat sich entschieden, dir zu folgen"
+  },
+  {
+    "id": "beg-leg-falke-der-wetterstange",
+    "category": "begleiter",
+    "rarity": "legendaer",
+    "name": "Falke der Wetterstange",
+    "blurb": "Es hat sich entschieden, dir zu folgen"
+  },
+  {
+    "id": "beg-leg-hund-vom-wachfeuer",
+    "category": "begleiter",
+    "rarity": "legendaer",
+    "name": "Hund vom Wachfeuer",
+    "blurb": "Es hat sich entschieden, dir zu folgen"
+  },
+  {
+    "id": "beg-leg-katze-aus-kesselgrund",
+    "category": "begleiter",
+    "rarity": "legendaer",
+    "name": "Katze aus Kesselgrund",
+    "blurb": "Es hat sich entschieden, dir zu folgen"
+  },
+  {
+    "id": "beg-leg-echse-der-wanderdunen",
+    "category": "begleiter",
+    "rarity": "legendaer",
+    "name": "Echse der Wanderdünen",
+    "blurb": "Es hat sich entschieden, dir zu folgen"
+  },
+  {
+    "id": "beg-leg-motte-aus-der-schmelze",
+    "category": "begleiter",
+    "rarity": "legendaer",
+    "name": "Motte aus der Schmelze",
+    "blurb": "Es hat sich entschieden, dir zu folgen"
+  },
+  {
+    "id": "atm-gew-regen-auf-segeltuch",
+    "category": "atmosphaere",
+    "rarity": "gewoehnlich",
+    "name": "Regen auf Segeltuch",
+    "blurb": "Ein Ton für den Hintergrund"
+  },
+  {
+    "id": "atm-gew-knisterndes-reisig",
+    "category": "atmosphaere",
+    "rarity": "gewoehnlich",
+    "name": "Knisterndes Reisig",
+    "blurb": "Ein Ton für den Hintergrund"
+  },
+  {
+    "id": "atm-gew-wind-im-kahlholz",
+    "category": "atmosphaere",
+    "rarity": "gewoehnlich",
+    "name": "Wind im Kahlholz",
+    "blurb": "Ein Ton für den Hintergrund"
+  },
+  {
+    "id": "atm-gew-wasser-in-rinnen",
+    "category": "atmosphaere",
+    "rarity": "gewoehnlich",
+    "name": "Wasser in Rinnen",
+    "blurb": "Ein Ton für den Hintergrund"
+  },
+  {
+    "id": "atm-gew-schritte-auf-kies",
+    "category": "atmosphaere",
+    "rarity": "gewoehnlich",
+    "name": "Schritte auf Kies",
+    "blurb": "Ein Ton für den Hintergrund"
+  },
+  {
+    "id": "atm-gew-ferner-donner",
+    "category": "atmosphaere",
+    "rarity": "gewoehnlich",
+    "name": "Ferner Donner",
+    "blurb": "Ein Ton für den Hintergrund"
+  },
+  {
+    "id": "atm-gew-schilf-im-wind",
+    "category": "atmosphaere",
+    "rarity": "gewoehnlich",
+    "name": "Schilf im Wind",
+    "blurb": "Ein Ton für den Hintergrund"
+  },
+  {
+    "id": "atm-gew-tropfen-im-gewolbe",
+    "category": "atmosphaere",
+    "rarity": "gewoehnlich",
+    "name": "Tropfen im Gewölbe",
+    "blurb": "Ein Ton für den Hintergrund"
+  },
+  {
+    "id": "atm-gew-sand-uber-stein",
+    "category": "atmosphaere",
+    "rarity": "gewoehnlich",
+    "name": "Sand über Stein",
+    "blurb": "Ein Ton für den Hintergrund"
+  },
+  {
+    "id": "atm-gew-mowen-weit-weg",
+    "category": "atmosphaere",
+    "rarity": "gewoehnlich",
+    "name": "Möwen weit weg",
+    "blurb": "Ein Ton für den Hintergrund"
+  },
+  {
+    "id": "atm-gew-torf-unter-stiefeln",
+    "category": "atmosphaere",
+    "rarity": "gewoehnlich",
+    "name": "Torf unter Stiefeln",
+    "blurb": "Ein Ton für den Hintergrund"
+  },
+  {
+    "id": "atm-gew-glas-unter-sohlen",
+    "category": "atmosphaere",
+    "rarity": "gewoehnlich",
+    "name": "Glas unter Sohlen",
+    "blurb": "Ein Ton für den Hintergrund"
+  },
+  {
+    "id": "atm-gew-papier-im-zug",
+    "category": "atmosphaere",
+    "rarity": "gewoehnlich",
+    "name": "Papier im Zug",
+    "blurb": "Ein Ton für den Hintergrund"
+  },
+  {
+    "id": "atm-gew-eisen-im-wind",
+    "category": "atmosphaere",
+    "rarity": "gewoehnlich",
+    "name": "Eisen im Wind",
+    "blurb": "Ein Ton für den Hintergrund"
+  },
+  {
+    "id": "atm-gew-grillen-bei-nacht",
+    "category": "atmosphaere",
+    "rarity": "gewoehnlich",
+    "name": "Grillen bei Nacht",
+    "blurb": "Ein Ton für den Hintergrund"
+  },
+  {
+    "id": "atm-gew-ebbe-am-damm",
+    "category": "atmosphaere",
+    "rarity": "gewoehnlich",
+    "name": "Ebbe am Damm",
+    "blurb": "Ein Ton für den Hintergrund"
+  },
+  {
+    "id": "atm-gew-rauch-im-zelt",
+    "category": "atmosphaere",
+    "rarity": "gewoehnlich",
+    "name": "Rauch im Zelt",
+    "blurb": "Ein Ton für den Hintergrund"
+  },
+  {
+    "id": "atm-gew-hufe-auf-lehm",
+    "category": "atmosphaere",
+    "rarity": "gewoehnlich",
+    "name": "Hufe auf Lehm",
+    "blurb": "Ein Ton für den Hintergrund"
+  },
+  {
+    "id": "atm-gew-kette-im-wind",
+    "category": "atmosphaere",
+    "rarity": "gewoehnlich",
+    "name": "Kette im Wind",
+    "blurb": "Ein Ton für den Hintergrund"
+  },
+  {
+    "id": "atm-gew-feuer-bei-ostwind",
+    "category": "atmosphaere",
+    "rarity": "gewoehnlich",
+    "name": "Feuer bei Ostwind",
+    "blurb": "Ein Ton für den Hintergrund"
+  },
+  {
+    "id": "atm-gew-wind-in-segeltuch",
+    "category": "atmosphaere",
+    "rarity": "gewoehnlich",
+    "name": "Wind in Segeltuch",
+    "blurb": "Ein Ton für den Hintergrund"
+  },
+  {
+    "id": "atm-gew-kohle-im-kessel",
+    "category": "atmosphaere",
+    "rarity": "gewoehnlich",
+    "name": "Kohle im Kessel",
+    "blurb": "Ein Ton für den Hintergrund"
+  },
+  {
+    "id": "atm-gew-regen-auf-blech",
+    "category": "atmosphaere",
+    "rarity": "gewoehnlich",
+    "name": "Regen auf Blech",
+    "blurb": "Ein Ton für den Hintergrund"
+  },
+  {
+    "id": "atm-gew-schnee-auf-fels",
+    "category": "atmosphaere",
+    "rarity": "gewoehnlich",
+    "name": "Schnee auf Fels",
+    "blurb": "Ein Ton für den Hintergrund"
+  },
+  {
+    "id": "atm-gew-sand-in-ritzen",
+    "category": "atmosphaere",
+    "rarity": "gewoehnlich",
+    "name": "Sand in Ritzen",
+    "blurb": "Ein Ton für den Hintergrund"
+  },
+  {
+    "id": "atm-gew-holz-das-arbeitet",
+    "category": "atmosphaere",
+    "rarity": "gewoehnlich",
+    "name": "Holz das arbeitet",
+    "blurb": "Ein Ton für den Hintergrund"
+  },
+  {
+    "id": "atm-gew-seil-das-knarrt",
+    "category": "atmosphaere",
+    "rarity": "gewoehnlich",
+    "name": "Seil das knarrt",
+    "blurb": "Ein Ton für den Hintergrund"
+  },
+  {
+    "id": "atm-gew-blech-im-wind",
+    "category": "atmosphaere",
+    "rarity": "gewoehnlich",
+    "name": "Blech im Wind",
+    "blurb": "Ein Ton für den Hintergrund"
+  },
+  {
+    "id": "atm-gew-wasser-im-krug",
+    "category": "atmosphaere",
+    "rarity": "gewoehnlich",
+    "name": "Wasser im Krug",
+    "blurb": "Ein Ton für den Hintergrund"
+  },
+  {
+    "id": "atm-gew-atem-bei-kalte",
+    "category": "atmosphaere",
+    "rarity": "gewoehnlich",
+    "name": "Atem bei Kälte",
+    "blurb": "Ein Ton für den Hintergrund"
+  },
+  {
+    "id": "atm-gew-schritte-auf-bohlen",
+    "category": "atmosphaere",
+    "rarity": "gewoehnlich",
+    "name": "Schritte auf Bohlen",
+    "blurb": "Ein Ton für den Hintergrund"
+  },
+  {
+    "id": "atm-gew-funken-im-dunkeln",
+    "category": "atmosphaere",
+    "rarity": "gewoehnlich",
+    "name": "Funken im Dunkeln",
+    "blurb": "Ein Ton für den Hintergrund"
+  },
+  {
+    "id": "atm-gew-papier-das-raschelt",
+    "category": "atmosphaere",
+    "rarity": "gewoehnlich",
+    "name": "Papier das raschelt",
+    "blurb": "Ein Ton für den Hintergrund"
+  },
+  {
+    "id": "atm-gew-fell-am-feuer",
+    "category": "atmosphaere",
+    "rarity": "gewoehnlich",
+    "name": "Fell am Feuer",
+    "blurb": "Ein Ton für den Hintergrund"
+  },
+  {
+    "id": "atm-gew-rauch-der-abzieht",
+    "category": "atmosphaere",
+    "rarity": "gewoehnlich",
+    "name": "Rauch der abzieht",
+    "blurb": "Ein Ton für den Hintergrund"
+  },
+  {
+    "id": "atm-gew-turen-die-schliessen",
+    "category": "atmosphaere",
+    "rarity": "gewoehnlich",
+    "name": "Türen die schließen",
+    "blurb": "Ein Ton für den Hintergrund"
+  },
+  {
+    "id": "atm-gew-kies-unter-radern",
+    "category": "atmosphaere",
+    "rarity": "gewoehnlich",
+    "name": "Kies unter Rädern",
+    "blurb": "Ein Ton für den Hintergrund"
+  },
+  {
+    "id": "atm-gew-glut-die-nachfallt",
+    "category": "atmosphaere",
+    "rarity": "gewoehnlich",
+    "name": "Glut die nachfällt",
+    "blurb": "Ein Ton für den Hintergrund"
+  },
+  {
+    "id": "atm-gew-wind-durch-ritzen",
+    "category": "atmosphaere",
+    "rarity": "gewoehnlich",
+    "name": "Wind durch Ritzen",
+    "blurb": "Ein Ton für den Hintergrund"
+  },
+  {
+    "id": "atm-gew-nacht-ohne-wind",
+    "category": "atmosphaere",
+    "rarity": "gewoehnlich",
+    "name": "Nacht ohne Wind",
+    "blurb": "Ein Ton für den Hintergrund"
+  },
+  {
+    "id": "atm-sel-glockenboje",
+    "category": "atmosphaere",
+    "rarity": "selten",
+    "name": "Glockenboje",
+    "blurb": "Man weiß sofort, wo man ist"
+  },
+  {
+    "id": "atm-sel-lauten-um-vier",
+    "category": "atmosphaere",
+    "rarity": "selten",
+    "name": "Läuten um vier",
+    "blurb": "Man weiß sofort, wo man ist"
+  },
+  {
+    "id": "atm-sel-die-pendeluhr",
+    "category": "atmosphaere",
+    "rarity": "selten",
+    "name": "Die Pendeluhr",
+    "blurb": "Man weiß sofort, wo man ist"
+  },
+  {
+    "id": "atm-sel-wind-uber-der-klamm",
+    "category": "atmosphaere",
+    "rarity": "selten",
+    "name": "Wind über der Klamm",
+    "blurb": "Man weiß sofort, wo man ist"
+  },
+  {
+    "id": "atm-sel-echo-in-der-schlucht",
+    "category": "atmosphaere",
+    "rarity": "selten",
+    "name": "Echo in der Schlucht",
+    "blurb": "Man weiß sofort, wo man ist"
+  },
+  {
+    "id": "atm-sel-regen-im-flusterwald",
+    "category": "atmosphaere",
+    "rarity": "selten",
+    "name": "Regen im Flüsterwald",
+    "blurb": "Man weiß sofort, wo man ist"
+  },
+  {
+    "id": "atm-sel-sand-uber-der-kammlinie",
+    "category": "atmosphaere",
+    "rarity": "selten",
+    "name": "Sand über der Kammlinie",
+    "blurb": "Man weiß sofort, wo man ist"
+  },
+  {
+    "id": "atm-sel-zisternenhall",
+    "category": "atmosphaere",
+    "rarity": "selten",
+    "name": "Zisternenhall",
+    "blurb": "Man weiß sofort, wo man ist"
+  },
+  {
+    "id": "atm-sel-blatter-uber-asche",
+    "category": "atmosphaere",
+    "rarity": "selten",
+    "name": "Blätter über Asche",
+    "blurb": "Man weiß sofort, wo man ist"
+  },
+  {
+    "id": "atm-sel-seile-im-sturm",
+    "category": "atmosphaere",
+    "rarity": "selten",
+    "name": "Seile im Sturm",
+    "blurb": "Man weiß sofort, wo man ist"
+  },
+  {
+    "id": "atm-sel-eis-auf-dem-grat",
+    "category": "atmosphaere",
+    "rarity": "selten",
+    "name": "Eis auf dem Grat",
+    "blurb": "Man weiß sofort, wo man ist"
+  },
+  {
+    "id": "atm-sel-schritte-im-archiv",
+    "category": "atmosphaere",
+    "rarity": "selten",
+    "name": "Schritte im Archiv",
+    "blurb": "Man weiß sofort, wo man ist"
+  },
+  {
+    "id": "atm-sel-turen-in-kesselgrund",
+    "category": "atmosphaere",
+    "rarity": "selten",
+    "name": "Türen in Kesselgrund",
+    "blurb": "Man weiß sofort, wo man ist"
+  },
+  {
+    "id": "atm-sel-feuer-im-wetterzelt",
+    "category": "atmosphaere",
+    "rarity": "selten",
+    "name": "Feuer im Wetterzelt",
+    "blurb": "Man weiß sofort, wo man ist"
+  },
+  {
+    "id": "atm-sel-wasser-unter-dem-damm",
+    "category": "atmosphaere",
+    "rarity": "selten",
+    "name": "Wasser unter dem Damm",
+    "blurb": "Man weiß sofort, wo man ist"
+  },
+  {
+    "id": "atm-sel-wind-in-der-kuppel",
+    "category": "atmosphaere",
+    "rarity": "selten",
+    "name": "Wind in der Kuppel",
+    "blurb": "Man weiß sofort, wo man ist"
+  },
+  {
+    "id": "atm-sel-reusen-im-priel",
+    "category": "atmosphaere",
+    "rarity": "selten",
+    "name": "Reusen im Priel",
+    "blurb": "Man weiß sofort, wo man ist"
+  },
+  {
+    "id": "atm-sel-bohlen-im-moor",
+    "category": "atmosphaere",
+    "rarity": "selten",
+    "name": "Bohlen im Moor",
+    "blurb": "Man weiß sofort, wo man ist"
+  },
+  {
+    "id": "atm-sel-staub-in-der-bibliothek",
+    "category": "atmosphaere",
+    "rarity": "selten",
+    "name": "Staub in der Bibliothek",
+    "blurb": "Man weiß sofort, wo man ist"
+  },
+  {
+    "id": "atm-sel-nebel-am-morgen",
+    "category": "atmosphaere",
+    "rarity": "selten",
+    "name": "Nebel am Morgen",
+    "blurb": "Man weiß sofort, wo man ist"
+  },
+  {
+    "id": "atm-epi-flugelschlag-uber-der-klamm",
+    "category": "atmosphaere",
+    "rarity": "episch",
+    "name": "Flügelschlag über der Klamm",
+    "blurb": "Der Moment vor dem Moment"
+  },
+  {
+    "id": "atm-epi-der-berg-der-sich-teilt",
+    "category": "atmosphaere",
+    "rarity": "episch",
+    "name": "Der Berg, der sich teilt",
+    "blurb": "Der Moment vor dem Moment"
+  },
+  {
+    "id": "atm-epi-etwas-atmet-im-hort",
+    "category": "atmosphaere",
+    "rarity": "episch",
+    "name": "Etwas atmet im Hort",
+    "blurb": "Der Moment vor dem Moment"
+  },
+  {
+    "id": "atm-epi-nordwand-bei-nacht",
+    "category": "atmosphaere",
+    "rarity": "episch",
+    "name": "Nordwand bei Nacht",
+    "blurb": "Der Moment vor dem Moment"
+  },
+  {
+    "id": "atm-epi-was-im-wasser-wartet",
+    "category": "atmosphaere",
+    "rarity": "episch",
+    "name": "Was im Wasser wartet",
+    "blurb": "Der Moment vor dem Moment"
+  },
+  {
+    "id": "atm-epi-der-spiegel-wirft-zuruck",
+    "category": "atmosphaere",
+    "rarity": "episch",
+    "name": "Der Spiegel wirft zurück",
+    "blurb": "Der Moment vor dem Moment"
+  },
+  {
+    "id": "atm-epi-schmelze-bei-sonnenaufgang",
+    "category": "atmosphaere",
+    "rarity": "episch",
+    "name": "Schmelze bei Sonnenaufgang",
+    "blurb": "Der Moment vor dem Moment"
+  },
+  {
+    "id": "atm-epi-sturm-auf-dem-sattel",
+    "category": "atmosphaere",
+    "rarity": "episch",
+    "name": "Sturm auf dem Sattel",
+    "blurb": "Der Moment vor dem Moment"
+  },
+  {
+    "id": "atm-epi-das-vierte-stockwerk",
+    "category": "atmosphaere",
+    "rarity": "episch",
+    "name": "Das vierte Stockwerk",
+    "blurb": "Der Moment vor dem Moment"
+  },
+  {
+    "id": "atm-epi-regale-die-sich-bewegen",
+    "category": "atmosphaere",
+    "rarity": "episch",
+    "name": "Regale, die sich bewegen",
+    "blurb": "Der Moment vor dem Moment"
+  },
+  {
+    "id": "atm-epi-der-kiel-gibt-nach",
+    "category": "atmosphaere",
+    "rarity": "episch",
+    "name": "Der Kiel gibt nach",
+    "blurb": "Der Moment vor dem Moment"
+  },
+  {
+    "id": "atm-epi-licht-aus-dem-riss",
+    "category": "atmosphaere",
+    "rarity": "episch",
+    "name": "Licht aus dem Riss",
+    "blurb": "Der Moment vor dem Moment"
+  },
+  {
+    "id": "atm-leg-die-nacht-fur-die-sie-gebaut-wurde",
+    "category": "atmosphaere",
+    "rarity": "legendaer",
+    "name": "Die Nacht, für die sie gebaut wurde",
+    "blurb": "Verändert, wie sich das Lager anfühlt"
+  },
+  {
+    "id": "atm-leg-stille-nach-der-klamm",
+    "category": "atmosphaere",
+    "rarity": "legendaer",
+    "name": "Stille nach der Klamm",
+    "blurb": "Verändert, wie sich das Lager anfühlt"
+  },
+  {
+    "id": "atm-leg-der-einundvierzigste-band",
+    "category": "atmosphaere",
+    "rarity": "legendaer",
+    "name": "Der einundvierzigste Band",
+    "blurb": "Verändert, wie sich das Lager anfühlt"
+  },
+  {
+    "id": "atm-leg-zwolf-fundstucke",
+    "category": "atmosphaere",
+    "rarity": "legendaer",
+    "name": "Zwölf Fundstücke",
+    "blurb": "Verändert, wie sich das Lager anfühlt"
+  },
+  {
+    "id": "atm-leg-das-grune-herz",
+    "category": "atmosphaere",
+    "rarity": "legendaer",
+    "name": "Das grüne Herz",
+    "blurb": "Verändert, wie sich das Lager anfühlt"
+  },
+  {
+    "id": "atm-leg-die-lange-ebbe",
+    "category": "atmosphaere",
+    "rarity": "legendaer",
+    "name": "Die lange Ebbe",
+    "blurb": "Verändert, wie sich das Lager anfühlt"
+  },
+  {
+    "id": "atm-leg-vierzig-blaue-turen",
+    "category": "atmosphaere",
+    "rarity": "legendaer",
+    "name": "Vierzig blaue Türen",
+    "blurb": "Verändert, wie sich das Lager anfühlt"
+  },
+  {
+    "id": "atm-leg-der-schacht-ohne-boden",
+    "category": "atmosphaere",
+    "rarity": "legendaer",
+    "name": "Der Schacht ohne Boden",
+    "blurb": "Verändert, wie sich das Lager anfühlt"
+  },
+  {
+    "id": "atm-leg-was-den-riss-gemacht-hat",
+    "category": "atmosphaere",
+    "rarity": "legendaer",
+    "name": "Was den Riss gemacht hat",
+    "blurb": "Verändert, wie sich das Lager anfühlt"
+  },
+  {
+    "id": "atm-leg-das-feuer-das-hielt",
+    "category": "atmosphaere",
+    "rarity": "legendaer",
+    "name": "Das Feuer, das hielt",
+    "blurb": "Verändert, wie sich das Lager anfühlt"
+  },
+  {
+    "id": "atm-leg-der-weg-hinaus",
+    "category": "atmosphaere",
+    "rarity": "legendaer",
+    "name": "Der Weg hinaus",
+    "blurb": "Verändert, wie sich das Lager anfühlt"
+  },
+  {
+    "id": "atm-leg-erste-nachtwache",
+    "category": "atmosphaere",
+    "rarity": "legendaer",
+    "name": "Erste Nachtwache",
+    "blurb": "Verändert, wie sich das Lager anfühlt",
+    "set": "nachtwache"
+  }
+]

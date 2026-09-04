@@ -42,12 +42,38 @@ export const BEATS_PER_LENGTH: Record<QuestLength, number> = {
   episch: 6,
 }
 
-/** Fokusminuten je Stufe. `episch` steht noch zur Entscheidung — siehe Issue #32. */
+/**
+ * Fokusminuten **je Abschnitt**. Bei allen Stufen außer `episch` ist das zugleich die
+ * ganze Quest.
+ */
 export const MINUTES_PER_LENGTH: Record<QuestLength, number> = {
   kundschaft: 15,
   kurz: 25,
   mittel: 50,
-  episch: 90,
+  episch: 25,
+}
+
+/**
+ * Aus wie vielen Fokusabschnitten eine Quest besteht.
+ *
+ * Die epische Quest ist ein **Bogen aus drei Abschnitten** mit Rasten dazwischen, nicht
+ * ein Block von 90 Minuten (Entscheidung zu K11, Issue #32). Neunzig Minuten ohne
+ * Unterbrechung widersprechen dem Grundsatz, auf dem die Methode beruht — und träfen
+ * ausgerechnet die Zielgruppe, die Schwierigkeiten hat, lange fokussiert zu bleiben.
+ *
+ * Erzählt wird trotzdem **eine** Quest: Der Bosskampf ist der dritte Abschnitt, und die
+ * Rasten dazwischen sind Teil der Geschichte („die Gruppe sammelt sich vor dem Tor").
+ */
+export const SEGMENTS_PER_LENGTH: Record<QuestLength, number> = {
+  kundschaft: 1,
+  kurz: 1,
+  mittel: 1,
+  episch: 3,
+}
+
+/** Gesamte Fokuszeit einer Quest, über alle Abschnitte. */
+export function totalFocusMinutes(length: QuestLength): number {
+  return MINUTES_PER_LENGTH[length] * SEGMENTS_PER_LENGTH[length]
 }
 
 /** Anzeigename für die Oberfläche. Nie „25-Minuten-Pomodoro" (Konzept V1 §6). */
@@ -65,6 +91,39 @@ export const LENGTH_LABEL: Record<QuestLength, string> = {
 export function beatIndexAt(quest: Quest, progress: number): number {
   const p = Math.min(0.999999, Math.max(0, progress))
   return Math.floor(p * quest.beats.length)
+}
+
+/**
+ * Fortschritt über den **ganzen Bogen**, nicht nur den laufenden Abschnitt.
+ *
+ * Bei einer epischen Quest wandert die Gruppe über drei Fokusabschnitte hinweg weiter.
+ * Ohne das würde die Kulisse bei jeder Rast an den Anfang zurückspringen — und der
+ * Bosskampf begänne dort, wo der erste Abschnitt begann.
+ *
+ * `segment` ist zerobasiert; `segmentProgress` kommt aus journeyProgress().
+ */
+export function arcProgress(
+  length: QuestLength,
+  segment: number,
+  segmentProgress: number,
+): number {
+  const total = SEGMENTS_PER_LENGTH[length]
+  const done = Math.min(Math.max(segment, 0), total - 1)
+  const within = Math.min(Math.max(segmentProgress, 0), 1)
+  return (done + within) / total
+}
+
+/**
+ * Welche Wegabschnitte in diesem Fokusabschnitt erzählt werden.
+ *
+ * Sechs Abschnitte auf drei Segmente: zwei je Segment. Der Bosskampf sind die letzten
+ * beiden.
+ */
+export function beatsForSegment(quest: Quest, segment: number): string[] {
+  const total = SEGMENTS_PER_LENGTH[quest.length]
+  const perSegment = Math.ceil(quest.beats.length / total)
+  const from = Math.min(Math.max(segment, 0), total - 1) * perSegment
+  return quest.beats.slice(from, from + perSegment)
 }
 
 /**
@@ -152,9 +211,14 @@ export function assembleBook(pool: readonly Quest[], opts: BookOptions): Quest[]
     const fallback = ofLength.filter((q) => !completed.has(q.id))
     const source = fresh.length >= slots ? fresh : fallback.length > 0 ? fallback : ofLength
 
-    for (let i = 0; i < slots; i++) {
-      const picked = source[hashSeed(`${opts.week}:${length}:${i}:${completed.size}`) % source.length]
-      if (picked && !book.some((b) => b.id === picked.id)) book.push(picked)
+    // Ohne Zurücklegen ziehen. Zöge man mit, träfe derselbe Hash zweimal dieselbe
+    // Quest, und das Buch käme mit weniger Einträgen heraus als vorgesehen —
+    // ein Fehler, den man erst bemerkt, wenn das Buch beim Nutzer zu kurz ist.
+    const remaining = [...source]
+    for (let i = 0; i < slots && remaining.length > 0; i++) {
+      const at = hashSeed(`${opts.week}:${length}:${i}:${completed.size}`) % remaining.length
+      const [picked] = remaining.splice(at, 1)
+      if (picked) book.push(picked)
     }
   }
   return book

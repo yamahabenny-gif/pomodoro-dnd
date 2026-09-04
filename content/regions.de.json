@@ -2,41 +2,122 @@
   "salzmarschen": {
     "name": "Die Salzmarschen",
     "blurb": "Flaches Wasser bis zum Horizont, darunter die Straßen einer Stadt, die niemand mehr benennt.",
-    "palette": ["#2A3A3E", "#3E5257", "#7E9A97"]
+    "palette": [
+      "#2A3A3E",
+      "#3E5257",
+      "#7E9A97"
+    ],
+    "theme": "Küste",
+    "tone": "ruhig"
   },
   "aschenwald": {
-    "name": "Der Aschenwald",
-    "blurb": "Stämme wie Säulen, Boden wie Schnee. Es hat hier vor sehr langer Zeit gebrannt.",
-    "palette": ["#241F1C", "#3C332C", "#8A7C6C"]
+    "name": "Der Flüsterwald",
+    "blurb": "Nach dem Brand kam er zurück, langsamer als früher und leiser. Man hört ihn atmen, wenn man stehen bleibt.",
+    "palette": [
+      "#241F1C",
+      "#3C332C",
+      "#8A7C6C"
+    ],
+    "theme": "Flüsterwald",
+    "tone": "ruhig"
   },
   "hohle-stadt": {
     "name": "Die Hohle Stadt",
     "blurb": "Sie wurde nach unten gebaut, Stockwerk unter Stockwerk, bis der Fels nicht mehr mitmachte.",
-    "palette": ["#1B1A22", "#302E3C", "#6E6A82"]
+    "palette": [
+      "#1B1A22",
+      "#302E3C",
+      "#6E6A82"
+    ],
+    "theme": "Dungeons",
+    "tone": "ruhig"
   },
   "nebelklippen": {
     "name": "Die Nebelklippen",
     "blurb": "Der Weg ist eine Handbreit breit und man sieht ihn nur, wenn der Wind steht.",
-    "palette": ["#2B2E33", "#464C55", "#8F9AA6"]
+    "palette": [
+      "#2B2E33",
+      "#464C55",
+      "#8F9AA6"
+    ],
+    "theme": "Frostgebirge",
+    "tone": "ruhig"
   },
   "bruchglastal": {
     "name": "Das Bruchglastal",
     "blurb": "Was hier zu Boden ging, ging als Glas zu Boden. Man geht langsam und sieht sich vor.",
-    "palette": ["#22282C", "#3A464C", "#7FA0AC"]
+    "palette": [
+      "#22282C",
+      "#3A464C",
+      "#7FA0AC"
+    ],
+    "theme": "alte Ruinen",
+    "tone": "ruhig"
   },
   "tiefe-bibliothek": {
     "name": "Die Tiefe Bibliothek",
     "blurb": "Regale bis in eine Dunkelheit hinauf, in der die Leitern aufhören.",
-    "palette": ["#241D18", "#3B2F25", "#9A7F5E"]
+    "palette": [
+      "#241D18",
+      "#3B2F25",
+      "#9A7F5E"
+    ],
+    "theme": "verlassene Tempel",
+    "tone": "ruhig"
   },
   "rostmoor": {
     "name": "Das Rostmoor",
     "blurb": "Aus dem Torf ragt Eisen. Niemand weiß, ob es eine Schlacht war oder eine Werft.",
-    "palette": ["#2A211B", "#48342A", "#A66B41"]
+    "palette": [
+      "#2A211B",
+      "#48342A",
+      "#A66B41"
+    ],
+    "theme": "verwunschene Höhlen",
+    "tone": "ruhig"
   },
   "sternwarte": {
     "name": "Sternwarte Kalt",
     "blurb": "Oben am Grat, seit dreihundert Jahren geöffnet, seit zweihundert unbemannt.",
-    "palette": ["#1C2029", "#2E3646", "#6F84A6"]
+    "palette": [
+      "#1C2029",
+      "#2E3646",
+      "#6F84A6"
+    ],
+    "theme": "Gebirge",
+    "tone": "ruhig"
+  },
+  "wanderduenen": {
+    "name": "Die Wanderdünen",
+    "theme": "Wüste",
+    "tone": "ruhig",
+    "blurb": "Der Sand geht jede Nacht ein Stück weiter. Was er freigibt, gibt er nur kurz frei.",
+    "palette": [
+      "#2E2519",
+      "#5A4526",
+      "#C0A05C"
+    ]
+  },
+  "kesselgrund": {
+    "name": "Kesselgrund",
+    "theme": "mystische Dörfer",
+    "tone": "ruhig",
+    "blurb": "Vierzig Häuser in einer Senke, alle bewohnt, alle mit derselben Farbe an der Tür.",
+    "palette": [
+      "#231E24",
+      "#3D3440",
+      "#8F7E93"
+    ]
+  },
+  "drachenklamm": {
+    "name": "Die Drachenklamm",
+    "theme": "Drachengebiete",
+    "tone": "episch",
+    "blurb": "Zwischen zwei Wänden, die einmal eine waren. Hier oben nistet, was den Riss gemacht hat.",
+    "palette": [
+      "#2A1614",
+      "#5C2620",
+      "#C4553A"
+    ]
   }
 }

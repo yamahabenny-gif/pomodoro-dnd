@@ -7,7 +7,8 @@ import quests from '../../../content/quests.de.json'
 import regions from '../../../content/regions.de.json'
 import {
   BEATS_PER_LENGTH, BOOK_COMPOSITION, LENGTH_LABEL, MINUTES_PER_LENGTH,
-  assembleBook, beatIndexAt, pickQuest, type Quest, type QuestLength,
+  SEGMENTS_PER_LENGTH, arcProgress, assembleBook, beatIndexAt, beatsForSegment,
+  pickQuest, totalFocusMinutes, type Quest, type QuestLength,
 } from '../schema'
 
 const LENGTHS: QuestLength[] = ['kundschaft', 'kurz', 'mittel', 'episch']
@@ -39,21 +40,47 @@ describe('Questpool', () => {
     }
   })
 
-  it('bietet zu jeder geschriebenen Länge genug Auswahl', () => {
-    // `episch` ist noch nicht geschrieben — siehe Issue #32.
-    for (const len of ['kundschaft', 'kurz', 'mittel'] as const) {
+  it('bietet zu jeder Länge genug Auswahl', () => {
+    for (const len of LENGTHS) {
       expect(pool.filter((q) => q.length === len).length).toBeGreaterThanOrEqual(10)
     }
+  })
+
+  it('reicht bei einer epischen Quest pro Woche für zehn Wochen', () => {
+    // Das Abenteuerbuch zieht eine epische Quest pro Woche (BOOK_COMPOSITION).
+    // Weniger als zehn hieße Wiederholung im ersten Vierteljahr.
+    const episch = pool.filter((q) => q.length === 'episch')
+    expect(episch.length).toBeGreaterThanOrEqual(10)
   })
 
   it('kennt nur die vier definierten Längen', () => {
     for (const q of pool) expect(LENGTHS).toContain(q.length)
   })
 
-  it('gibt jeder Region mindestens acht Quests', () => {
+  it('gibt jeder Region genug Quests, um sie kennenzulernen', () => {
     const count = new Map<string, number>()
     for (const q of pool) count.set(q.region, (count.get(q.region) ?? 0) + 1)
-    for (const [, n] of count) expect(n).toBeGreaterThanOrEqual(8)
+    for (const [region, n] of count) {
+      // Epische Regionen brauchen weniger: es gibt nur eine epische Quest pro Woche.
+      const istEpisch = (regions as Record<string, { tone: string }>)[region]?.tone === 'episch'
+      expect(n).toBeGreaterThanOrEqual(istEpisch ? 4 : 8)
+    }
+  })
+
+  it('ordnet jede Region einer Themenwelt und einem Ton zu', () => {
+    for (const [, r] of Object.entries(regions as Record<string, { theme: string; tone: string }>)) {
+      expect(r.theme.length).toBeGreaterThan(0)
+      expect(['ruhig', 'episch']).toContain(r.tone)
+    }
+  })
+
+  it('hält den ruhigen Ton dort, wo während der Arbeit gelesen wird', () => {
+    // K10: Kurz und mittel laufen nebenher, während jemand arbeitet — dort ist
+    // Zurückhaltung keine Stilfrage, sondern Funktion. Episch darf lauter sein.
+    const laut = /Kampf|Schwert|Blut|Angriff|Feind/i
+    for (const q of pool.filter((x) => x.length !== 'episch')) {
+      for (const b of q.beats) expect(b).not.toMatch(laut)
+    }
   })
 })
 
@@ -65,10 +92,52 @@ describe('Längen', () => {
     }
   })
 
-  it('steigt in Minuten und Wegabschnitten gleichsinnig an', () => {
+  it('steigt in Gesamtfokuszeit und Wegabschnitten gleichsinnig an', () => {
+    // MINUTES_PER_LENGTH ist die Zeit je Abschnitt — bei `episch` sind das 25,
+    // nicht 75. Verglichen wird deshalb die Gesamtzeit über den ganzen Bogen.
     for (let i = 1; i < LENGTHS.length; i++) {
-      expect(MINUTES_PER_LENGTH[LENGTHS[i]!]).toBeGreaterThan(MINUTES_PER_LENGTH[LENGTHS[i - 1]!])
+      expect(totalFocusMinutes(LENGTHS[i]!)).toBeGreaterThan(totalFocusMinutes(LENGTHS[i - 1]!))
       expect(BEATS_PER_LENGTH[LENGTHS[i]!]).toBeGreaterThan(BEATS_PER_LENGTH[LENGTHS[i - 1]!])
+    }
+  })
+
+  it('macht aus der epischen Quest einen Bogen, keinen 90-Minuten-Block', () => {
+    // K11 (#32): Neunzig Minuten ohne Unterbrechung treffen ausgerechnet die
+    // Zielgruppe, die Schwierigkeiten hat, lange fokussiert zu bleiben.
+    expect(SEGMENTS_PER_LENGTH.episch).toBe(3)
+    expect(MINUTES_PER_LENGTH.episch).toBeLessThanOrEqual(25)
+    expect(totalFocusMinutes('episch')).toBe(75)
+    for (const len of ['kundschaft', 'kurz', 'mittel'] as const) {
+      expect(SEGMENTS_PER_LENGTH[len]).toBe(1)
+    }
+  })
+
+  it('verteilt die Wegabschnitte gleichmäßig über den Bogen', () => {
+    const q = pool.find((x) => x.length === 'episch')!
+    const gesehen: string[] = []
+    for (let seg = 0; seg < SEGMENTS_PER_LENGTH.episch; seg++) {
+      const teil = beatsForSegment(q, seg)
+      expect(teil).toHaveLength(2)
+      gesehen.push(...teil)
+    }
+    expect(gesehen).toEqual(q.beats)
+  })
+
+  it('lässt die Wanderung über den ganzen Bogen laufen, nicht je Abschnitt', () => {
+    // Ohne das spränge die Kulisse bei jeder Rast an den Anfang zurück, und der
+    // Bosskampf begänne dort, wo der erste Abschnitt begann.
+    expect(arcProgress('episch', 0, 0)).toBeCloseTo(0, 10)
+    expect(arcProgress('episch', 0, 1)).toBeCloseTo(1 / 3, 10)
+    expect(arcProgress('episch', 1, 0.5)).toBeCloseTo(0.5, 10)
+    expect(arcProgress('episch', 2, 1)).toBeCloseTo(1, 10)
+    expect(arcProgress('kurz', 0, 0.4)).toBeCloseTo(0.4, 10)
+  })
+
+  it('bleibt bei unsinnigen Abschnittsnummern in Grenzen', () => {
+    for (const [seg, p] of [[-3, 0.5], [99, 0.5], [1, -2], [1, 7]] as const) {
+      const v = arcProgress('episch', seg, p)
+      expect(v).toBeGreaterThanOrEqual(0)
+      expect(v).toBeLessThanOrEqual(1)
     }
   })
 

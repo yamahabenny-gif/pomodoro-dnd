@@ -143,10 +143,18 @@ export function drawsRemaining(
   ).length
 }
 
-/** Mindestgrößen je Topf, damit die Regel nicht nach zwei Wochen ins Leere greift. */
+/**
+ * Mindestgrößen je Topf, damit die Regel nicht nach zwei Wochen ins Leere greift.
+ *
+ * Hergeleitet, nicht geraten: Bei acht Quests am Tag und vier Kategorien zieht ein
+ * einzelner Topf `8 × Wahrscheinlichkeit ÷ 4` Mal pro Tag. Für `gewoehnlich` sind das
+ * 1,2 Ziehungen täglich — vierzig Einträge halten damit gut einen Monat, zwanzig nur
+ * gut zwei Wochen. Genau das hat der Reichweiten-Test aufgedeckt, als die Töpfe noch
+ * halb so groß waren: 65-mal Gold statt eines Gegenstands innerhalb von 30 Tagen.
+ */
 export const MIN_POOL_SIZE: Record<Rarity, number> = {
   gewoehnlich: 40,
-  selten: 40,
+  selten: 20,
   episch: 12,
   legendaer: 12,
 }

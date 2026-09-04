@@ -181,3 +181,40 @@ Epische Quest 90 (letztere noch in Klärung, Issue #32).
 **Grund:** Konzept V1 §1 adressiert ausdrücklich Menschen, die Schwierigkeiten haben,
 lange fokussiert zu bleiben. Wäre 25 Minuten die kürzeste Stufe, wäre der Einstieg für
 einen erheblichen Teil dieser Zielgruppe der erste Misserfolg.
+
+### ADR-018 · Die epische Quest ist ein Bogen, kein Block
+**Status:** angenommen · 2026-09-04 (Issue #32)
+**Kontext:** Konzept V1 §6 setzte die epische Quest auf ca. 90 Minuten.
+**Entscheidung:** Drei Fokusabschnitte à 25 Minuten mit Rasten dazwischen, erzählt als
+**eine** Quest. Der Bosskampf ist der dritte Abschnitt. Gesamtfokuszeit 75 Minuten.
+**Alternative:** Neunzig Minuten am Stück.
+**Grund:** Ein ununterbrochener 90-Minuten-Block widerspricht dem Grundsatz, auf dem die
+Methode beruht, und trifft ausgerechnet die Zielgruppe aus Konzept V1 §1. Das epische
+Gefühl bleibt, die Pausen bleiben drin, und der Wiedereinstieg ist erzählerisch motiviert.
+**Technische Folge:** `arcProgress()` rechnet den Fortschritt über alle drei Abschnitte.
+Ohne das spränge die Kulisse bei jeder Rast an den Anfang zurück.
+
+### ADR-019 · Ruhiger Ton bei kurz und mittel, laut nur beim Boss
+**Status:** angenommen · 2026-09-04 (Issue #31)
+**Kontext:** Konzept V1 fordert Cozy Fantasy mit Drachen; der vorhandene Questpool war
+karg und ohne Kreaturen.
+**Entscheidung:** Kundschaftergang, kurze und mittlere Quests behalten den ruhigen,
+beobachtenden Ton. Epische Quests und Bosskämpfe dürfen laut sein.
+**Alternative:** Durchgängig ein Ton.
+**Grund:** Konzept V1 §15 macht die Unterscheidung selbst („Fokusoberfläche: ruhig",
+„Bosskämpfe: deutlich epischer"). Kurze und mittlere Quests laufen nebenher, während
+jemand arbeitet — dort ist Zurückhaltung keine Stilfrage, sondern Funktion. Epische
+Quests sind eine pro Woche und dürfen tragen.
+**Umsetzung:** Jede Region trägt `theme` (Zuordnung zu Konzept V1 §5) und `tone`.
+Ein Test hält den lauten Wortschatz aus den nicht-epischen Quests heraus.
+
+### ADR-020 · Mindestgrößen der Loot-Töpfe sind hergeleitet, nicht geschätzt
+**Status:** angenommen · 2026-09-04 (Issue #33)
+**Kontext:** „Keine Duplikate" hält nur, solange die Töpfe reichen.
+**Entscheidung:** 40 gewöhnliche, 20 seltene, 12 epische und 12 legendäre Einträge je
+Kategorie. Insgesamt 336 Einträge in 16 Töpfen.
+**Grund:** Bei acht Quests am Tag und vier Kategorien zieht ein Topf
+`8 × Wahrscheinlichkeit ÷ 4` Mal täglich — für gewöhnlich 1,2. Vierzig Einträge halten
+damit gut einen Monat. Der erste Entwurf hatte zwanzig, und der Reichweiten-Test deckte
+auf, dass es innerhalb von 30 Tagen 65-mal Gold statt eines Gegenstands gegeben hätte.
+Die Zahl steht jetzt als Test, nicht als Annahme.
