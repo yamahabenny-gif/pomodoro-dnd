@@ -191,8 +191,8 @@ export function CharacterCreator({ userId, initialCharacter }: { userId: string;
 
 function CharacterPreview({ draft, asset }: { draft: CharacterDraft; asset: string }) {
   const bodyScale = bodyScales[draft.bodyVariant] ?? 1
-  const skinColor = skinColors[draft.skinVariant] ?? skinColors.warm
-  const hairColor = hairColors[draft.hairColor] ?? hairColors.dunkel
+  const skinColor = skinColors[draft.skinVariant] ?? '#c8a483'
+  const hairColor = hairColors[draft.hairColor] ?? '#49392f'
 
   return (
     <svg className={styles.characterPreview} viewBox="0 0 512 512" focusable="false">
