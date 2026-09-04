@@ -3,6 +3,8 @@ import { createSupabaseServerClient } from '../../lib/supabase/server'
 import { CharacterCreator, type CharacterDraft } from './character-creator'
 import styles from './character.module.css'
 
+export const dynamic = 'force-dynamic'
+
 export default async function CharacterPage() {
   const supabase = await createSupabaseServerClient()
   const {
