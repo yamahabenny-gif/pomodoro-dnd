@@ -20,6 +20,8 @@ Detaildokumente konkretisieren das Konzept, dürfen ihm aber nicht widersprechen
 | [docs/SCREENS.md](docs/SCREENS.md) | Screen- und UX-Spezifikation |
 | [docs/DESIGN-SYSTEM.md](docs/DESIGN-SYSTEM.md) | Komponenten, Tokens, Typografie, A11y |
 | [docs/ART-DIRECTION.md](docs/ART-DIRECTION.md) | visuelle Umsetzung der Cozy-Fantasy-Welt |
+| [docs/ASSET-BIBLE.md](docs/ASSET-BIBLE.md) | **Produktion, Formate, Layering, Audio und Motion-Assets** |
+| [docs/MOTION-ENGINE.md](docs/MOTION-ENGINE.md) | technische Bewegungslogik |
 | [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) | technische Architektur |
 | [docs/SYNC-PROTOCOL.md](docs/SYNC-PROTOCOL.md) | Zeit- und Party-Synchronisation |
 | [docs/ROADMAP.md](docs/ROADMAP.md) | Umsetzungsphasen |
@@ -33,44 +35,50 @@ Detaildokumente konkretisieren das Konzept, dürfen ihm aber nicht widersprechen
 ## Das Produkt in 60 Sekunden
 
 1. **Charakter erstellen.** Mensch, Elf, Zwerg, Goblin oder Ork. Keine Klassen, keine Stats, keine Geschlechtsauswahl. Die Figur ist Identität, kein Build.
-2. **Im Lager ankommen.** Das Lager ist Home-Screen und Navigation: Abenteuerbuch, Rucksack, Sammlung, Signalhorn und Händler sind Teil der Welt.
-3. **Quest wählen.** 15, 25 oder 50 Minuten; später epische Abenteuer als 3×25-Minuten-Bogen. Die Quest ist die Timer-Konfiguration.
-4. **Fokussieren.** Der Charakter reist automatisch durch eine 2D-Fantasywelt. Der Timer bleibt lesbar in die Welt integriert. Während Fokus ist keine Spielinteraktion nötig.
-5. **Ankommen und rasten.** XP und Gold werden vergeben, eine Truhe wird verdient. Erst kommt die reale Pause, danach darf die Truhe geöffnet werden.
-6. **Welt wachsen lassen.** Loot ist kosmetisch und ohne Duplikate. Gold gibt Wahlfreiheit beim Händler. Sets, Erinnerungen, Begleiter und Lagerentwicklung erzählen langfristig die Geschichte investierter Fokuszeit.
-7. **Optional gemeinsam aufbrechen.** Solo ist vollständig. Party-Einladung erfolgt bevorzugt per Link, ein kurzer Code bleibt Fallback. Alle bestätigen Bereitschaft, sehen dieselbe Uhr und arbeiten dann „zusammen allein“ – ohne Chat oder Pings während Fokus.
-
-### Leitplanken
-
-- **Die Welt ist das Menü.**
-- **Fokus vor Gamification.**
-- **1 Fokusminute = 1 XP.**
-- **Keine Streaks, Daily Rewards, FOMO oder Schuldmechaniken.**
-- **Keine Power-Progression.**
-- **Keine Party-Truhe oder sozialen Leistungsrankings.**
-- **Accessibility verändert nie Rewards.**
-- **Die Fokuszeit der Person ist heiliger als die Spielinszenierung.**
+2. **Im Lager ankommen.** Das Lager ist Heimat, Navigation und sichtbare Geschichte. Das Abenteuerbuch startet Quests, das Signalhorn verbindet Gefährten, der Händler bringt Kosmetik.
+3. **Quest wählen.** Kundschaftergang 15, kurze Quest 25, mittlere Quest 50. Epische Abenteuer kommen später als 3×25-Minuten-Bogen.
+4. **Fokussieren.** Während real gearbeitet wird, reist die Figur automatisch durch eine ruhige 2D-Fantasywelt. Keine Interaktion ist nötig.
+5. **Abschließen und rasten.** Fokuszeit gibt XP, eine abgeschlossene Quest Gold und eine Truhe. Die Rast kommt **vor** der Truhenöffnung.
+6. **Welt wachsen lassen.** Neue Looks, Relikte, Sets, Lagerobjekte und später Begleiter erzählen die investierte Zeit weiter.
+7. **Optional gemeinsam.** Solo ist vollständig. Später ermöglicht das Signalhorn synchronen Gruppenfokus ohne Chat, Dungeon Master oder Leistungsranking.
 
 ---
 
-## Fokuszeiten und Economy
+## Produktregeln
 
-| Quest | Fokus | Basisgold |
-|---|---:|---:|
-| Kundschaftergang | 15 min | 3 |
-| Kurze Quest | 25 min | 5 |
-| Mittlere Quest | 50 min | 10 |
-| Episches Abenteuer | 3 × 25 min | 15 gesamt |
-
-XP entstehen pro tatsächlich fokussierter Minute. Bei vorzeitigem Abbruch bleiben diese XP erhalten; Questabschluss-Gold und Truhe gibt es nur für einen abgeschlossenen Fokusabschnitt.
-
-Loot nutzt vier Seltenheitsstufen: **Gewöhnlich 60 % · Ungewöhnlich 27 % · Selten 11 % · Außergewöhnlich 2 %**. Wenn eine Truhe ein Item enthält, ist es neu.
+- **1 fokussierte Minute = 1 XP**
+- Gold: **1 pro 5 erfolgreich abgeschlossenen Fokusminuten**
+- Loot ist kosmetisch und hat **keine Duplikate**
+- vier Seltenheiten: **60 / 27 / 11 / 2 %**
+- keine Streak-Pflicht, Daily Rewards, Countdown-Shops oder Produktivitätsrankings
+- Accessibility-Einstellungen verändern niemals Rewards
+- Abwesenheit wird niemals bestraft
 
 ---
 
-## Aktueller Content und vorhandene Logik
+## Vertical Slice zuerst
 
-Das Repository enthält bereits einen umfangreichen Content- und Logikbestand, darunter Quest-/Regionsdaten, Itemkataloge, Lootlogik und zeitbasierte Journey-Logik. Bestehender Content darf weiterverwendet werden, sofern er Concept V2 entspricht; widersprechende Texte, Tests und Annahmen werden schrittweise migriert.
+Die erste Umsetzung beweist den kompletten emotionalen Kern mit nur einem Weg:
+
+**Waldintro → Account → Charakter → kleines Lager → „Ein Licht im Unterholz“ → 15 Minuten Fokus → Questabschluss → Rast → erste Truhe → Alte Weglaterne erscheint im Lager.**
+
+Erst wenn dieser Weg visuell, akustisch und funktional trägt, wird auf weitere Regionen, Quests und Langzeitsysteme skaliert.
+
+---
+
+## Bestehender Content & Core
+
+Im Repository liegen bereits Quest-, Regionen-, Item- und Timerbausteine. Sie sind wertvolles Material, aber nicht automatisch verbindliche Produktlogik. Wo bestehender Content oder Code Concept V2 widerspricht, wird er schrittweise migriert statt das Konzept zurückzubiegen.
+
+Besonders wiederverwendbar sind:
+
+- `content/quests.de.json`
+- `content/regions.de.json`
+- `content/items.de.json`
+- `lib/quests/`
+- `lib/loot/`
+- `lib/timer/journey.ts`
+- `docs/SYNC-PROTOCOL.md`
 
 ```bash
 npm test
@@ -79,22 +87,15 @@ npm run typecheck
 
 ---
 
-## Umsetzungsreihenfolge
+## Entwicklungsprinzip
 
-1. **Vertical Slice:** Einstieg → Account → Charakter → Lager → „Ein Licht im Unterholz“ → 15 Minuten Fokus → Abschluss → Rast → deterministische Weglaterne.
-2. **Core MVP:** 15/25/50-Quests, Progression, Loot, Ausrüstung, erste Lagerentwicklung, Settings, responsive Nutzung.
-3. **Weltvertiefung:** Händler, Sets, Begleiter, weitere Regionen und Lagerstufen.
-4. **Party:** Signalhorn, Einladungslink + Code-Fallback, Ready Check, gemeinsame Uhr, individuelle Rewards.
-5. **Epische Abenteuer:** 3×25 Minuten mit persistentem Aktfortschritt.
-6. **Langfristige Welt:** weitere Inhalte, Events und Plattformoptionen.
+**So einfach wie technisch möglich, so immersiv wie gestalterisch nötig.**
+
+Keine Game Engine, kein komplexes RPG und kein Feature um seiner selbst willen. Die technische Priorität ist Zuverlässigkeit, Synchronisation, schnelle Ladezeit, Accessibility und eine störungsfreie Fokusphase.
+
+> **Die Fokuszeit der Person ist heiliger als die Spielinszenierung.**
 
 ---
-
-## Für Mitwirkende
-
-Vor Produktentscheidungen zuerst [docs/CONCEPT.md](docs/CONCEPT.md) lesen. Bei einem Widerspruch zwischen älteren Dokumenten und Concept V2 gilt Concept V2; der Widerspruch soll im selben Change bereinigt oder explizit als Migration dokumentiert werden.
-
-Details zum Entwicklungsworkflow: [CONTRIBUTING.md](CONTRIBUTING.md) · [docs/WORKFLOW.md](docs/WORKFLOW.md)
 
 ## Lizenz
 
