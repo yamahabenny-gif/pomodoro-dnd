@@ -11,7 +11,7 @@
 | Auth | **Supabase Auth** — Magic Link, Discord OAuth | Discord, weil die Zielgruppe dort ist. **Kein Gastzugang** — Konto und Charakter sind Pflicht, weil Fortschritt, Inventar und Level geräteübergreifend erhalten bleiben müssen (Entscheidung zu W5, Issue #30). |
 | Datenbank | **Supabase Postgres** + Row Level Security | RLS macht die Zugriffsregeln zu Datenbank-Constraints statt zu Anwendungslogik. |
 | Realtime | **Supabase Realtime** (Broadcast + Presence) | Siehe [SYNC-PROTOCOL.md](SYNC-PROTOCOL.md). |
-| Hosting | **Hostinger** → `focus.lang-jamin.de` | Zielarchitektur gemäß ADR-036 / Issue #3. Konkreter Hostinger-Laufzeitmodus muss vor Produktions-Cutover qualifiziert werden. |
+| Hosting | **Hostinger** → `focus.lang-jamin.de` | Zielarchitektur gemäß ADR-036 / Issue #3. Die Plattform-Kompatibilität ist in [HOSTINGER-RUNTIME-QUALIFICATION.md](HOSTINGER-RUNTIME-QUALIFICATION.md) belegt; der konkrete Account/Tarif bleibt vor Produktions-Cutover zu verifizieren. |
 | Tests | **Vitest** (Logik) + **Playwright** (E2E, mehrere Kontexte) | Der Sync ist nur mit zwei echten Browser-Kontexten sinnvoll testbar. |
 
 **Warum kein eigener WebSocket-Server?** Weil das Protokoll fast zustandslos ist. Wir
@@ -126,11 +126,17 @@ Das ist ein Fokus-Tool, kein Zeiterfassungssystem. Konkret:
 Infrastruktur ist bereits vorbereitet; das ist **noch kein App-Deployment**. Der kontrollierte
 Produktions-Cutover bleibt in **Issue #3** gegatet.
 
+Die dokumentierte Plattform-Kompatibilität liegt in
+[HOSTINGER-RUNTIME-QUALIFICATION.md](HOSTINGER-RUNTIME-QUALIFICATION.md). Sie bestätigt,
+dass Hostingers Managed-Node.js-Plattform die benötigte Next.js-Serverarchitektur grundsätzlich
+tragen kann. Sie ersetzt **nicht** die noch ausstehende hPanel-Verifikation des konkreten Tarifs
+und Zielbetriebs für `focus.lang-jamin.de`.
+
 Vor dem Cutover müssen mindestens folgende Punkte nachgewiesen und dokumentiert sein:
 
 1. **Vertical Slice #35** intern vollständig abgenommen.
-2. **Hostinger-Laufzeit qualifiziert:** konkreter Tarif/Betriebsmodus, unterstützte Node.js-Version,
-   `npm run build`/`npm run start`, Route Handlers, persistenter Prozess, Logs/Monitoring und Rollback.
+2. **Hostinger-Zielbetrieb account-spezifisch qualifiziert:** konkreter Tarif/Betriebsmodus,
+   tatsächlich auswählbare Node.js-Version, Build/Start-Einstellungen, Runtime-Logs und Rollback.
 3. **Pre-Cutover-Backup/Snapshot** des aktuellen `focus`-Zustands erstellt und Wiederherstellung geprüft.
 4. **Freigegebener Produktions-Build** aus einem dokumentierten Commit erzeugt.
 5. **Secrets ausschließlich serverseitig:** `SUPABASE_SERVICE_ROLE_KEY` niemals als `NEXT_PUBLIC_*`,
@@ -142,10 +148,10 @@ Vor dem Cutover müssen mindestens folgende Punkte nachgewiesen und dokumentiert
    keine früheren Vercel-CNAME-Werte übernehmen.
 9. **Technical Owner + Release-Team-Freigabe** in Issue #3 dokumentieren.
 
-Bis diese Laufzeitqualifikation vorliegt, werden `next.config.mjs`, `package.json` und Deployment-CI
-nicht vorsorglich auf Hostinger-spezifische Annahmen umgebaut. Falls der verfügbare Hostinger-Betrieb
-keine benötigte Next.js-Serverlaufzeit unterstützt, ist vor Implementierung eine separate
-Architekturentscheidung nötig; ein statischer Export wird nicht implizit angenommen.
+Bis die account-spezifische Laufzeitqualifikation vorliegt, werden `next.config.mjs`, `package.json`
+und Deployment-CI nicht vorsorglich auf Hostinger-spezifische Annahmen umgebaut. Falls der verfügbare
+Hostinger-Betrieb keine benötigte Next.js-Serverlaufzeit unterstützt, ist vor Implementierung eine
+separate Architekturentscheidung nötig; ein statischer Export wird nicht implizit angenommen.
 
 Supabase bleibt unabhängig vom Webhosting für Auth, Postgres und Realtime vorgesehen. Ein Hostingwechsel
 erfordert nicht automatisch eine Schemaänderung; produktive Migrationen bleiben separat reproduzierbar,
