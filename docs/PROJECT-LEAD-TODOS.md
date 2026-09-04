@@ -2,14 +2,14 @@
 
 **Projekt:** D&D Pomodoro Timer  
 **Repository:** `yamahabenny-gif/pomodoro-dnd`  
-**Stand:** 04.09.2026, nach Merge von PR #48 und PR #49  
+**Stand:** 04.09.2026, nach Merge von PR #50  
 **Source of Truth:** `docs/CONCEPT.md` + `docs/ROADMAP.md`
 
 ## Aktueller Stand
 
 Der erste Teil der Phase-1-User-Journey ist jetzt auf `main`:
 
-**Waldintro → Account → [nächster Schritt: Charakter]**
+**Waldintro → Account → Charakter → [nächster sichtbarer Schritt: Preview + Lager]**
 
 Abgeschlossen:
 - [x] #4 / PR #45 – Next.js-/Design-Grundlage
@@ -17,11 +17,14 @@ Abgeschlossen:
 - [x] #6 – serverzeitfähige Timer-Grundlage
 - [x] #36 / PR #48 – Waldintro
 - [x] #10 / PR #49 – Magic-Link-Account
+- [x] #11 / PR #50 – minimale visuelle Charaktererstellung
 - [x] #40/#41 / PR #44 – Phase-1-Art-/Audio-Produktionspaket geliefert
 
-Noch offen im Phase-1-Vertical-Slice:
-- [ ] #11 – minimale Charaktererstellung
+Jetzt unmittelbar offen:
+- [ ] #51 – internes Preview-Deployment für laufende Phase 1
 - [ ] #29 – kleines Lager als diegetischer Hub
+
+Danach offen im Phase-1-Vertical-Slice:
 - [ ] #37 – Abenteuerbuch mit kuratierter erster Quest
 - [ ] #38 – „Ein Licht im Unterholz“: Aufbruch und Questabschluss
 - [ ] #12 – Fokus-Screen mit integriertem 15-Minuten-Timer
@@ -32,61 +35,48 @@ Noch offen im Phase-1-Vertical-Slice:
 
 ## Wer muss jetzt als Nächstes etwas tun?
 
-### Developer — **JETZT AKTIV**
-**Nächste Aufgabe: #11 – Minimale Charaktererstellung nach Concept V2.**
+### Developer / Technical Setup — **JETZT AKTIV**
+**Nächste Aufgabe: #51 – Internes Preview-Deployment einrichten.**
 
-Verbindlicher Scope:
-- fünf Völker: Mensch, Elf, Zwerg, Goblin, Ork
-- Körperform / Silhouette
-- Haut- bzw. Fantasyfarbe
-- Frisur
-- Haarfarbe
-- Name
-- vollständig tastaturbedienbar
-- sehr lange Namen müssen sauber umbrechen
-- Charakter persistent speichern
-- Abschluss führt direkt in das kleine Lager (#29)
+Ziel:
+- aktuellen `main` über eine Browser-URL testbar machen
+- Preview/Test klar von späterer Produktion trennen
+- Account-/Auth-Flow und Charaktererstellung real testbar machen
+- keine Secrets im Repository oder Client offenlegen
+- Preview-URL an Project Lead übergeben
+- nach weiteren Phase-1-Merges den Preview-Stand fortlaufend aktualisieren
 
-Nicht einbauen:
-- keine Klassen
-- keine Stats oder Boni
-- keine Geschlechtsauswahl
-- keine Tattoos, Narben, Pflaster/Patches, Make-up-Systeme oder Detailslider
+**Direkt danach:** #29 – Kleines Lager als diegetischer Hub.
 
-Nach Umsetzung: Pull Request erstellen und an Technical Owner + Project Lead zur Prüfung geben.
-
-### Technical Owner — **WARTET AUF #11-PR**
+### Technical Owner — **PRÜFT #51 TECHNISCH**
 - Nichts entwickeln.
-- Den nächsten Developer-PR zu #11 technisch gegen den aktuellen `main` prüfen.
-- Besonders Persistenzanbindung an #5/#47, Accessibility, Scope-Trennung und Regressionen prüfen.
-- Nur bei grünem technischen Ergebnis freigeben/weiterziehen.
+- Preview-Setup auf saubere Environment-/Secret-Trennung und sichere Auth-Konfiguration prüfen.
+- Danach die folgenden Feature-PRs jeweils gegen aktuellen `main` prüfen.
 
 ### Senior Developer — **AKTUELL KEINE AKTIVE AUFGABE**
 - Persistenz-Grundlage #5 ist abgeschlossen.
-- Nur eingreifen, wenn #11 eine echte Architektur-, Persistenz-, RLS- oder Security-Nachbesserung an #5 benötigt.
-- Keine parallele neue Feature-Entwicklung starten.
+- Nur eingreifen, wenn Preview/Auth oder weitere Integration eine echte Architektur-, RLS-, Persistenz- oder Security-Nachbesserung benötigt.
 
 ### Art / Audio — **AKTUELL KEINE NEUE PRODUKTION**
 - Das Phase-1-Asset-Pack liegt auf `main`.
-- Für #11 vorhandene fünf Race-Bases und Character-Variants-Guide verwenden.
-- Nur konkrete Lücken/Nachbesserungen bearbeiten, wenn der Developer sie bei der Integration nachweist.
+- Bei #29 und den folgenden visuellen Schritten vorhandene Assets integrieren.
+- Nur konkrete fehlende Assets oder notwendige Nachbesserungen produzieren.
 
-### Project Lead — **STEUERN + ABNEHMEN**
-- #11 nach PR auf Produkt, Scope und Character-Art-Direction abnehmen.
-- Keine Scope-Erweiterung zulassen.
-- Nach Merge von #11 unmittelbar #29 als nächsten Developer-Schritt freigeben.
-- Backlog und kritischen Pfad synchron halten.
+### Project Lead — **PREVIEW ABNEHMEN + PFAD STEUERN**
+- #51 nach Bereitstellung im Browser prüfen.
+- Danach #29 produkt-/artseitig begleiten und abnehmen.
+- Backlog, Tracking #35 und kritischen Pfad synchron halten.
 
 ## Kritischer Pfad ab jetzt
 
-**#4 ✅ → #5 ✅ → #6 ✅ → #36 ✅ → #10 ✅ → #11 → #29 → #37 → #38 + #12 + #21 → #13 → #39 → #35 Abnahme**
+**#4 ✅ → #5 ✅ → #6 ✅ → #36 ✅ → #10 ✅ → #11 ✅ → #51 Preview → #29 → #37 → #38 + #12 + #21 → #13 → #39 → #35 Abnahme**
 
 ## Reihenfolge der nächsten Developer-Pakete
 
-1. **#11 Charaktererstellung** – jetzt
+1. **#51 Internes Preview-Deployment** – jetzt
 2. **#29 Kleines Lager** – direkt danach
 3. **#37 Abenteuerbuch**
-4. **#38 + #12 + #21** – Quest-Rahmen, Fokus-Screen und Journey als zusammenhängender Fokus-Abschnitt
+4. **#38 + #12 + #21** – Quest-Rahmen, Fokus-Screen und Journey
 5. **#13 Rast**
 6. **#39 Weglaterne + sichtbare Lagerveränderung**
 7. **#35 End-to-End-Abnahme**
@@ -122,7 +112,7 @@ Der Vertical Slice ist erst fertig, wenn:
 - #16
 
 ### Release-Gates
-- #3 Deployment
+- #3 öffentliches Deployment
 - #18 Accessibility-Gesamtdurchgang
 - #20 Datenschutz / Impressum / Export / Kontolöschung
 
@@ -130,4 +120,4 @@ Diese Aufgaben blockieren den internen Phase-1-Vertical-Slice aktuell nicht.
 
 ## Führungsregel
 
-Der operative Engpass liegt jetzt vollständig bei **#11 Charaktererstellung**. Developer entwickelt. Technical Owner prüft nur. Senior Developer wartet auf echte Persistenz-/Security-Fragen. Art/Audio produziert nichts auf Vorrat. Nach erfolgreicher #11-Abnahme wird unmittelbar #29 Kleines Lager gestartet.
+PR #50 / #11 ist abgeschlossen und gemerged. Der operative Engpass liegt jetzt bei **#51 internes Preview-Deployment**. Sobald eine Browser-URL verfügbar und technisch sauber geprüft ist, geht der Developer unmittelbar weiter mit **#29 Kleines Lager**. Der Technical Owner prüft nur; Senior Developer und Art/Audio warten auf konkrete Integrationsbedarfe.
