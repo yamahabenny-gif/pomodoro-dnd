@@ -86,8 +86,12 @@ set search_path = ''
 as $$
 begin
   insert into public.profiles (id, display_name)
-  values (new.id, coalesce(new.raw_user_meta_data ->> 'display_name', new.raw_user_meta_data ->> 'full_name'))
+  values (
+    new.id,
+    coalesce(new.raw_user_meta_data ->> 'display_name', new.raw_user_meta_data ->> 'full_name')
+  )
   on conflict (id) do nothing;
+
   return new;
 end;
 $$;
@@ -96,8 +100,78 @@ create trigger on_auth_user_created
 after insert on auth.users
 for each row execute function public.handle_new_user();
 
--- Atomic first-loop completion. Rewards are intentionally fixed to the Phase 1 quest.
--- Idempotency is provided by rewarded_at and unlocks' composite primary key.
+-- Sole creation path for the first Phase-1 quest session.
+-- Identity, start time and duration are server-authoritative.
+create or replace function public.start_first_light_session()
+returns public.focus_sessions
+language plpgsql
+security definer
+set search_path = ''
+as $$
+declare
+  v_user_id uuid := auth.uid();
+  v_session public.focus_sessions%rowtype;
+begin
+  if v_user_id is null then
+    raise exception 'authentication required';
+  end if;
+
+  if not exists (select 1 from public.profiles p where p.id = v_user_id) then
+    raise exception 'profile not found';
+  end if;
+
+  insert into public.focus_sessions (
+    profile_id,
+    quest_key,
+    started_at,
+    duration_seconds,
+    status
+  ) values (
+    v_user_id,
+    'ein-licht-im-unterholz',
+    now(),
+    900,
+    'active'
+  )
+  on conflict (profile_id) where status = 'active' do nothing;
+
+  select * into v_session
+  from public.focus_sessions fs
+  where fs.profile_id = v_user_id and fs.status = 'active'
+  limit 1;
+
+  if not found then
+    raise exception 'could not create or restore active session';
+  end if;
+
+  return v_session;
+end;
+$$;
+
+create or replace function public.cancel_focus_session(p_session_id uuid)
+returns void
+language plpgsql
+security definer
+set search_path = ''
+as $$
+declare
+  v_user_id uuid := auth.uid();
+begin
+  if v_user_id is null then
+    raise exception 'authentication required';
+  end if;
+
+  update public.focus_sessions fs
+  set status = 'cancelled'
+  where fs.id = p_session_id
+    and fs.profile_id = v_user_id
+    and fs.status = 'active'
+    and fs.rewarded_at is null;
+end;
+$$;
+
+-- Atomic and idempotent first-loop completion.
+-- Rewards are deliberately fixed to the Phase-1 quest contract.
 create or replace function public.complete_first_light_session(p_session_id uuid)
 returns table (xp integer, gold integer, lantern_unlocked boolean)
 language plpgsql
@@ -113,15 +187,15 @@ begin
   end if;
 
   select * into v_session
-  from public.focus_sessions
-  where id = p_session_id and profile_id = v_user_id
+  from public.focus_sessions fs
+  where fs.id = p_session_id and fs.profile_id = v_user_id
   for update;
 
   if not found then
     raise exception 'session not found';
   end if;
 
-  if v_session.quest_key <> 'ein-licht-im-unterholz' then
+  if v_session.quest_key <> 'ein-licht-im-unterholz' or v_session.duration_seconds <> 900 then
     raise exception 'session is not the phase 1 quest';
   end if;
 
@@ -130,33 +204,34 @@ begin
       raise exception 'focus duration not yet elapsed';
     end if;
 
-    update public.focus_sessions
+    update public.focus_sessions fs
     set status = 'completed', completed_at = now()
-    where id = p_session_id;
+    where fs.id = p_session_id;
   elsif v_session.status <> 'completed' then
     raise exception 'session is not completable';
   end if;
 
   if v_session.rewarded_at is null then
-    update public.profiles
-    set xp = profiles.xp + 15,
-        gold = profiles.gold + 3
-    where profiles.id = v_user_id;
+    update public.profiles p
+    set xp = p.xp + 15,
+        gold = p.gold + 3
+    where p.id = v_user_id;
 
     insert into public.unlocks(profile_id, unlock_key)
     values (v_user_id, 'alte-weglaterne')
     on conflict do nothing;
 
-    update public.focus_sessions
+    update public.focus_sessions fs
     set rewarded_at = now()
-    where id = p_session_id and rewarded_at is null;
+    where fs.id = p_session_id and fs.rewarded_at is null;
   end if;
 
   return query
   select p.xp,
          p.gold,
          exists(
-           select 1 from public.unlocks u
+           select 1
+           from public.unlocks u
            where u.profile_id = v_user_id and u.unlock_key = 'alte-weglaterne'
          )
   from public.profiles p
@@ -164,9 +239,7 @@ begin
 end;
 $$;
 
-revoke all on function public.complete_first_light_session(uuid) from public;
-grant execute on function public.complete_first_light_session(uuid) to authenticated;
-
+-- RLS is mandatory for all user-related Phase-1 tables.
 alter table public.profiles enable row level security;
 alter table public.characters enable row level security;
 alter table public.focus_sessions enable row level security;
@@ -176,12 +249,6 @@ create policy profiles_select_own
 on public.profiles for select
 to authenticated
 using ((select auth.uid()) = id);
-
-create policy profiles_update_own
-on public.profiles for update
-to authenticated
-using ((select auth.uid()) = id)
-with check ((select auth.uid()) = id);
 
 create policy characters_select_own
 on public.characters for select
@@ -209,21 +276,19 @@ on public.focus_sessions for select
 to authenticated
 using ((select auth.uid()) = profile_id);
 
-create policy focus_sessions_insert_own
-on public.focus_sessions for insert
-to authenticated
-with check ((select auth.uid()) = profile_id and status = 'active' and completed_at is null and rewarded_at is null);
-
-create policy focus_sessions_cancel_own
-on public.focus_sessions for update
-to authenticated
-using ((select auth.uid()) = profile_id)
-with check ((select auth.uid()) = profile_id and status in ('active', 'cancelled') and rewarded_at is null);
-
 create policy unlocks_select_own
 on public.unlocks for select
 to authenticated
 using ((select auth.uid()) = profile_id);
 
--- No direct client insert/update policy exists for unlocks or rewards.
--- Reward mutation is only possible through complete_first_light_session().
+-- Exact client privileges. Progress, session outcome and unlocks are RPC-only.
+revoke all on public.profiles, public.characters, public.focus_sessions, public.unlocks from anon, authenticated;
+grant select on public.profiles, public.characters, public.focus_sessions, public.unlocks to authenticated;
+grant insert, update, delete on public.characters to authenticated;
+
+revoke all on function public.start_first_light_session() from public;
+revoke all on function public.cancel_focus_session(uuid) from public;
+revoke all on function public.complete_first_light_session(uuid) from public;
+grant execute on function public.start_first_light_session() to authenticated;
+grant execute on function public.cancel_focus_session(uuid) to authenticated;
+grant execute on function public.complete_first_light_session(uuid) to authenticated;
