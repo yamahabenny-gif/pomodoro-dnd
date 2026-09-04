@@ -52,7 +52,7 @@ hat, ist noch kein `#junDev`-Issue.
 Alles, was nach außen wirkt oder schwer rückholbar ist. **Merge erst nach ausdrücklicher
 Freigabe durch das Release Team.**
 
-- Deployment auf `pomodoro.lang-jamin.de`
+- Deployment auf `focus.lang-jamin.de`
 - DNS- und Domain-Änderungen
 - Schema-Migrationen gegen Produktion
 - Änderungen an öffentlichen Texten, Impressum, Datenschutzerklärung
@@ -61,6 +61,10 @@ Freigabe durch das Release Team.**
 
 `#release` ersetzt `#SENDEV`/`#junDev` nicht — es kommt dazu. Ein Deployment ist
 `#release #SENDEV`.
+
+Der kanonische öffentliche Release-Tracker ist **Issue #3**. Die in #3 dokumentierten
+Hostinger-Laufzeit-, Backup-, Auth-, DNS- und Rollback-Gates müssen vor jedem Produktions-
+Cutover erfüllt sein. Ein gemergter Architektur- oder Dokumentations-PR ist kein Deployment.
 
 ## Issues
 
@@ -71,7 +75,7 @@ Titelformat:
 ```
 #SENDEV Party-Sync: Clock-Skew-Abgleich implementieren
 #junDev Chest-Opening-Animation mit Reduced-Motion-Fallback
-#release #SENDEV Deployment-Setup pomodoro.lang-jamin.de
+#release #SENDEV Hostinger-Deployment für focus.lang-jamin.de
 ```
 
 Fällt dir bei der Arbeit etwas Zusätzliches auf, gilt: **nicht nebenbei miterledigen,
