@@ -22,6 +22,7 @@ erzeugt.
 | `Charakterbogen.dc.html` | Charakterbogen mit Gepäck |
 | `Einstellungen.dc.html` | Einstellungen |
 | `Designsystem.dc.html` | Token-, Schrift- und Sigel-Übersicht |
+| `RichtungA.dc.html` | Nicht übernommene Art-Direction-Exploration — Rast in gemaltem Chiaroscuro, direkt neben `Rast.dc.html` zum Vergleich |
 
 ## Stand des Drafts
 

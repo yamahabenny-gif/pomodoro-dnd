@@ -49,6 +49,14 @@
       "h": 760
     },
     {
+      "file": "RichtungA.dc.html",
+      "title": "Richtung A · Ölgemälde am Lagerfeuer (Vergleich zu 6)",
+      "x": 3900,
+      "y": 1140,
+      "w": 1280,
+      "h": 900
+    },
+    {
       "file": "Truhe.dc.html",
       "title": "7 · Truhe",
       "x": 0,
@@ -103,6 +111,13 @@
       "y": 2080,
       "w": 460,
       "text": "Beide Party-Screens zeigen dieselbe Zahl (18:42) wie der Solo-Timer. Genau das ist der Punkt: eine Uhr, aus einem Server-Zeitstempel berechnet, nicht n Countdowns."
+    },
+    {
+      "id": "richtung-a-note",
+      "x": 3900,
+      "y": 1020,
+      "w": 700,
+      "text": "Exploration, nicht übernommen: gemaltes Chiaroscuro statt flacher Illustration, eine Lichtquelle statt Ambient Light. Gleicher Inhalt wie Rast (6), damit sich beide Richtungen direkt vergleichen lassen. An kein Issue gebunden."
     },
     {
       "id": "state-note",
