@@ -2,14 +2,14 @@
 
 **Projekt:** D&D Pomodoro Timer  
 **Repository:** `yamahabenny-gif/pomodoro-dnd`  
-**Stand:** 04.09.2026, nach Project-Lead-Freigabe von PR #57  
+**Stand:** 04.09.2026, nach Merge von PR #57  
 **Source of Truth:** `docs/CONCEPT.md` + `docs/ROADMAP.md`
 
 ## Aktueller Stand
 
-Der erste Teil der Phase-1-User-Journey ist auf `main`:
+Der sichtbare Phase-1-Pfad auf `main` reicht jetzt bis ins Lager:
 
-**Waldintro → Account → Charakter → [Lager in PR #57 freigegeben]**
+**Waldintro → Account → Charakter → Lager**
 
 Abgeschlossen:
 - [x] #4 / PR #45 – Next.js-/Design-Grundlage
@@ -18,23 +18,19 @@ Abgeschlossen:
 - [x] #36 / PR #48 – Waldintro
 - [x] #10 / PR #49 – Magic-Link-Account
 - [x] #11 / PR #50 – minimale visuelle Charaktererstellung
+- [x] #29 / PR #57 – kleines Lager als diegetischer Hub
 - [x] #40/#41 / PR #44 – Phase-1-Art-/Audio-Produktionspaket geliefert
-- [x] PR #53 – Hostinger-/`focus.lang-jamin.de`-Architektur- und Release-Handoff dokumentiert und gemerged
-- [x] PR #57 – #29 kleines Lager: Technical Owner technisch freigegeben und Project Lead produkt-/artseitig freigegeben; Merge steht noch aus
+- [x] PR #53 – Hostinger-/`focus.lang-jamin.de`-Architektur- und Release-Handoff
 
-Wichtig zu PR #53:
-- `focus.lang-jamin.de` ist die dokumentierte Zielrichtung für den späteren öffentlichen Release.
-- PR #53 war **nur Handoff/Dokumentation**. Er hat keine Pomodoro-App, DNS-, Supabase- oder Produktionsumstellung ausgerollt.
-- Issue #3 ist auf Hostinger / `focus.lang-jamin.de` aktualisiert und bleibt der kanonische Release-Tracker.
-- #35 bleibt zwingendes Produkt-Gate vor dem späteren Hostinger-/DNS-/App-Cutover.
+Aktuell gibt es **keinen offenen Pull Request**. Damit wartet gerade keine Freigabe bei Project Lead oder Technical Owner.
 
-Jetzt unmittelbar offen:
-- [ ] PR #57 mergen – #29 kleines Lager; beide erforderlichen Freigaben liegen vor
-- [ ] #51 – internes Preview-Deployment für laufende Phase 1
-- [ ] #37 – Abenteuerbuch mit kuratierter erster Quest
-- [ ] Architektur-Follow-up aus PR #53 – Repo-Dokumente/ADR auf Hostinger-Zielrichtung bringen; technische Runtime-Entscheidung nur nach Hostinger-Qualifikation
+## Jetzt unmittelbar offen
 
-Danach offen im Phase-1-Vertical-Slice:
+1. [ ] **#51 – internes Preview-Deployment**: höchste operative Priorität, damit der aktuelle Stand endlich im Browser testbar wird.
+2. [ ] **#37 – Abenteuerbuch mit kuratierter erster Quest**: nächster Feature-Schritt im Produktpfad.
+3. [ ] **Architektur-Follow-up aus PR #53**: Hostinger-/`focus.lang-jamin.de`-Dokumentation konsolidieren und technische Runtime-Qualifikation vorbereiten.
+
+Danach:
 - [ ] #38 – „Ein Licht im Unterholz“: Aufbruch und Questabschluss
 - [ ] #12 – Fokus-Screen mit integriertem 15-Minuten-Timer
 - [ ] #21 – ruhige Journey-Kulisse
@@ -42,49 +38,64 @@ Danach offen im Phase-1-Vertical-Slice:
 - [ ] #39 – deterministische Weglaterne und sichtbare Lagerveränderung
 - [ ] #35 – End-to-End-Tracking und Produktabnahme
 
-## Wer muss jetzt als Nächstes etwas tun?
+## Wer muss jetzt was tun?
 
-### Developer / Merge-Verantwortung — **PR #57 JETZT MERGEN**
-- PR #57 ist technisch und produkt-/artseitig freigegeben.
-- Solange Head/CI/mergeability unverändert sauber bleiben, kann #57 gemerged werden.
-- Danach direkt #37 – Abenteuerbuch mit kuratierter erster Quest – starten.
+### Developer / Technical Setup — **PRIORITÄT 1: #51 PREVIEW**
+- #51 jetzt tatsächlich technisch umsetzen; nicht nur vorbereiten.
+- aktuellen `main` über eine Browser-URL bereitstellen.
+- Preview/Test klar von späterer Produktion auf `focus.lang-jamin.de` trennen.
+- Auth, Charakter und Lager in der Preview real testbar machen.
+- keine Secrets im Repository oder Client offenlegen.
+- Preview-URL an Project Lead übergeben.
+- danach Preview bei weiteren Phase-1-Merges fortlaufend aktualisieren.
 
-### Developer / Technical Setup — **#51 PREVIEW PARALLEL**
-- Internes Preview weiter vorbereiten, aber klar von `focus.lang-jamin.de` und dem späteren Produktions-Cutover trennen.
-- Keine Produktions-DNS-/Supabase-Umstellung vor #35.
-- Ziel bleibt: Browser-URL für laufende Produkt-/Art-Abnahme.
+### Developer / Feature — **PRIORITÄT 2: #37 ABENTEUERBUCH**
+Sobald #51 nicht mehr den Feature-Developer blockiert bzw. parallel technisch betreut werden kann:
+- #37 auf aktuellem `main` umsetzen.
+- geliefertes Abenteuerbuch-Artwork tatsächlich integrieren.
+- erste Quest „Ein Licht im Unterholz“ mit 15 Minuten prominent anbieten.
+- keine abstrakte Timer-Konfiguration, keine Deadline/FOMO.
+- CTA führt in den Aufbruch-/Questpfad.
+- responsive, semantisch und tastaturbedienbar.
+- danach PR zur TO- und Project-Lead-Abnahme geben.
 
 ### Senior Developer / Architektur — **PR #53 FOLLOW-UP**
-- Den im Handoff beschriebenen Architektur-PR erstellen.
-- `docs/DECISIONS.md`, `docs/ARCHITECTURE.md`, `README.md`, `docs/WORKFLOW.md`, `design/README.md` und `.env.example` auf Hostinger / `focus.lang-jamin.de` konsolidieren.
-- Keine anbieterabhängigen Änderungen an `next.config.mjs`, `package.json` oder Deployment-CI ohne belegte Hostinger-Next.js-Laufzeit.
-- Danach an Technical Owner zur technischen Prüfung geben.
+- Architektur-Handoff aus #53 umsetzen.
+- `docs/DECISIONS.md`, `docs/ARCHITECTURE.md`, `README.md`, `docs/WORKFLOW.md`, `design/README.md` und `.env.example` konsolidieren.
+- Hostinger-Next.js-Laufzeit qualifizieren, bevor anbieterabhängige Runtime-/CI-Änderungen erfolgen.
+- keine Produktionsmigration vor #35.
+- Ergebnis als PR an Technical Owner geben.
 
-### Technical Owner — **PRÜFT, ENTWICKELT NICHT**
-- PR #57 ist technisch freigegeben.
-- Architektur-Follow-up aus PR #53 technisch prüfen.
-- #51 Preview auf Environment-/Secret-Trennung und sichere Auth-Konfiguration prüfen.
-- Keine Eigenentwicklung.
+### Technical Owner — **AKTUELL WARTEN / NUR PRÜFEN**
+- Es gibt aktuell keinen offenen PR zur technischen Freigabe.
+- Sobald #51, #37 oder der Architektur-Follow-up als PR vorliegt: technisch prüfen.
+- insbesondere bei #51 Environment-/Secret-Trennung, Auth und Deployment-Verhalten prüfen.
+- keine Eigenentwicklung.
 
-### Art / Audio — **KEINE NEUE PRODUKTION**
-- Phase-1-Asset-Pack liegt vor.
-- Bei #37 und folgenden visuellen Schritten vorhandene Assets integrieren.
-- Nur konkrete Lücken nach Integration bearbeiten.
+### Art / Audio — **AKTUELL WARTEN**
+- Keine neue spekulative Produktion.
+- vorhandenes Phase-1-Pack ist die Quelle für #37 und folgende Screens.
+- nur reagieren, wenn bei Integration eine konkrete Asset-Lücke oder Qualitätsabweichung sichtbar wird.
 
-### Project Lead — **AKTUELL KEINE OFFENE FREIGABE MEHR**
-- PR #57 wurde produkt-/artseitig freigegeben.
-- Aktuell existiert kein weiterer offener PR, der eine Project-Lead-Freigabe verlangt.
-- Nach Merge von #57 den nächsten sichtbaren Feature-PR (#37) prüfen.
-- #35 als zwingendes Produkt-Gate schützen.
+### Project Lead — **AKTUELL WARTEN AUF PREVIEW/PRS**
+- keine offene Freigabe.
+- #51 nach Übergabe der Browser-URL produktseitig testen.
+- #37 nach TO-Prüfung produkt-/artseitig abnehmen.
+- kritischen Pfad und #35 synchron halten.
+- `focus.lang-jamin.de` weiterhin vor vorzeitigem Produktions-Cutover schützen.
 
 ## Kritischer Produktpfad
 
-**#4 ✅ → #5 ✅ → #6 ✅ → #36 ✅ → #10 ✅ → #11 ✅ → #29 / PR #57 FREIGEGEBEN → #37 → #38 + #12 + #21 → #13 → #39 → #35 Abnahme**
+**#4 ✅ → #5 ✅ → #6 ✅ → #36 ✅ → #10 ✅ → #11 ✅ → #29 ✅ → #37 → #38 + #12 + #21 → #13 → #39 → #35 Abnahme**
 
-## Release-/Architekturpfad parallel dazu
+Parallel und jetzt dringend sichtbar:
+
+**#51 Preview → Browser-Test durch Project Lead**
+
+## Release-/Architekturpfad
 
 **PR #53 ✅ → Architektur-Follow-up → Hostinger-Laufzeitqualifikation → #35 ✅ → #3 App/DNS/Supabase-Cutover auf `focus.lang-jamin.de`**
 
-## Führungsregel
+## Führungsentscheidung
 
-Die aktuell offene Project-Lead-Freigabe war PR #57 und ist erteilt. Der nächste operative Schritt ist der Merge von #57. Danach verschiebt sich der Produktengpass auf #37 Abenteuerbuch; #51 Preview und der Hostinger-Architekturpfad laufen parallel.
+PR #57 ist nicht mehr der Engpass: Es gibt aktuell keinen offenen PR. Der operative Engpass ist jetzt **#51**, weil der bereits vorhandene Produktstand sonst für den Project Lead nicht real im Browser prüfbar ist. Feature-seitig folgt **#37 Abenteuerbuch**. Senior Developer kann den Hostinger-Architekturpfad parallel bearbeiten, ohne den Phase-1-Produktpfad anzuhalten.
