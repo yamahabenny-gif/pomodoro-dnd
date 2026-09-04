@@ -1,0 +1,152 @@
+.shell {
+  min-height: 100dvh;
+  padding: clamp(24px, 5vw, 72px);
+  background:
+    radial-gradient(circle at 50% 18%, rgb(212 167 44 / .08), transparent 32%),
+    #14110d;
+  color: var(--text);
+}
+
+.book {
+  width: min(1120px, 100%);
+  margin: 0 auto;
+}
+
+.heading {
+  width: min(720px, 100%);
+  margin-bottom: clamp(28px, 5vw, 52px);
+}
+
+.heading h1 {
+  margin: 8px 0 14px;
+  font-size: clamp(2.25rem, 6vw, 4.8rem);
+  line-height: .98;
+}
+
+.heading p:last-child {
+  max-width: 58ch;
+  margin: 0;
+  color: var(--text-muted);
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  line-height: 1.6;
+}
+
+.quest {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(320px, .85fr);
+  min-height: 520px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.questArt {
+  min-height: 420px;
+  background: #101713;
+}
+
+.questArt svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.questCopy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(28px, 5vw, 58px);
+}
+
+.meta {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 18px;
+  color: var(--text-muted);
+  font-size: .95rem;
+}
+
+.meta strong {
+  color: var(--accent);
+  font-size: clamp(1.35rem, 3vw, 2rem);
+  font-variant-numeric: tabular-nums;
+}
+
+.questCopy h2 {
+  margin: 0 0 18px;
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  line-height: 1.02;
+}
+
+.questCopy p {
+  margin: 0 0 14px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.departure {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  align-self: flex-start;
+  margin-top: 18px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--accent);
+  color: var(--text);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.departure span {
+  transition: transform 160ms ease-out;
+}
+
+.departure:hover span {
+  transform: translateX(4px);
+}
+
+.departure:focus-visible,
+.back:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 6px;
+}
+
+.back {
+  display: inline-block;
+  margin-top: 24px;
+  color: var(--text-muted);
+  text-decoration: none;
+}
+
+@media (max-width: 780px) {
+  .shell {
+    padding: 24px 18px 36px;
+  }
+
+  .quest {
+    grid-template-columns: 1fr;
+  }
+
+  .questArt {
+    min-height: 260px;
+  }
+
+  .meta {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 6px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .departure span {
+    transition: none;
+  }
+
+  .departure:hover span {
+    transform: none;
+  }
+}
