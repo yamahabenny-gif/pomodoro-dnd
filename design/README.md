@@ -11,7 +11,7 @@ erzeugt.
 
 | Artboard | Screen |
 |---|---|
-| `Landing.dc.html` | Landing für `pomodoro.lang-jamin.de` |
+| `Landing.dc.html` | Landing für `focus.lang-jamin.de` |
 | `Login.dc.html` | Login — „Die Tavernentür" |
 | `Klassen.dc.html` | Klassenwahl |
 | `Main.dc.html` | Quest-Screen (Haupt-Timer) |
