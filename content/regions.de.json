@@ -1,0 +1,42 @@
+{
+  "salzmarschen": {
+    "name": "Die Salzmarschen",
+    "blurb": "Flaches Wasser bis zum Horizont, darunter die Straßen einer Stadt, die niemand mehr benennt.",
+    "palette": ["#2A3A3E", "#3E5257", "#7E9A97"]
+  },
+  "aschenwald": {
+    "name": "Der Aschenwald",
+    "blurb": "Stämme wie Säulen, Boden wie Schnee. Es hat hier vor sehr langer Zeit gebrannt.",
+    "palette": ["#241F1C", "#3C332C", "#8A7C6C"]
+  },
+  "hohle-stadt": {
+    "name": "Die Hohle Stadt",
+    "blurb": "Sie wurde nach unten gebaut, Stockwerk unter Stockwerk, bis der Fels nicht mehr mitmachte.",
+    "palette": ["#1B1A22", "#302E3C", "#6E6A82"]
+  },
+  "nebelklippen": {
+    "name": "Die Nebelklippen",
+    "blurb": "Der Weg ist eine Handbreit breit und man sieht ihn nur, wenn der Wind steht.",
+    "palette": ["#2B2E33", "#464C55", "#8F9AA6"]
+  },
+  "bruchglastal": {
+    "name": "Das Bruchglastal",
+    "blurb": "Was hier zu Boden ging, ging als Glas zu Boden. Man geht langsam und sieht sich vor.",
+    "palette": ["#22282C", "#3A464C", "#7FA0AC"]
+  },
+  "tiefe-bibliothek": {
+    "name": "Die Tiefe Bibliothek",
+    "blurb": "Regale bis in eine Dunkelheit hinauf, in der die Leitern aufhören.",
+    "palette": ["#241D18", "#3B2F25", "#9A7F5E"]
+  },
+  "rostmoor": {
+    "name": "Das Rostmoor",
+    "blurb": "Aus dem Torf ragt Eisen. Niemand weiß, ob es eine Schlacht war oder eine Werft.",
+    "palette": ["#2A211B", "#48342A", "#A66B41"]
+  },
+  "sternwarte": {
+    "name": "Sternwarte Kalt",
+    "blurb": "Oben am Grat, seit dreihundert Jahren geöffnet, seit zweihundert unbemannt.",
+    "palette": ["#1C2029", "#2E3646", "#6F84A6"]
+  }
+}

@@ -57,3 +57,72 @@ im Randblickfeld, oft abends. Eine helle Fläche, die 25 Minuten leuchtet, ermü
 **Alternative:** Freischaltbare Funktionen oder Premium-Inhalte.
 **Grund:** Loot ist hier Rückmeldung für getane Arbeit. Sobald man es kaufen kann, ist
 es keine Rückmeldung mehr, sondern eine Währung — und die Motivation kippt.
+
+### ADR-007 · Keine Game-Engine
+**Status:** angenommen · 2026-09-04
+**Kontext:** Wanderung, Truhen und Kulissen brauchen Bewegung.
+**Entscheidung:** SVG und CSS, dazu `motion` für Choreografie. Kein Phaser, kein PixiJS, kein Three.js.
+**Alternative:** Eine der genannten Engines.
+**Grund:** Ein WebGL-Canvas, der 50 Minuten am Stück rendert, ist in einer Fokus-App
+ein Fehler — er zieht Akku, lässt den Lüfter angehen und holt sich Aufmerksamkeit, die
+gerade woanders gebraucht wird. Dazu 150–600 kB Laufzeit für Physik, Sprite-Batching und
+Szenengraph, von denen wir nichts nutzen.
+
+### ADR-008 · Die Wanderung ist abgeleiteter Zustand
+**Status:** angenommen · 2026-09-04
+**Kontext:** Die Gruppe soll während der Quest sichtbar unterwegs sein.
+**Entscheidung:** `Position = verstrichene Zeit / Quest-Dauer`. Keine eigene
+Animationsschleife, keine gespeicherte Position.
+**Alternative:** Eine Animation mit eigenem Zeitgeber, die bei Phasenwechseln
+zurückgesetzt und über die Party synchronisiert wird.
+**Grund:** Dieselbe Idee wie ADR-002. Damit ist die Wanderung nach Hintergrund-Tab,
+Standby und für spät beitretende Mitglieder automatisch korrekt — ohne eine Zeile
+Synchronisationscode. Die Alternative wäre ein zweites Sync-Problem neben dem, das
+wir schon gelöst haben.
+
+### ADR-009 · Rive nur für die Höhepunkte
+**Status:** angenommen · 2026-09-04
+**Kontext:** Die Truhe hat fünf Seltenheitsstufen mit derselben Choreografie.
+**Entscheidung:** Rive für Truhe, Stufenaufstieg und Party-Truhe. Alles andere in CSS
+und `motion`. Die Laufzeit wird erst bei `progress > 0.9` nachgeladen.
+**Alternative:** Alles handanimiert, oder Lottie.
+**Grund:** Fünf handanimierte Varianten derselben Choreografie laufen auseinander,
+sobald jemand eine davon anfasst. Rives State Machine hält sie in einer Datei zusammen
+und macht sie ohne Deployment änderbar. Der Preis — 200 kB WASM und ein Werkzeug, das
+jemand bedienen muss — ist nur für diese wenigen Momente gerechtfertigt, nicht für
+Übergänge oder Icons. Lottie bringt bei größerem Aufwand keinen Zusatznutzen, solange
+niemand im Team ohnehin mit After Effects arbeitet.
+
+### ADR-010 · Hybride Kunstrichtung mit scharfer Grenze
+**Status:** angenommen · 2026-09-04
+**Kontext:** Die Oberfläche ist Linienzeichnung, das Spiel braucht reichere Bilder.
+**Entscheidung:** Oberfläche bleibt Linie. Illustration ausschließlich innerhalb
+begrenzter Felder: Item-Kachel, Truhen-Podest, Wanderungs-Band.
+**Alternative:** Alles illustrieren, alles Linie lassen, oder Pixel-Art.
+**Grund:** Der Hybrid trägt nur, solange die Grenze scharf ist. Ein Verlauf zwischen
+beiden Welten ist genau der Punkt, an dem so etwas nach zwei Projekten aussieht. Mit
+Rahmen liest sich Illustration als *Abbildung eines Gegenstands* statt als Dekoration
+der Oberfläche.
+
+### ADR-011 · 576 Gegenstände aus 26 gezeichneten Teilen
+**Status:** angenommen · 2026-09-04
+**Kontext:** Der Spielinhalt braucht viele unterscheidbare Gegenstände.
+**Entscheidung:** 12 Grundformen × 6 Materialien × 8 Embleme, deterministisch aus der
+Item-Kennung abgeleitet. Ein optionales Feld `art` überschreibt mit einer Illustration.
+**Alternative:** Jeden Gegenstand einzeln zeichnen, oder generieren lassen.
+**Grund:** Bildwiederholung fällt weit weniger auf als Textwiederholung — genau umgekehrt
+zu den Quests, die deshalb einzeln geschrieben sind. Der Baukasten geht sofort live und
+bleibt automatisch auf Strichstärke; Illustrationen kommen nach Seltenheit priorisiert
+dazu, ohne dass ein Screen darauf wartet. Generierte Icons scheiden aus, weil man
+Seltenheit erkennen können muss und 576 Einzelgenerierungen nie zueinander passen.
+
+### ADR-012 · 100 einzeln geschriebene Quests statt Textbausteinen
+**Status:** angenommen · 2026-09-04
+**Kontext:** In einem Arbeitstag laufen bis zu 16 Quests. Wiederholung fällt sofort auf.
+**Entscheidung:** 100 von Hand geschriebene Quests in acht Regionen, mit je 3–5
+Wegabschnitten, als `content/quests.de.json`. Auswahl deterministisch aus Party-Code
+und Zyklus, zuletzt gespielte ausgeschlossen.
+**Alternative:** Prozedural aus Satzbausteinen erzeugen.
+**Grund:** Kombinierter Text liest sich nach dem dritten Mal wie kombinierter Text.
+Das ist bei Bildern anders (siehe ADR-011) — bei Sprache merkt man das Raster sofort.
+100 Quests decken auch einen sehr langen Tag ohne Wiederholung ab.

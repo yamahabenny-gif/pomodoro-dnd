@@ -19,6 +19,8 @@
 | [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) | Tech-Stack, Datenmodell, Deployment |
 | [docs/SYNC-PROTOCOL.md](docs/SYNC-PROTOCOL.md) | **Kernstück:** wie die Party dieselbe Uhr sieht |
 | [docs/DESIGN-SYSTEM.md](docs/DESIGN-SYSTEM.md) | Farben, Typografie, Spacing, Motion, A11y |
+| [docs/ART-DIRECTION.md](docs/ART-DIRECTION.md) | Hybrid aus Linie und Illustration, der Item-Baukasten |
+| [docs/MOTION-ENGINE.md](docs/MOTION-ENGINE.md) | Warum keine Game-Engine, und wie die Wanderung funktioniert |
 | [docs/SCREENS.md](docs/SCREENS.md) | Alle Screens von Login bis Charakterbogen |
 | [design/](design/) | Der visuelle Draft — elf Artboards als Quelldateien |
 | [docs/AGENT-SKILLS.md](docs/AGENT-SKILLS.md) | Welche Agent-Skills gelten und wofür |
@@ -63,6 +65,21 @@ Mitglied ist sofort synchron.
 → Vollständige Spezifikation in [docs/SYNC-PROTOCOL.md](docs/SYNC-PROTOCOL.md)
 
 ---
+
+## Inhalt
+
+| | |
+|---|---|
+| [`content/quests.de.json`](content/quests.de.json) | **100 Quests** in acht Regionen, 398 Wegabschnitte |
+| [`content/regions.de.json`](content/regions.de.json) | Die acht Regionen mit Kulissen-Paletten |
+| [`lib/quests/`](lib/quests/) | Auswahl und Wegabschnitte — reine Funktionen, getestet |
+| [`lib/loot/`](lib/loot/) | Der Item-Baukasten: 576 Gegenstände aus 26 Teilen |
+| [`lib/timer/journey.ts`](lib/timer/journey.ts) | Die Wanderung als abgeleiteter Zustand |
+
+```bash
+npm test        # 33 Tests über Questpool, Items und Wanderung
+npm run typecheck
+```
 
 ## Für Mitwirkende
 

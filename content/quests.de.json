@@ -1,0 +1,1200 @@
+[
+  {
+    "id": "sm-01",
+    "title": "Der Salzpfad",
+    "region": "salzmarschen",
+    "length": "standard",
+    "beats": [
+      "Bei Ebbe liegt der alte Damm frei.",
+      "Pfähle im Wasser, in Abständen wie Schritte.",
+      "Ein Wegstein, halb versunken, mit einer Zahl.",
+      "Der Damm endet an einem Tor ohne Mauer."
+    ]
+  },
+  {
+    "id": "sm-02",
+    "title": "Zwei Fuß unter Wasser",
+    "region": "salzmarschen",
+    "length": "short",
+    "beats": [
+      "Das Pflaster ist zu sehen, wenn man stillsteht.",
+      "Eine Kreuzung, an der vier Straßen weitergehen.",
+      "Du nimmst die, die nach Westen weiterläuft."
+    ]
+  },
+  {
+    "id": "sm-03",
+    "title": "Die Glockenboje",
+    "region": "salzmarschen",
+    "length": "long",
+    "beats": [
+      "Irgendwo läutet es, unregelmäßig.",
+      "Der Ton kommt von backbord, dann von vorn.",
+      "Die Boje ist neuer als alles hier.",
+      "Jemand hat sie vor Kurzem festgemacht.",
+      "Die Kette führt senkrecht nach unten."
+    ]
+  },
+  {
+    "id": "sm-04",
+    "title": "Reusen ohne Fischer",
+    "region": "salzmarschen",
+    "length": "standard",
+    "beats": [
+      "Sechs Reusen, alle gesetzt.",
+      "Die Netze sind trocken — seit Tagen niemand hier.",
+      "In der vierten liegt etwas, das kein Fisch ist.",
+      "Du lässt es liegen und merkst dir die Stelle."
+    ]
+  },
+  {
+    "id": "sm-05",
+    "title": "Der flache Turm",
+    "region": "salzmarschen",
+    "length": "short",
+    "beats": [
+      "Ein Turm, der nur noch zwei Meter hoch ist.",
+      "Innen eine Wendeltreppe, die nach unten geht.",
+      "Unten steht das Wasser still."
+    ]
+  },
+  {
+    "id": "sm-06",
+    "title": "Salz auf der Karte",
+    "region": "salzmarschen",
+    "length": "standard",
+    "beats": [
+      "Die Karte stimmt nicht mehr mit dem Ufer überein.",
+      "Du korrigierst sie, während du gehst.",
+      "Zwei Buchten fehlen, eine ist dazugekommen.",
+      "Am Abend ist die Karte brauchbarer als vorher."
+    ]
+  },
+  {
+    "id": "sm-07",
+    "title": "Was die Ebbe hergibt",
+    "region": "salzmarschen",
+    "length": "long",
+    "beats": [
+      "Sechs Stunden Zeit, bis das Wasser zurückkommt.",
+      "Du arbeitest dich vom Ufer nach außen.",
+      "Die Hälfte der Zeit ist um.",
+      "Das Wasser steht schon wieder in den Rinnen.",
+      "Du bist zurück, bevor es die Knöchel erreicht."
+    ]
+  },
+  {
+    "id": "sm-08",
+    "title": "Der Vogelzug",
+    "region": "salzmarschen",
+    "length": "short",
+    "beats": [
+      "Sie ziehen alle in dieselbe Richtung.",
+      "Nicht nach Süden — nach Osten, quer.",
+      "Du gehst nach, so weit du kommst."
+    ]
+  },
+  {
+    "id": "sm-09",
+    "title": "Die zweite Brücke",
+    "region": "salzmarschen",
+    "length": "standard",
+    "beats": [
+      "Von der ersten Brücke steht ein Pfeiler.",
+      "Von der zweiten steht alles, aber sie führt ins Wasser.",
+      "Du gehst sie trotzdem ab, bis zum Ende.",
+      "Am Ende ist eine Leiter nach unten befestigt."
+    ]
+  },
+  {
+    "id": "sm-10",
+    "title": "Marschfeuer",
+    "region": "salzmarschen",
+    "length": "standard",
+    "beats": [
+      "Ein Feuer weit draußen, wo kein Land ist.",
+      "Es bewegt sich nicht, also steht jemand darauf.",
+      "Du brauchst zwei Stunden, um heranzukommen.",
+      "Es ist eine Plattform. Sie ist leer und warm."
+    ]
+  },
+  {
+    "id": "sm-11",
+    "title": "Das Deichbuch",
+    "region": "salzmarschen",
+    "length": "long",
+    "beats": [
+      "Im Wärterhaus liegt ein Buch, dreihundert Jahre geführt.",
+      "Jede Sturmflut, jede Reparatur, jede Hand.",
+      "Die letzten vierzig Jahre fehlen.",
+      "Du liest die Jahre davor.",
+      "Der letzte Eintrag ist eine Warnung, keine Meldung."
+    ]
+  },
+  {
+    "id": "sm-12",
+    "title": "Priel bei Nacht",
+    "region": "salzmarschen",
+    "length": "short",
+    "beats": [
+      "Der Priel ist der einzige Weg zurück.",
+      "Er ist tiefer als heute Morgen.",
+      "Du gehst hindurch, ohne zu zögern."
+    ]
+  },
+  {
+    "id": "sm-13",
+    "title": "Die Salzgärten",
+    "region": "salzmarschen",
+    "length": "standard",
+    "beats": [
+      "Becken, eines neben dem anderen, quadratisch.",
+      "Manche noch voll, manche längst ausgeblüht.",
+      "Zwischen zweien führt ein Pfad weiter, als er müsste.",
+      "Er endet an einer Tür im Boden."
+    ]
+  },
+  {
+    "id": "aw-01",
+    "title": "Der erste Schnitt",
+    "region": "aschenwald",
+    "length": "standard",
+    "beats": [
+      "Am Waldrand hat jemand angefangen zu schlagen.",
+      "Zwölf Stämme, sauber, dann aufgehört.",
+      "Die Äxte liegen noch da, unter der Asche.",
+      "Du gehst weiter hinein, dorthin, wo niemand war."
+    ]
+  },
+  {
+    "id": "aw-02",
+    "title": "Wo das Feuer aufhörte",
+    "region": "aschenwald",
+    "length": "long",
+    "beats": [
+      "Es gibt eine Linie, an der der Wald wieder grün ist.",
+      "Sie verläuft zu gerade für einen Zufall.",
+      "Du gehst sie ab, in beide Richtungen.",
+      "Alle vierzig Schritt ein Stein im Boden.",
+      "Jemand hat das Feuer gehalten. Absichtlich."
+    ]
+  },
+  {
+    "id": "aw-03",
+    "title": "Aschespur",
+    "region": "aschenwald",
+    "length": "short",
+    "beats": [
+      "Fußspuren, tief, mit Last.",
+      "Sie führen hinein, nicht heraus.",
+      "Du folgst ihnen, so weit sie halten."
+    ]
+  },
+  {
+    "id": "aw-04",
+    "title": "Die Köhlerei",
+    "region": "aschenwald",
+    "length": "standard",
+    "beats": [
+      "Sechs Meiler, alle kalt.",
+      "Der siebte ist warm. Nicht heiß — warm.",
+      "Also war jemand hier, vor drei oder vier Tagen.",
+      "Du legst nach und wartest nicht auf ihn."
+    ]
+  },
+  {
+    "id": "aw-05",
+    "title": "Stämme zählen",
+    "region": "aschenwald",
+    "length": "standard",
+    "beats": [
+      "Die Bäume tragen Nummern, eingeschlagen.",
+      "Sie laufen nicht durch, sondern springen.",
+      "Du notierst, wo sie springen.",
+      "Die Lücken ergeben ein Muster, aber kein Wort."
+    ]
+  },
+  {
+    "id": "aw-06",
+    "title": "Das grüne Herz",
+    "region": "aschenwald",
+    "length": "long",
+    "beats": [
+      "Mitten im Verbrannten steht ein Kreis, der lebt.",
+      "Vierzig Schritt Durchmesser, kein Rauchschaden.",
+      "Der Boden ist feucht, obwohl es nicht geregnet hat.",
+      "Unter dem Moos liegt Stein, gearbeitet.",
+      "Du deckst so viel frei, wie das Licht reicht."
+    ]
+  },
+  {
+    "id": "aw-07",
+    "title": "Wind im Toten",
+    "region": "aschenwald",
+    "length": "short",
+    "beats": [
+      "Ohne Blätter klingt der Wald anders.",
+      "Ein Ton, der nicht vom Holz kommt.",
+      "Du gehst darauf zu, bis er lauter wird."
+    ]
+  },
+  {
+    "id": "aw-08",
+    "title": "Der Hochstand",
+    "region": "aschenwald",
+    "length": "standard",
+    "beats": [
+      "Ein Ansitz, dreißig Fuß hoch, unversehrt.",
+      "Von oben sieht man, wie weit das Feuer ging.",
+      "Es ging weiter, als man unten glaubt.",
+      "Am Horizont steht immer noch Rauch."
+    ]
+  },
+  {
+    "id": "aw-09",
+    "title": "Wurzelwerk",
+    "region": "aschenwald",
+    "length": "standard",
+    "beats": [
+      "Ein Wurzelteller, aufgestellt wie eine Wand.",
+      "Dahinter eine Grube, in die man hineinpasst.",
+      "Jemand hat darin geschlafen, mehrfach.",
+      "Die Vorräte sind aufgebraucht, ordentlich gestapelt."
+    ]
+  },
+  {
+    "id": "aw-10",
+    "title": "Der lange Rückweg",
+    "region": "aschenwald",
+    "length": "long",
+    "beats": [
+      "Der Weg hinein war eine Stunde.",
+      "Der Weg hinaus ist es nicht.",
+      "Du gehst nach der Sonne, nicht nach den Spuren.",
+      "Nach zwei Stunden kreuzt du deine eigene Spur.",
+      "Beim dritten Versuch stimmt die Richtung."
+    ]
+  },
+  {
+    "id": "aw-11",
+    "title": "Harz",
+    "region": "aschenwald",
+    "length": "short",
+    "beats": [
+      "Aus einem Stamm läuft noch Harz.",
+      "Also ist der Baum nicht tot.",
+      "Du markierst ihn und gehst weiter."
+    ]
+  },
+  {
+    "id": "aw-12",
+    "title": "Die Glocke im Wald",
+    "region": "aschenwald",
+    "length": "standard",
+    "beats": [
+      "Eine Glocke, ohne Turm, an einem Ast.",
+      "Sie ist zu schwer für den Ast, hält aber.",
+      "Der Klöppel ist herausgenommen und liegt darunter.",
+      "Du lässt ihn liegen, wo er liegt."
+    ]
+  },
+  {
+    "id": "aw-13",
+    "title": "Zweite Ernte",
+    "region": "aschenwald",
+    "length": "standard",
+    "beats": [
+      "In der Asche wächst etwas, das vorher nicht hier war.",
+      "Reihenweise, nicht verstreut.",
+      "Das ist nicht angeflogen, das ist gesät.",
+      "Du erntest, was reif ist, und lässt den Rest."
+    ]
+  },
+  {
+    "id": "hs-01",
+    "title": "Erstes Stockwerk abwärts",
+    "region": "hohle-stadt",
+    "length": "standard",
+    "beats": [
+      "Die Treppe beginnt in einem Wohnhaus.",
+      "Nach zwanzig Stufen hört der Verputz auf.",
+      "Nach vierzig hört das Tageslicht auf.",
+      "Nach sechzig beginnt eine Straße."
+    ]
+  },
+  {
+    "id": "hs-02",
+    "title": "Die Wasserleitung",
+    "region": "hohle-stadt",
+    "length": "long",
+    "beats": [
+      "Ein Rohr, mannshoch, trocken.",
+      "Es fällt sehr gleichmäßig ab.",
+      "Nach einer Stunde eine Verzweigung, unbeschriftet.",
+      "Du nimmst die trockenere und merkst dir die Stelle.",
+      "Am Ende steht die Stadt unter dir, nicht vor dir."
+    ]
+  },
+  {
+    "id": "hs-03",
+    "title": "Laternenöl",
+    "region": "hohle-stadt",
+    "length": "short",
+    "beats": [
+      "Ein Depot, ordentlich, halb voll.",
+      "Das Öl ist noch brennbar.",
+      "Du nimmst so viel, wie du tragen kannst."
+    ]
+  },
+  {
+    "id": "hs-04",
+    "title": "Der obere Markt",
+    "region": "hohle-stadt",
+    "length": "standard",
+    "beats": [
+      "Ein Platz mit Ständen, alle abgebaut.",
+      "Die Steinbänke stehen, die Namen sind lesbar.",
+      "Vierzig Händler, vierzig Namen.",
+      "Einer ist mit frischer Farbe durchgestrichen."
+    ]
+  },
+  {
+    "id": "hs-05",
+    "title": "Stützen",
+    "region": "hohle-stadt",
+    "length": "standard",
+    "beats": [
+      "Die Decke wird von Säulen gehalten, nicht von Fels.",
+      "Jede vierte ist nachträglich gesetzt.",
+      "Die neuen sind besser gearbeitet als die alten.",
+      "Also hat jemand hier gebaut, nachdem alle weg waren."
+    ]
+  },
+  {
+    "id": "hs-06",
+    "title": "Das dritte Stockwerk",
+    "region": "hohle-stadt",
+    "length": "long",
+    "beats": [
+      "Zwei Stockwerke sind kartiert. Das dritte nicht.",
+      "Der Abstieg dauert länger als beim letzten Mal.",
+      "Die Luft wird besser statt schlechter.",
+      "Also gibt es einen Zug von irgendwoher.",
+      "Du findest woher, aber nicht wohin."
+    ]
+  },
+  {
+    "id": "hs-07",
+    "title": "Kreide",
+    "region": "hohle-stadt",
+    "length": "short",
+    "beats": [
+      "An der Wand stehen Kreidezeichen.",
+      "Nicht deine, aber dasselbe System.",
+      "Du folgst ihnen bis zum letzten."
+    ]
+  },
+  {
+    "id": "hs-08",
+    "title": "Die verschlossene Gasse",
+    "region": "hohle-stadt",
+    "length": "standard",
+    "beats": [
+      "Eine Gasse ist zugemauert, sauber, von innen.",
+      "Das Mauerwerk ist jünger als die Stadt.",
+      "Man hat sich eingemauert, nicht ausgesperrt.",
+      "Du klopfst einmal und wartest lange."
+    ]
+  },
+  {
+    "id": "hs-09",
+    "title": "Zisterne",
+    "region": "hohle-stadt",
+    "length": "standard",
+    "beats": [
+      "Ein Becken, so groß wie ein Hof.",
+      "Das Wasser ist klar und steht sehr still.",
+      "Am Grund liegt etwas Helles, in Reihen.",
+      "Es sind Stufen. Das Becken hat einen Ausgang."
+    ]
+  },
+  {
+    "id": "hs-10",
+    "title": "Der Schacht ohne Boden",
+    "region": "hohle-stadt",
+    "length": "long",
+    "beats": [
+      "Ein Stein fällt und man hört nichts.",
+      "Ein zweiter, größer. Immer noch nichts.",
+      "Du lässt eine Laterne an der Leine hinunter.",
+      "Sie geht bei sechzig Fuß aus, ohne Grund.",
+      "Du ziehst sie hoch und trägst es ein."
+    ]
+  },
+  {
+    "id": "hs-11",
+    "title": "Das Archiv der Straßen",
+    "region": "hohle-stadt",
+    "length": "short",
+    "beats": [
+      "Ein Raum voller Steintafeln mit Straßennamen.",
+      "Die Hälfte der Namen kennst du von oben.",
+      "Die andere Hälfte gibt es oben nicht."
+    ]
+  },
+  {
+    "id": "hs-12",
+    "title": "Rückweg mit Last",
+    "region": "hohle-stadt",
+    "length": "standard",
+    "beats": [
+      "Bergauf, mit dem Doppelten des Hinwegs.",
+      "Alle zweihundert Stufen ein Absatz.",
+      "Du zählst die Absätze statt die Stufen.",
+      "Beim elften kommt Licht von oben."
+    ]
+  },
+  {
+    "id": "nk-01",
+    "title": "Der schmale Weg",
+    "region": "nebelklippen",
+    "length": "standard",
+    "beats": [
+      "Eine Handbreit Fels, links die Wand, rechts nichts.",
+      "Der Nebel steht bis auf Kniehöhe.",
+      "Nach zweihundert Schritt wird der Weg breiter.",
+      "Und danach hört er ganz auf."
+    ]
+  },
+  {
+    "id": "nk-02",
+    "title": "Warten auf Sicht",
+    "region": "nebelklippen",
+    "length": "long",
+    "beats": [
+      "Ohne Wind sieht man vier Schritt weit.",
+      "Du setzt dich hin und wartest.",
+      "Nach einer Stunde reißt es kurz auf.",
+      "Du siehst genug, um zwei Stunden zu gehen.",
+      "Dann steht der Nebel wieder."
+    ]
+  },
+  {
+    "id": "nk-03",
+    "title": "Steinmännchen",
+    "region": "nebelklippen",
+    "length": "short",
+    "beats": [
+      "Alle fünfzig Schritt eines, sauber gesetzt.",
+      "Sie führen nicht zum Gipfel, sondern quer.",
+      "Du gehst quer."
+    ]
+  },
+  {
+    "id": "nk-04",
+    "title": "Die Seilbrücke",
+    "region": "nebelklippen",
+    "length": "standard",
+    "beats": [
+      "Drei Seile, zwei davon gut.",
+      "Die Bretter fehlen in der Mitte.",
+      "Du gehst auf dem unteren Seil, an den oberen.",
+      "Auf der anderen Seite ist der Anker frisch geschlagen."
+    ]
+  },
+  {
+    "id": "nk-05",
+    "title": "Echo zählen",
+    "region": "nebelklippen",
+    "length": "standard",
+    "beats": [
+      "Ein Ruf kommt dreifach zurück.",
+      "Aus der Zeit ergibt sich die Entfernung.",
+      "Du rufst an sechs Stellen und rechnest.",
+      "Die Schlucht ist doppelt so breit wie gedacht."
+    ]
+  },
+  {
+    "id": "nk-06",
+    "title": "Der Grat bei Wind",
+    "region": "nebelklippen",
+    "length": "long",
+    "beats": [
+      "Bei Wind sieht man alles und steht schlecht.",
+      "Du gehst gebückt, mit drei Punkten am Fels.",
+      "Auf halber Strecke ein Absatz, windstill.",
+      "Du bleibst länger, als du müsstest.",
+      "Der letzte Abschnitt geht schneller als der erste."
+    ]
+  },
+  {
+    "id": "nk-07",
+    "title": "Nasse Wand",
+    "region": "nebelklippen",
+    "length": "short",
+    "beats": [
+      "Der Fels ist nass, obwohl es nicht regnet.",
+      "Der Nebel schlägt sich nieder, den ganzen Tag.",
+      "Du kletterst trotzdem, langsamer."
+    ]
+  },
+  {
+    "id": "nk-08",
+    "title": "Die Wetterstange",
+    "region": "nebelklippen",
+    "length": "standard",
+    "beats": [
+      "Eine Eisenstange im Fels, mit Ösen.",
+      "An den Ösen hingen Bänder, sie sind weg.",
+      "Aus der Richtung der Roststreifen liest du den Hauptwind.",
+      "Er steht anders, als die Karte behauptet."
+    ]
+  },
+  {
+    "id": "nk-09",
+    "title": "Unter der Wolke",
+    "region": "nebelklippen",
+    "length": "standard",
+    "beats": [
+      "Von oben ist der Nebel eine ebene Fläche.",
+      "Man könnte glauben, man dürfte darauf gehen.",
+      "Du steigst wieder hinein, weil der Weg dort ist.",
+      "Nach zwanzig Schritt ist oben nur noch Gerücht."
+    ]
+  },
+  {
+    "id": "nk-10",
+    "title": "Das Nest",
+    "region": "nebelklippen",
+    "length": "long",
+    "beats": [
+      "Auf einem Vorsprung ein Nest, größer als du.",
+      "Es ist alt und seit Jahren unbenutzt.",
+      "Im Geflecht steckt Eisen, absichtlich verbaut.",
+      "Du bekommst zwei Stücke heraus, ohne es zu zerstören.",
+      "Der Vorsprung trägt gerade so den Rückweg."
+    ]
+  },
+  {
+    "id": "nk-11",
+    "title": "Ohne Karte",
+    "region": "nebelklippen",
+    "length": "short",
+    "beats": [
+      "Die Karte hört hier auf, ehrlicherweise.",
+      "Ab hier zeichnest du selbst.",
+      "Der erste Strich ist immer der schwerste."
+    ]
+  },
+  {
+    "id": "nk-12",
+    "title": "Die Kanzel",
+    "region": "nebelklippen",
+    "length": "standard",
+    "beats": [
+      "Ein Felsvorsprung, flach, wie gemacht zum Stehen.",
+      "Bei klarer Sicht sieht man vier Regionen.",
+      "Heute siehst du eine, und die kennst du.",
+      "Du bleibst, bis du eine zweite siehst."
+    ]
+  },
+  {
+    "id": "bg-01",
+    "title": "Langsam gehen",
+    "region": "bruchglastal",
+    "length": "standard",
+    "beats": [
+      "Der Boden ist Glas, in Scherben, überall.",
+      "Jeder Schritt macht ein Geräusch, das bleibt.",
+      "Du gehst langsamer, als du willst.",
+      "Nach einer Stunde hast du dich daran gewöhnt."
+    ]
+  },
+  {
+    "id": "bg-02",
+    "title": "Woher das Glas kommt",
+    "region": "bruchglastal",
+    "length": "long",
+    "beats": [
+      "Die Scherben werden größer, je weiter du gehst.",
+      "Also gibt es eine Richtung, aus der sie kamen.",
+      "Nach zwei Stunden sind es Platten statt Scherben.",
+      "Dann Wände statt Platten.",
+      "Was hier stand, war ganz aus Glas."
+    ]
+  },
+  {
+    "id": "bg-03",
+    "title": "Schnittfest",
+    "region": "bruchglastal",
+    "length": "short",
+    "beats": [
+      "Die Sohlen halten nicht mehr lange.",
+      "Du bindest sie neu, mit dem, was du hast.",
+      "Es hält bis zum Abend, mehr braucht es nicht."
+    ]
+  },
+  {
+    "id": "bg-04",
+    "title": "Der Lichtfleck",
+    "region": "bruchglastal",
+    "length": "standard",
+    "beats": [
+      "Eine Scherbe wirft Licht an die Talwand.",
+      "Immer an dieselbe Stelle, den ganzen Vormittag.",
+      "An der Stelle ist etwas in den Fels geschlagen.",
+      "Du liest es ab, bevor die Sonne weiterzieht."
+    ]
+  },
+  {
+    "id": "bg-05",
+    "title": "Klare Stelle",
+    "region": "bruchglastal",
+    "length": "standard",
+    "beats": [
+      "Ein Streifen ohne Glas, quer durchs Tal.",
+      "Jemand hat ihn geräumt, nicht die Natur.",
+      "Er führt auf beiden Seiten in den Hang.",
+      "Du nimmst die Seite, die aufwärts geht."
+    ]
+  },
+  {
+    "id": "bg-06",
+    "title": "Nachts durchs Tal",
+    "region": "bruchglastal",
+    "length": "long",
+    "beats": [
+      "Bei Tag blendet es zu sehr.",
+      "Also gehst du nach Sonnenuntergang.",
+      "Das Glas gibt die Wärme des Tages ab.",
+      "Man sieht besser als erwartet und hört alles.",
+      "Vor Morgengrauen bist du auf der anderen Seite."
+    ]
+  },
+  {
+    "id": "bg-07",
+    "title": "Gewicht",
+    "region": "bruchglastal",
+    "length": "short",
+    "beats": [
+      "Eine Platte, zwei Fuß im Quadrat, unversehrt.",
+      "Sie ist zu schwer für den ganzen Weg.",
+      "Du nimmst sie trotzdem mit, ein Stück weit."
+    ]
+  },
+  {
+    "id": "bg-08",
+    "title": "Die Schmelze",
+    "region": "bruchglastal",
+    "length": "standard",
+    "beats": [
+      "An einer Stelle ist das Glas geflossen, nicht gesplittert.",
+      "Also war es hier heißer als überall sonst.",
+      "Der Fleck ist rund und hat einen Mittelpunkt.",
+      "Im Mittelpunkt steht etwas aufrecht."
+    ]
+  },
+  {
+    "id": "bg-09",
+    "title": "Zwölf Fundstücke",
+    "region": "bruchglastal",
+    "length": "standard",
+    "beats": [
+      "Du sammelst, was ganz geblieben ist.",
+      "Nach einer halben Stunde sind es zwölf.",
+      "Nach einer weiteren immer noch zwölf.",
+      "Also ist zwölf alles, was das Tal hergibt."
+    ]
+  },
+  {
+    "id": "bg-10",
+    "title": "Der Weg zurück ist anders",
+    "region": "bruchglastal",
+    "length": "standard",
+    "beats": [
+      "Deine Spur ist nicht mehr da.",
+      "Das Glas hat sich nachgelegt, wie Sand.",
+      "Du gehst nach dem Hang, nicht nach dem Boden.",
+      "Es dauert länger und geht trotzdem gut."
+    ]
+  },
+  {
+    "id": "tb-01",
+    "title": "Regal 400 bis 480",
+    "region": "tiefe-bibliothek",
+    "length": "standard",
+    "beats": [
+      "Die Nummern laufen an der Wand entlang.",
+      "Ab 440 sind die Bände nicht mehr sortiert.",
+      "Also hat hier jemand gearbeitet und nicht zurückgestellt.",
+      "Du sortierst so weit, wie das Licht reicht."
+    ]
+  },
+  {
+    "id": "tb-02",
+    "title": "Die obere Galerie",
+    "region": "tiefe-bibliothek",
+    "length": "long",
+    "beats": [
+      "Die Leiter hört bei vierzig Fuß auf.",
+      "Darüber gehen die Regale weiter.",
+      "Es gibt einen zweiten Weg, über die Galerie.",
+      "Die Galerie ist begehbar, mit Vorsicht.",
+      "Von oben sieht man, dass der Raum kein Ende hat."
+    ]
+  },
+  {
+    "id": "tb-03",
+    "title": "Ein Band fehlt",
+    "region": "tiefe-bibliothek",
+    "length": "short",
+    "beats": [
+      "In einer Reihe klafft eine Lücke.",
+      "Der Staub zeigt, dass sie neu ist.",
+      "Du merkst dir die Nummer."
+    ]
+  },
+  {
+    "id": "tb-04",
+    "title": "Der Lesesaal",
+    "region": "tiefe-bibliothek",
+    "length": "standard",
+    "beats": [
+      "Dreißig Tische, jeder mit einer Lampe.",
+      "Auf einem liegt aufgeschlagene Arbeit.",
+      "Notizen, Handschrift, mitten im Satz.",
+      "Du liest den Satz zu Ende und legst alles zurück."
+    ]
+  },
+  {
+    "id": "tb-05",
+    "title": "Katalog gegen Regal",
+    "region": "tiefe-bibliothek",
+    "length": "standard",
+    "beats": [
+      "Der Katalog nennt Bände, die im Regal fehlen.",
+      "Und das Regal führt Bände, die der Katalog nicht kennt.",
+      "Beides ist zu ordentlich für einen Diebstahl.",
+      "Also gab es zwei Ordnungen. Du schreibst beide auf."
+    ]
+  },
+  {
+    "id": "tb-06",
+    "title": "Abschreiben",
+    "region": "tiefe-bibliothek",
+    "length": "long",
+    "beats": [
+      "Ein Band darf den Raum nicht verlassen.",
+      "Also schreibst du ab, Seite für Seite.",
+      "Nach einer Stunde hast du ein Viertel.",
+      "Die Hand wird langsamer, die Schrift bleibt.",
+      "Am Ende ist die Abschrift vollständig und lesbar."
+    ]
+  },
+  {
+    "id": "tb-07",
+    "title": "Trockene Luft",
+    "region": "tiefe-bibliothek",
+    "length": "short",
+    "beats": [
+      "Hier unten ist es trocken, absichtlich.",
+      "Irgendwo arbeitet noch etwas dagegen an.",
+      "Du suchst, findest es aber nicht."
+    ]
+  },
+  {
+    "id": "tb-08",
+    "title": "Der versperrte Gang",
+    "region": "tiefe-bibliothek",
+    "length": "standard",
+    "beats": [
+      "Ein Gang ist mit Regalen zugestellt.",
+      "Sie sind voll, also war es kein Notbehelf.",
+      "Dahinter geht Licht durch, ein Streifen.",
+      "Du rührst nichts an und trägst es ein."
+    ]
+  },
+  {
+    "id": "tb-09",
+    "title": "Randnotizen",
+    "region": "tiefe-bibliothek",
+    "length": "standard",
+    "beats": [
+      "Eine Hand hat durch dreißig Bände hindurch kommentiert.",
+      "Immer dieselbe Tinte, immer dieselbe Frage.",
+      "Sie beantwortet sie im letzten Band nicht.",
+      "Sie hört einfach auf, mitten in der Reihe."
+    ]
+  },
+  {
+    "id": "tb-10",
+    "title": "Eine Kerze weit",
+    "region": "tiefe-bibliothek",
+    "length": "standard",
+    "beats": [
+      "Du hast Licht für vier Stunden.",
+      "Der Rückweg braucht eine davon.",
+      "Also bleiben drei, und du teilst sie ein.",
+      "Bei der letzten halben Stunde kehrst du um."
+    ]
+  },
+  {
+    "id": "rm-01",
+    "title": "Eisen im Torf",
+    "region": "rostmoor",
+    "length": "standard",
+    "beats": [
+      "Aus dem Boden ragt ein Träger, mannshoch.",
+      "Zwanzig Schritt weiter der nächste, in einer Linie.",
+      "Die Linie läuft schnurgerade ins Moor.",
+      "Du folgst ihr, so lange der Boden trägt."
+    ]
+  },
+  {
+    "id": "rm-02",
+    "title": "Der Kiel",
+    "region": "rostmoor",
+    "length": "long",
+    "beats": [
+      "Was aussieht wie ein Zaun, ist ein Kiel.",
+      "Also lag hier ein Schiff, und zwar quer.",
+      "Du gehst es ab, Spant für Spant.",
+      "Es ist größer als jedes Schiff, das du kennst.",
+      "Am Heck steht eine Zahl, keine Sprache."
+    ]
+  },
+  {
+    "id": "rm-03",
+    "title": "Bohlenweg",
+    "region": "rostmoor",
+    "length": "short",
+    "beats": [
+      "Ein Bohlenweg, halb versunken, noch tragfähig.",
+      "Er endet nach hundert Schritt im Nichts.",
+      "Du gehst bis ans Ende und stehst dort."
+    ]
+  },
+  {
+    "id": "rm-04",
+    "title": "Rostwasser",
+    "region": "rostmoor",
+    "length": "standard",
+    "beats": [
+      "Das Wasser in den Kuhlen ist rot.",
+      "Nicht überall, sondern in Streifen.",
+      "Die Streifen laufen alle nach Nordost.",
+      "Also liegt dort mehr Eisen als hier."
+    ]
+  },
+  {
+    "id": "rm-05",
+    "title": "Die Torfstiche",
+    "region": "rostmoor",
+    "length": "standard",
+    "beats": [
+      "Alte Stiche, kantig, meterhoch.",
+      "In der Wand steckt Holz, viel älter als der Torf.",
+      "Also war hier Wald, bevor hier Moor war.",
+      "Du nimmst ein Stück mit, für später."
+    ]
+  },
+  {
+    "id": "rm-06",
+    "title": "Sondieren",
+    "region": "rostmoor",
+    "length": "long",
+    "beats": [
+      "Mit der Stange findet man den festen Grund.",
+      "Alle zwei Schritt einmal einstechen.",
+      "Es dauert lang und man kommt kaum vom Fleck.",
+      "Nach zwei Stunden hast du einen sicheren Pfad.",
+      "Du markierst ihn, damit es beim nächsten Mal schneller geht."
+    ]
+  },
+  {
+    "id": "rm-07",
+    "title": "Nebel über dem Moor",
+    "region": "rostmoor",
+    "length": "short",
+    "beats": [
+      "Morgens steht er kniehoch und man sieht die Füße nicht.",
+      "Du wartest, bis die Sonne ihn wegnimmt.",
+      "Dann sind es nur noch zwei Stunden."
+    ]
+  },
+  {
+    "id": "rm-08",
+    "title": "Die Nietenreihe",
+    "region": "rostmoor",
+    "length": "standard",
+    "beats": [
+      "Eine Platte mit Nieten, handbreit auseinander.",
+      "Sie sind kalt geschlagen, nicht warm.",
+      "Das ist keine Werft, das ist eine Reparatur.",
+      "Und zwar eine eilige."
+    ]
+  },
+  {
+    "id": "rm-09",
+    "title": "Was der Frost hebt",
+    "region": "rostmoor",
+    "length": "standard",
+    "beats": [
+      "Über Winter drückt der Boden Dinge nach oben.",
+      "Was letztes Jahr unten war, liegt jetzt offen.",
+      "Du gehst die Stellen ab, die du dir gemerkt hast.",
+      "Drei von acht haben etwas hergegeben."
+    ]
+  },
+  {
+    "id": "rm-10",
+    "title": "Die Schlackenhalde",
+    "region": "rostmoor",
+    "length": "long",
+    "beats": [
+      "Ein Hügel, der kein Hügel ist.",
+      "Alles daran ist Schlacke, nichts davon Fels.",
+      "Also stand hier ein Ofen, und zwar lange.",
+      "Du suchst die Beschickungsseite und findest sie.",
+      "Der Ofen selbst liegt unter der Halde, die er gemacht hat."
+    ]
+  },
+  {
+    "id": "rm-11",
+    "title": "Trittsicher",
+    "region": "rostmoor",
+    "length": "short",
+    "beats": [
+      "Der Pfad von gestern trägt heute nicht.",
+      "Also musst du einen neuen suchen.",
+      "Du findest ihn zwanzig Schritt weiter westlich."
+    ]
+  },
+  {
+    "id": "rm-12",
+    "title": "Die Kette",
+    "region": "rostmoor",
+    "length": "standard",
+    "beats": [
+      "Eine Kette kommt aus dem Torf und geht wieder hinein.",
+      "Die Glieder sind größer als deine Hand.",
+      "Du gräbst nach, in beide Richtungen.",
+      "Beide Enden verschwinden tiefer, als du kommst."
+    ]
+  },
+  {
+    "id": "rm-13",
+    "title": "Moorleuchten",
+    "region": "rostmoor",
+    "length": "standard",
+    "beats": [
+      "Nachts steht Licht über der Fläche, blass.",
+      "Es zieht nicht, es steht.",
+      "Du gehst hin und findest nichts, was leuchten könnte.",
+      "Von der Stelle aus siehst du es woanders."
+    ]
+  },
+  {
+    "id": "rm-14",
+    "title": "Bergung",
+    "region": "rostmoor",
+    "length": "standard",
+    "beats": [
+      "Ein Fund, zu schwer zum Tragen.",
+      "Du baust einen Schlitten aus dem, was da ist.",
+      "Er hält die halbe Strecke.",
+      "Die zweite Hälfte gehst du zweimal."
+    ]
+  },
+  {
+    "id": "rm-15",
+    "title": "Der letzte Träger",
+    "region": "rostmoor",
+    "length": "short",
+    "beats": [
+      "Der äußerste Träger steht schräg.",
+      "Dahinter ist nur noch Wasser.",
+      "Du drehst um, wie es vernünftig ist."
+    ]
+  },
+  {
+    "id": "sw-01",
+    "title": "Der Aufstieg",
+    "region": "sternwarte",
+    "length": "standard",
+    "beats": [
+      "Vom Tal bis zum Grat sind es vier Stunden.",
+      "Nach zwei Stunden hört der Wald auf.",
+      "Nach drei sieht man die Kuppel, sehr klein.",
+      "Sie ist offen, wie seit zweihundert Jahren."
+    ]
+  },
+  {
+    "id": "sw-02",
+    "title": "Das Fernrohr richten",
+    "region": "sternwarte",
+    "length": "long",
+    "beats": [
+      "Die Mechanik ist eingefroren, nicht gebrochen.",
+      "Du wärmst die Lager und arbeitest sie durch.",
+      "Nach einer Stunde bewegt sich die erste Achse.",
+      "Nach zwei die zweite.",
+      "Es zielt wieder. Nur nicht dorthin, wo die Skala sagt."
+    ]
+  },
+  {
+    "id": "sw-03",
+    "title": "Kälte",
+    "region": "sternwarte",
+    "length": "short",
+    "beats": [
+      "Oben ist es zehn Grad kälter als unten.",
+      "Man arbeitet in halben Stunden, dann wärmt man die Hände.",
+      "Du teilst dir die Zeit entsprechend ein."
+    ]
+  },
+  {
+    "id": "sw-04",
+    "title": "Die Beobachtungsbücher",
+    "region": "sternwarte",
+    "length": "standard",
+    "beats": [
+      "Vierzig Bände, gleichmäßig geführt.",
+      "Dann sechs Jahre Lücke.",
+      "Dann ein einziger Band, andere Hand, dichter beschrieben.",
+      "Und danach nichts mehr."
+    ]
+  },
+  {
+    "id": "sw-05",
+    "title": "Kuppel drehen",
+    "region": "sternwarte",
+    "length": "standard",
+    "beats": [
+      "Die Kuppel läuft auf Rädern, alle sechzehn da.",
+      "Vier sind fest, zwölf drehen sich.",
+      "Zu zweit wäre es leicht, allein dauert es.",
+      "Am Ende steht der Spalt, wo er stehen soll."
+    ]
+  },
+  {
+    "id": "sw-06",
+    "title": "Eine Nacht messen",
+    "region": "sternwarte",
+    "length": "long",
+    "beats": [
+      "Klarer Himmel, kein Wind, keine Ausrede.",
+      "Alle zwanzig Minuten ein Eintrag.",
+      "Nach der Hälfte werden die Zahlen ruhiger.",
+      "Gegen Morgen kommt Dunst von Osten.",
+      "Du hast neun Stunden auf drei Seiten."
+    ]
+  },
+  {
+    "id": "sw-07",
+    "title": "Die Uhr",
+    "region": "sternwarte",
+    "length": "short",
+    "beats": [
+      "Eine Pendeluhr, stehengeblieben.",
+      "Du ziehst sie auf und stellst sie nach der Sonne.",
+      "Sie geht. Um vier Minuten falsch, aber sie geht."
+    ]
+  },
+  {
+    "id": "sw-08",
+    "title": "Die falsche Skala",
+    "region": "sternwarte",
+    "length": "standard",
+    "beats": [
+      "Die Skala am Fernrohr passt nicht zum Himmel.",
+      "Der Unterschied ist überall gleich groß.",
+      "Also wurde sie verstellt, nicht verlernt.",
+      "Du rechnest die Verschiebung heraus und trägst sie ein."
+    ]
+  },
+  {
+    "id": "sw-09",
+    "title": "Der Wetterturm",
+    "region": "sternwarte",
+    "length": "standard",
+    "beats": [
+      "Ein zweiter Turm, kleiner, für die Instrumente.",
+      "Die Fenster sind ausgeschlagen, die Geräte nicht.",
+      "Also war es der Wind, nicht ein Mensch.",
+      "Drei von sieben Geräten laufen wieder an."
+    ]
+  },
+  {
+    "id": "sw-10",
+    "title": "Der lange Winter",
+    "region": "sternwarte",
+    "length": "long",
+    "beats": [
+      "Im Vorratsraum liegt Holz für drei Monate.",
+      "Es ist nicht angerührt worden.",
+      "Also ist jemand vor dem Winter gegangen.",
+      "Und wollte zurück, sonst hätte er es nicht geschlagen.",
+      "Du legst nach, für den, der als Nächstes kommt."
+    ]
+  },
+  {
+    "id": "sw-11",
+    "title": "Sicht nach Süden",
+    "region": "sternwarte",
+    "length": "short",
+    "beats": [
+      "Nach Süden liegt das Bruchglastal.",
+      "Bei dieser Sonne sieht man es blitzen.",
+      "Von hier oben ist es zum ersten Mal klein."
+    ]
+  },
+  {
+    "id": "sw-12",
+    "title": "Der Spiegel",
+    "region": "sternwarte",
+    "length": "standard",
+    "beats": [
+      "Der Hauptspiegel ist blind, nicht gesprungen.",
+      "Der Belag ist ab, das Glas ist ganz.",
+      "Du reinigst, was zu reinigen ist.",
+      "Er wirft wieder ein Bild, dunkel, aber scharf."
+    ]
+  },
+  {
+    "id": "sw-13",
+    "title": "Kartieren von oben",
+    "region": "sternwarte",
+    "length": "standard",
+    "beats": [
+      "Von hier sieht man sechs der acht Regionen.",
+      "Du zeichnest, was du siehst, nicht was du weißt.",
+      "Zwei Grenzen liegen anders als auf deiner Karte.",
+      "Du korrigierst deine, nicht die Landschaft."
+    ]
+  },
+  {
+    "id": "sw-14",
+    "title": "Signalfeuer",
+    "region": "sternwarte",
+    "length": "standard",
+    "beats": [
+      "Auf dem Grat steht eine Feuerpfanne.",
+      "Sie ist trocken und würde brennen.",
+      "Von hier sähe man es vier Regionen weit.",
+      "Du entzündest sie nicht. Noch nicht."
+    ]
+  },
+  {
+    "id": "sw-15",
+    "title": "Abstieg im Dunkeln",
+    "region": "sternwarte",
+    "length": "standard",
+    "beats": [
+      "Der Rückweg beginnt zwei Stunden zu spät.",
+      "Die ersten hundert Schritte sind die schwersten.",
+      "Danach kennt der Fuß den Weg besser als das Auge.",
+      "Unten brennt Licht, und zwar für dich."
+    ]
+  }
+]
