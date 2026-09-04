@@ -1,132 +1,297 @@
-# Screens
+# Screens & User Journey – Concept V2
 
-> Der visuelle Draft liegt als Claude-Design-Canvas vor (Link im Issue
-> `#release Design-Draft Review`). Diese Seite ist die textliche Referenz dazu.
+> Textliche UX-Referenz. Produktentscheidungen kommen aus [CONCEPT.md](CONCEPT.md). Die Welt ist das Menü; konventionelle UI wird dort eingesetzt, wo sie Verständlichkeit oder Accessibility verbessert.
 
-Reihenfolge entspricht dem Nutzerweg — von der Tavernentür bis zum Charakterbogen.
+## 1 · Erster Eintritt (`/`)
+
+**Modus: Welt betreten, nicht Marketing konsumieren.**
+
+Ruhige Waldszene, entferntes warmes Licht.
+
+> „Ah. Da bist du ja.“
+>
+> „Wir haben noch einen Platz am Feuer.“
+
+Primäre Aktion: **Zum Lager**.
+
+Kein laufender Demo-Timer, keine Klassenwerbung, kein Party-Code-Feld als dominanter Einstieg.
 
 ---
 
-## 1 · Landing (`/`)
-**Modus: Überzeugen.** Öffentlich, unter `pomodoro.lang-jamin.de`.
+## 2 · Login / Account (`/login`)
 
-Erklärt das Produkt in einem Bildschirm: die Quest-Metapher, die Klassen und das
-Party-Feature. Der Beweis ist ein **echter, laufender Timer** in der Hero-Fläche —
-kein Screenshot, kein Video. Wer die Seite öffnet, sieht das Produkt arbeiten.
+So wenig Reibung wie möglich. Account ist nötig für Charakter, Fortschritt und Gerätewechsel.
 
-Zwei Handlungsangebote, klar gewichtet: *Quest beginnen* (primär) und
-*Party beitreten* mit direktem Code-Feld (sekundär, aber sofort bedienbar). Der
-häufigste Besucher hat einen Code von einer Freundin bekommen — der darf nicht
-hinter einem Login liegen.
+Copy-Prinzip: Grund erklären statt Registrierung verkaufen, z. B. **„Damit dein Lager dich wiederfindet.“**
 
-## 2 · Login (`/login`) — „Die Tavernentür"
-Zwei Wege:
+Kein Gastzugang.
 
-1. **Discord** — die Zielgruppe hat dort schon einen Account.
-2. **Magic Link** per E-Mail — kein Passwort, das jemand vergessen kann.
+Zustände: lädt · Anmeldung versendet/gestartet · abgelaufen/abgebrochen · offline · Fehler.
 
-**Kein Gastzugang.** Konto und Charakter sind Pflicht, damit Fortschritt, Inventar und
-Level geräteübergreifend erhalten bleiben (Entscheidung zu W5, Issue #30).
+---
 
-Weil das die härteste Hürde der App ist und direkt vor dem ersten Erlebnis steht, trägt
-dieser Screen die entsprechende Verantwortung: kein Passwort, keine Bestätigungsmail vor
-dem Betreten, und der Text sagt, **warum** — nicht „Registrieren", sondern „Damit dein
-Charakter dir auf jedem Gerät folgt."
+## 3 · Charaktererstellung (`/character`)
 
-Zustände: `lädt` · `Magic Link verschickt` · `Link abgelaufen` · `OAuth abgebrochen`
-· `offline`.
+Fünf Völker: **Mensch · Elf · Zwerg · Goblin · Ork**.
 
-## 3 · Charakter (`/character`)
-**Fünf Völker:** Mensch, Elf, Zwerg, Goblin, Ork. Dazu ein Name.
+Keine Klassen und keine Geschlechtsauswahl.
 
-Die Wahl ist **Identität, keine Mechanik**. Sie bringt keine Fähigkeiten und keine
-Zeiten mit — besondere Fähigkeiten werden später *erspielt*, nicht gewählt
-(Entscheidung zu K1, Issue #27). Der Charakter bleibt dauerhaft, geht auf alle Quests
-und levelt.
+V1-Auswahl:
+- Volk
+- Körperform / Silhouette
+- Haut-/Fantasyfarbe
+- Frisur
+- Haarfarbe
+- Name
 
-Weil die Karten damit nichts Zählbares mehr zeigen, tragen sie das Volk selbst: Figur,
-eine Zeile Charakter, sonst nichts. Kein Raster gleich großer Icon-Karten — die gewählte
-Figur wird groß und steht neben dem Namensfeld.
+Keine Detailregler, Tattoos, Narben, Patches oder Make-up-Systeme.
 
-**Die Dauer hängt nicht mehr hier, sondern an der Quest.** Man wählt „Der verlassene
-Wachtturm · Mittlere Quest · 50 Minuten" im Abenteuerbuch — und das ist die Einstellung.
+Figur groß im Mittelpunkt, Änderungen live sichtbar. Nach Namensvergabe kein Success-Dialog; der Charakter geht direkt ins Lager.
 
-## 4 · Quest läuft (`/quest`) — Hauptscreen
-Der Bildschirm, den man 25 Minuten lang ansieht. Deshalb: **ruhig**.
+---
 
-- Der Timer beherrscht die Fläche. Große Ziffern, `tabular-nums`, Messing auf warmem
-  Schwarz.
-- Ein Fortschrittsring als Fassung — die einzige Ornamentik.
-- Darunter klein: welche Quest im Zyklus (2 von 4), die Klasse, der Streak.
-- Steuerung: *Pausieren* und *Aufgeben*. Mehr nicht. Alles Weitere liegt hinter einem
-  Menü und stört den Fokus nicht.
-- Auto-DND-Status als schlichte Zeile, nicht als Banner.
+## 4 · Lager (`/camp`)
 
-Zustände: `läuft` · `pausiert` · `letzte Minute` (der Ring wechselt die Farbe,
-kein Blinken) · `abgeschlossen`.
+**Home-Screen und zentraler Hub.** Leicht erhöhte 2D-Diorama-Perspektive.
 
-## 5 · Rast (`/quest` — Pausenphase)
-Sichtbar anderer Ort. Warme Ember-Töne statt Messing, ein Lagerfeuer mit ruhiger
-Atem-Animation (4 s, unter `reduce` stillstehend).
+Diegetische Objekte:
+- Abenteuerbuch → Quests
+- Charakter / Rucksack → Ausrüstung
+- Sammlung → Sets/Funde
+- Signalhorn → Gefährten/Party
+- Händlerwagen → kosmetische Goldkäufe
 
-Der Text lädt zur Pause ein, statt sie zu überwachen: „Deine Gruppe rastet. Steh auf,
-trink was." Der *Rast überspringen*-Button existiert, ist aber sekundär — Pausen zu
-überspringen ist der häufigste Fehler beim Pomodoro.
+Settings bleiben als dezentes konventionelles Zahnrad verfügbar.
 
-## 6 · Truhe (`/quest` — nach der Quest)
-**Der Moment.** Die Truhe erscheint mittig, das Umfeld tritt zurück.
+Erstes Lager ist bereits gemütlich: Feuer, einfacher Schlafplatz, Buch, Rucksack, Horn. Spätere Entwicklung macht es reicher und persönlicher, nicht erst „schön“.
 
-Öffnen ist eine bewusste Handlung — Klick, Leertaste oder Enter. Dann die
-Choreografie: Ruck, Riss, Lichtschein in der Seltenheitsfarbe, Inhalt steigt auf,
-Zahlen zählen hoch (`tabular-nums`, damit nichts zappelt).
+Auf Mobile wird die Szene neu komponiert statt nur verkleinert.
 
-Unter `prefers-reduced-motion` gibt es dieselbe Belohnung als Überblendung — gleicher
-Inhalt, gleicher Beat, keine Bewegung. Ungeöffnete Truhen wandern ins Inventar und
-gehen nicht verloren.
+---
 
-## 7 · Party-Hub (`/party`)
-Zwei gleichwertige Hälften: **Party gründen** und **Party beitreten**.
+## 5 · Abenteuerbuch (`/quests`)
 
-Beim Gründen erscheint der Code groß und gesperrt gesetzt — `H 2 6 H E` — mit einem
-Kopieren-Button, der den Erfolg auch bestätigt.
+Illustriertes Journal statt SaaS-Kartenraster.
 
-Beim Beitreten ein Fünf-Zeichen-Feld: Einfügen erlaubt, Groß-/Kleinschreibung egal,
-`I`/`L`→`1` und `O`→`0` werden automatisch gemappt. Fehlermeldung nennt den nächsten
-Schritt, nicht nur das Problem.
+Quest auf einen Blick:
+- Name
+- Region
+- Typ
+- **Dauer prominent**
+- kurzer Hook
 
-## 8 · Party-Quest (`/party/[code]`)
-Derselbe ruhige Timer wie im Solo-Modus — **eine Uhr, die für alle gilt** — plus die
-Mitgliederliste seitlich.
+Lesezeichen/Filter: **15 · 25 · 50 · Episch**.
 
-Jedes Mitglied: Name, Klassen-Sigel, Status (unterwegs / rastet / weg). Der Dungeon
-Master ist markiert; nur er sieht die Steuerung, alle anderen sehen an ihrer Stelle,
-wer steuert.
+Der Pool hält ungefähr zehn Optionen sichtbar und füllt sich nach; keine Fristen oder Ablaufkommunikation.
 
-Zustände, die gestaltet sein müssen: `wartet auf Start` · `ein Mitglied` ·
-`zwölf Mitglieder` · `Mitglied verbindet neu` · `DM hat verlassen, Rolle wandert` ·
-`eigene Verbindung weg` (deutlicher Hinweis — die angezeigte Zeit könnte veraltet sein).
+Questdetail zeigt Illustration/Atmosphäre, 1–2 Erzählerzeilen, Dauer und Grundbelohnungen.
 
-## 9 · Charakterbogen (`/character/sheet`)
-Kein Dashboard voller Kacheln. Ein **Bogen**: Klasse, Stufe, XP-Balken, Gold,
-Streak-Tage, absolvierte Quests, Inventar der Fundstücke.
+Aktionen: **Alleine aufbrechen** · **Gefährten rufen** (sobald Party verfügbar ist).
 
-Die Fokus-Historie als schlichte Wochenansicht — informativ, ohne Druck zu erzeugen.
-Es gibt bewusst keine roten Lücken für ausgelassene Tage.
+Kein Pflichtfeld „Woran möchtest du arbeiten?“.
 
-## 10 · Einstellungen (`/settings`)
-Eigene Zeiten, Ton, Systembenachrichtigungen, Auto-DND, Design (Dunkel / Hell /
-System), Bewegung reduzieren, Sprache. Dazu Datenexport und Kontolöschung — sichtbar,
-nicht versteckt.
+---
+
+## 6 · Aufbruch
+
+Kurze 3–5-Sekunden-Sequenz. Charakter steht auf, nimmt Ausrüstung, Musikmotiv beginnt, Szene wechselt. Danach startet die Fokuszeit.
+
+---
+
+## 7 · Quest läuft (`/quest/[session]`)
+
+**Hauptscreen. Ruhig, illustrativ, lesbar.**
+
+- dominante 2D-Questlandschaft
+- Questname
+- integrierter exakter Timer, standardmäßig z. B. `18:42`
+- atmosphärischer Reise-/Fortschrittsindikator
+- Pause
+- Audio
+- optional Vollbild
+- Quest verlassen
+
+Der Timer ist Teil der Abenteuerwelt, aber funktional sofort lesbar. Kein riesiger generischer Digitaltimer als Overlay.
+
+Timer-Modi:
+- exakt
+- ungefähr („Noch etwa 20 Minuten“)
+- atmosphärisch (nur Journey-Fortschritt)
+
+Während Fokus kein Inventar, Händler, Sammlung, Chat, Pings oder klickbare Spielmechanik.
+
+Zustände: läuft · pausiert · offline/reconnecting · abgeschlossen.
+
+---
+
+## 8 · Questabschluss
+
+Die Szene erreicht ihr Ziel; Aufbruchsmotiv löst sich musikalisch auf. Kein schriller Beep.
+
+Anzeige:
+
+**Quest abgeschlossen**
+
+`+ XP` · `+ Gold`
+
+**Eine Truhe wartet auf dich.**
+
+Die Truhe wird jetzt noch nicht geöffnet.
+
+---
+
+## 9 · Rast (`/quest/[session]/rest` oder Session-State)
+
+Charakter am Feuer. Optional eine einzige kleine Handlung wie **Holz nachlegen**.
+
+Danach:
+
+> „Das Feuer hält. Geh ruhig. Wir passen hier auf.“
+
+Keine Minispiele, kein Händler, keine Sammlung, kein Lootmenü.
+
+Kurze Rast ca. 5 Minuten. Lange Rast wird später anhand kumulierter Fokuszeit empfohlen, nicht nach starrer Questanzahl.
+
+Rast überspringen ist erlaubt und ohne Strafe.
+
+---
+
+## 10 · Truhe
+
+Erst nach der Rast bzw. nach bewusstem Überspringen.
+
+> „Während du weg warst, hat sich die Truhe leider nicht selbst geöffnet.“
+
+Aktionen: **Truhe öffnen** · **Später**.
+
+Öffnung wirkt materiell und hochwertig, nicht wie Slotmachine. Reduced Motion zeigt denselben Inhalt ohne große Bewegung.
+
+Wenn ein Item enthalten ist, ist es neu. Gefundene Ausrüstung wird nicht automatisch angelegt.
+
+Erste Truhe im Onboarding ist deterministisch: **Alte Weglaterne** (oder final benannter äquivalenter Lagerfund). Danach sichtbare Platzierung im Lager.
+
+---
+
+## 11 · Sammlung
+
+Wird erst nach dem ersten relevanten Fund eingeführt.
+
+Thematische Sets statt generischer Itemlisten, z. B. **Relikte des Flüsterwaldes · 3/5**. Unbekannte Teile als Silhouetten/Hinweise.
+
+---
+
+## 12 · Händler
+
+Erscheint nach frühen Fortschritten als Welt-Ereignis und bleibt danach im Lager.
+
+Nur kosmetische Waren gegen Gold. Keine Countdown-Angebote, keine dauerhafte künstliche Verknappung.
+
+---
+
+## 13 · Charakter / Ausrüstung
+
+Kein klassischer RPG-Charakterbogen mit Stats oder Streak.
+
+Zeigt:
+- Charakter und Level
+- XP / kumulativen Fortschritt
+- Gold
+- kosmetische Ausrüstung
+- freigeschaltete Looks
+- neutrale Fokus-/Questhistorie, sofern später vorgesehen
+
+Keine Power-Werte und keine roten „verpassten Tage“.
+
+---
+
+## 14 · Signalhorn / Party
+
+Das Signalhorn öffnet die soziale Ebene aus dem Lager heraus.
+
+Standard: **Einladungslink teilen**. Zusätzlich kurzer Party-Code als Fallback.
+
+Kein Freundschafts-Handshake vor der ersten Session. Nach gemeinsamer Quest optional: **Als Gefährten merken**.
+
+Konto und Charakter sind Pflicht.
+
+---
+
+## 15 · Party wartet
+
+Alle sehen vorgeschlagene Quest, Dauer und Bereitschaft.
+
+Beispiel:
+- Daisy — bereit ✓
+- Benny — bereit ✓
+- Juliette — noch nicht bereit
+
+Kein Dungeon Master und kein automatischer Countdown. Start erst nach Bereitschaft aller aktuellen Mitglieder.
+
+---
+
+## 16 · Party-Quest
+
+Dieselbe Fokusoberfläche wie solo, zusätzlich die gemeinsam reisenden Charaktere. Eine gemeinsame serverbasierte Uhr.
+
+Während Fokus:
+- kein Chat
+- keine Emojis
+- keine Pings
+- keine Reactions
+
+**Zusammen allein.**
+
+Individueller Abbruch beendet die Quest nicht für andere.
+
+Erstmaliger Beitritt während einer laufenden Quest ist nicht möglich; der Screen zeigt, dass die Gruppe unterwegs ist und bei der nächsten Quest gemeinsam aufbrechen kann. Reconnect eines bestehenden Teilnehmers stellt die laufende Session wieder her.
+
+Abschluss: individuelle XP/Gold/Truhen; keine Party-Truhe. Optional kleiner additiver Goldbonus.
+
+---
+
+## 17 · Einstellungen (`/settings`)
+
+Bewusst konventionell und klar:
+- Account
+- Timerdarstellung
+- Ruhiger Fokus
+- Reduced Motion
+- Musik
+- Umgebung
+- Effekte
+- alles stummschalten
+- Accessibility
+- später Benachrichtigungen
+- Datenexport / Kontolöschung
+
+Keine Fantasy-Metapher, wenn sie Bedienbarkeit verschlechtert.
+
+---
+
+## 18 · Rückkehr / laufende Quest auf anderem Gerät
+
+Wenn eine Session läuft, wird sie wiederhergestellt:
+
+> „Du bist noch unterwegs.“
+
+Restzeit wird aus dem autoritativen Sessionzustand rekonstruiert, nicht lokal neu gestartet.
+
+Nach langer Abwesenheit kein Recovery-/Schuld-Screen. Lager bleibt unverändert.
 
 ---
 
 ## Für jeden Screen verbindlich
 
-| | |
+| Prinzip | Regel |
 |---|---|
-| Zustände | leer · lädt · Fehler · offline — keine Ausnahme |
-| Tastatur | vollständig bedienbar, sichtbarer Fokusring |
-| Responsiv | 360 px bis 1920 px, ohne horizontales Scrollen |
-| Themes | dunkel **und** hell, beide geprüft |
-| Texte | Problem **und** nächster Schritt bei jedem Fehler |
-| URL | Zustand steckt in der URL — Party-Code ist teilbar |
+| Zustände | leer · lädt · Fehler · offline/reconnect, wo relevant |
+| Tastatur | Kernfunktionen vollständig bedienbar, sichtbarer Fokus |
+| Semantik | diegetisch visuell, semantisch darunter |
+| Responsive | Mobile neu komponieren, nicht Desktop nur schrumpfen |
+| Farbe | Status nie ausschließlich über Farbe |
+| Audio | wichtige Information nie ausschließlich akustisch |
+| Motion | `prefers-reduced-motion` + In-App Reduced Motion |
+| Fokus | keine unnötige Interaktion während laufender Quest |
+| Copy | warm, kurz, klar; Fehler nennen Problem und nächsten Schritt |
+
+**Informationshierarchie:** Verständlichkeit → Fokus → Atmosphäre → dekorativer Detailreichtum.

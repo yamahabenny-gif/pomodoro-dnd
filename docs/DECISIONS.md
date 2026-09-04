@@ -1,220 +1,164 @@
-# Architecture Decision Records
+# Architecture & Product Decision Records
 
-Kurz halten. Vier Zeilen reichen. Der Zweck ist, dass in sechs Monaten niemand eine
-Entscheidung zurückdreht, ohne den Grund zu kennen — und dass das übernehmende Team
-nicht raten muss.
+> Historische ADRs bleiben nachvollziehbar, aber **Concept V2 ist die verbindliche Produktspezifikation**. Bei Widerspruch gilt die neuere Entscheidung in diesem Dokument bzw. `CONCEPT.md`.
 
-Format: **Kontext · Entscheidung · Alternative · Grund** — plus Status.
+Format: **Kontext · Entscheidung · Alternative · Grund**.
 
 ---
 
+## Weiterhin gültige technische Entscheidungen
+
 ### ADR-001 · Supabase Realtime statt eigenem WebSocket-Server
-**Status:** angenommen · 2026-09-04
-**Kontext:** Die Party braucht Echtzeit-Synchronisation.
-**Entscheidung:** Supabase Realtime Broadcast.
-**Alternative:** Eigener Node/Bun-WebSocket-Service mit Redis.
-**Grund:** Das Protokoll überträgt Phasenwechsel, keine Ticks — wenige Nachrichten pro
-halbe Stunde und Party. Ein eigener Service wäre Infrastruktur ohne passende Last, und
-das übernehmende Team müsste ihn betreiben.
+**Status:** angenommen · 2026-09-04  
+**Kontext:** Party braucht Echtzeit-Synchronisation.  
+**Entscheidung:** Supabase Realtime Broadcast.  
+**Grund:** Das Protokoll überträgt Zustandswechsel, keine sekündlichen Ticks.
 
-### ADR-002 · Der Timer ist ein Zeitstempel, kein Countdown
-**Status:** angenommen · 2026-09-04
-**Kontext:** Alle Mitglieder müssen dieselbe Zeit sehen.
-**Entscheidung:** Server hält `phase_started_at` + `phase_duration_s`; Clients rechnen
-die Restzeit selbst aus und korrigieren über einen gemessenen Uhren-Offset.
-**Alternative:** Server sendet jede Sekunde die Restzeit.
-**Grund:** Übernimmt das Prinzip des Referenzprojekts (Zustand an der Wanduhr verankert).
-Überlebt Reconnects, Hintergrund-Tabs und Standby ohne Sonderbehandlung, und ein später
-beitretendes Mitglied ist sofort korrekt. Sekündliches Senden wäre teurer *und* fragiler.
+### ADR-002 · Timer ist Zeit-/Sessionzustand, kein lokaler Countdown
+**Status:** angenommen · 2026-09-04  
+**Entscheidung:** Autoritative Zeitinformation; Clients leiten Restzeit daraus ab.  
+**Grund:** Überlebt Reload, Hintergrund-Tab, Gerätewechsel, Reconnect und Party-Sync.
 
-### ADR-003 · Fünfstelliger Code aus 32 Zeichen ohne I, L, O, U
-**Status:** angenommen · 2026-09-04
-**Kontext:** Der Code wird vorgelesen und abgetippt.
-**Entscheidung:** `0-9 A-Z` ohne `I L O U`, Länge 5 → 33,5 Mio. Kombinationen.
-**Alternative:** UUID-Kurzform oder sechs Zeichen.
-**Grund:** `I/L/1` und `O/0` sind beim Vorlesen nicht unterscheidbar; ohne `U` entstehen
-keine ungewollten Wörter. Fünf Zeichen bleiben am Telefon durchsagbar. Gegen das Erraten
-schützen Rate-Limits, nicht die Länge.
-
-### ADR-004 · Verpasste Phasen — nachholen oder verfallen?
-**Status:** **offen** — Entscheidung im Review von M3
-**Kontext:** Waren alle Clients über einen Phasenwechsel offline, ist unklar, was gilt.
-**Empfehlung:** Verfallen, Party geht in `idle`. Nachträgliches Gutschreiben lädt dazu
-ein, Fortschritt durch Wegklicken zu erzeugen — und entwertet damit die Belohnung.
-
-### ADR-005 · Dunkel als Standard
-**Status:** angenommen · 2026-09-04
-**Kontext:** Welcher Modus ist voreingestellt?
-**Entscheidung:** Dunkel, mit vollwertigem hellen Modus und System-Erkennung.
-**Alternative:** Hell, oder ausschließlich System.
-**Grund:** Aus der Nutzungssituation, nicht aus Geschmack: Der Timer steht stundenlang
-im Randblickfeld, oft abends. Eine helle Fläche, die 25 Minuten leuchtet, ermüdet.
-
-### ADR-006 · Loot ist kosmetisch und nicht kaufbar
-**Status:** angenommen · 2026-09-04
-**Kontext:** Was steckt in den Truhen?
-**Entscheidung:** XP, Gold und rein kosmetische Fundstücke. Kein Kauf, keine Spielvorteile.
-**Alternative:** Freischaltbare Funktionen oder Premium-Inhalte.
-**Grund:** Loot ist hier Rückmeldung für getane Arbeit. Sobald man es kaufen kann, ist
-es keine Rückmeldung mehr, sondern eine Währung — und die Motivation kippt.
+### ADR-003 · Kurzer Party-Code als Fallback
+**Status:** **geändert durch ADR-024**  
+Der bestehende fünfstellige Code kann als Fallback bestehen bleiben, ist aber nicht mehr der primäre Einladungsweg.
 
 ### ADR-007 · Keine Game-Engine
-**Status:** angenommen · 2026-09-04
-**Kontext:** Wanderung, Truhen und Kulissen brauchen Bewegung.
-**Entscheidung:** SVG und CSS, dazu `motion` für Choreografie. Kein Phaser, kein PixiJS, kein Three.js.
-**Alternative:** Eine der genannten Engines.
-**Grund:** Ein WebGL-Canvas, der 50 Minuten am Stück rendert, ist in einer Fokus-App
-ein Fehler — er zieht Akku, lässt den Lüfter angehen und holt sich Aufmerksamkeit, die
-gerade woanders gebraucht wird. Dazu 150–600 kB Laufzeit für Physik, Sprite-Batching und
-Szenengraph, von denen wir nichts nutzen.
+**Status:** angenommen · 2026-09-04  
+**Entscheidung:** 2D-Webdarstellung; keine Phaser/Pixi/Three-Game-Engine ohne neue belegte Notwendigkeit.  
+**Grund:** Fokus-App benötigt Illustration und zeitbasierte Zustände, keine Physik- oder Kampfsimulation.
 
-### ADR-008 · Die Wanderung ist abgeleiteter Zustand
-**Status:** angenommen · 2026-09-04
-**Kontext:** Die Gruppe soll während der Quest sichtbar unterwegs sein.
-**Entscheidung:** `Position = verstrichene Zeit / Quest-Dauer`. Keine eigene
-Animationsschleife, keine gespeicherte Position.
-**Alternative:** Eine Animation mit eigenem Zeitgeber, die bei Phasenwechseln
-zurückgesetzt und über die Party synchronisiert wird.
-**Grund:** Dieselbe Idee wie ADR-002. Damit ist die Wanderung nach Hintergrund-Tab,
-Standby und für spät beitretende Mitglieder automatisch korrekt — ohne eine Zeile
-Synchronisationscode. Die Alternative wäre ein zweites Sync-Problem neben dem, das
-wir schon gelöst haben.
+### ADR-008 · Journey ist abgeleiteter Zustand
+**Status:** angenommen · 2026-09-04  
+**Entscheidung:** Visueller Fortschritt wird aus verstrichener Zeit / Questdauer abgeleitet.  
+**Grund:** Robuste Wiederherstellung und Synchronisation ohne zweite Animationsuhr.
 
-### ADR-009 · Rive nur für die Höhepunkte
-**Status:** angenommen · 2026-09-04
-**Kontext:** Die Truhe hat fünf Seltenheitsstufen mit derselben Choreografie.
-**Entscheidung:** Rive für Truhe, Stufenaufstieg und Party-Truhe. Alles andere in CSS
-und `motion`. Die Laufzeit wird erst bei `progress > 0.9` nachgeladen.
-**Alternative:** Alles handanimiert, oder Lottie.
-**Grund:** Fünf handanimierte Varianten derselben Choreografie laufen auseinander,
-sobald jemand eine davon anfasst. Rives State Machine hält sie in einer Datei zusammen
-und macht sie ohne Deployment änderbar. Der Preis — 200 kB WASM und ein Werkzeug, das
-jemand bedienen muss — ist nur für diese wenigen Momente gerechtfertigt, nicht für
-Übergänge oder Icons. Lottie bringt bei größerem Aufwand keinen Zusatznutzen, solange
-niemand im Team ohnehin mit After Effects arbeitet.
+### ADR-011 · Item-Baukasten bleibt technisches Hilfsmittel
+**Status:** angenommen mit neuer Rolle  
+Der bestehende Baukasten kann Darstellung liefern; Produktwahrheit ist der katalogisierte, dauerhaft freischaltbare Gegenstand mit No-Duplicate-Regel.
 
-### ADR-010 · Hybride Kunstrichtung mit scharfer Grenze
-**Status:** angenommen · 2026-09-04
-**Kontext:** Die Oberfläche ist Linienzeichnung, das Spiel braucht reichere Bilder.
-**Entscheidung:** Oberfläche bleibt Linie. Illustration ausschließlich innerhalb
-begrenzter Felder: Item-Kachel, Truhen-Podest, Wanderungs-Band.
-**Alternative:** Alles illustrieren, alles Linie lassen, oder Pixel-Art.
-**Grund:** Der Hybrid trägt nur, solange die Grenze scharf ist. Ein Verlauf zwischen
-beiden Welten ist genau der Punkt, an dem so etwas nach zwei Projekten aussieht. Mit
-Rahmen liest sich Illustration als *Abbildung eines Gegenstands* statt als Dekoration
-der Oberfläche.
+### ADR-012 · Quests werden als Content gepflegt, nicht aus Satzbausteinen erzeugt
+**Status:** angenommen  
+Vorhandener Questcontent darf weiterverwendet werden, sofern Ton, Dauer und Struktur Concept V2 entsprechen.
 
-### ADR-011 · 576 Gegenstände aus 26 gezeichneten Teilen
-**Status:** angenommen · 2026-09-04
-**Kontext:** Der Spielinhalt braucht viele unterscheidbare Gegenstände.
-**Entscheidung:** 12 Grundformen × 6 Materialien × 8 Embleme, deterministisch aus der
-Item-Kennung abgeleitet. Ein optionales Feld `art` überschreibt mit einer Illustration.
-**Alternative:** Jeden Gegenstand einzeln zeichnen, oder generieren lassen.
-**Grund:** Bildwiederholung fällt weit weniger auf als Textwiederholung — genau umgekehrt
-zu den Quests, die deshalb einzeln geschrieben sind. Der Baukasten geht sofort live und
-bleibt automatisch auf Strichstärke; Illustrationen kommen nach Seltenheit priorisiert
-dazu, ohne dass ein Screen darauf wartet. Generierte Icons scheiden aus, weil man
-Seltenheit erkennen können muss und 576 Einzelgenerierungen nie zueinander passen.
-
-### ADR-012 · 100 einzeln geschriebene Quests statt Textbausteinen
-**Status:** angenommen · 2026-09-04
-**Kontext:** In einem Arbeitstag laufen bis zu 16 Quests. Wiederholung fällt sofort auf.
-**Entscheidung:** 100 von Hand geschriebene Quests in acht Regionen, mit je 3–5
-Wegabschnitten, als `content/quests.de.json`. Auswahl deterministisch aus Party-Code
-und Zyklus, zuletzt gespielte ausgeschlossen.
-**Alternative:** Prozedural aus Satzbausteinen erzeugen.
-**Grund:** Kombinierter Text liest sich nach dem dritten Mal wie kombinierter Text.
-Das ist bei Bildern anders (siehe ADR-011) — bei Sprache merkt man das Raster sofort.
-100 Quests decken auch einen sehr langen Tag ohne Wiederholung ab.
-
-### ADR-013 · Ein Volk, dauerhaft, ohne Mechanik
-**Status:** angenommen · 2026-09-04 (Issue #27)
-**Kontext:** Konzept V1 §4 verlangt Völker ohne Klassen; das ursprüngliche Briefing
-sprach von einer Klasse, die auf Quests geht.
-**Entscheidung:** Ein Volk (Mensch, Elf, Zwerg, Goblin, Ork), einmal gewählt, dauerhaft.
-Reine Identität — keine Zeiten, keine Attribute, keine angeborenen Fähigkeiten.
-Besondere Fähigkeiten gibt es **als Gewinn**, nicht als Anlage.
-**Alternative:** Sechs Klassen, die zugleich das Timer-Profil setzen.
-**Grund:** Die Dauer gehört an die Quest, nicht an den Charakter. Wer heute fünfzehn
-Minuten schafft und morgen fünfzig, soll nicht den Charakter wechseln müssen — gerade
-bei einer Zielgruppe, deren Belastbarkeit von Tag zu Tag schwankt.
+### ADR-013 · Fünf Völker, keine mechanischen Klassen
+**Status:** angenommen  
+Mensch, Elf, Zwerg, Goblin, Ork. Reine Identität. Quest bestimmt Fokusdauer.
 
 ### ADR-014 · Kein Gastzugang
-**Status:** angenommen · 2026-09-04 (Issue #30, W5)
-**Kontext:** Ein Gastzugang senkt die Hürde für den Gruppenbeitritt erheblich.
-**Entscheidung:** Konto und Charakter sind Pflicht. Kein anonymer Beitritt.
-**Alternative:** Gast für die Sitzung, Belohnungen später gutschreiben.
-**Grund:** Fortschritt, Inventar und Level müssen geräteübergreifend erhalten bleiben,
-und der Charakter muss am Lagerfeuer sitzen können. Ein Gast ohne Charakter hat im
-Lager keinen Platz — die Metapher trägt ihn nicht.
-**Preis, den wir dafür zahlen:** Der Login ist die härteste Hürde der App und steht vor
-dem ersten Erlebnis. Der Login-Screen trägt dafür besondere Verantwortung: kein Passwort,
-keine Bestätigungsmail vor dem Betreten, und der Text nennt den Grund.
+**Status:** angenommen  
+Konto und Charakter sind für persistente Nutzung und Party erforderlich.
 
 ### ADR-015 · Bereitschaftsprüfung statt Dungeon Master
-**Status:** angenommen · 2026-09-04 (Issue #28)
-**Kontext:** Wer startet, pausiert und überspringt in einer Gruppe?
-**Entscheidung:** Niemand. Aufbruch, wenn alle bereit sind; Rast folgt automatisch;
-Abbruch gilt nur für einen selbst.
-**Alternative:** Ein Dungeon Master steuert, die Rolle wandert beim Verlassen.
-**Grund:** Beseitigt eine ganze Klasse von Problemen — keine Rolle, die weitergereicht
-werden muss; keine Gruppe, die auf eine Person wartet; kein sozialer Druck durch eine
-Person, die alle anderen steuert.
+**Status:** angenommen  
+Alle bestätigen vor dem gemeinsamen Aufbruch. Individueller Abbruch betrifft nur die eigene Person.
 
-### ADR-016 · Das Abenteuerbuch läuft nie leer
-**Status:** angenommen · 2026-09-04 (Issue #30, W2)
-**Kontext:** Konzept V1 §5 sieht zehn Quests pro Woche vor.
-**Entscheidung:** Zehn Quests als kuratierte Auswahl, aber abgeschlossene werden
-**ersetzt, nicht gestrichen**. Der Wochenwechsel mischt neu und nimmt nichts weg; es
-gibt keine Frist und keine Ablaufkommunikation.
-**Alternative:** Feste zehn pro Woche, danach leeres Buch.
-**Grund:** Bei sechs Quests am Tag wäre die Woche nach zwei Tagen vorbei — genau bei
-den Nutzern, die am meisten arbeiten. Und „die Quests dieser Woche" erzeugt die Sorge,
-etwas zu verpassen, die Konzept V1 §14 ausschließt.
+### ADR-016 · Abenteuerbuch läuft nie leer
+**Status:** angenommen  
+Ungefähr zehn sichtbare Quests; abgeschlossene werden nachgefüllt. Keine Frist-/Expiry-Kommunikation.
 
-### ADR-017 · Vier Quest-Längen, kürzeste 15 Minuten
-**Status:** angenommen · 2026-09-04 (Issue #30, W3)
-**Kontext:** Konzept V1 §6 bot 25, 50 und 90 Minuten an.
-**Entscheidung:** Vier Stufen — Kundschaftergang 15, Kurze Quest 25, Mittlere Quest 50,
-Epische Quest 90 (letztere noch in Klärung, Issue #32).
-**Alternative:** Bei drei Stufen ab 25 Minuten bleiben.
-**Grund:** Konzept V1 §1 adressiert ausdrücklich Menschen, die Schwierigkeiten haben,
-lange fokussiert zu bleiben. Wäre 25 Minuten die kürzeste Stufe, wäre der Einstieg für
-einen erheblichen Teil dieser Zielgruppe der erste Misserfolg.
+### ADR-018 · Epische Quest ist 3×25 Minuten
+**Status:** angenommen  
+Drei persistente Akte mit Rasten; Boss/Höhepunkt in Akt III. Kein 90-Minuten-Dauerblock.
 
-### ADR-018 · Die epische Quest ist ein Bogen, kein Block
-**Status:** angenommen · 2026-09-04 (Issue #32)
-**Kontext:** Konzept V1 §6 setzte die epische Quest auf ca. 90 Minuten.
-**Entscheidung:** Drei Fokusabschnitte à 25 Minuten mit Rasten dazwischen, erzählt als
-**eine** Quest. Der Bosskampf ist der dritte Abschnitt. Gesamtfokuszeit 75 Minuten.
-**Alternative:** Neunzig Minuten am Stück.
-**Grund:** Ein ununterbrochener 90-Minuten-Block widerspricht dem Grundsatz, auf dem die
-Methode beruht, und trifft ausgerechnet die Zielgruppe aus Konzept V1 §1. Das epische
-Gefühl bleibt, die Pausen bleiben drin, und der Wiedereinstieg ist erzählerisch motiviert.
-**Technische Folge:** `arcProgress()` rechnet den Fortschritt über alle drei Abschnitte.
-Ohne das spränge die Kulisse bei jeder Rast an den Anfang zurück.
+---
 
-### ADR-019 · Ruhiger Ton bei kurz und mittel, laut nur beim Boss
-**Status:** angenommen · 2026-09-04 (Issue #31)
-**Kontext:** Konzept V1 fordert Cozy Fantasy mit Drachen; der vorhandene Questpool war
-karg und ohne Kreaturen.
-**Entscheidung:** Kundschaftergang, kurze und mittlere Quests behalten den ruhigen,
-beobachtenden Ton. Epische Quests und Bosskämpfe dürfen laut sein.
-**Alternative:** Durchgängig ein Ton.
-**Grund:** Konzept V1 §15 macht die Unterscheidung selbst („Fokusoberfläche: ruhig",
-„Bosskämpfe: deutlich epischer"). Kurze und mittlere Quests laufen nebenher, während
-jemand arbeitet — dort ist Zurückhaltung keine Stilfrage, sondern Funktion. Epische
-Quests sind eine pro Woche und dürfen tragen.
-**Umsetzung:** Jede Region trägt `theme` (Zuordnung zu Konzept V1 §5) und `tone`.
-Ein Test hält den lauten Wortschatz aus den nicht-epischen Quests heraus.
+## Concept-V2-Entscheidungen
 
-### ADR-020 · Mindestgrößen der Loot-Töpfe sind hergeleitet, nicht geschätzt
-**Status:** angenommen · 2026-09-04 (Issue #33)
-**Kontext:** „Keine Duplikate" hält nur, solange die Töpfe reichen.
-**Entscheidung:** 40 gewöhnliche, 20 seltene, 12 epische und 12 legendäre Einträge je
-Kategorie. Insgesamt 336 Einträge in 16 Töpfen.
-**Grund:** Bei acht Quests am Tag und vier Kategorien zieht ein Topf
-`8 × Wahrscheinlichkeit ÷ 4` Mal täglich — für gewöhnlich 1,2. Vierzig Einträge halten
-damit gut einen Monat. Der erste Entwurf hatte zwanzig, und der Reichweiten-Test deckte
-auf, dass es innerhalb von 30 Tagen 65-mal Gold statt eines Gegenstands gegeben hätte.
-Die Zahl steht jetzt als Test, nicht als Annahme.
+### ADR-021 · Vier Seltenheitsstufen
+**Status:** angenommen · 2026-09-04  
+**Kontext:** Ältere Dokumente nannten fünf Stufen.  
+**Entscheidung:** Gewöhnlich 60 %, Ungewöhnlich 27 %, Selten 11 %, Außergewöhnlich 2 %.  
+**Grund:** Einfacheres No-Duplicate-System und klarere kosmetische Progression.
+
+### ADR-022 · Questabschluss → Rast → Truhe
+**Status:** angenommen · 2026-09-04  
+**Kontext:** Frühere Schleife öffnete Loot vor der Pause.  
+**Entscheidung:** Nach Abschluss werden XP/Gold und eine wartende Truhe angezeigt; zuerst Rast, danach Lootöffnung.  
+**Grund:** Die Belohnung darf die reale Pause nicht am Bildschirm auffressen.
+
+### ADR-023 · Keine Streaks
+**Status:** angenommen · 2026-09-04  
+**Entscheidung:** Keine Tagesstreaks, auch keine „unzerbrechlichen“ Streaks.  
+**Grund:** Kalenderbasierte Serien erzeugen impliziten Druck und widersprechen der No-Dark-Patterns-Charta.
+
+### ADR-024 · Einladungslink primär, Code als Fallback
+**Status:** angenommen · 2026-09-04  
+**Entscheidung:** Signalhorn erzeugt bevorzugt einen teilbaren Einladungslink; kurzer Party-Code bleibt für Vorlesen/anderes Gerät verfügbar.  
+**Grund:** Link minimiert Reibung, Code bleibt praktischer Fallback. Beide referenzieren dieselbe Party.
+
+### ADR-025 · Keine Party-Truhe
+**Status:** angenommen · 2026-09-04  
+**Kontext:** Früher war eine zusätzliche, mit Gruppengröße skalierende Truhe vorgesehen.  
+**Entscheidung:** Jede Person erhält individuelle normale Rewards; optional nur ein sehr kleiner additiver Goldbonus.  
+**Grund:** Solo darf wirtschaftlich nicht zur schlechteren Spielweise werden.
+
+### ADR-026 · Kein erstmaliger Drop-in in laufende Quest
+**Status:** angenommen · 2026-09-04  
+**Entscheidung:** Neue Teilnehmer warten bis zum nächsten gemeinsamen Aufbruch. Reconnect bestehender Teilnehmer stellt die laufende Session wieder her.  
+**Grund:** Bewahrt Ready-Check-Ritual und vermeidet unklare Teilbelohnungen.
+
+### ADR-027 · Minimale, genderfreie Charaktererstellung
+**Status:** angenommen · 2026-09-04  
+**Entscheidung:** Volk, Körperform, Haut-/Fantasyfarbe, Frisur, Haarfarbe, Name. Keine Geschlechtsauswahl und keine Detailregler.  
+**Grund:** Identität ohne unnötige Onboarding-Reibung; visuelle Optionen werden nicht künstlich nach Gender getrennt.
+
+### ADR-028 · Lager ist Home und Navigation
+**Status:** angenommen · 2026-09-04  
+**Entscheidung:** Die Welt ist das Menü: Abenteuerbuch, Rucksack, Sammlung, Signalhorn und Händler leben im Lager. Settings bleiben konventionell erreichbar.  
+**Grund:** Das Produkt soll eine Fantasywelt sein, nicht ein SaaS-Dashboard mit Fantasy-Skin.
+
+### ADR-029 · Kuratierte Lager-Slots statt freiem Housing
+**Status:** angenommen · 2026-09-04  
+**Entscheidung:** Dekoration über definierte Slots, keine freie Platzierung.  
+**Grund:** Personalisierung und sichtbare Geschichte ohne zweiten komplexen Spielmodus.
+
+### ADR-030 · XP und Gold haben getrennte Rollen
+**Status:** angenommen · 2026-09-04  
+**Entscheidung:** 1 tatsächlich fokussierte Minute = 1 XP. 1 Gold pro 5 erfolgreich abgeschlossenen Fokusminuten. Bei Abbruch bleiben XP, aber kein Questabschluss-Gold/keine Truhe.  
+**Grund:** Investierte Zeit bleibt wertvoll, Abschluss erhält trotzdem einen eigenen Reward.
+
+### ADR-031 · Erste Truhe ist deterministisch
+**Status:** angenommen · 2026-09-04  
+**Entscheidung:** Erste 15-Minuten-Onboardingquest gibt einen kuratierten Lagerfund, z. B. die Alte Weglaterne.  
+**Grund:** Der erste Loop muss zuverlässig zeigen, dass reale Fokuszeit die Welt sichtbar verändert.
+
+### ADR-032 · Art Direction: lebendiges illustriertes Abenteuerbuch
+**Status:** angenommen · 2026-09-04  
+**Entscheidung:** Adult Cozy Fantasy, 2D-Illustration mit leichter Diorama-/2.5D-Tiefe; nicht chibi, nicht fotorealistisch, nicht SaaS-Fantasy-Skin.  
+**Grund:** Ruhige Pen-&-Paper-Seele ist Teil der Produktidentität und unterstützt Fokus.
+
+### ADR-033 · Accessibility verändert niemals Progression
+**Status:** angenommen · 2026-09-04  
+**Entscheidung:** Reduced Motion, Ruhiger Fokus, Timer-Ausblendung/-Vereinfachung und Audioeinstellungen haben keine Reward-Nachteile.  
+**Grund:** Zugänglichkeit ist Produktdesign, keine Schwierigkeitsstufe.
+
+### ADR-034 · No-Dark-Patterns-Charta
+**Status:** angenommen · 2026-09-04  
+**Entscheidung:** Keine Streaks, Daily Rewards, Countdown-Shops, künstliche Verknappung, Schuldkommunikation, Vernachlässigung, Produktivitätsrankings oder bezahlte Lootboxen.  
+**Grund:** Das Produkt soll beim Fokussieren helfen und Aufmerksamkeit respektieren, nicht Retention durch Druck maximieren.
+
+### ADR-035 · Vertical Slice vor Feature-Breite
+**Status:** angenommen · 2026-09-04  
+**Entscheidung:** Zuerst den vollständigen Weg Waldintro → Account → Charakter → Lager → „Ein Licht im Unterholz“ → 15 Min → Abschluss → Rast → Weglaterne nahezu final umsetzen.  
+**Grund:** Erst die emotionale Kernhypothese beweisen, bevor Content- und Featurebreite ausgebaut werden.
+
+---
+
+## Superseded / nicht mehr gültig
+
+Folgende ältere Annahmen dürfen nicht mehr als Produktanforderung verwendet werden:
+- sechs Klassen oder klassenabhängige Timerprofile
+- epische Quest als 90-Minuten-Dauerblock
+- fünf Loot-Seltenheiten
+- Lootöffnung vor der Rast
+- lange Rast starr nach jeder vierten Quest
+- Party-Truhe
+- Dungeon-Master-Steuerung
+- erstmaliger Drop-in in eine laufende Quest
+- Streak-Anzeige
+- Charaktererstellung nur aus Volk + Name
+- Party-Code als einziger/primärer Einladungsweg
+- Charakterfähigkeiten oder Items mit Fokus-/Progressionsvorteilen
+
+Bei Konflikten mit älteren Dokumenten gilt [CONCEPT.md](CONCEPT.md).
