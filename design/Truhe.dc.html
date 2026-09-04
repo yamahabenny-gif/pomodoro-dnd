@@ -1,0 +1,144 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Alegreya+Sans:wght@400;500;700;800&display=swap">
+  <style>
+    :root{
+      --bg:#14110D; --surface:#1D1913; --raised:#262019;
+      --border:#3A3126; --border-strong:#766753;
+      --text:#EDE4D3; --muted:#A8977B;
+      --accent:#D4A72C; --accent-ink:#14110D;
+      --rest:#E08A4C; --danger:#D9645A;
+      --r-common:#A79C8C; --r-uncommon:#7BB05A; --r-rare:#5C9BD6;
+      --r-epic:#A87ED4; --r-legend:#E8B93C;
+      --display:"Cinzel",Georgia,"Times New Roman",serif;
+      --ui:"Alegreya Sans","Segoe UI",system-ui,sans-serif;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--text);
+      font-family:var(--ui);font-size:16px;line-height:1.55;
+      -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+    a{color:var(--accent);text-decoration:none}
+    a:hover{color:#E8BE4A}
+    h1,h2,h3{font-family:var(--display);font-weight:600;letter-spacing:.02em;
+      margin:0;text-wrap:balance;line-height:1.15}
+    p{margin:0;text-wrap:pretty}
+    ::selection{background:var(--accent);color:var(--accent-ink)}
+    .num{font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+    .card{background:var(--surface);border:1px solid var(--border);border-radius:14px}
+    .btn{font-family:var(--ui);font-size:15px;font-weight:700;border-radius:8px;
+      padding:11px 20px;border:1px solid var(--border-strong);background:transparent;
+      color:var(--text);display:inline-flex;align-items:center;gap:9px;
+      min-height:44px;cursor:pointer}
+    .btn-primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+    .btn-ghost{border-color:transparent;color:var(--muted)}
+    .lbl{font-family:var(--display);font-size:11px;font-weight:600;
+      letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+    .rule{height:1px;background:var(--border);border:0;margin:0}
+    .focus{outline:2px solid var(--accent);outline-offset:2px}
+  </style>
+</helmet>
+
+<div style="width:1120px;min-height:760px;background:var(--bg);display:flex;flex-direction:column">
+  <div style="display:flex;align-items:center;justify-content:space-between;padding:18px 40px;border-bottom:1px solid var(--border)">
+  <div style="display:flex;align-items:center;gap:10px">
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.2 4.6 6v6.1c0 4.3 3 7.4 7.4 8.7 4.4-1.3 7.4-4.4 7.4-8.7V6L12 3.2Z"/><path d="M12 8.4v7"/><path d="M9.2 11.2h5.6"/></svg>
+  <span style="font-family:var(--display);font-weight:700;font-size:15px;letter-spacing:.14em">POMODORO&nbsp;D&amp;D</span>
+</div>
+  <div style="display:flex;align-items:center;gap:14px">
+  <div style="display:flex;align-items:center;gap:9px;padding-right:6px">
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--muted)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v3.1M12 18.3v3.1M2.6 12h3.1M18.3 12h3.1"/><path d="m5.6 5.6 2.2 2.2M16.2 16.2l2.2 2.2M18.4 5.6l-2.2 2.2M7.8 16.2l-2.2 2.2"/></svg>
+    <span style="font-size:14px;color:var(--muted)">Mara · Magier · Stufe 7</span>
+  </div></div>
+</div>
+  <div style="flex:1 1 auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+    gap:56px;align-items:center;padding:52px 64px">
+
+    <div style="display:flex;flex-direction:column;align-items:center;gap:26px">
+      <!-- Truhe, offen, Lichtschein in der Seltenheitsfarbe -->
+      <svg width="252" height="220" viewBox="0 0 252 220" fill="none" aria-hidden="true">
+        <path d="M126 6v34M96 16l10 28M156 16l-10 28M64 40l22 22M188 40l-22 22"
+          stroke="var(--r-rare)" stroke-width="1.5" stroke-linecap="round" opacity=".55"/>
+        <path d="M50 100h152v98H50v-98Z" stroke="var(--border-strong)" stroke-width="1.5"/>
+        <path d="M50 100 66 62h120l16 38" stroke="var(--r-rare)" stroke-width="1.5" stroke-linejoin="round"/>
+        <path d="M50 132h152" stroke="var(--border-strong)" stroke-width="1.5"/>
+        <path d="M114 132h24v26h-24v-26Z" stroke="var(--r-rare)" stroke-width="1.5"/>
+        <path d="M126 140v10" stroke="var(--r-rare)" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M78 100v98M174 100v98" stroke="var(--border)" stroke-width="1.5"/>
+      </svg>
+      <div style="text-align:center;display:flex;flex-direction:column;gap:7px">
+        <div style="font-family:var(--display);font-size:14px;font-weight:600;letter-spacing:.2em;
+          text-transform:uppercase;color:var(--r-rare)">Seltene Truhe</div>
+        <p style="font-size:14px;color:var(--muted)">Quest 2 von 4 · 50 Minuten am Stück</p>
+      </div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:22px;min-width:0">
+      <h1 style="font-size:32px">Du hast sie geöffnet</h1>
+
+      <div style="display:flex;gap:14px">
+        <div class="card" style="flex:1;padding:18px 20px">
+          <div class="lbl">Erfahrung</div>
+          <div class="num" style="font-size:32px;font-weight:800;color:var(--accent);margin-top:3px">+320</div>
+        </div>
+        <div class="card" style="flex:1;padding:18px 20px">
+          <div class="lbl">Gold</div>
+          <div class="num" style="font-size:32px;font-weight:800;color:var(--accent);margin-top:3px">+48</div>
+        </div>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:10px">
+        
+  <div style="display:flex;align-items:center;gap:14px;padding:14px 16px;background:var(--raised);
+    border:1px solid var(--border);border-radius:10px">
+    <span style="flex:0 0 auto;width:34px;height:34px;border-radius:8px;border:1px solid var(--r-rare);
+      display:flex;align-items:center;justify-content:center"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--r-rare)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.6 9.4h16.8v9.8H3.6V9.4Z"/><path d="M3.6 9.4 6.2 4.8h11.6l2.6 4.6"/><path d="M3.6 13.2h16.8"/><path d="M10.4 13.2h3.2v3h-3.2v-3Z"/></svg></span>
+    <span style="display:flex;flex-direction:column;min-width:0;flex:1 1 auto">
+      <span style="font-size:15px;font-weight:700">Siegel des stillen Turms</span>
+      <span style="font-size:13px;color:var(--muted)">Rahmen für dein Charakterbild</span>
+    </span>
+    <span style="flex:0 0 auto;font-family:var(--display);font-size:11px;font-weight:600;
+      letter-spacing:.12em;text-transform:uppercase;color:var(--r-rare);border:1px solid var(--r-rare);
+      border-radius:999px;padding:3px 11px">Selten</span>
+  </div>
+        
+  <div style="display:flex;align-items:center;gap:14px;padding:14px 16px;background:var(--raised);
+    border:1px solid var(--border);border-radius:10px">
+    <span style="flex:0 0 auto;width:34px;height:34px;border-radius:8px;border:1px solid var(--r-common);
+      display:flex;align-items:center;justify-content:center"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--r-common)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.6 9.4h16.8v9.8H3.6V9.4Z"/><path d="M3.6 9.4 6.2 4.8h11.6l2.6 4.6"/><path d="M3.6 13.2h16.8"/><path d="M10.4 13.2h3.2v3h-3.2v-3Z"/></svg></span>
+    <span style="display:flex;flex-direction:column;min-width:0;flex:1 1 auto">
+      <span style="font-size:15px;font-weight:700">Wachsstummel</span>
+      <span style="font-size:13px;color:var(--muted)">Truhen-Anstrich</span>
+    </span>
+    <span style="flex:0 0 auto;font-family:var(--display);font-size:11px;font-weight:600;
+      letter-spacing:.12em;text-transform:uppercase;color:var(--r-common);border:1px solid var(--r-common);
+      border-radius:999px;padding:3px 11px">Gewöhnlich</span>
+  </div>
+      </div>
+
+      <div style="display:flex;align-items:center;gap:14px;margin-top:6px">
+        <button class="btn btn-primary" style="gap:9px">Weiter zur Rast <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-ink)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13"/><path d="m12.6 6.2 5.8 5.8-5.8 5.8"/></svg></button>
+        <button class="btn btn-ghost">Ins Gepäck legen</button>
+      </div>
+
+      <p style="font-size:13px;color:var(--muted);max-width:50ch">
+        Alle Fundstücke sind rein kosmetisch. Nichts davon lässt sich kaufen, und nichts
+        davon macht dich schneller — es erinnert dich nur daran, dass du die Zeit gearbeitet hast.
+      </p>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script data-dc-script data-props='{}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

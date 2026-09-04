@@ -1,0 +1,299 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Alegreya+Sans:wght@400;500;700;800&display=swap">
+  <style>
+    :root{
+      --bg:#14110D; --surface:#1D1913; --raised:#262019;
+      --border:#3A3126; --border-strong:#766753;
+      --text:#EDE4D3; --muted:#A8977B;
+      --accent:#D4A72C; --accent-ink:#14110D;
+      --rest:#E08A4C; --danger:#D9645A;
+      --r-common:#A79C8C; --r-uncommon:#7BB05A; --r-rare:#5C9BD6;
+      --r-epic:#A87ED4; --r-legend:#E8B93C;
+      --display:"Cinzel",Georgia,"Times New Roman",serif;
+      --ui:"Alegreya Sans","Segoe UI",system-ui,sans-serif;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--text);
+      font-family:var(--ui);font-size:16px;line-height:1.55;
+      -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+    a{color:var(--accent);text-decoration:none}
+    a:hover{color:#E8BE4A}
+    h1,h2,h3{font-family:var(--display);font-weight:600;letter-spacing:.02em;
+      margin:0;text-wrap:balance;line-height:1.15}
+    p{margin:0;text-wrap:pretty}
+    ::selection{background:var(--accent);color:var(--accent-ink)}
+    .num{font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+    .card{background:var(--surface);border:1px solid var(--border);border-radius:14px}
+    .btn{font-family:var(--ui);font-size:15px;font-weight:700;border-radius:8px;
+      padding:11px 20px;border:1px solid var(--border-strong);background:transparent;
+      color:var(--text);display:inline-flex;align-items:center;gap:9px;
+      min-height:44px;cursor:pointer}
+    .btn-primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+    .btn-ghost{border-color:transparent;color:var(--muted)}
+    .lbl{font-family:var(--display);font-size:11px;font-weight:600;
+      letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+    .rule{height:1px;background:var(--border);border:0;margin:0}
+    .focus{outline:2px solid var(--accent);outline-offset:2px}
+  </style>
+</helmet>
+
+<div style="width:1280px;min-height:820px;background:var(--bg);padding:40px 48px;display:flex;flex-direction:column;gap:34px">
+  <div>
+    <h1 style="font-size:29px;margin-bottom:7px">Tinte auf Pergament, gelesen bei Kerzenlicht</h1>
+    <p style="font-size:15px;color:var(--muted);max-width:78ch">
+      Die visuelle Welt: warme Schwarztöne statt kalter, gebranntes Messing als einziger
+      Akzent, Inschriften-Kapitälchen für Überschriften. Alle Werte hier sind gegen
+      WCAG&nbsp;2.2&nbsp;AA nachgerechnet — die Zahl hinter jeder Farbe ist der gemessene Kontrast.
+    </p>
+  </div>
+
+  <div style="display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:44px">
+    <section style="min-width:0;display:flex;flex-direction:column;gap:16px">
+      <h2 style="font-size:17px">Farben · Dunkel</h2>
+      <div style="display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px">
+        
+  <div style="display:flex;flex-direction:column;gap:7px;min-width:0">
+    <div style="height:52px;border-radius:10px;background:#14110D;border:1px solid var(--border)"></div>
+    <div style="font-size:13px;font-weight:700">bg</div>
+    <div class="num" style="font-size:12px;color:var(--muted);text-transform:uppercase">#14110D</div>
+    <div style="font-size:12px;color:var(--muted)">Seitengrund</div>
+  </div>
+        
+  <div style="display:flex;flex-direction:column;gap:7px;min-width:0">
+    <div style="height:52px;border-radius:10px;background:#1D1913;border:1px solid var(--border)"></div>
+    <div style="font-size:13px;font-weight:700">surface</div>
+    <div class="num" style="font-size:12px;color:var(--muted);text-transform:uppercase">#1D1913</div>
+    <div style="font-size:12px;color:var(--muted)">Karten</div>
+  </div>
+        
+  <div style="display:flex;flex-direction:column;gap:7px;min-width:0">
+    <div style="height:52px;border-radius:10px;background:#766753;border:1px solid var(--border)"></div>
+    <div style="font-size:13px;font-weight:700">border-strong</div>
+    <div class="num" style="font-size:12px;color:var(--muted);text-transform:uppercase">#766753</div>
+    <div style="font-size:12px;color:var(--muted)">3,4:1 — bedienbar</div>
+  </div>
+        
+  <div style="display:flex;flex-direction:column;gap:7px;min-width:0">
+    <div style="height:52px;border-radius:10px;background:#D4A72C;border:1px solid var(--border)"></div>
+    <div style="font-size:13px;font-weight:700">accent</div>
+    <div class="num" style="font-size:12px;color:var(--muted);text-transform:uppercase">#D4A72C</div>
+    <div style="font-size:12px;color:var(--muted)">8,4:1 — Quest</div>
+  </div>
+        
+  <div style="display:flex;flex-direction:column;gap:7px;min-width:0">
+    <div style="height:52px;border-radius:10px;background:#E08A4C;border:1px solid var(--border)"></div>
+    <div style="font-size:13px;font-weight:700">rest</div>
+    <div class="num" style="font-size:12px;color:var(--muted);text-transform:uppercase">#E08A4C</div>
+    <div style="font-size:12px;color:var(--muted)">7,1:1 — Rast</div>
+  </div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px">
+        
+  <div style="display:flex;flex-direction:column;gap:7px;min-width:0">
+    <div style="height:52px;border-radius:10px;background:#EDE4D3;border:1px solid var(--border)"></div>
+    <div style="font-size:13px;font-weight:700">text</div>
+    <div class="num" style="font-size:12px;color:var(--muted);text-transform:uppercase">#EDE4D3</div>
+    <div style="font-size:12px;color:var(--muted)">14,9:1</div>
+  </div>
+        
+  <div style="display:flex;flex-direction:column;gap:7px;min-width:0">
+    <div style="height:52px;border-radius:10px;background:#A8977B;border:1px solid var(--border)"></div>
+    <div style="font-size:13px;font-weight:700">muted</div>
+    <div class="num" style="font-size:12px;color:var(--muted);text-transform:uppercase">#A8977B</div>
+    <div style="font-size:12px;color:var(--muted)">6,6:1</div>
+  </div>
+        
+  <div style="display:flex;flex-direction:column;gap:7px;min-width:0">
+    <div style="height:52px;border-radius:10px;background:#262019;border:1px solid var(--border)"></div>
+    <div style="font-size:13px;font-weight:700">raised</div>
+    <div class="num" style="font-size:12px;color:var(--muted);text-transform:uppercase">#262019</div>
+    
+  </div>
+        
+  <div style="display:flex;flex-direction:column;gap:7px;min-width:0">
+    <div style="height:52px;border-radius:10px;background:#3A3126;border:1px solid var(--border)"></div>
+    <div style="font-size:13px;font-weight:700">border</div>
+    <div class="num" style="font-size:12px;color:var(--muted);text-transform:uppercase">#3A3126</div>
+    <div style="font-size:12px;color:var(--muted)">nur dekorativ</div>
+  </div>
+        
+  <div style="display:flex;flex-direction:column;gap:7px;min-width:0">
+    <div style="height:52px;border-radius:10px;background:#D9645A;border:1px solid var(--border)"></div>
+    <div style="font-size:13px;font-weight:700">danger</div>
+    <div class="num" style="font-size:12px;color:var(--muted);text-transform:uppercase">#D9645A</div>
+    <div style="font-size:12px;color:var(--muted)">5,3:1</div>
+  </div>
+      </div>
+      <p style="font-size:13px;color:var(--muted);max-width:70ch;margin-top:2px">
+        Zwei Kanten-Token, kein Kompromiss: <b style="color:var(--text)">border</b> darf schwach
+        sein, weil es nur trennt. <b style="color:var(--text)">border-strong</b> liegt an allem,
+        was man bedienen kann, und hält 3:1. Ein einziges Token, das beides sein soll, ist
+        entweder unsichtbar oder zu laut.
+      </p>
+    </section>
+
+    <section style="min-width:0;display:flex;flex-direction:column;gap:16px">
+      <h2 style="font-size:17px">Seltenheitsstufen</h2>
+      <div style="display:flex;flex-direction:column;gap:8px">
+        
+  <div style="display:flex;align-items:center;gap:11px;padding:10px 13px;border-radius:10px;
+    background:var(--raised);border:1px solid var(--border)">
+    <span style="width:20px;height:20px;border-radius:5px;background:#A79C8C;flex:0 0 auto"></span>
+    <span style="font-size:14px;font-weight:500;flex:1 1 auto">Gewöhnlich · 55 %</span>
+    <span class="num" style="font-size:12px;color:var(--muted)">6,5:1</span>
+  </div>
+        
+  <div style="display:flex;align-items:center;gap:11px;padding:10px 13px;border-radius:10px;
+    background:var(--raised);border:1px solid var(--border)">
+    <span style="width:20px;height:20px;border-radius:5px;background:#7BB05A;flex:0 0 auto"></span>
+    <span style="font-size:14px;font-weight:500;flex:1 1 auto">Ungewöhnlich · 25 %</span>
+    <span class="num" style="font-size:12px;color:var(--muted)">6,8:1</span>
+  </div>
+        
+  <div style="display:flex;align-items:center;gap:11px;padding:10px 13px;border-radius:10px;
+    background:var(--raised);border:1px solid var(--border)">
+    <span style="width:20px;height:20px;border-radius:5px;background:#5C9BD6;flex:0 0 auto"></span>
+    <span style="font-size:14px;font-weight:500;flex:1 1 auto">Selten · 13 %</span>
+    <span class="num" style="font-size:12px;color:var(--muted)">5,9:1</span>
+  </div>
+        
+  <div style="display:flex;align-items:center;gap:11px;padding:10px 13px;border-radius:10px;
+    background:var(--raised);border:1px solid var(--border)">
+    <span style="width:20px;height:20px;border-radius:5px;background:#A87ED4;flex:0 0 auto"></span>
+    <span style="font-size:14px;font-weight:500;flex:1 1 auto">Episch · 6 %</span>
+    <span class="num" style="font-size:12px;color:var(--muted)">5,5:1</span>
+  </div>
+        
+  <div style="display:flex;align-items:center;gap:11px;padding:10px 13px;border-radius:10px;
+    background:var(--raised);border:1px solid var(--border)">
+    <span style="width:20px;height:20px;border-radius:5px;background:#E8B93C;flex:0 0 auto"></span>
+    <span style="font-size:14px;font-weight:500;flex:1 1 auto">Legendär · 1 %</span>
+    <span class="num" style="font-size:12px;color:var(--muted)">9,5:1</span>
+  </div>
+      </div>
+      <p style="font-size:13px;color:var(--muted);max-width:44ch">
+        Farbe verstärkt, sie trägt nicht: Jede Stufe steht immer auch als Wort daneben.
+      </p>
+    </section>
+  </div>
+
+  <hr class="rule">
+
+  <div style="display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:44px">
+    <section style="min-width:0;display:flex;flex-direction:column;gap:18px">
+      <h2 style="font-size:17px">Schrift</h2>
+      <div style="display:flex;flex-direction:column;gap:14px">
+        <div style="display:flex;align-items:baseline;gap:20px;flex-wrap:wrap">
+          <div style="font-family:var(--display);font-size:38px;font-weight:600;letter-spacing:.02em">Cinzel</div>
+          <div style="font-size:13px;color:var(--muted);max-width:46ch">
+            Überschriften. Römische Inschriften-Kapitälchen — trägt das Historische, ohne
+            ins Kostüm zu kippen. Braucht Sperrung, sonst kleben die Versalien.
+          </div>
+        </div>
+        <hr class="rule">
+        <div style="display:flex;align-items:baseline;gap:20px;flex-wrap:wrap">
+          <div style="font-size:32px;font-weight:700">Alegreya Sans</div>
+          <div style="font-size:13px;color:var(--muted);max-width:46ch">
+            Fließtext, Bedienelemente und die Timer-Ziffern. Humanistisch und wärmer als
+            die üblichen Verdächtigen, auf kleinen Größen einwandfrei.
+          </div>
+        </div>
+        <hr class="rule">
+        <div style="display:flex;align-items:center;gap:24px;flex-wrap:wrap">
+          <div class="num" style="font-size:56px;font-weight:800;letter-spacing:-.02em">18:42</div>
+          <div style="font-size:13px;color:var(--muted);max-width:44ch">
+            <b style="color:var(--text)">tabular-nums</b> auf jeder Zahl, die sich ändert.
+            Ohne das springt die Ziffernbreite im Sekundentakt und der Timer zappelt sichtbar.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="min-width:0;display:flex;flex-direction:column;gap:18px">
+      <h2 style="font-size:17px">Klassen-Sigel</h2>
+      <div style="display:flex;gap:14px;flex-wrap:wrap">
+        
+  <div style="display:flex;flex-direction:column;align-items:center;gap:8px">
+    <div style="width:52px;height:52px;border-radius:12px;border:1px solid var(--border-strong);
+      display:flex;align-items:center;justify-content:center"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.2 4.6 6v6.1c0 4.3 3 7.4 7.4 8.7 4.4-1.3 7.4-4.4 7.4-8.7V6L12 3.2Z"/><path d="M12 8.4v7"/><path d="M9.2 11.2h5.6"/></svg></div>
+    <div style="font-size:12px;color:var(--muted)">Krieger</div>
+  </div>
+  <div style="display:flex;flex-direction:column;align-items:center;gap:8px">
+    <div style="width:52px;height:52px;border-radius:12px;border:1px solid var(--border-strong);
+      display:flex;align-items:center;justify-content:center"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v3.1M12 18.3v3.1M2.6 12h3.1M18.3 12h3.1"/><path d="m5.6 5.6 2.2 2.2M16.2 16.2l2.2 2.2M18.4 5.6l-2.2 2.2M7.8 16.2l-2.2 2.2"/></svg></div>
+    <div style="font-size:12px;color:var(--muted)">Magier</div>
+  </div>
+  <div style="display:flex;flex-direction:column;align-items:center;gap:8px">
+    <div style="width:52px;height:52px;border-radius:12px;border:1px solid var(--border-strong);
+      display:flex;align-items:center;justify-content:center"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.6 3.4 8.2 14.1l3.5 2.1 6.4-10.7-3.5-2.1Z"/><path d="m8.2 14.1-2 3.5 4.1.7"/><path d="m11.7 16.2 2.6 4.4"/></svg></div>
+    <div style="font-size:12px;color:var(--muted)">Schurke</div>
+  </div>
+        
+  <div style="display:flex;flex-direction:column;align-items:center;gap:8px">
+    <div style="width:52px;height:52px;border-radius:12px;border:1px solid var(--border-strong);
+      display:flex;align-items:center;justify-content:center"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.4v17.2"/><path d="M6.6 8.6h10.8"/><circle cx="12" cy="8.6" r="3.4"/></svg></div>
+    <div style="font-size:12px;color:var(--muted)">Kleriker</div>
+  </div>
+  <div style="display:flex;flex-direction:column;align-items:center;gap:8px">
+    <div style="width:52px;height:52px;border-radius:12px;border:1px solid var(--border-strong);
+      display:flex;align-items:center;justify-content:center"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.2 19.8 19.4 4.6"/><path d="M14.6 4.6h4.8v4.8"/><path d="M4.2 19.8 8.6 18l-1.8-4.4-2.6 6.2Z"/></svg></div>
+    <div style="font-size:12px;color:var(--muted)">Waldläufer</div>
+  </div>
+  <div style="display:flex;flex-direction:column;align-items:center;gap:8px">
+    <div style="width:52px;height:52px;border-radius:12px;border:1px solid var(--border-strong);
+      display:flex;align-items:center;justify-content:center"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.4 4.2v9.4M16.6 4.2v9.4"/><path d="M7.4 5.4c3-1.6 6.2-1.6 9.2 0"/><path d="M12 8.2v11.6"/><ellipse cx="12" cy="19.8" rx="4.4" ry="1.6"/></svg></div>
+    <div style="font-size:12px;color:var(--muted)">Barde</div>
+  </div>
+      </div>
+      <p style="font-size:13px;color:var(--muted);max-width:46ch">
+        Gezeichnete SVGs, Strichstärke 1,5&nbsp;px, runde Enden — kein Emoji. Ein Emoji
+        rendert auf jedem Betriebssystem anders und lässt sich nicht auf eine Strichstärke bringen.
+      </p>
+    </section>
+  </div>
+
+  <hr class="rule">
+
+  <section style="display:flex;gap:44px;flex-wrap:wrap">
+    <div style="display:flex;flex-direction:column;gap:12px;min-width:0">
+      <h2 style="font-size:17px">Bedienelemente</h2>
+      <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap">
+        <button class="btn btn-primary">Primär</button>
+        <button class="btn">Sekundär</button>
+        <button class="btn btn-ghost">Beiläufig</button>
+        <button class="btn focus">Fokus sichtbar</button>
+        <button class="btn" style="opacity:.45">Deaktiviert</button>
+      </div>
+      <div style="font-size:13px;color:var(--muted);max-width:56ch">
+        Radien: Karten 14&nbsp;px, Bedienelemente 8&nbsp;px. Mindesthöhe 44&nbsp;px.
+        Elevation genau einmal: im Dunkeln nur Kante, im Hellen nur Schatten — nie beides.
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px;min-width:0">
+      <h2 style="font-size:17px">Bewegung</h2>
+      <div style="font-size:13px;color:var(--muted);max-width:52ch">
+        Ein gestalteter Moment pro Screen. Truhe öffnen 1400&nbsp;ms mehrstufig,
+        Phasenwechsel 600&nbsp;ms <span class="num">cubic-bezier(.16,1,.3,1)</span>,
+        Lagerfeuer 4&nbsp;s Atem. Unter
+        <b style="color:var(--text)">prefers-reduced-motion</b> gibt es eine zweite
+        Fassung — nicht das Nichts.
+      </div>
+    </div>
+  </section>
+</div>
+</x-dc>
+<script data-dc-script data-props='{}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

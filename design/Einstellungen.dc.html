@@ -1,0 +1,252 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Alegreya+Sans:wght@400;500;700;800&display=swap">
+  <style>
+    :root{
+      --bg:#14110D; --surface:#1D1913; --raised:#262019;
+      --border:#3A3126; --border-strong:#766753;
+      --text:#EDE4D3; --muted:#A8977B;
+      --accent:#D4A72C; --accent-ink:#14110D;
+      --rest:#E08A4C; --danger:#D9645A;
+      --r-common:#A79C8C; --r-uncommon:#7BB05A; --r-rare:#5C9BD6;
+      --r-epic:#A87ED4; --r-legend:#E8B93C;
+      --display:"Cinzel",Georgia,"Times New Roman",serif;
+      --ui:"Alegreya Sans","Segoe UI",system-ui,sans-serif;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--text);
+      font-family:var(--ui);font-size:16px;line-height:1.55;
+      -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+    a{color:var(--accent);text-decoration:none}
+    a:hover{color:#E8BE4A}
+    h1,h2,h3{font-family:var(--display);font-weight:600;letter-spacing:.02em;
+      margin:0;text-wrap:balance;line-height:1.15}
+    p{margin:0;text-wrap:pretty}
+    ::selection{background:var(--accent);color:var(--accent-ink)}
+    .num{font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+    .card{background:var(--surface);border:1px solid var(--border);border-radius:14px}
+    .btn{font-family:var(--ui);font-size:15px;font-weight:700;border-radius:8px;
+      padding:11px 20px;border:1px solid var(--border-strong);background:transparent;
+      color:var(--text);display:inline-flex;align-items:center;gap:9px;
+      min-height:44px;cursor:pointer}
+    .btn-primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+    .btn-ghost{border-color:transparent;color:var(--muted)}
+    .lbl{font-family:var(--display);font-size:11px;font-weight:600;
+      letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+    .rule{height:1px;background:var(--border);border:0;margin:0}
+    .focus{outline:2px solid var(--accent);outline-offset:2px}
+  </style>
+</helmet>
+
+<div style="width:1120px;min-height:880px;background:var(--bg);display:flex;flex-direction:column">
+  <div style="display:flex;align-items:center;justify-content:space-between;padding:18px 40px;border-bottom:1px solid var(--border)">
+  <div style="display:flex;align-items:center;gap:10px">
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.2 4.6 6v6.1c0 4.3 3 7.4 7.4 8.7 4.4-1.3 7.4-4.4 7.4-8.7V6L12 3.2Z"/><path d="M12 8.4v7"/><path d="M9.2 11.2h5.6"/></svg>
+  <span style="font-family:var(--display);font-weight:700;font-size:15px;letter-spacing:.14em">POMODORO&nbsp;D&amp;D</span>
+</div>
+  <div style="display:flex;align-items:center;gap:14px">
+  <div style="display:flex;align-items:center;gap:9px;padding-right:6px">
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--muted)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v3.1M12 18.3v3.1M2.6 12h3.1M18.3 12h3.1"/><path d="m5.6 5.6 2.2 2.2M16.2 16.2l2.2 2.2M18.4 5.6l-2.2 2.2M7.8 16.2l-2.2 2.2"/></svg>
+    <span style="font-size:14px;color:var(--muted)">Mara · Magier · Stufe 7</span>
+  </div></div>
+</div>
+  <div style="padding:40px 48px 48px;display:grid;grid-template-columns:200px minmax(0,1fr);gap:44px">
+    <nav style="display:flex;flex-direction:column;gap:3px" aria-label="Einstellungen">
+      
+        <a href="#" style="font-size:15px;padding:9px 13px;border-radius:8px;
+          background:var(--surface);color:var(--text);font-weight:700">Zeiten</a>
+        <a href="#" style="font-size:15px;padding:9px 13px;border-radius:8px;
+          color:var(--muted)">Ton &amp; Hinweise</a>
+        <a href="#" style="font-size:15px;padding:9px 13px;border-radius:8px;
+          color:var(--muted)">Darstellung</a>
+        <a href="#" style="font-size:15px;padding:9px 13px;border-radius:8px;
+          color:var(--muted)">Konto &amp; Daten</a>
+    </nav>
+
+    <div style="min-width:0;display:flex;flex-direction:column;gap:34px">
+      <div>
+        <h1 style="font-size:29px;margin-bottom:6px">Einstellungen</h1>
+        <p style="font-size:15px;color:var(--muted);max-width:62ch">
+          Deine Klasse setzt die Zeiten schon sinnvoll. Hier änderst du sie, wenn du genau weißt, was du willst.
+        </p>
+      </div>
+
+      <section>
+        <h2 style="font-size:17px;margin-bottom:4px">Zeiten</h2>
+        <hr class="rule">
+        
+  <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:28px;padding:18px 0">
+    <div style="min-width:0;display:flex;flex-direction:column;gap:2px">
+      <div style="font-size:15px;font-weight:500">Quest</div>
+      <div style="font-size:13px;color:var(--muted);max-width:56ch">Wie lange du am Stück arbeitest.</div>
+    </div>
+    <div style="flex:0 0 auto"><span class="num" style="display:inline-flex;align-items:center;gap:10px;
+  border:1px solid var(--border-strong);border-radius:8px;padding:8px 14px;font-size:16px;font-weight:700">
+  50<span style="font-size:13px;font-weight:400;color:var(--muted)">min</span></span></div>
+  </div>
+        <hr class="rule">
+        
+  <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:28px;padding:18px 0">
+    <div style="min-width:0;display:flex;flex-direction:column;gap:2px">
+      <div style="font-size:15px;font-weight:500">Rast</div>
+      <div style="font-size:13px;color:var(--muted);max-width:56ch">Die kurze Pause nach jeder Quest.</div>
+    </div>
+    <div style="flex:0 0 auto"><span class="num" style="display:inline-flex;align-items:center;gap:10px;
+  border:1px solid var(--border-strong);border-radius:8px;padding:8px 14px;font-size:16px;font-weight:700">
+  10<span style="font-size:13px;font-weight:400;color:var(--muted)">min</span></span></div>
+  </div>
+        <hr class="rule">
+        
+  <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:28px;padding:18px 0">
+    <div style="min-width:0;display:flex;flex-direction:column;gap:2px">
+      <div style="font-size:15px;font-weight:500">Lange Rast</div>
+      <div style="font-size:13px;color:var(--muted);max-width:56ch">Nach jeder vierten Quest, in der Taverne.</div>
+    </div>
+    <div style="flex:0 0 auto"><span class="num" style="display:inline-flex;align-items:center;gap:10px;
+  border:1px solid var(--border-strong);border-radius:8px;padding:8px 14px;font-size:16px;font-weight:700">
+  25<span style="font-size:13px;font-weight:400;color:var(--muted)">min</span></span></div>
+  </div>
+      </section>
+
+      <section>
+        <h2 style="font-size:17px;margin-bottom:4px">Ton und Hinweise</h2>
+        <hr class="rule">
+        
+  <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:28px;padding:18px 0">
+    <div style="min-width:0;display:flex;flex-direction:column;gap:2px">
+      <div style="font-size:15px;font-weight:500">Nicht stören während der Quest</div>
+      <div style="font-size:13px;color:var(--muted);max-width:56ch">Systembenachrichtigungen sind stumm, solange du unterwegs bist.</div>
+    </div>
+    <div style="flex:0 0 auto">
+  <span role="switch" aria-checked="true" style="display:inline-flex;align-items:center;width:48px;height:28px;
+    border-radius:999px;padding:3px;background:var(--accent);
+    border:1px solid var(--accent);justify-content:flex-end">
+    <span style="width:20px;height:20px;border-radius:50%;background:var(--accent-ink)"></span>
+  </span></div>
+  </div>
+        <hr class="rule">
+        
+  <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:28px;padding:18px 0">
+    <div style="min-width:0;display:flex;flex-direction:column;gap:2px">
+      <div style="font-size:15px;font-weight:500">Ton bei Phasenwechsel</div>
+      <div style="font-size:13px;color:var(--muted);max-width:56ch">Ein kurzer Ton, wenn die Quest endet oder die Rast vorbei ist.</div>
+    </div>
+    <div style="flex:0 0 auto">
+  <span role="switch" aria-checked="true" style="display:inline-flex;align-items:center;width:48px;height:28px;
+    border-radius:999px;padding:3px;background:var(--accent);
+    border:1px solid var(--accent);justify-content:flex-end">
+    <span style="width:20px;height:20px;border-radius:50%;background:var(--accent-ink)"></span>
+  </span></div>
+  </div>
+        <hr class="rule">
+        
+  <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:28px;padding:18px 0">
+    <div style="min-width:0;display:flex;flex-direction:column;gap:2px">
+      <div style="font-size:15px;font-weight:500">Truhe automatisch öffnen</div>
+      <div style="font-size:13px;color:var(--muted);max-width:56ch">Aus gutem Grund standardmäßig aus — das Öffnen ist der Moment.</div>
+    </div>
+    <div style="flex:0 0 auto">
+  <span role="switch" aria-checked="false" style="display:inline-flex;align-items:center;width:48px;height:28px;
+    border-radius:999px;padding:3px;background:var(--surface);
+    border:1px solid var(--border-strong);justify-content:flex-start">
+    <span style="width:20px;height:20px;border-radius:50%;background:var(--muted)"></span>
+  </span></div>
+  </div>
+      </section>
+
+      <section>
+        <h2 style="font-size:17px;margin-bottom:4px">Darstellung</h2>
+        <hr class="rule">
+        
+  <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:28px;padding:18px 0">
+    <div style="min-width:0;display:flex;flex-direction:column;gap:2px">
+      <div style="font-size:15px;font-weight:500">Design</div>
+      <div style="font-size:13px;color:var(--muted);max-width:56ch">Dunkel ist voreingestellt, weil der Timer lange im Blick steht.</div>
+    </div>
+    <div style="flex:0 0 auto">
+  <span style="display:inline-flex;border:1px solid var(--border-strong);border-radius:8px;overflow:hidden">
+    <span style="font-size:14px;font-weight:700;padding:9px 16px;
+      background:var(--accent);
+      color:var(--accent-ink)">Dunkel</span><span style="font-size:14px;font-weight:400;padding:9px 16px;
+      background:transparent;
+      color:var(--muted)">Hell</span><span style="font-size:14px;font-weight:400;padding:9px 16px;
+      background:transparent;
+      color:var(--muted)">System</span>
+  </span></div>
+  </div>
+        <hr class="rule">
+        
+  <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:28px;padding:18px 0">
+    <div style="min-width:0;display:flex;flex-direction:column;gap:2px">
+      <div style="font-size:15px;font-weight:500">Bewegung reduzieren</div>
+      <div style="font-size:13px;color:var(--muted);max-width:56ch">Truhen und Lagerfeuer laufen dann ohne Bewegung — mit demselben Ergebnis.</div>
+    </div>
+    <div style="flex:0 0 auto">
+  <span role="switch" aria-checked="false" style="display:inline-flex;align-items:center;width:48px;height:28px;
+    border-radius:999px;padding:3px;background:var(--surface);
+    border:1px solid var(--border-strong);justify-content:flex-start">
+    <span style="width:20px;height:20px;border-radius:50%;background:var(--muted)"></span>
+  </span></div>
+  </div>
+        <hr class="rule">
+        
+  <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:28px;padding:18px 0">
+    <div style="min-width:0;display:flex;flex-direction:column;gap:2px">
+      <div style="font-size:15px;font-weight:500">Sprache</div>
+      <div style="font-size:13px;color:var(--muted);max-width:56ch"></div>
+    </div>
+    <div style="flex:0 0 auto">
+  <span style="display:inline-flex;border:1px solid var(--border-strong);border-radius:8px;overflow:hidden">
+    <span style="font-size:14px;font-weight:700;padding:9px 16px;
+      background:var(--accent);
+      color:var(--accent-ink)">Deutsch</span><span style="font-size:14px;font-weight:400;padding:9px 16px;
+      background:transparent;
+      color:var(--muted)">English</span>
+  </span></div>
+  </div>
+      </section>
+
+      <section>
+        <h2 style="font-size:17px;margin-bottom:4px">Konto und Daten</h2>
+        <hr class="rule">
+        
+  <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:28px;padding:18px 0">
+    <div style="min-width:0;display:flex;flex-direction:column;gap:2px">
+      <div style="font-size:15px;font-weight:500">Daten herunterladen</div>
+      <div style="font-size:13px;color:var(--muted);max-width:56ch">Alle deine Quests und Fundstücke als Datei. Ohne Nachfrage, ohne Wartezeit.</div>
+    </div>
+    <div style="flex:0 0 auto"><button class="btn" style="min-height:40px">Export anfordern</button></div>
+  </div>
+        <hr class="rule">
+        
+  <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:28px;padding:18px 0">
+    <div style="min-width:0;display:flex;flex-direction:column;gap:2px">
+      <div style="font-size:15px;font-weight:500">Konto löschen</div>
+      <div style="font-size:13px;color:var(--muted);max-width:56ch">Löscht alles endgültig, auch deine Mitgliedschaften in Gruppen.</div>
+    </div>
+    <div style="flex:0 0 auto"><button class="btn" style="min-height:40px;border-color:var(--danger);color:var(--danger)">Konto löschen</button></div>
+  </div>
+        <hr class="rule">
+        <p style="font-size:13px;color:var(--muted);max-width:64ch;padding-top:16px">
+          Wir speichern, <b style="color:var(--text)">wie lange</b> du gearbeitet hast — nie,
+          <b style="color:var(--text)">woran</b>. Es gibt kein Feld dafür, und es ist keins geplant.
+        </p>
+      </section>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script data-dc-script data-props='{}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

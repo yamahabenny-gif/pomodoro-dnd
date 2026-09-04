@@ -1,0 +1,24 @@
+{
+  "artboards": [
+    { "file": "Landing.dc.html",        "title": "1 · Landing",         "x": 0,    "y": 0,    "w": 1280, "h": 1000 },
+    { "file": "Login.dc.html",          "title": "2 · Login",           "x": 1400, "y": 0,    "w": 1120, "h": 760 },
+    { "file": "Klassen.dc.html",        "title": "3 · Klassenwahl",     "x": 2640, "y": 0,    "w": 1120, "h": 800 },
+    { "file": "Main.dc.html",           "title": "4 · Quest",           "x": 0,    "y": 1140, "w": 1120, "h": 760 },
+    { "file": "Rast.dc.html",           "title": "5 · Rast",            "x": 1240, "y": 1140, "w": 1120, "h": 760 },
+    { "file": "Truhe.dc.html",          "title": "6 · Truhe",           "x": 2480, "y": 1140, "w": 1120, "h": 760 },
+    { "file": "PartyHub.dc.html",       "title": "7 · Party-Hub",       "x": 0,    "y": 2040, "w": 1120, "h": 760 },
+    { "file": "PartyQuest.dc.html",     "title": "8 · Party-Quest",     "x": 1240, "y": 2040, "w": 1120, "h": 760 },
+    { "file": "Charakterbogen.dc.html", "title": "9 · Charakterbogen",  "x": 2480, "y": 2040, "w": 1120, "h": 880 },
+    { "file": "Einstellungen.dc.html",  "title": "10 · Einstellungen",  "x": 0,    "y": 2940, "w": 1120, "h": 880 },
+    { "file": "Designsystem.dc.html",   "title": "Design-System",       "x": 1240, "y": 2940, "w": 1280, "h": 820 }
+  ],
+  "annotations": [
+    { "id": "brief", "x": 0, "y": -220, "w": 620,
+      "text": "POMODORO D&D — Draft M0\n\nAlle Screens im dunklen Modus. Tokens, Kontraste und Regeln stehen im Repo unter docs/DESIGN-SYSTEM.md und sind nachgerechnet.\n\nDer Wortmarken-Text ist ein Platzhalter — der Produktname ist noch offen." },
+    { "id": "sync-note", "x": 1240, "y": 1980, "w": 460,
+      "text": "Beide Party-Screens zeigen dieselbe Zahl (18:42) wie der Solo-Timer. Genau das ist der Punkt: eine Uhr, aus einem Server-Zeitstempel berechnet, nicht n Countdowns." },
+    { "id": "state-note", "x": 2480, "y": 1980, "w": 440,
+      "text": "Absicht: Der Truhen-Screen ist der eine gestaltete Moment des Produkts. Unter prefers-reduced-motion bekommt er eine zweite Fassung, keine Abschaltung." }
+  ],
+  "launch": { "view": "canvas" }
+}

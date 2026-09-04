@@ -17,3 +17,6 @@ test-results/
 .agents/
 agent/
 .claude/skills/
+
+# Gesiegelte Canvas-Datei: ~2 MB Editor-Code, wird aus den .dc.html neu erzeugt
+design/pomodoro-dnd-draft.html

@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Alegreya+Sans:wght@400;500;700;800&display=swap">
+  <style>
+    :root{
+      --bg:#14110D; --surface:#1D1913; --raised:#262019;
+      --border:#3A3126; --border-strong:#766753;
+      --text:#EDE4D3; --muted:#A8977B;
+      --accent:#D4A72C; --accent-ink:#14110D;
+      --rest:#E08A4C; --danger:#D9645A;
+      --r-common:#A79C8C; --r-uncommon:#7BB05A; --r-rare:#5C9BD6;
+      --r-epic:#A87ED4; --r-legend:#E8B93C;
+      --display:"Cinzel",Georgia,"Times New Roman",serif;
+      --ui:"Alegreya Sans","Segoe UI",system-ui,sans-serif;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--text);
+      font-family:var(--ui);font-size:16px;line-height:1.55;
+      -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+    a{color:var(--accent);text-decoration:none}
+    a:hover{color:#E8BE4A}
+    h1,h2,h3{font-family:var(--display);font-weight:600;letter-spacing:.02em;
+      margin:0;text-wrap:balance;line-height:1.15}
+    p{margin:0;text-wrap:pretty}
+    ::selection{background:var(--accent);color:var(--accent-ink)}
+    .num{font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+    .card{background:var(--surface);border:1px solid var(--border);border-radius:14px}
+    .btn{font-family:var(--ui);font-size:15px;font-weight:700;border-radius:8px;
+      padding:11px 20px;border:1px solid var(--border-strong);background:transparent;
+      color:var(--text);display:inline-flex;align-items:center;gap:9px;
+      min-height:44px;cursor:pointer}
+    .btn-primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+    .btn-ghost{border-color:transparent;color:var(--muted)}
+    .lbl{font-family:var(--display);font-size:11px;font-weight:600;
+      letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+    .rule{height:1px;background:var(--border);border:0;margin:0}
+    .focus{outline:2px solid var(--accent);outline-offset:2px}
+  </style>
+</helmet>
+
+<div style="width:1120px;min-height:760px;background:var(--bg);display:flex;flex-direction:column">
+  <div style="display:flex;align-items:center;justify-content:space-between;padding:18px 40px;border-bottom:1px solid var(--border)">
+  <div style="display:flex;align-items:center;gap:10px">
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.2 4.6 6v6.1c0 4.3 3 7.4 7.4 8.7 4.4-1.3 7.4-4.4 7.4-8.7V6L12 3.2Z"/><path d="M12 8.4v7"/><path d="M9.2 11.2h5.6"/></svg>
+  <span style="font-family:var(--display);font-weight:700;font-size:15px;letter-spacing:.14em">POMODORO&nbsp;D&amp;D</span>
+</div>
+  <div style="display:flex;align-items:center;gap:14px">
+  <div style="display:flex;align-items:center;gap:9px;padding-right:6px">
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--muted)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v3.1M12 18.3v3.1M2.6 12h3.1M18.3 12h3.1"/><path d="m5.6 5.6 2.2 2.2M16.2 16.2l2.2 2.2M18.4 5.6l-2.2 2.2M7.8 16.2l-2.2 2.2"/></svg>
+    <span style="font-size:14px;color:var(--muted)">Mara · Magier · Stufe 7</span>
+  </div></div>
+</div>
+  <div style="flex:1 1 auto;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:30px;padding:52px 40px">
+
+    <div style="display:flex;align-items:center;gap:10px">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--rest)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.4c3.4 3.6 5.4 6.2 5.4 9.2a5.4 5.4 0 1 1-10.8 0c0-3 2-5.6 5.4-9.2Z"/><path d="M12 20.6a2.8 2.8 0 0 1-2.8-2.8c0-1.6 1-2.8 2.8-4.6 1.8 1.8 2.8 3 2.8 4.6a2.8 2.8 0 0 1-2.8 2.8Z"/></svg>
+      <span class="lbl" style="color:var(--rest)">Rast am Lagerfeuer</span>
+    </div>
+
+    <!-- Lagerfeuer als Geometrie, 4s Atem-Animation, unter reduce still -->
+    <div style="position:relative;width:340px;height:340px;display:flex;align-items:center;justify-content:center">
+      <div style="position:absolute;inset:0"><svg width="340" height="340" viewBox="0 0 340 340" aria-hidden="true" style="display:block">
+    <circle cx="170" cy="170" r="166" fill="none" stroke="var(--border)" stroke-width="6"/>
+    <circle cx="170" cy="170" r="166" fill="none" stroke="var(--rest)" stroke-width="6"
+      stroke-linecap="round" stroke-dasharray="1043.0"
+      stroke-dashoffset="751.0" transform="rotate(-90 170 170)"/>
+  </svg></div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:16px">
+        <svg width="74" height="74" viewBox="0 0 74 74" fill="none" aria-hidden="true" class="breathe" style="transform-origin:center">
+          <path d="M37 12c11 12 17 20 17 29a17 17 0 1 1-34 0c0-9 6-17 17-29Z" stroke="var(--rest)" stroke-width="1.5" stroke-linejoin="round"/>
+          <path d="M37 40c5 5 8 8 8 12a8 8 0 0 1-16 0c0-4 3-7 8-12Z" stroke="var(--accent)" stroke-width="1.5" stroke-linejoin="round"/>
+          <path d="M14 64h46M20 64l10-9M54 64l-10-9" stroke="var(--border-strong)" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <div class="num" style="font-size:76px;font-weight:800;line-height:1;color:var(--rest)">07:14</div>
+      </div>
+    </div>
+
+    <p style="font-size:18px;color:var(--text);text-align:center;max-width:44ch">
+      Deine Gruppe rastet. Steh auf, streck dich, trink was.
+    </p>
+    <p style="font-size:14px;color:var(--muted);text-align:center;max-width:52ch">
+      Nach dieser Rast wartet Quest&nbsp;3 von 4. Danach die lange Rast in der Taverne.
+    </p>
+
+    <div style="display:flex;align-items:center;gap:14px;margin-top:4px">
+      <button class="btn" style="gap:10px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.4 5.6v12.8M14.6 5.6v12.8"/></svg> Rast anhalten</button>
+      <button class="btn btn-ghost">Rast überspringen</button>
+    </div>
+  </div>
+
+  <div style="padding:16px 40px;border-top:1px solid var(--border);display:flex;align-items:center;gap:9px;color:var(--muted)">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--r-rare)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.6 9.4h16.8v9.8H3.6V9.4Z"/><path d="M3.6 9.4 6.2 4.8h11.6l2.6 4.6"/><path d="M3.6 13.2h16.8"/><path d="M10.4 13.2h3.2v3h-3.2v-3Z"/></svg>
+    <span style="font-size:13px">Eine ungeöffnete Truhe wartet in deinem Gepäck — sie läuft nicht weg.</span>
+  </div>
+</div>
+<style>
+  @keyframes breathe{0%,100%{transform:scale(1);opacity:.92}50%{transform:scale(1.07);opacity:1}}
+  .breathe{animation:breathe 4s ease-in-out infinite}
+  @media (prefers-reduced-motion:reduce){.breathe{animation:none}}
+</style>
+</x-dc>
+<script data-dc-script data-props='{}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>
