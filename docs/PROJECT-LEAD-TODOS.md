@@ -2,45 +2,48 @@
 
 **Projekt:** D&D Pomodoro Timer  
 **Repository:** `yamahabenny-gif/pomodoro-dnd`  
-**Stand:** 04.09.2026, TO-Reviewstand nach PRs #47–#49  
+**Stand:** 04.09.2026, aktueller TO-Reviewstand  
 **Source of Truth:** `docs/CONCEPT.md` + `docs/ROADMAP.md`
 
 ## Wer soll gerade was tun?
 
 ### Developer — **jetzt aktiv**
-**Primäre Aufgabe: #36 Waldintro nach Art-/Audio-Hinweisen nachbessern.**
+**Primäre Aufgabe: #36 / PR #48 Waldintro nach Art-/Audio-Hinweisen nachbessern.**
 
-- PR #48 ist technisch sauber und CI-grün.
-- Vor Merge sind die bereits dokumentierten Art-/Audio-/Produktnachbesserungen umzusetzen:
+- Technische Grundlage ist sauber und CI-grün.
+- Vor Merge sind die bereits dokumentierten Produkt-/Art-Nachbesserungen umzusetzen:
   - Narrationsbereich weniger wie klassische Web-Card gestalten.
   - Theme-/Darstellungssteuerung im Einstieg visuell zurücknehmen.
   - Diegetischen Eindruck „lebendiges illustriertes Fantasy-Abenteuerbuch“ stärken.
 - Reduced Motion, Tastaturbedienbarkeit und direkte Weiterleitung zu #10 beibehalten.
+- PR #48 ist aktuell außerdem nicht mergeable und muss vor finaler Freigabe auf den aktuellen `main`-Stand gebracht werden.
 
-**#10 / PR #49 ist technisch freigabefähig, wird aber noch nicht am kritischen Pfad vorbeigemerged.**
+**#10 / PR #49 ist technisch freigabefähig, bleibt aber bis zur Freigabe von #48 nachgelagert.**
 
-### Senior Developer — **jetzt aktiv**
-**Primäre Aufgabe: #5 / PR #47 Persistenz-Grundlage nachbessern.**
+### Senior Developer — **aktuell erledigt / wartet**
+**#5 / PR #47 Persistenz-Grundlage ist nach TO-Re-Review freigegeben und gemerged.**
 
-- CI ist grün und die Security-Grundlage ist grundsätzlich sauber.
-- Blocker: `Alte Weglaterne` wird aktuell bereits beim Fokusabschluss persistent freigeschaltet.
-- Concept V2 verlangt verbindlich: **Questabschluss → Rast → Truhe → Weglaterne**.
-- Die Persistenzlogik muss diese Reihenfolge abbilden; Fokusabschluss darf die Laterne noch nicht endgültig freischalten.
-- RLS, serverautoritatives `started_at`, idempotente Rewards und fehlende Party-/Klassen-/DM-Abhängigkeiten beibehalten.
+- Der frühere Sequenzblocker ist behoben.
+- `complete_first_light_session()` verbucht nur Fokusabschluss sowie 15 XP / 3 Gold.
+- `finish_first_light_rest()` persistiert Rast bzw. expliziten Skip.
+- Erst `open_first_light_chest()` schaltet `alte-weglaterne` frei.
+- RLS und RPC-only Schreibpfade bleiben erhalten.
+- Serverzeit und `auth.uid()` bleiben autoritativ.
+- Keine Party-, Klassen-, DM- oder Gast-Token-Abhängigkeiten.
 
 ### Art / Audio — **Review-Hinweise offen, keine neue Produktionslinie**
 Das Phase-1-Produktionspaket ist über PR #44 geliefert.
 
-- Für PR #48 sind konkrete Nachbesserungshinweise dokumentiert.
+- Für PR #48 bleiben konkrete Nachbesserungshinweise offen.
 - Keine neuen unabhängigen Assets anfangen.
 - Nach Developer-Nachbesserung erneute visuelle/produktseitige Abnahme von #48.
 
-### Technical Owner — **aktuell prüfen / auf Wiedervorlage warten**
+### Technical Owner — **aktuell warten / erneut prüfen sobald #48 nachgebessert ist**
 Aktueller Reviewstand:
 
-- **PR #47 — BLOCKIERT:** Concept-/Sequenzabweichung bei Weglaternen-Unlock. Re-Review nach Senior-Developer-Fix.
-- **PR #48 — TECHNISCH SAUBER, NOCH NICHT MERGEBEREIT:** CI grün; wartet auf Art-/Audio-/Produktnachbesserung und vorgesehene Product-Lead-Abnahme.
-- **PR #49 — TECHNISCH FREIGABEFÄHIG:** CI grün, Scope-konform, Magic Link ohne Gastmodus; noch nicht gemerged, solange #47 als vorgelagerter kritischer Schritt blockiert ist.
+- **PR #47 — GEMERGED:** Sequenzfehler behoben, Security/RLS sauber, CI grün.
+- **PR #48 — TECHNISCH SAUBER, NOCH NICHT MERGEBEREIT:** wartet auf Produkt-/Art-Nachbesserung und ist aktuell nicht mergeable gegen `main`.
+- **PR #49 — TECHNISCH FREIGABEFÄHIG:** CI grün, Scope-konform, Magic Link ohne Gastmodus; bleibt nachgelagert, bis #48 freigegeben ist.
 
 Regel bleibt:
 - Keine Eigenentwicklung.
@@ -50,31 +53,30 @@ Regel bleibt:
 ### Project Lead — **aktuell steuern und abnehmen**
 - Kritischen Pfad sauber halten.
 - #48 nach Developer-Nachbesserung produktseitig auf Ton, Einstieg und Art Direction abnehmen.
-- #47 nach Senior-Developer-Fix erneut zum TO-Re-Review geben.
-- #49 erst nach Freigabe des vorgelagerten Pfads mergen lassen.
+- Nach Freigabe von #48 kann #49 als nächster User-Journey-Schritt gemerged werden.
 - Danach den ersten vollständigen User-Journey-Abschnitt gezielt weiterführen.
 
 ## Aktueller kritischer Pfad
 
-**#47 / #5 Fix + #48 / #36 Nachbesserung → #49 / #10 Merge → #11 → #29 → #37 → #38/#12/#21 → #13 → #39 → #35 Abnahme**
+**#47 / #5 ✅ → #48 / #36 Nachbesserung + Produktabnahme → #49 / #10 Merge → #11 → #29 → #37 → #38/#12/#21 → #13 → #39 → #35 Abnahme**
 
 ## Aktuelle TO-Ergebnisse
 
 ### PR #47 — Phase 1 Persistence Foundation (#5)
-**Status: BLOCKIERT**
+**Status: GEMERGED**
 
-Positiv:
+Ergebnis:
 - CI grün.
 - Profile 1:1 zu `auth.users`.
 - RLS auf nutzerbezogenen Tabellen.
 - Serverautoritatives Session-`started_at` via Datenbankzeit.
-- Client kann XP/Gold, Session-Outcomes und Unlocks nicht direkt schreiben.
+- Client kann XP/Gold, Session-Outcomes, Rest-/Chest-Timestamps und Unlocks nicht direkt schreiben.
 - Keine Party-, Klassen-, DM- oder Gast-Token-Abhängigkeiten.
+- Reward-Reihenfolge jetzt Concept-V2-konform: **Fokusabschluss → XP/Gold + Truhe verdient → Rast/Skip → Truhe öffnen → Weglaterne**.
 
-Blocker:
-- `complete_first_light_session()` vergibt aktuell XP/Gold **und** legt sofort `alte-weglaterne` in `unlocks` an.
-- Das verletzt die verbindliche Produktsequenz **Fokusabschluss → Rast → Truhe → Laterne**.
-- Nachbesserung wurde im PR dokumentiert; Re-Review erforderlich.
+Merge:
+- PR #47 per Squash gemerged.
+- Merge-Commit: `d541ccdbc5e3ae1b7c086eb5c160f9c468176161`.
 
 ### PR #48 — Waldintro für Phase 1 (#36)
 **Status: technisch sauber, noch nicht mergebereit**
@@ -85,11 +87,12 @@ Positiv:
 - Semantischer Übergang zu `/account`.
 - Responsive, tastaturbedienbar, Reduced Motion vorhanden.
 
-Offene Abnahme-/Nachbesserungspunkte:
+Offen:
 - Narrationsbereich weniger wie klassische Web-Card.
 - ThemeSwitcher im ersten Moment visuell zurücknehmen.
 - Stärker diegetische Darstellung gemäß „Die Welt ist das Menü“.
 - Product-/Art-Abnahme nicht umgehen.
+- PR ist aktuell nicht mergeable gegen den aktuellen `main`-Stand; Rebase/Update durch den Developer erforderlich.
 
 ### PR #49 — Magic-Link-Account (#10)
 **Status: technisch freigabefähig, noch nicht gemerged**
@@ -104,11 +107,12 @@ Positiv:
 - Keine Änderungen an Persistenzschema, RLS oder Reward-/Session-RPCs aus #47.
 
 Merge-Entscheidung:
-- Noch nicht mergen, solange #47 als vorgelagerter Schritt im kritischen Pfad blockiert ist.
+- Noch nicht mergen, solange #48 / #36 als vorgelagerter User-Journey-Schritt nicht produktseitig freigegeben und mergebar ist.
 
 ## Bereits erledigt
 
 - #4 / PR #45 — Next.js-/Design-Grundlage gemergt.
+- #5 / PR #47 — Persistenz-Grundlage gemergt.
 - #6 — serverzeitfähige Timer-Grundlage abgeschlossen.
 - #40/#41 — Art-/Audio-Produktionspaket via PR #44 geliefert.
 - #1 — Phase 0 abgeschlossen.
@@ -122,4 +126,4 @@ Merge-Entscheidung:
 
 ## Führungsregel
 
-Es laufen weiterhin zwei kontrollierte Umsetzungsstränge: **Senior Developer behebt #47/#5**, **Developer bessert #48/#36 gemäß Art-/Produktreview nach**. PR #49 bleibt technisch freigabefähig in Wartestellung. Der Technical Owner entwickelt nicht, sondern prüft nur eingehende PRs und hält die Reihenfolge des kritischen Pfads ein.
+Der Senior-Developer-Strang #5 ist abgeschlossen. Der operative Engpass liegt jetzt vollständig bei **#48 / #36 Waldintro**: Developer-Nachbesserung, Branch-Aktualisierung und Produkt-/Art-Abnahme. PR #49 bleibt technisch bereit in Wartestellung. Der Technical Owner entwickelt nicht, sondern prüft nur eingehende PRs und hält die Reihenfolge des kritischen Pfads ein.
