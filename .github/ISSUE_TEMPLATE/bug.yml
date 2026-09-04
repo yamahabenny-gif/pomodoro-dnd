@@ -1,0 +1,32 @@
+name: Fehler
+description: Etwas funktioniert nicht wie beschrieben.
+title: "#junDev Fehler: "
+labels: ["bug"]
+body:
+  - type: textarea
+    id: expected
+    attributes: { label: Erwartet }
+    validations: { required: true }
+  - type: textarea
+    id: actual
+    attributes: { label: Tatsächlich }
+    validations: { required: true }
+  - type: textarea
+    id: steps
+    attributes:
+      label: Schritte zum Nachstellen
+      value: |
+        1. 
+        2. 
+    validations: { required: true }
+  - type: input
+    id: env
+    attributes:
+      label: Umgebung
+      placeholder: "Browser, Betriebssystem, Solo oder Party, Party-Code falls relevant"
+  - type: checkboxes
+    id: sync
+    attributes:
+      label: Betrifft das den Party-Sync?
+      options:
+        - label: "Ja — dann bitte Abweichung in Sekunden und Anzahl der Clients angeben"

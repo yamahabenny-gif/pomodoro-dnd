@@ -1,0 +1,17 @@
+name: Entscheidung (ADR)
+description: Eine Entscheidung mit ernsthafter Alternative — kommt nach docs/DECISIONS.md.
+title: "#SENDEV ADR: "
+labels: ["decision"]
+body:
+  - type: textarea
+    id: context
+    attributes: { label: Kontext, description: Welches Problem steht an? }
+    validations: { required: true }
+  - type: textarea
+    id: options
+    attributes: { label: Optionen, description: Mindestens zwei, mit Konsequenzen. }
+    validations: { required: true }
+  - type: textarea
+    id: recommendation
+    attributes: { label: Empfehlung und Begründung }
+    validations: { required: true }

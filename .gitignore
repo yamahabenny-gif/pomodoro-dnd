@@ -1,0 +1,19 @@
+node_modules/
+.next/
+out/
+build/
+.env
+.env.local
+.env*.local
+.DS_Store
+*.log
+.vercel
+coverage/
+playwright-report/
+test-results/
+
+# Agent-Skills: über skills-lock.json reproduzierbar, deshalb nicht im Repo.
+# Wiederherstellen mit: npx skills experimental_install
+.agents/
+agent/
+.claude/skills/

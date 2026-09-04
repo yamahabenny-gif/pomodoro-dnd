@@ -1,0 +1,53 @@
+name: Aufgabe
+description: Eine umsetzbare Aufgabe. Titel muss einen Hashtag tragen.
+title: "#junDev "
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Titel-Format:** `#SENDEV …` oder `#junDev …` — plus `#release`, wenn es nach
+        außen wirkt (Deployment, Domain, Produktions-Migrationen, öffentliche Texte).
+  - type: dropdown
+    id: track
+    attributes:
+      label: Zuständigkeit
+      options: ["#junDev", "#SENDEV"]
+    validations: { required: true }
+  - type: checkboxes
+    id: release
+    attributes:
+      label: Freigabe
+      options:
+        - label: "#release — braucht Freigabe durch das Release Team vor dem Merge"
+  - type: textarea
+    id: goal
+    attributes:
+      label: Ziel
+      description: Was soll danach möglich sein? Ein bis drei Sätze.
+    validations: { required: true }
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Akzeptanzkriterien
+      description: Überprüfbar formulieren. Bei #junDev verpflichtend.
+      value: |
+        - [ ] 
+        - [ ] Zustände abgedeckt: leer, lädt, Fehler, offline
+        - [ ] Tastaturbedienbar, sichtbarer Fokusring
+        - [ ] Heller und dunkler Modus geprüft
+    validations: { required: true }
+  - type: input
+    id: files
+    attributes:
+      label: Betroffene Dateien / Bereiche
+  - type: input
+    id: contact
+    attributes:
+      label: Ansprechpartner für Rückfragen
+      description: Bei #junDev verpflichtend.
+  - type: textarea
+    id: open
+    attributes:
+      label: Offene Fragen
+      description: Unsicherheiten hier notieren statt stillschweigend annehmen.
