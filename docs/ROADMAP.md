@@ -2,6 +2,10 @@
 
 Jeder Meilenstein existiert als GitHub-Milestone. Aufgaben liegen als Issues darunter.
 
+> ⚠️ **Diese Reihenfolge steht zur Disposition.** Konzept V1 verlangt Solo zuerst
+> (§11), was M2 bis M4 umstellt — siehe [KONZEPT-ABGLEICH.md §5](KONZEPT-ABGLEICH.md)
+> und Issue #28. Bis dahin gilt die Ordnung unten unverändert.
+
 ## M0 · Draft & Freigabe ← **hier stehen wir**
 Konzept, Architektur, Sync-Protokoll und Design-System sind dokumentiert; der visuelle
 Draft aller Screens liegt vor. **Ergebnis:** Freigabe des Konzepts durch das Release Team.

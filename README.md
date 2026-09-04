@@ -5,7 +5,7 @@
 > 5-stelligen Code, bei der alle dieselbe Uhr sehen.
 
 **Ziel-Domain:** `pomodoro.lang-jamin.de`
-**Status:** 🎨 Draft / Design-Review — noch keine Implementierung
+**Status:** 🎨 Konzept-Abgleich — 9 Konflikte offen, davon 2 auf Eigentümer-Ebene
 **Visueller Draft:** [alle elf Screens als Canvas](https://claude.ai/code/artifact/671894a8-8452-4e21-a32d-c48e88dea90e) · Quellen unter [`design/`](design/)
 **Owner:** @yamahabenny-gif · **Freigabe:** Release Team (`#release`)
 
@@ -15,6 +15,7 @@
 
 | Dokument | Inhalt |
 |---|---|
+| **[docs/KONZEPT-ABGLEICH.md](docs/KONZEPT-ABGLEICH.md)** | **Abgleich mit Konzept V1 — hier zuerst lesen** |
 | [docs/CONCEPT.md](docs/CONCEPT.md) | Spielkonzept: Klassen, Quests, Rast, Truhen, Loot |
 | [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) | Tech-Stack, Datenmodell, Deployment |
 | [docs/SYNC-PROTOCOL.md](docs/SYNC-PROTOCOL.md) | **Kernstück:** wie die Party dieselbe Uhr sieht |
