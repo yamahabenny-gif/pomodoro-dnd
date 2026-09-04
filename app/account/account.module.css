@@ -1,0 +1,62 @@
+.shell {
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: radial-gradient(circle at 50% 20%, rgb(212 167 44 / .08), transparent 38%), var(--bg);
+}
+
+.card {
+  width: min(100%, 620px);
+  padding: clamp(24px, 6vw, 52px);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--surface);
+}
+
+:global(html[data-theme="light"]) .card {
+  border-color: transparent;
+  box-shadow: 0 2px 8px -2px rgb(36 28 20 / .18);
+}
+
+.card h1 {
+  margin: 8px 0 16px;
+  font-size: clamp(2rem, 5vw, 3.6rem);
+  line-height: 1.05;
+}
+
+.card form {
+  display: grid;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.card label {
+  font-weight: 700;
+}
+
+.card input {
+  min-height: 48px;
+  width: 100%;
+  border: 1px solid var(--border-strong);
+  border-radius: 8px;
+  background: var(--surface-raised);
+  color: var(--text);
+  padding: 11px 12px;
+}
+
+.card button {
+  min-height: 48px;
+  margin-top: 4px;
+}
+
+.card button:disabled,
+.card input:disabled {
+  cursor: not-allowed;
+  opacity: .62;
+}
+
+.card [role="status"] {
+  min-height: 1.5em;
+  margin: 4px 0 0;
+}
