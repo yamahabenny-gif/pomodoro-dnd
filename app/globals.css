@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+:root,
+html[data-theme="dark"] {
+  --bg: #14110D;
+  --surface: #1D1913;
+  --surface-raised: #262019;
+  --border: #3A3126;
+  --border-strong: #766753;
+  --text: #EDE4D3;
+  --text-muted: #A8977B;
+  --accent: #D4A72C;
+  --accent-ink: #14110D;
+  --rest: #E08A4C;
+  --danger: #D9645A;
+  --selection: #D4A72C;
+  --selection-ink: #14110D;
+}
+
+html[data-theme="light"] {
+  --bg: #F2EADB;
+  --surface: #FBF6EC;
+  --surface-raised: #FBF6EC;
+  --border: #DFD2BC;
+  --border-strong: #8C7960;
+  --text: #241C14;
+  --text-muted: #6B5B45;
+  --accent: #7E600F;
+  --accent-ink: #FBF6EC;
+  --rest: #9A4E1E;
+  --danger: #9B2F26;
+  --selection: #7E600F;
+  --selection-ink: #FBF6EC;
+}
+
+* { box-sizing: border-box; }
+html { background: var(--bg); color-scheme: dark light; }
+body { margin: 0; min-height: 100dvh; background: var(--bg); color: var(--text); font-family: var(--font-ui), sans-serif; caret-color: var(--accent); }
+::selection { background: var(--selection); color: var(--selection-ink); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; box-shadow: 0 0 0 2px var(--bg); }
+* { scrollbar-color: var(--border-strong) var(--bg); }
+h1, h2, h3 { font-family: var(--font-display), serif; letter-spacing: .02em; text-wrap: balance; }
+p { color: var(--text-muted); text-wrap: pretty; max-width: 70ch; }
+button, input { font: inherit; }
+button { border: 1px solid var(--border-strong); border-radius: 8px; background: var(--accent); color: var(--accent-ink); padding: 12px 16px; font-weight: 700; cursor: pointer; transition: transform 160ms ease-out, opacity 160ms ease-out; }
+button:hover { transform: translateY(-1px); }
+.shell { width: min(100% - 32px, 960px); margin-inline: auto; padding-block: 64px; display: grid; gap: 32px; }
+.foundation-card { padding: clamp(24px, 6vw, 64px); border-radius: 14px; background: var(--surface); border: 1px solid var(--border); }
+html[data-theme="light"] .foundation-card { border-color: transparent; box-shadow: 0 2px 8px -2px rgb(36 28 20 / .18); }
+.eyebrow { color: var(--accent); font-weight: 700; }
+.theme-switcher { border: 1px solid var(--border-strong); border-radius: 8px; padding: 16px; display: flex; flex-wrap: wrap; gap: 12px 24px; }
+.theme-switcher legend { padding-inline: 8px; font-weight: 700; }
+.theme-switcher label { display: inline-flex; align-items: center; gap: 8px; }
+@media (prefers-reduced-motion: reduce) { button { transition: opacity 120ms ease-out; } button:hover { transform: none; } }
