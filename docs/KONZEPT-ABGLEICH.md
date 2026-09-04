@@ -378,7 +378,7 @@ fertig spezifiziert und wartet.
 | Nr. | Frage | Entscheidung | Stand |
 |---|---|---|---|
 | K1 | Klassen oder Völker? | **Völker** — Identität, keine Mechanik. Dauer an der Quest. Fähigkeiten nur als Gewinn | ✅ #27 · ADR-013 |
-| K2 | Lager als Hub? | **Ja** — durch #28 bestätigt („Menschen ins Lager einladen") | ✅ #29 offen für die Umsetzung |
+| K2 | Lager als Hub? | **Ja** — gezeichnet, Party-Hub entfällt | ✅ #29 |
 | K3 | Solo zuerst? | **Ja** — Solo ist Normalzustand, Meilensteine umgestellt | ✅ #28 |
 | K4 | DM oder Bereitschaft? | **Bereitschaftsprüfung**, keine Rolle | ✅ ADR-015 |
 | K5 | Wochenpool? | **Ja, nachfüllend** — läuft nie leer, keine Frist | ✅ ADR-016 |
@@ -386,15 +386,17 @@ fertig spezifiziert und wartet.
 | K7 | Vier Seltenheitsstufen? | **Ja**, 60/27/11/2 % | ✅ umgesetzt |
 | K8 | Tagesserie? | **Streichen** | ⬜ noch im Charakterbogen |
 | K9 | Konto-Pflicht? | **Konto und Charakter sind Pflicht**, kein Gastzugang | ✅ #30 W5 · ADR-014 |
-| K10 | Welcher Ton? | — | 🔴 **offen** · #31 |
-| K11 | 90 Minuten? | — | 🔴 **offen** · #32 |
+| K10 | Welcher Ton? | **Ruhig kurz/mittel, laut nur beim Boss** | ✅ #31 · ADR-019 |
+| K11 | 90 Minuten? | **Bogen aus 3 × 25 mit Rasten** | ✅ #32 · ADR-018 |
 | W1 | Rast interaktiv? | **Eine Handlung, ein Klick**, danach schickt der Screen weg | ✅ #30 |
 | W2 | Wochenpool leerlaufen? | **Nein** — füllt nach | ✅ ADR-016 |
 | W3 | Kürzeste Stufe? | **Kundschaftergang, 15 min** | ✅ ADR-017 |
 | W4 | Mindestgrößen? | **40 / 40 / 12 / 12 je Kategorie** | ✅ als Test hinterlegt |
 | W5 | Gastzugang? | **Nein** | ✅ ADR-014 |
 
-**Was noch blockiert:** K10 (#31) entscheidet über den Ton der 100 geschriebenen Quests
-und damit über die Regionen. K11 (#32) entscheidet über die epische Stufe, die als
-einzige noch gar nicht geschrieben ist. Beide hängen am selben Material — solange sie
-offen sind, wird das Lager nicht gezeichnet.
+**Alle Konflikte sind entschieden.** Der Abgleich ist damit abgeschlossen; die beiden
+Entwürfe sind zu einem Konzept zusammengeführt.
+
+Offen bleiben nur noch Punkte, die nichts mit dem Abgleich zu tun haben: der Produktname,
+ADR-004 (verpasste Phasen), wer den Rive-Editor bedient (#25) und der Weg für die
+Regionen-Kulissen (#24). Keiner davon blockiert M1.
