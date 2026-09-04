@@ -2,12 +2,12 @@
 
 **Projekt:** D&D Pomodoro Timer  
 **Repository:** `yamahabenny-gif/pomodoro-dnd`  
-**Stand:** 04.09.2026, nach Merge von PR #50  
+**Stand:** 04.09.2026, nach Merge von PR #53  
 **Source of Truth:** `docs/CONCEPT.md` + `docs/ROADMAP.md`
 
 ## Aktueller Stand
 
-Der erste Teil der Phase-1-User-Journey ist jetzt auf `main`:
+Der erste Teil der Phase-1-User-Journey ist auf `main`:
 
 **Waldintro → Account → Charakter → [nächster sichtbarer Schritt: Preview + Lager]**
 
@@ -19,10 +19,18 @@ Abgeschlossen:
 - [x] #10 / PR #49 – Magic-Link-Account
 - [x] #11 / PR #50 – minimale visuelle Charaktererstellung
 - [x] #40/#41 / PR #44 – Phase-1-Art-/Audio-Produktionspaket geliefert
+- [x] PR #53 – Hostinger-/`focus.lang-jamin.de`-Architektur- und Release-Handoff dokumentiert und gemerged
+
+Wichtig zu PR #53:
+- `focus.lang-jamin.de` ist jetzt die dokumentierte Zielrichtung für den späteren öffentlichen Release.
+- PR #53 war **nur Handoff/Dokumentation**. Er hat keine Pomodoro-App, DNS-, Supabase- oder Produktionsumstellung ausgerollt.
+- Issue #3 ist auf Hostinger / `focus.lang-jamin.de` aktualisiert und bleibt der kanonische Release-Tracker.
+- #35 bleibt zwingendes Produkt-Gate vor dem späteren Hostinger-/DNS-/App-Cutover.
 
 Jetzt unmittelbar offen:
 - [ ] #51 – internes Preview-Deployment für laufende Phase 1
 - [ ] #29 – kleines Lager als diegetischer Hub
+- [ ] Architektur-Follow-up aus PR #53 – Repo-Dokumente/ADR auf Hostinger-Zielrichtung bringen; technische Runtime-Entscheidung nur nach Hostinger-Qualifikation
 
 Danach offen im Phase-1-Vertical-Slice:
 - [ ] #37 – Abenteuerbuch mit kuratierter erster Quest
@@ -35,89 +43,43 @@ Danach offen im Phase-1-Vertical-Slice:
 
 ## Wer muss jetzt als Nächstes etwas tun?
 
-### Developer / Technical Setup — **JETZT AKTIV**
-**Nächste Aufgabe: #51 – Internes Preview-Deployment einrichten.**
+### Senior Developer / Architektur — **PR #53 FOLLOW-UP**
+- Den im Handoff beschriebenen Architektur-PR erstellen.
+- `docs/DECISIONS.md`, `docs/ARCHITECTURE.md`, `README.md`, `docs/WORKFLOW.md`, `design/README.md` und `.env.example` auf Hostinger / `focus.lang-jamin.de` konsolidieren.
+- Keine anbieterabhängigen Änderungen an `next.config.mjs`, `package.json` oder Deployment-CI ohne belegte Hostinger-Next.js-Laufzeit.
+- Danach an Technical Owner zur technischen Prüfung geben.
 
-Ziel:
-- aktuellen `main` über eine Browser-URL testbar machen
-- Preview/Test klar von späterer Produktion trennen
-- Account-/Auth-Flow und Charaktererstellung real testbar machen
-- keine Secrets im Repository oder Client offenlegen
-- Preview-URL an Project Lead übergeben
-- nach weiteren Phase-1-Merges den Preview-Stand fortlaufend aktualisieren
+### Developer / Technical Setup — **#51 PREVIEW**
+- Internes Preview weiter vorbereiten, aber klar von `focus.lang-jamin.de` und dem späteren Produktions-Cutover trennen.
+- Keine Produktions-DNS-/Supabase-Umstellung vor #35.
+- Ziel bleibt: Browser-URL für laufende Produkt-/Art-Abnahme.
+- Danach #29 – kleines Lager.
 
-**Direkt danach:** #29 – Kleines Lager als diegetischer Hub.
+### Technical Owner — **PRÜFT, ENTWICKELT NICHT**
+- Architektur-Follow-up aus PR #53 technisch prüfen.
+- #51 Preview auf Environment-/Secret-Trennung und sichere Auth-Konfiguration prüfen.
+- Keine Eigenentwicklung.
 
-### Technical Owner — **PRÜFT #51 TECHNISCH**
-- Nichts entwickeln.
-- Preview-Setup auf saubere Environment-/Secret-Trennung und sichere Auth-Konfiguration prüfen.
-- Danach die folgenden Feature-PRs jeweils gegen aktuellen `main` prüfen.
+### Art / Audio — **KEINE NEUE PRODUKTION**
+- Phase-1-Asset-Pack liegt vor.
+- Bei #29 und folgenden visuellen Schritten vorhandene Assets integrieren.
+- Nur konkrete Lücken nach Integration bearbeiten.
 
-### Senior Developer — **AKTUELL KEINE AKTIVE AUFGABE**
-- Persistenz-Grundlage #5 ist abgeschlossen.
-- Nur eingreifen, wenn Preview/Auth oder weitere Integration eine echte Architektur-, RLS-, Persistenz- oder Security-Nachbesserung benötigt.
+### Project Lead — **STEUERN + ABNEHMEN**
+- PR #53 ist release-seitig freigegeben und gemerged.
+- Issue #3 ist auf Hostinger / `focus.lang-jamin.de` aktualisiert.
+- #51 als interne Preview klar vom späteren Produktionsweg trennen.
+- Architektur-Follow-up und #29 jeweils nach Review weiterziehen.
+- #35 als zwingendes Produkt-Gate schützen.
 
-### Art / Audio — **AKTUELL KEINE NEUE PRODUKTION**
-- Das Phase-1-Asset-Pack liegt auf `main`.
-- Bei #29 und den folgenden visuellen Schritten vorhandene Assets integrieren.
-- Nur konkrete fehlende Assets oder notwendige Nachbesserungen produzieren.
-
-### Project Lead — **PREVIEW ABNEHMEN + PFAD STEUERN**
-- #51 nach Bereitstellung im Browser prüfen.
-- Danach #29 produkt-/artseitig begleiten und abnehmen.
-- Backlog, Tracking #35 und kritischen Pfad synchron halten.
-
-## Kritischer Pfad ab jetzt
+## Kritischer Produktpfad
 
 **#4 ✅ → #5 ✅ → #6 ✅ → #36 ✅ → #10 ✅ → #11 ✅ → #51 Preview → #29 → #37 → #38 + #12 + #21 → #13 → #39 → #35 Abnahme**
 
-## Reihenfolge der nächsten Developer-Pakete
+## Release-/Architekturpfad parallel dazu
 
-1. **#51 Internes Preview-Deployment** – jetzt
-2. **#29 Kleines Lager** – direkt danach
-3. **#37 Abenteuerbuch**
-4. **#38 + #12 + #21** – Quest-Rahmen, Fokus-Screen und Journey
-5. **#13 Rast**
-6. **#39 Weglaterne + sichtbare Lagerveränderung**
-7. **#35 End-to-End-Abnahme**
-
-## Phase-1-Abnahmekriterien für #35
-
-Der Vertical Slice ist erst fertig, wenn:
-- [ ] kompletter Weg ohne Sackgasse durchspielbar ist
-- [ ] Desktop und Mobile funktionieren
-- [ ] Reload/Hintergrund-Tab die Fokuszeit schützt
-- [ ] Timer während Fokus sichtbar und in die Welt integriert bleibt
-- [ ] Reduced Motion und Mute funktionieren
-- [ ] erste Belohnung das Lager sichtbar verändert
-- [ ] Art/Audio aus PR #44 konsistent wirken und Fokus nicht stören
-- [ ] Produkt wie das Zielprodukt wirkt und nicht wie ein technischer Prototyp
-
-## Späterer Backlog – nicht jetzt bearbeiten
-
-### Phase 2
-- #14
-- #15
-- #17
-- #23
-- #26
-
-### Phase 3
-- #22
-
-### Phase 4
-- #7
-- #8
-- #9
-- #16
-
-### Release-Gates
-- #3 öffentliches Deployment
-- #18 Accessibility-Gesamtdurchgang
-- #20 Datenschutz / Impressum / Export / Kontolöschung
-
-Diese Aufgaben blockieren den internen Phase-1-Vertical-Slice aktuell nicht.
+**PR #53 ✅ → Architektur-Follow-up → Hostinger-Laufzeitqualifikation → #35 ✅ → #3 App/DNS/Supabase-Cutover auf `focus.lang-jamin.de`**
 
 ## Führungsregel
 
-PR #50 / #11 ist abgeschlossen und gemerged. Der operative Engpass liegt jetzt bei **#51 internes Preview-Deployment**. Sobald eine Browser-URL verfügbar und technisch sauber geprüft ist, geht der Developer unmittelbar weiter mit **#29 Kleines Lager**. Der Technical Owner prüft nur; Senior Developer und Art/Audio warten auf konkrete Integrationsbedarfe.
+PR #53 ist erledigt. Der Handoff darf nicht mit einer bereits erfolgten technischen Migration verwechselt werden. Produktseitig bleibt #51 → #29 der nächste sichtbare Pfad. Architektur und Release laufen parallel, aber der öffentliche Hostinger-Cutover bleibt bis zur vollständigen #35-Abnahme gesperrt.
