@@ -36,11 +36,19 @@ create table public.focus_sessions (
   status public.focus_session_status not null default 'active',
   completed_at timestamptz,
   rewarded_at timestamptz,
+  rest_finished_at timestamptz,
+  chest_opened_at timestamptz,
   created_at timestamptz not null default now(),
   updated_at timestamptz not null default now(),
   constraint focus_sessions_completion_consistency check (
     (status = 'completed' and completed_at is not null)
     or (status <> 'completed' and completed_at is null)
+  ),
+  constraint focus_sessions_rest_after_completion check (
+    rest_finished_at is null or completed_at is not null
+  ),
+  constraint focus_sessions_chest_after_rest check (
+    chest_opened_at is null or rest_finished_at is not null
   )
 );
 
@@ -100,8 +108,6 @@ create trigger on_auth_user_created
 after insert on auth.users
 for each row execute function public.handle_new_user();
 
--- Sole creation path for the first Phase-1 quest session.
--- Identity, start time and duration are server-authoritative.
 create or replace function public.start_first_light_session()
 returns public.focus_sessions
 language plpgsql
@@ -170,10 +176,10 @@ begin
 end;
 $$;
 
--- Atomic and idempotent first-loop completion.
--- Rewards are deliberately fixed to the Phase-1 quest contract.
+-- Quest completion persists only the focus reward. It deliberately does not
+-- unlock the lantern; that belongs to the post-rest chest step.
 create or replace function public.complete_first_light_session(p_session_id uuid)
-returns table (xp integer, gold integer, lantern_unlocked boolean)
+returns table (xp integer, gold integer, chest_earned boolean)
 language plpgsql
 security definer
 set search_path = ''
@@ -217,29 +223,100 @@ begin
         gold = p.gold + 3
     where p.id = v_user_id;
 
-    insert into public.unlocks(profile_id, unlock_key)
-    values (v_user_id, 'alte-weglaterne')
-    on conflict do nothing;
-
     update public.focus_sessions fs
     set rewarded_at = now()
     where fs.id = p_session_id and fs.rewarded_at is null;
   end if;
 
   return query
-  select p.xp,
-         p.gold,
-         exists(
-           select 1
-           from public.unlocks u
-           where u.profile_id = v_user_id and u.unlock_key = 'alte-weglaterne'
-         )
+  select p.xp, p.gold, true
   from public.profiles p
   where p.id = v_user_id;
 end;
 $$;
 
--- RLS is mandatory for all user-related Phase-1 tables.
+-- Marks the mandatory rest step as finished. The UI may call this after the
+-- normal rest duration or when the user explicitly skips the rest.
+create or replace function public.finish_first_light_rest(p_session_id uuid)
+returns timestamptz
+language plpgsql
+security definer
+set search_path = ''
+as $$
+declare
+  v_user_id uuid := auth.uid();
+  v_rest_finished_at timestamptz;
+begin
+  if v_user_id is null then
+    raise exception 'authentication required';
+  end if;
+
+  update public.focus_sessions fs
+  set rest_finished_at = coalesce(fs.rest_finished_at, now())
+  where fs.id = p_session_id
+    and fs.profile_id = v_user_id
+    and fs.status = 'completed'
+    and fs.rewarded_at is not null
+  returning fs.rest_finished_at into v_rest_finished_at;
+
+  if not found then
+    raise exception 'completed rewarded session required before rest can finish';
+  end if;
+
+  return v_rest_finished_at;
+end;
+$$;
+
+-- Deterministic first chest. Only this post-rest step persists the lantern.
+create or replace function public.open_first_light_chest(p_session_id uuid)
+returns boolean
+language plpgsql
+security definer
+set search_path = ''
+as $$
+declare
+  v_user_id uuid := auth.uid();
+  v_session public.focus_sessions%rowtype;
+begin
+  if v_user_id is null then
+    raise exception 'authentication required';
+  end if;
+
+  select * into v_session
+  from public.focus_sessions fs
+  where fs.id = p_session_id and fs.profile_id = v_user_id
+  for update;
+
+  if not found then
+    raise exception 'session not found';
+  end if;
+
+  if v_session.quest_key <> 'ein-licht-im-unterholz'
+     or v_session.status <> 'completed'
+     or v_session.rewarded_at is null then
+    raise exception 'completed rewarded phase 1 quest required';
+  end if;
+
+  if v_session.rest_finished_at is null then
+    raise exception 'rest must finish before opening the chest';
+  end if;
+
+  insert into public.unlocks(profile_id, unlock_key)
+  values (v_user_id, 'alte-weglaterne')
+  on conflict do nothing;
+
+  update public.focus_sessions fs
+  set chest_opened_at = coalesce(fs.chest_opened_at, now())
+  where fs.id = p_session_id;
+
+  return exists(
+    select 1
+    from public.unlocks u
+    where u.profile_id = v_user_id and u.unlock_key = 'alte-weglaterne'
+  );
+end;
+$$;
+
 alter table public.profiles enable row level security;
 alter table public.characters enable row level security;
 alter table public.focus_sessions enable row level security;
@@ -281,7 +358,6 @@ on public.unlocks for select
 to authenticated
 using ((select auth.uid()) = profile_id);
 
--- Exact client privileges. Progress, session outcome and unlocks are RPC-only.
 revoke all on public.profiles, public.characters, public.focus_sessions, public.unlocks from anon, authenticated;
 grant select on public.profiles, public.characters, public.focus_sessions, public.unlocks to authenticated;
 grant insert, update, delete on public.characters to authenticated;
@@ -289,6 +365,10 @@ grant insert, update, delete on public.characters to authenticated;
 revoke all on function public.start_first_light_session() from public;
 revoke all on function public.cancel_focus_session(uuid) from public;
 revoke all on function public.complete_first_light_session(uuid) from public;
+revoke all on function public.finish_first_light_rest(uuid) from public;
+revoke all on function public.open_first_light_chest(uuid) from public;
 grant execute on function public.start_first_light_session() to authenticated;
 grant execute on function public.cancel_focus_session(uuid) to authenticated;
 grant execute on function public.complete_first_light_session(uuid) to authenticated;
+grant execute on function public.finish_first_light_rest(uuid) to authenticated;
+grant execute on function public.open_first_light_chest(uuid) to authenticated;
