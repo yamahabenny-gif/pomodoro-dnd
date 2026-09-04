@@ -107,8 +107,18 @@ Drei Schnitte, jeder mit einer Aufgabe. Alle über Google Fonts verfügbar und f
 Über einer Überschrift steht mehr Luft als darunter — die Überschrift gehört zu dem,
 was sie einleitet, nicht zu dem, was davor endet.
 
-**Radien:** Karten `14px`. Bedienelemente `8px`. Pillen nur für kleine Marker
-(Party-Status, Seltenheits-Chips), nie für Karten.
+**Radien — drei Stufen, keine dazwischen:**
+
+| Stufe | Wert | Wofür |
+|---|---|---|
+| Karte | `14px` | Karten, Panels, Dialoge |
+| Bedienelement | `8px` | Knöpfe, Eingabefelder, Listenzeilen, Chips |
+| Marke | `6px` | Farbquadrate, kleine Sigel-Kacheln |
+| Pille | `999px` | Nur Fortschrittsbalken und Status-Marker — nie für Karten |
+
+Ein Zwischenwert wie `10px` oder `12px` sieht für sich genommen richtig aus und macht
+das System trotzdem kaputt: Sobald zwei Elemente nebeneinander liegen, sieht man den
+Unterschied, ohne ihn benennen zu können.
 
 **Elevation genau einmal deklarieren:**
 - Dunkel → **nur Kante** (`1px solid var(--border)`). Ein Schatten auf Fast-Schwarz ist

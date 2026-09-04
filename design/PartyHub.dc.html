@@ -81,31 +81,31 @@
         <div style="display:flex;gap:10px">
           
   <div style="width:62px;height:78px;border:1px solid var(--accent);
-    border-radius:10px;display:flex;align-items:center;justify-content:center;
+    border-radius:8px;display:flex;align-items:center;justify-content:center;
     background:var(--raised)">
     <span class="num" style="font-family:var(--display);font-size:34px;font-weight:700;
       color:var(--accent)">H</span>
   </div>
   <div style="width:62px;height:78px;border:1px solid var(--accent);
-    border-radius:10px;display:flex;align-items:center;justify-content:center;
+    border-radius:8px;display:flex;align-items:center;justify-content:center;
     background:var(--raised)">
     <span class="num" style="font-family:var(--display);font-size:34px;font-weight:700;
       color:var(--accent)">2</span>
   </div>
   <div style="width:62px;height:78px;border:1px solid var(--accent);
-    border-radius:10px;display:flex;align-items:center;justify-content:center;
+    border-radius:8px;display:flex;align-items:center;justify-content:center;
     background:var(--raised)">
     <span class="num" style="font-family:var(--display);font-size:34px;font-weight:700;
       color:var(--accent)">6</span>
   </div>
   <div style="width:62px;height:78px;border:1px solid var(--accent);
-    border-radius:10px;display:flex;align-items:center;justify-content:center;
+    border-radius:8px;display:flex;align-items:center;justify-content:center;
     background:var(--raised)">
     <span class="num" style="font-family:var(--display);font-size:34px;font-weight:700;
       color:var(--accent)">H</span>
   </div>
   <div style="width:62px;height:78px;border:1px solid var(--accent);
-    border-radius:10px;display:flex;align-items:center;justify-content:center;
+    border-radius:8px;display:flex;align-items:center;justify-content:center;
     background:var(--raised)">
     <span class="num" style="font-family:var(--display);font-size:34px;font-weight:700;
       color:var(--accent)">E</span>
@@ -133,44 +133,18 @@
         O statt einer Null tippst, verstehen wir dich trotzdem.
       </p>
       <div style="align-self:center;display:flex;flex-direction:column;align-items:center;gap:18px;padding:10px 0">
-        <label for="code" style="position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)">Party-Code, fünf Zeichen</label>
-        <div style="display:flex;gap:10px">
-          
-  <div style="width:62px;height:78px;border:1px solid var(--accent);
-    border-radius:10px;display:flex;align-items:center;justify-content:center;
-    background:var(--raised)">
-    <span class="num" style="font-family:var(--display);font-size:34px;font-weight:700;
-      color:var(--accent)">T</span>
-  </div>
-  <div style="width:62px;height:78px;border:1px solid var(--accent);
-    border-radius:10px;display:flex;align-items:center;justify-content:center;
-    background:var(--raised)">
-    <span class="num" style="font-family:var(--display);font-size:34px;font-weight:700;
-      color:var(--accent)">9</span>
-  </div>
-  <div style="width:62px;height:78px;border:1px solid var(--accent);
-    border-radius:10px;display:flex;align-items:center;justify-content:center;
-    background:var(--raised)">
-    <span class="num" style="font-family:var(--display);font-size:34px;font-weight:700;
-      color:var(--accent)">K</span>
-  </div>
-          <div style="width:62px;height:78px;border:2px solid var(--accent);border-radius:10px;
-            display:flex;align-items:center;justify-content:center;background:var(--raised)">
-            <span style="width:2px;height:34px;background:var(--accent)"></span>
-          </div>
-          
-  <div style="width:62px;height:78px;border:1px solid var(--border-strong);
-    border-radius:10px;display:flex;align-items:center;justify-content:center;
-    background:var(--surface)">
-    <span class="num" style="font-family:var(--display);font-size:34px;font-weight:700;
-      color:var(--muted)"></span>
-  </div>
-        </div>
+        <label for="code" style="font-family:var(--display);font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)">Party-Code, fünf Zeichen</label>
+        <input id="code" name="party-code" type="text" inputmode="latin" autocomplete="off" spellcheck="false"
+          maxlength="5" size="5" value="T9K"
+          style="width:340px;background:var(--raised);border:2px solid var(--accent);border-radius:8px;
+          padding:14px 0 14px 22px;color:var(--accent);font-family:var(--display);font-size:38px;
+          font-weight:700;font-variant-numeric:tabular-nums;letter-spacing:22px;text-align:left;
+          min-height:44px;caret-color:var(--accent)">
         <p style="font-size:13px;color:var(--muted)">Einfügen mit ⌘&nbsp;V funktioniert.</p>
       </div>
 
       <!-- Fehlerzustand: nennt den nächsten Schritt -->
-      <div style="align-self:stretch;display:flex;gap:11px;padding:13px 15px;border-radius:10px;
+      <div style="align-self:stretch;display:flex;gap:11px;padding:13px 15px;border-radius:8px;
         border:1px solid var(--danger);background:var(--raised)">
         <span style="flex:0 0 auto;margin-top:1px"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--danger)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4.6 21 19.6H3L12 4.6Z"/><path d="M12 10v4.2"/><path d="M12 17.1h.01"/></svg></span>
         <span style="font-size:14px;color:var(--text);line-height:1.45">
