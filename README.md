@@ -6,6 +6,7 @@
 
 **Ziel-Domain:** `pomodoro.lang-jamin.de`
 **Status:** 🎨 Draft / Design-Review — noch keine Implementierung
+**Visueller Draft:** [alle elf Screens als Canvas](https://claude.ai/code/artifact/671894a8-8452-4e21-a32d-c48e88dea90e) · Quellen unter [`design/`](design/)
 **Owner:** @yamahabenny-gif · **Freigabe:** Release Team (`#release`)
 
 ---
@@ -19,6 +20,8 @@
 | [docs/SYNC-PROTOCOL.md](docs/SYNC-PROTOCOL.md) | **Kernstück:** wie die Party dieselbe Uhr sieht |
 | [docs/DESIGN-SYSTEM.md](docs/DESIGN-SYSTEM.md) | Farben, Typografie, Spacing, Motion, A11y |
 | [docs/SCREENS.md](docs/SCREENS.md) | Alle Screens von Login bis Charakterbogen |
+| [design/](design/) | Der visuelle Draft — elf Artboards als Quelldateien |
+| [docs/AGENT-SKILLS.md](docs/AGENT-SKILLS.md) | Welche Agent-Skills gelten und wofür |
 | [docs/WORKFLOW.md](docs/WORKFLOW.md) | Hashtags, Branches, Reviews, Release-Freigabe |
 | [docs/ROADMAP.md](docs/ROADMAP.md) | Meilensteine M0–M5 |
 | [docs/DECISIONS.md](docs/DECISIONS.md) | Architecture Decision Records (ADR) |
@@ -69,6 +72,7 @@ Mitglied ist sofort synchron.
 - Jedes Issue trägt genau einen **Zuständigkeits-Hashtag**: `#SENDEV` oder `#junDev`.
 - Alles, was nach außen geht, trägt zusätzlich `#release` und wartet auf das Release Team.
 - Jede Architektur-Entscheidung wird als ADR in [docs/DECISIONS.md](docs/DECISIONS.md) festgehalten.
+- `main` ist geschützt: Merge nur über einen Pull Request mit mindestens einem Review.
 
 Details: [CONTRIBUTING.md](CONTRIBUTING.md) · [docs/WORKFLOW.md](docs/WORKFLOW.md)
 
