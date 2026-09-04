@@ -1,0 +1,69 @@
+name: Internal Preview
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+env:
+  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+
+jobs:
+  deploy-preview:
+    name: Deploy current main to internal preview
+    runs-on: ubuntu-latest
+    environment: preview
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Verify repository quality gates
+        run: |
+          npm run lint
+          npm run typecheck
+          npm test
+
+      - name: Install Vercel CLI
+        run: npm install --global vercel@latest
+
+      - name: Pull preview project settings
+        run: vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}
+
+      - name: Build preview
+        run: vercel build --token=${{ secrets.VERCEL_TOKEN }}
+
+      - name: Deploy preview
+        id: deploy
+        shell: bash
+        run: |
+          set -euo pipefail
+          preview_url="$(vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }})"
+          echo "url=${preview_url}" >> "$GITHUB_OUTPUT"
+          echo "### Internal Phase-1 Preview" >> "$GITHUB_STEP_SUMMARY"
+          echo "${preview_url}" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Verify preview responds
+        env:
+          PREVIEW_URL: ${{ steps.deploy.outputs.url }}
+        run: |
+          node - <<'NODE'
+          const url = process.env.PREVIEW_URL
+          if (!url) throw new Error('Preview URL missing')
+          const response = await fetch(url, { redirect: 'follow' })
+          if (!response.ok) throw new Error(`Preview responded with ${response.status}`)
+          console.log(`Preview reachable: ${response.url}`)
+          NODE
