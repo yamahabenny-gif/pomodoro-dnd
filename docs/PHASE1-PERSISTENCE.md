@@ -20,7 +20,7 @@
 4. Successful focus completion uses `complete_first_light_session(session_id)`.
    - It rejects completion before the server-side end time.
    - It atomically adds **15 XP** and **3 Gold**.
-   - It marks the first chest as earned by virtue of the rewarded completed session.
+   - A completed session with `rewarded_at` is the persisted proof that the first chest was earned.
    - It does **not** unlock the lantern.
 5. After the normal rest or an explicit rest skip, call `finish_first_light_rest(session_id)`.
    - This persists `rest_finished_at` only for an already completed and rewarded session.
