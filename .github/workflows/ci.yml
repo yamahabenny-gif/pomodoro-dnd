@@ -7,7 +7,7 @@ on:
 
 jobs:
   check:
-    name: Typecheck und Tests
+    name: Build, Lint, Typecheck und Tests
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -16,7 +16,24 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
+      - name: Lint
+        run: npm run lint
       - name: Typecheck
         run: npm run typecheck
       - name: Tests
         run: npm test
+      - name: Build
+        run: npm run build
+      - name: Dev smoke test
+        run: |
+          npm run dev > /tmp/pomodoro-dnd-dev.log 2>&1 &
+          DEV_PID=$!
+          trap 'kill $DEV_PID' EXIT
+          for i in {1..30}; do
+            if curl --fail --silent http://127.0.0.1:3000/ > /dev/null; then
+              exit 0
+            fi
+            sleep 1
+          done
+          cat /tmp/pomodoro-dnd-dev.log
+          exit 1
