@@ -1,91 +1,152 @@
 # Bewegung und Grafik
 
-> Zuständigkeit: `#SENDEV` (Architektur) · `#junDev` (Umsetzung)
-> Entscheidungen: ADR-007 bis ADR-010 in [DECISIONS.md](DECISIONS.md)
+> Zuständigkeit: Architektur + Design/Frontend
+> Gilt zusammen mit [CONCEPT.md](CONCEPT.md), [ART-DIRECTION.md](ART-DIRECTION.md) und [ASSET-BIBLE.md](ASSET-BIBLE.md).
 
 ## Der Grundsatz
 
-**Animation bekommt keine eigene Uhr.**
+**Animation bekommt keine eigene fachliche Uhr.**
 
-```
-Position der Gruppe auf dem Weg  =  verstrichene Zeit / Quest-Dauer
-```
-
-Das ist dasselbe Prinzip wie beim Timer selbst — abgeleiteter Zustand statt laufender
-Schleife. Die Wanderung ist damit kein Zustand, der gepflegt werden muss, sondern ein
-Wert, der berechnet wird.
-
-Die Folgen sind der eigentliche Gewinn:
-
-| Situation | Verhalten |
-|---|---|
-| Tab 20 Minuten im Hintergrund | Beim Zurückkehren steht die Gruppe sofort an der richtigen Stelle |
-| Laptop-Standby über eine halbe Quest | Korrekt, ohne Aufholen |
-| Mitglied tritt bei Minute 17 bei | Sieht die Gruppe genau dort, wo sie ist |
-| Zwei Geräte derselben Party | Zeigen dieselbe Stelle des Weges, ohne einen einzigen Sync-Aufruf |
-
-Es kostet nichts, weil es auf demselben `requestAnimationFrame`-Tick mitläuft, der
-ohnehin den Timer zeichnet. Es gibt keine zweite Schleife.
-
-```ts
-// lib/timer/ — rein, ohne React, ohne Date.now()
-export function journeyProgress(phase: PartyPhase, now: number): number {
-  const elapsed = now - Date.parse(phase.phase_started_at)
-  return clamp01(elapsed / (phase.phase_duration_s * 1000))
-}
+```text
+Journey-Fortschritt = verstrichene Fokuszeit / Quest-Dauer
 ```
 
-## Was wir bewusst nicht laden
+Die Reise ist abgeleiteter Zustand. Dadurch ist sie nach Hintergrund-Tab, Standby, Reload oder Gerätewechsel sofort an der richtigen Stelle, ohne dass eine zweite Animations-Zeitachse synchronisiert werden muss.
 
-**Keine Game-Engine.** Phaser, PixiJS und Three.js sind hier die falsche Antwort.
+Bei Gruppenquests sehen wiederverbundene Mitglieder denselben Fortschritt. Ein erstmaliger Drop-in in eine bereits laufende Quest ist nach Concept V2 nicht vorgesehen.
 
-Ein WebGL-Canvas, der 50 Minuten am Stück rendert, ist genau das, was eine Fokus-App
-nicht tun darf: Er zieht Akku, lässt den Lüfter angehen und holt sich Aufmerksamkeit,
-die der Nutzer gerade woanders braucht. Dazu kämen 150–600&nbsp;kB Laufzeit für
-Fähigkeiten — Physik, Sprite-Batching, Szenengraph — von denen wir keine einzige nutzen.
+---
 
-Was wir tatsächlich brauchen, ist eine Kulisse, die sich sehr langsam bewegt, und
-**einen** Moment, der aufwendig ist. Dafür reichen SVG und CSS.
+## Keine Game Engine
 
-## Die drei Ebenen
+Phaser, PixiJS und Three.js sind für das Kernprodukt unnötig. Wir brauchen keine Physik, kein Echtzeit-Kampfsystem und keinen permanent rendernden Szenengraphen.
 
-| Ebene | Womit | Wo |
-|---|---|---|
-| **Ruhige Kulisse** | SVG-Ebenen, `transform: translateX`, gesteuert vom Fortschritt | Wanderung während der Quest, Lagerfeuer während der Rast |
-| **Übergänge** | `motion` (motion.dev), 120–600&nbsp;ms | Phasenwechsel, Panels, Listen |
-| **Der eine Moment** | **Rive**, State Machine | Truhe öffnen, Stufenaufstieg, Party-Truhe |
+Bevorzugt werden:
+- CSS für kleine Ambient-Effekte
+- SVG für einfache World-/UI-Elemente
+- `motion` für Übergänge und leichte Transforms
+- zeitabhängige Layer-/Szenenwechsel für Quest-Journeys
+- Rive nur dort, wo eine echte State-Machine-Animation einen klaren Mehrwert hat
 
-### Warum Rive für die Truhe
+Die Fokusphase soll CPU- und akkusparend bleiben.
 
-Die Truhe hat fünf Seltenheitsstufen. Handanimiert wären das fünf Varianten derselben
-Choreografie, die auseinanderlaufen, sobald jemand eine davon anfasst.
+---
 
-Rive löst das über eine **State Machine**: ein Asset, ein Eingang `rarity` (0–4), und
-die Übergänge gehören zur Datei statt zum Code. Eine Designerin ändert das Timing, ohne
-dass jemand ein Deployment braucht.
+## Ebenenmodell
 
-Der Preis ist ehrlich zu nennen: rund 200&nbsp;kB WASM und die Voraussetzung, dass
-jemand im Team den Rive-Editor bedient. Deshalb ist Rive **nur** für die Höhepunkte
-vorgesehen — nicht für Übergänge, nicht für die Kulisse, nicht für Icons.
+Ein Quest- oder Lagerbild kann aus mehreren 2D-Ebenen bestehen:
 
-**Ladeverhalten:** Die Rive-Laufzeit wird erst geladen, wenn die erste Quest fast
-vorbei ist (`progress > 0.9`), nicht beim Seitenaufruf. Wer die App öffnet, um zu
-arbeiten, soll keine Animationslaufzeit herunterladen.
+1. Hintergrund
+2. Mittelgrund
+3. Vordergrund
+4. Charakter(e)
+5. atmosphärische Ebene (Nebel, Licht, Blätter, Glut)
+6. UI
 
-**Fallback ist Pflicht, nicht Kür:** Lädt Rive nicht, öffnet sich die Truhe als
-CSS-Überblendung mit demselben Ergebnis. Dieselbe Fassung dient unter
-`prefers-reduced-motion`.
+Die Ebenen dürfen sich mit unterschiedlichen, sehr kleinen Geschwindigkeiten bewegen. Bewegung bleibt unterstützend und nie aufmerksamkeitsfordernd.
 
-## Budget
+---
 
-Verbindlich, wird in CI geprüft:
+## Journey-Beats
 
-| | |
-|---|---|
-| JavaScript auf dem Quest-Screen | ≤ 120&nbsp;kB gzip, **ohne** Rive |
-| Rive-Laufzeit | nachgeladen, nie im ersten Bundle |
-| Bilder im Erstaufruf | ≤ 250&nbsp;kB |
-| CPU während einer laufenden Quest | < 2&nbsp;% auf einem Laptop von 2020 |
+Questtypen können unterschiedliche Beat-Zahlen haben:
+- Kundschaftergang 15 min: ca. 3–4 Zustände
+- Kurze Quest 25 min: ca. 4 Zustände
+- Mittlere Quest 50 min: ca. 5 Zustände
+- Epische Quest: pro 25-Minuten-Akt eigene Zustände; Arc-Fortschritt bleibt über Akte persistent
 
-Der letzte Punkt ist der wichtigste und der einzige, den man nicht messen kann, ohne
-es zu versuchen. Er gehört in jedes Review eines Animations-PRs.
+Ein Beat ist kein zwingend komplett neues Vollbild. Oft reicht ein anderer Vordergrund, Lichtzustand, Questdetail oder Ausschnitt derselben Region.
+
+---
+
+## Aufbruch
+
+Aufbruch ist ein 3–5 Sekunden langes Ritual:
+- Charakter richtet sich auf / nimmt Ausrüstung
+- Scene/Audio wechselt
+- kurze Kamerabewegung oder Überblendung
+- Fokuszeit beginnt
+
+Reduced Motion: statischer Zustandswechsel mit kurzer Überblendung.
+
+---
+
+## Fokusphase
+
+Während Fokus gilt:
+- keine hektischen Animationen
+- keine dauernden UI-Pulse
+- keine Bildschirmerschütterungen
+- keine Action-Choreografie, die Aufmerksamkeit verlangt
+- keine nötige Interaktion
+
+Ambient Motion darf laufen, muss aber klein und pausierbar sein.
+
+### Ruhiger Fokus
+Im Modus „Ruhiger Fokus“ werden Szenenwechsel und Ambient Motion weiter reduziert. Die fachliche Journey und Rewards bleiben unverändert.
+
+---
+
+## Questabschluss
+
+Der Questabschluss ist kurz, eindeutig und wärmer/größer als die Fokusphase:
+- Zielzustand der Szene
+- musikalische Auflösung
+- XP/Gold/Truhe verdient
+- Übergang zur Rast
+
+Die Truhe wird **nicht vor der Rast geöffnet**.
+
+---
+
+## Rast
+
+Rast ist der visuell ruhigste Zustand:
+- keine Journey-Bewegung
+- Feuer/Umgebung nur subtil
+- Musik stark reduziert oder aus
+- eine optionale kleine Handlung
+- aktive Einladung, den Bildschirm zu verlassen
+
+---
+
+## Truhe
+
+Die Truhe ist ein hochwertiger Discovery-Moment nach der Rast.
+
+Rive ist möglich, aber nicht verpflichtend. Wenn Rive eingesetzt wird, muss:
+- die Runtime lazy geladen werden
+- die Animation alle vier Seltenheiten unterstützen
+- ein CSS-/statischer Fallback existieren
+- Reduced Motion einen gleichwertigen Endzustand erhalten
+
+Keine Party-Truhe. Gruppenmitglieder erhalten individuelle Rewards.
+
+---
+
+## Reduced Motion
+
+`prefers-reduced-motion` wird respektiert und durch eine In-App-Einstellung ergänzt.
+
+Reduziert/entfernt werden insbesondere:
+- Parallax
+- große Kamerafahrten
+- Zooms
+- starke Transform-Animationen
+
+Atmosphäre bleibt über Illustration, Licht und sanfte Fades erhalten.
+
+---
+
+## Performance-Leitplanken
+
+- keine Game Engine im Quest-Screen
+- große World-Assets responsive und komprimiert ausliefern
+- nur aktuelle Region und nächste Beats priorisiert laden
+- Audio erst bei Bedarf und nach Nutzerinteraktion laden
+- Hero-Motion-Runtimes nie in den initialen Bundle-Pfad zwingen
+- Animation darf Fokusfunktion nie blockieren
+
+Die konkreten Assetformate, Layer-Konventionen und Produktionsschritte stehen in [ASSET-BIBLE.md](ASSET-BIBLE.md).
+
+> **Wenn Motion ausfällt, muss der Timer trotzdem perfekt funktionieren.**
