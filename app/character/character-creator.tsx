@@ -56,6 +56,26 @@ const hairColorOptions = [
   ['silber', 'Silber'],
 ]
 
+const skinColors: Record<string, string> = {
+  warm: '#c8a483',
+  kuehl: '#b5a6a2',
+  moos: '#879876',
+  stein: '#9a9288',
+}
+
+const hairColors: Record<string, string> = {
+  dunkel: '#49392f',
+  kastanie: '#704b36',
+  kupfer: '#9b5d35',
+  silber: '#b6b0a4',
+}
+
+const bodyScales: Record<string, number> = {
+  schmal: 0.88,
+  ausgewogen: 1,
+  kraeftig: 1.12,
+}
+
 export function CharacterCreator({ userId, initialCharacter }: { userId: string; initialCharacter: CharacterDraft | null }) {
   const router = useRouter()
   const [draft, setDraft] = useState<CharacterDraft>(initialCharacter ?? defaults)
@@ -127,9 +147,7 @@ export function CharacterCreator({ userId, initialCharacter }: { userId: string;
 
       <section className={styles.detailPanel} aria-labelledby="appearance-title">
         <div className={styles.preview} aria-hidden="true">
-          <svg viewBox="0 0 220 260" focusable="false">
-            <use href={`/assets/phase1-art-pack.svg#${selectedAncestry.asset}`} />
-          </svg>
+          <CharacterPreview draft={draft} asset={selectedAncestry.asset} />
           <span>{draft.name.trim() || selectedAncestry.label}</span>
         </div>
 
@@ -168,6 +186,62 @@ export function CharacterCreator({ userId, initialCharacter }: { userId: string;
         </div>
       </section>
     </form>
+  )
+}
+
+function CharacterPreview({ draft, asset }: { draft: CharacterDraft; asset: string }) {
+  const bodyScale = bodyScales[draft.bodyVariant] ?? 1
+  const skinColor = skinColors[draft.skinVariant] ?? skinColors.warm
+  const hairColor = hairColors[draft.hairColor] ?? hairColors.dunkel
+
+  return (
+    <svg className={styles.characterPreview} viewBox="0 0 512 512" focusable="false">
+      <g transform={`translate(256 0) scale(${bodyScale} 1) translate(-256 0)`}>
+        <use href={`/assets/phase1-art-pack.svg#${asset}`} />
+      </g>
+      <circle className={styles.skinLayer} cx="256" cy="150" r={draft.ancestry === 'goblin' ? 60 : 69} fill={skinColor} />
+      {draft.ancestry === 'elf' ? (
+        <path className={styles.skinLayer} d="M185 125L115 150L180 175ZM327 125L397 150L332 175Z" fill={skinColor} />
+      ) : null}
+      {draft.ancestry === 'goblin' ? (
+        <path className={styles.skinLayer} d="M185 120L95 110L178 175ZM327 120L417 110L334 175Z" fill={skinColor} />
+      ) : null}
+      {draft.ancestry === 'ork' ? (
+        <path className={styles.skinLayer} d="M185 135L130 155L182 178ZM327 135L382 155L330 178Z" fill={skinColor} />
+      ) : null}
+      <Hair style={draft.hairStyle} color={hairColor} ancestry={draft.ancestry} />
+    </svg>
+  )
+}
+
+function Hair({ style, color, ancestry }: { style: string; color: string; ancestry: Ancestry }) {
+  if (style === 'lang') {
+    return (
+      <path
+        className={styles.hairLayer}
+        d="M188 132Q205 66 256 64Q310 66 325 132L320 230Q298 197 286 174Q256 192 226 174Q214 199 193 230Z"
+        fill={color}
+      />
+    )
+  }
+
+  if (style === 'geflochten') {
+    return (
+      <g className={styles.hairLayer} fill={color}>
+        <path d="M188 132Q205 66 256 64Q310 66 325 132Q290 106 256 107Q222 106 188 132Z" />
+        <circle cx="306" cy="178" r="13" />
+        <circle cx="310" cy="202" r="11" />
+        <circle cx="307" cy="223" r="9" />
+      </g>
+    )
+  }
+
+  return (
+    <path
+      className={styles.hairLayer}
+      d={ancestry === 'goblin' ? 'M201 129Q225 80 256 82Q288 81 311 129Q281 111 256 112Q231 111 201 129Z' : 'M188 130Q207 69 256 67Q307 69 324 130Q289 104 256 105Q223 104 188 130Z'}
+      fill={color}
+    />
   )
 }
 
