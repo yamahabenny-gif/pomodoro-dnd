@@ -3,7 +3,7 @@
     "id": "sm-01",
     "title": "Der Salzpfad",
     "region": "salzmarschen",
-    "length": "standard",
+    "length": "kurz",
     "beats": [
       "Bei Ebbe liegt der alte Damm frei.",
       "Pfähle im Wasser, in Abständen wie Schritte.",
@@ -15,7 +15,7 @@
     "id": "sm-02",
     "title": "Zwei Fuß unter Wasser",
     "region": "salzmarschen",
-    "length": "short",
+    "length": "kundschaft",
     "beats": [
       "Das Pflaster ist zu sehen, wenn man stillsteht.",
       "Eine Kreuzung, an der vier Straßen weitergehen.",
@@ -26,7 +26,7 @@
     "id": "sm-03",
     "title": "Die Glockenboje",
     "region": "salzmarschen",
-    "length": "long",
+    "length": "mittel",
     "beats": [
       "Irgendwo läutet es, unregelmäßig.",
       "Der Ton kommt von backbord, dann von vorn.",
@@ -39,7 +39,7 @@
     "id": "sm-04",
     "title": "Reusen ohne Fischer",
     "region": "salzmarschen",
-    "length": "standard",
+    "length": "kurz",
     "beats": [
       "Sechs Reusen, alle gesetzt.",
       "Die Netze sind trocken — seit Tagen niemand hier.",
@@ -51,7 +51,7 @@
     "id": "sm-05",
     "title": "Der flache Turm",
     "region": "salzmarschen",
-    "length": "short",
+    "length": "kundschaft",
     "beats": [
       "Ein Turm, der nur noch zwei Meter hoch ist.",
       "Innen eine Wendeltreppe, die nach unten geht.",
@@ -62,7 +62,7 @@
     "id": "sm-06",
     "title": "Salz auf der Karte",
     "region": "salzmarschen",
-    "length": "standard",
+    "length": "kurz",
     "beats": [
       "Die Karte stimmt nicht mehr mit dem Ufer überein.",
       "Du korrigierst sie, während du gehst.",
@@ -74,7 +74,7 @@
     "id": "sm-07",
     "title": "Was die Ebbe hergibt",
     "region": "salzmarschen",
-    "length": "long",
+    "length": "mittel",
     "beats": [
       "Sechs Stunden Zeit, bis das Wasser zurückkommt.",
       "Du arbeitest dich vom Ufer nach außen.",
@@ -87,7 +87,7 @@
     "id": "sm-08",
     "title": "Der Vogelzug",
     "region": "salzmarschen",
-    "length": "short",
+    "length": "kundschaft",
     "beats": [
       "Sie ziehen alle in dieselbe Richtung.",
       "Nicht nach Süden — nach Osten, quer.",
@@ -98,7 +98,7 @@
     "id": "sm-09",
     "title": "Die zweite Brücke",
     "region": "salzmarschen",
-    "length": "standard",
+    "length": "kurz",
     "beats": [
       "Von der ersten Brücke steht ein Pfeiler.",
       "Von der zweiten steht alles, aber sie führt ins Wasser.",
@@ -110,7 +110,7 @@
     "id": "sm-10",
     "title": "Marschfeuer",
     "region": "salzmarschen",
-    "length": "standard",
+    "length": "kurz",
     "beats": [
       "Ein Feuer weit draußen, wo kein Land ist.",
       "Es bewegt sich nicht, also steht jemand darauf.",
@@ -122,7 +122,7 @@
     "id": "sm-11",
     "title": "Das Deichbuch",
     "region": "salzmarschen",
-    "length": "long",
+    "length": "mittel",
     "beats": [
       "Im Wärterhaus liegt ein Buch, dreihundert Jahre geführt.",
       "Jede Sturmflut, jede Reparatur, jede Hand.",
@@ -135,7 +135,7 @@
     "id": "sm-12",
     "title": "Priel bei Nacht",
     "region": "salzmarschen",
-    "length": "short",
+    "length": "kundschaft",
     "beats": [
       "Der Priel ist der einzige Weg zurück.",
       "Er ist tiefer als heute Morgen.",
@@ -146,7 +146,7 @@
     "id": "sm-13",
     "title": "Die Salzgärten",
     "region": "salzmarschen",
-    "length": "standard",
+    "length": "kurz",
     "beats": [
       "Becken, eines neben dem anderen, quadratisch.",
       "Manche noch voll, manche längst ausgeblüht.",
@@ -158,7 +158,7 @@
     "id": "aw-01",
     "title": "Der erste Schnitt",
     "region": "aschenwald",
-    "length": "standard",
+    "length": "kurz",
     "beats": [
       "Am Waldrand hat jemand angefangen zu schlagen.",
       "Zwölf Stämme, sauber, dann aufgehört.",
@@ -170,7 +170,7 @@
     "id": "aw-02",
     "title": "Wo das Feuer aufhörte",
     "region": "aschenwald",
-    "length": "long",
+    "length": "mittel",
     "beats": [
       "Es gibt eine Linie, an der der Wald wieder grün ist.",
       "Sie verläuft zu gerade für einen Zufall.",
@@ -183,7 +183,7 @@
     "id": "aw-03",
     "title": "Aschespur",
     "region": "aschenwald",
-    "length": "short",
+    "length": "kundschaft",
     "beats": [
       "Fußspuren, tief, mit Last.",
       "Sie führen hinein, nicht heraus.",
@@ -194,7 +194,7 @@
     "id": "aw-04",
     "title": "Die Köhlerei",
     "region": "aschenwald",
-    "length": "standard",
+    "length": "kurz",
     "beats": [
       "Sechs Meiler, alle kalt.",
       "Der siebte ist warm. Nicht heiß — warm.",
@@ -206,7 +206,7 @@
     "id": "aw-05",
     "title": "Stämme zählen",
     "region": "aschenwald",
-    "length": "standard",
+    "length": "kurz",
     "beats": [
       "Die Bäume tragen Nummern, eingeschlagen.",
       "Sie laufen nicht durch, sondern springen.",
@@ -218,7 +218,7 @@
     "id": "aw-06",
     "title": "Das grüne Herz",
     "region": "aschenwald",
-    "length": "long",
+    "length": "mittel",
     "beats": [
       "Mitten im Verbrannten steht ein Kreis, der lebt.",
       "Vierzig Schritt Durchmesser, kein Rauchschaden.",
@@ -231,7 +231,7 @@
     "id": "aw-07",
     "title": "Wind im Toten",
     "region": "aschenwald",
-    "length": "short",
+    "length": "kundschaft",
     "beats": [
       "Ohne Blätter klingt der Wald anders.",
       "Ein Ton, der nicht vom Holz kommt.",
@@ -242,7 +242,7 @@
     "id": "aw-08",
     "title": "Der Hochstand",
     "region": "aschenwald",
-    "length": "standard",
+    "length": "kurz",
     "beats": [
       "Ein Ansitz, dreißig Fuß hoch, unversehrt.",
       "Von oben sieht man, wie weit das Feuer ging.",
@@ -254,7 +254,7 @@
     "id": "aw-09",
     "title": "Wurzelwerk",
     "region": "aschenwald",
-    "length": "standard",
+    "length": "kurz",
     "beats": [
       "Ein Wurzelteller, aufgestellt wie eine Wand.",
       "Dahinter eine Grube, in die man hineinpasst.",
@@ -266,7 +266,7 @@
     "id": "aw-10",
     "title": "Der lange Rückweg",
     "region": "aschenwald",
-    "length": "long",
+    "length": "mittel",
     "beats": [
       "Der Weg hinein war eine Stunde.",
       "Der Weg hinaus ist es nicht.",
@@ -279,7 +279,7 @@
     "id": "aw-11",
     "title": "Harz",
     "region": "aschenwald",
-    "length": "short",
+    "length": "kundschaft",
     "beats": [
       "Aus einem Stamm läuft noch Harz.",
       "Also ist der Baum nicht tot.",
@@ -290,7 +290,7 @@
     "id": "aw-12",
     "title": "Die Glocke im Wald",
     "region": "aschenwald",
-    "length": "standard",
+    "length": "kurz",
     "beats": [
       "Eine Glocke, ohne Turm, an einem Ast.",
       "Sie ist zu schwer für den Ast, hält aber.",
@@ -302,7 +302,7 @@
     "id": "aw-13",
     "title": "Zweite Ernte",
     "region": "aschenwald",
-    "length": "standard",
+    "length": "kurz",
     "beats": [
       "In der Asche wächst etwas, das vorher nicht hier war.",
       "Reihenweise, nicht verstreut.",
@@ -314,7 +314,7 @@
     "id": "hs-01",
     "title": "Erstes Stockwerk abwärts",
     "region": "hohle-stadt",
-    "length": "standard",
+    "length": "kurz",
     "beats": [
       "Die Treppe beginnt in einem Wohnhaus.",
       "Nach zwanzig Stufen hört der Verputz auf.",
@@ -326,7 +326,7 @@
     "id": "hs-02",
     "title": "Die Wasserleitung",
     "region": "hohle-stadt",
-    "length": "long",
+    "length": "mittel",
     "beats": [
       "Ein Rohr, mannshoch, trocken.",
       "Es fällt sehr gleichmäßig ab.",
@@ -339,7 +339,7 @@
     "id": "hs-03",
     "title": "Laternenöl",
     "region": "hohle-stadt",
-    "length": "short",
+    "length": "kundschaft",
     "beats": [
       "Ein Depot, ordentlich, halb voll.",
       "Das Öl ist noch brennbar.",
@@ -350,7 +350,7 @@
     "id": "hs-04",
     "title": "Der obere Markt",
     "region": "hohle-stadt",
-    "length": "standard",
+    "length": "kurz",
     "beats": [
       "Ein Platz mit Ständen, alle abgebaut.",
       "Die Steinbänke stehen, die Namen sind lesbar.",
@@ -362,7 +362,7 @@
     "id": "hs-05",
     "title": "Stützen",
     "region": "hohle-stadt",
-    "length": "standard",
+    "length": "kurz",
     "beats": [
       "Die Decke wird von Säulen gehalten, nicht von Fels.",
       "Jede vierte ist nachträglich gesetzt.",
@@ -374,7 +374,7 @@
     "id": "hs-06",
     "title": "Das dritte Stockwerk",
     "region": "hohle-stadt",
-    "length": "long",
+    "length": "mittel",
     "beats": [
       "Zwei Stockwerke sind kartiert. Das dritte nicht.",
       "Der Abstieg dauert länger als beim letzten Mal.",
@@ -387,7 +387,7 @@
     "id": "hs-07",
     "title": "Kreide",
     "region": "hohle-stadt",
-    "length": "short",
+    "length": "kundschaft",
     "beats": [
       "An der Wand stehen Kreidezeichen.",
       "Nicht deine, aber dasselbe System.",
@@ -398,7 +398,7 @@
     "id": "hs-08",
     "title": "Die verschlossene Gasse",
     "region": "hohle-stadt",
-    "length": "standard",
+    "length": "kurz",
     "beats": [
       "Eine Gasse ist zugemauert, sauber, von innen.",
       "Das Mauerwerk ist jünger als die Stadt.",
@@ -410,7 +410,7 @@
     "id": "hs-09",
     "title": "Zisterne",
     "region": "hohle-stadt",
-    "length": "standard",
+    "length": "kurz",
     "beats": [
       "Ein Becken, so groß wie ein Hof.",
       "Das Wasser ist klar und steht sehr still.",
@@ -422,7 +422,7 @@
     "id": "hs-10",
     "title": "Der Schacht ohne Boden",
     "region": "hohle-stadt",
-    "length": "long",
+    "length": "mittel",
     "beats": [
       "Ein Stein fällt und man hört nichts.",
       "Ein zweiter, größer. Immer noch nichts.",
@@ -435,7 +435,7 @@
     "id": "hs-11",
     "title": "Das Archiv der Straßen",
     "region": "hohle-stadt",
-    "length": "short",
+    "length": "kundschaft",
     "beats": [
       "Ein Raum voller Steintafeln mit Straßennamen.",
       "Die Hälfte der Namen kennst du von oben.",
@@ -446,7 +446,7 @@
     "id": "hs-12",
     "title": "Rückweg mit Last",
     "region": "hohle-stadt",
-    "length": "standard",
+    "length": "kurz",
     "beats": [
       "Bergauf, mit dem Doppelten des Hinwegs.",
       "Alle zweihundert Stufen ein Absatz.",
@@ -458,7 +458,7 @@
     "id": "nk-01",
     "title": "Der schmale Weg",
     "region": "nebelklippen",
-    "length": "standard",
+    "length": "kurz",
     "beats": [
       "Eine Handbreit Fels, links die Wand, rechts nichts.",
       "Der Nebel steht bis auf Kniehöhe.",
@@ -470,7 +470,7 @@
     "id": "nk-02",
     "title": "Warten auf Sicht",
     "region": "nebelklippen",
-    "length": "long",
+    "length": "mittel",
     "beats": [
       "Ohne Wind sieht man vier Schritt weit.",
       "Du setzt dich hin und wartest.",
@@ -483,7 +483,7 @@
     "id": "nk-03",
     "title": "Steinmännchen",
     "region": "nebelklippen",
-    "length": "short",
+    "length": "kundschaft",
     "beats": [
       "Alle fünfzig Schritt eines, sauber gesetzt.",
       "Sie führen nicht zum Gipfel, sondern quer.",
@@ -494,7 +494,7 @@
     "id": "nk-04",
     "title": "Die Seilbrücke",
     "region": "nebelklippen",
-    "length": "standard",
+    "length": "kurz",
     "beats": [
       "Drei Seile, zwei davon gut.",
       "Die Bretter fehlen in der Mitte.",
@@ -506,7 +506,7 @@
     "id": "nk-05",
     "title": "Echo zählen",
     "region": "nebelklippen",
-    "length": "standard",
+    "length": "kurz",
     "beats": [
       "Ein Ruf kommt dreifach zurück.",
       "Aus der Zeit ergibt sich die Entfernung.",
@@ -518,7 +518,7 @@
     "id": "nk-06",
     "title": "Der Grat bei Wind",
     "region": "nebelklippen",
-    "length": "long",
+    "length": "mittel",
     "beats": [
       "Bei Wind sieht man alles und steht schlecht.",
       "Du gehst gebückt, mit drei Punkten am Fels.",
@@ -531,7 +531,7 @@
     "id": "nk-07",
     "title": "Nasse Wand",
     "region": "nebelklippen",
-    "length": "short",
+    "length": "kundschaft",
     "beats": [
       "Der Fels ist nass, obwohl es nicht regnet.",
       "Der Nebel schlägt sich nieder, den ganzen Tag.",
@@ -542,7 +542,7 @@
     "id": "nk-08",
     "title": "Die Wetterstange",
     "region": "nebelklippen",
-    "length": "standard",
+    "length": "kurz",
     "beats": [
       "Eine Eisenstange im Fels, mit Ösen.",
       "An den Ösen hingen Bänder, sie sind weg.",
@@ -554,7 +554,7 @@
     "id": "nk-09",
     "title": "Unter der Wolke",
     "region": "nebelklippen",
-    "length": "standard",
+    "length": "kurz",
     "beats": [
       "Von oben ist der Nebel eine ebene Fläche.",
       "Man könnte glauben, man dürfte darauf gehen.",
@@ -566,7 +566,7 @@
     "id": "nk-10",
     "title": "Das Nest",
     "region": "nebelklippen",
-    "length": "long",
+    "length": "mittel",
     "beats": [
       "Auf einem Vorsprung ein Nest, größer als du.",
       "Es ist alt und seit Jahren unbenutzt.",
@@ -579,7 +579,7 @@
     "id": "nk-11",
     "title": "Ohne Karte",
     "region": "nebelklippen",
-    "length": "short",
+    "length": "kundschaft",
     "beats": [
       "Die Karte hört hier auf, ehrlicherweise.",
       "Ab hier zeichnest du selbst.",
@@ -590,7 +590,7 @@
     "id": "nk-12",
     "title": "Die Kanzel",
     "region": "nebelklippen",
-    "length": "standard",
+    "length": "kurz",
     "beats": [
       "Ein Felsvorsprung, flach, wie gemacht zum Stehen.",
       "Bei klarer Sicht sieht man vier Regionen.",
@@ -602,7 +602,7 @@
     "id": "bg-01",
     "title": "Langsam gehen",
     "region": "bruchglastal",
-    "length": "standard",
+    "length": "kurz",
     "beats": [
       "Der Boden ist Glas, in Scherben, überall.",
       "Jeder Schritt macht ein Geräusch, das bleibt.",
@@ -614,7 +614,7 @@
     "id": "bg-02",
     "title": "Woher das Glas kommt",
     "region": "bruchglastal",
-    "length": "long",
+    "length": "mittel",
     "beats": [
       "Die Scherben werden größer, je weiter du gehst.",
       "Also gibt es eine Richtung, aus der sie kamen.",
@@ -627,7 +627,7 @@
     "id": "bg-03",
     "title": "Schnittfest",
     "region": "bruchglastal",
-    "length": "short",
+    "length": "kundschaft",
     "beats": [
       "Die Sohlen halten nicht mehr lange.",
       "Du bindest sie neu, mit dem, was du hast.",
@@ -638,7 +638,7 @@
     "id": "bg-04",
     "title": "Der Lichtfleck",
     "region": "bruchglastal",
-    "length": "standard",
+    "length": "kurz",
     "beats": [
       "Eine Scherbe wirft Licht an die Talwand.",
       "Immer an dieselbe Stelle, den ganzen Vormittag.",
@@ -650,7 +650,7 @@
     "id": "bg-05",
     "title": "Klare Stelle",
     "region": "bruchglastal",
-    "length": "standard",
+    "length": "kurz",
     "beats": [
       "Ein Streifen ohne Glas, quer durchs Tal.",
       "Jemand hat ihn geräumt, nicht die Natur.",
@@ -662,7 +662,7 @@
     "id": "bg-06",
     "title": "Nachts durchs Tal",
     "region": "bruchglastal",
-    "length": "long",
+    "length": "mittel",
     "beats": [
       "Bei Tag blendet es zu sehr.",
       "Also gehst du nach Sonnenuntergang.",
@@ -675,7 +675,7 @@
     "id": "bg-07",
     "title": "Gewicht",
     "region": "bruchglastal",
-    "length": "short",
+    "length": "kundschaft",
     "beats": [
       "Eine Platte, zwei Fuß im Quadrat, unversehrt.",
       "Sie ist zu schwer für den ganzen Weg.",
@@ -686,7 +686,7 @@
     "id": "bg-08",
     "title": "Die Schmelze",
     "region": "bruchglastal",
-    "length": "standard",
+    "length": "kurz",
     "beats": [
       "An einer Stelle ist das Glas geflossen, nicht gesplittert.",
       "Also war es hier heißer als überall sonst.",
@@ -698,7 +698,7 @@
     "id": "bg-09",
     "title": "Zwölf Fundstücke",
     "region": "bruchglastal",
-    "length": "standard",
+    "length": "kurz",
     "beats": [
       "Du sammelst, was ganz geblieben ist.",
       "Nach einer halben Stunde sind es zwölf.",
@@ -710,7 +710,7 @@
     "id": "bg-10",
     "title": "Der Weg zurück ist anders",
     "region": "bruchglastal",
-    "length": "standard",
+    "length": "kurz",
     "beats": [
       "Deine Spur ist nicht mehr da.",
       "Das Glas hat sich nachgelegt, wie Sand.",
@@ -722,7 +722,7 @@
     "id": "tb-01",
     "title": "Regal 400 bis 480",
     "region": "tiefe-bibliothek",
-    "length": "standard",
+    "length": "kurz",
     "beats": [
       "Die Nummern laufen an der Wand entlang.",
       "Ab 440 sind die Bände nicht mehr sortiert.",
@@ -734,7 +734,7 @@
     "id": "tb-02",
     "title": "Die obere Galerie",
     "region": "tiefe-bibliothek",
-    "length": "long",
+    "length": "mittel",
     "beats": [
       "Die Leiter hört bei vierzig Fuß auf.",
       "Darüber gehen die Regale weiter.",
@@ -747,7 +747,7 @@
     "id": "tb-03",
     "title": "Ein Band fehlt",
     "region": "tiefe-bibliothek",
-    "length": "short",
+    "length": "kundschaft",
     "beats": [
       "In einer Reihe klafft eine Lücke.",
       "Der Staub zeigt, dass sie neu ist.",
@@ -758,7 +758,7 @@
     "id": "tb-04",
     "title": "Der Lesesaal",
     "region": "tiefe-bibliothek",
-    "length": "standard",
+    "length": "kurz",
     "beats": [
       "Dreißig Tische, jeder mit einer Lampe.",
       "Auf einem liegt aufgeschlagene Arbeit.",
@@ -770,7 +770,7 @@
     "id": "tb-05",
     "title": "Katalog gegen Regal",
     "region": "tiefe-bibliothek",
-    "length": "standard",
+    "length": "kurz",
     "beats": [
       "Der Katalog nennt Bände, die im Regal fehlen.",
       "Und das Regal führt Bände, die der Katalog nicht kennt.",
@@ -782,7 +782,7 @@
     "id": "tb-06",
     "title": "Abschreiben",
     "region": "tiefe-bibliothek",
-    "length": "long",
+    "length": "mittel",
     "beats": [
       "Ein Band darf den Raum nicht verlassen.",
       "Also schreibst du ab, Seite für Seite.",
@@ -795,7 +795,7 @@
     "id": "tb-07",
     "title": "Trockene Luft",
     "region": "tiefe-bibliothek",
-    "length": "short",
+    "length": "kundschaft",
     "beats": [
       "Hier unten ist es trocken, absichtlich.",
       "Irgendwo arbeitet noch etwas dagegen an.",
@@ -806,7 +806,7 @@
     "id": "tb-08",
     "title": "Der versperrte Gang",
     "region": "tiefe-bibliothek",
-    "length": "standard",
+    "length": "kurz",
     "beats": [
       "Ein Gang ist mit Regalen zugestellt.",
       "Sie sind voll, also war es kein Notbehelf.",
@@ -818,7 +818,7 @@
     "id": "tb-09",
     "title": "Randnotizen",
     "region": "tiefe-bibliothek",
-    "length": "standard",
+    "length": "kurz",
     "beats": [
       "Eine Hand hat durch dreißig Bände hindurch kommentiert.",
       "Immer dieselbe Tinte, immer dieselbe Frage.",
@@ -830,7 +830,7 @@
     "id": "tb-10",
     "title": "Eine Kerze weit",
     "region": "tiefe-bibliothek",
-    "length": "standard",
+    "length": "kurz",
     "beats": [
       "Du hast Licht für vier Stunden.",
       "Der Rückweg braucht eine davon.",
@@ -842,7 +842,7 @@
     "id": "rm-01",
     "title": "Eisen im Torf",
     "region": "rostmoor",
-    "length": "standard",
+    "length": "kurz",
     "beats": [
       "Aus dem Boden ragt ein Träger, mannshoch.",
       "Zwanzig Schritt weiter der nächste, in einer Linie.",
@@ -854,7 +854,7 @@
     "id": "rm-02",
     "title": "Der Kiel",
     "region": "rostmoor",
-    "length": "long",
+    "length": "mittel",
     "beats": [
       "Was aussieht wie ein Zaun, ist ein Kiel.",
       "Also lag hier ein Schiff, und zwar quer.",
@@ -867,7 +867,7 @@
     "id": "rm-03",
     "title": "Bohlenweg",
     "region": "rostmoor",
-    "length": "short",
+    "length": "kundschaft",
     "beats": [
       "Ein Bohlenweg, halb versunken, noch tragfähig.",
       "Er endet nach hundert Schritt im Nichts.",
@@ -878,7 +878,7 @@
     "id": "rm-04",
     "title": "Rostwasser",
     "region": "rostmoor",
-    "length": "standard",
+    "length": "kurz",
     "beats": [
       "Das Wasser in den Kuhlen ist rot.",
       "Nicht überall, sondern in Streifen.",
@@ -890,7 +890,7 @@
     "id": "rm-05",
     "title": "Die Torfstiche",
     "region": "rostmoor",
-    "length": "standard",
+    "length": "kurz",
     "beats": [
       "Alte Stiche, kantig, meterhoch.",
       "In der Wand steckt Holz, viel älter als der Torf.",
@@ -902,7 +902,7 @@
     "id": "rm-06",
     "title": "Sondieren",
     "region": "rostmoor",
-    "length": "long",
+    "length": "mittel",
     "beats": [
       "Mit der Stange findet man den festen Grund.",
       "Alle zwei Schritt einmal einstechen.",
@@ -915,7 +915,7 @@
     "id": "rm-07",
     "title": "Nebel über dem Moor",
     "region": "rostmoor",
-    "length": "short",
+    "length": "kundschaft",
     "beats": [
       "Morgens steht er kniehoch und man sieht die Füße nicht.",
       "Du wartest, bis die Sonne ihn wegnimmt.",
@@ -926,7 +926,7 @@
     "id": "rm-08",
     "title": "Die Nietenreihe",
     "region": "rostmoor",
-    "length": "standard",
+    "length": "kurz",
     "beats": [
       "Eine Platte mit Nieten, handbreit auseinander.",
       "Sie sind kalt geschlagen, nicht warm.",
@@ -938,7 +938,7 @@
     "id": "rm-09",
     "title": "Was der Frost hebt",
     "region": "rostmoor",
-    "length": "standard",
+    "length": "kurz",
     "beats": [
       "Über Winter drückt der Boden Dinge nach oben.",
       "Was letztes Jahr unten war, liegt jetzt offen.",
@@ -950,7 +950,7 @@
     "id": "rm-10",
     "title": "Die Schlackenhalde",
     "region": "rostmoor",
-    "length": "long",
+    "length": "mittel",
     "beats": [
       "Ein Hügel, der kein Hügel ist.",
       "Alles daran ist Schlacke, nichts davon Fels.",
@@ -963,7 +963,7 @@
     "id": "rm-11",
     "title": "Trittsicher",
     "region": "rostmoor",
-    "length": "short",
+    "length": "kundschaft",
     "beats": [
       "Der Pfad von gestern trägt heute nicht.",
       "Also musst du einen neuen suchen.",
@@ -974,7 +974,7 @@
     "id": "rm-12",
     "title": "Die Kette",
     "region": "rostmoor",
-    "length": "standard",
+    "length": "kurz",
     "beats": [
       "Eine Kette kommt aus dem Torf und geht wieder hinein.",
       "Die Glieder sind größer als deine Hand.",
@@ -986,7 +986,7 @@
     "id": "rm-13",
     "title": "Moorleuchten",
     "region": "rostmoor",
-    "length": "standard",
+    "length": "kurz",
     "beats": [
       "Nachts steht Licht über der Fläche, blass.",
       "Es zieht nicht, es steht.",
@@ -998,7 +998,7 @@
     "id": "rm-14",
     "title": "Bergung",
     "region": "rostmoor",
-    "length": "standard",
+    "length": "kurz",
     "beats": [
       "Ein Fund, zu schwer zum Tragen.",
       "Du baust einen Schlitten aus dem, was da ist.",
@@ -1010,7 +1010,7 @@
     "id": "rm-15",
     "title": "Der letzte Träger",
     "region": "rostmoor",
-    "length": "short",
+    "length": "kundschaft",
     "beats": [
       "Der äußerste Träger steht schräg.",
       "Dahinter ist nur noch Wasser.",
@@ -1021,7 +1021,7 @@
     "id": "sw-01",
     "title": "Der Aufstieg",
     "region": "sternwarte",
-    "length": "standard",
+    "length": "kurz",
     "beats": [
       "Vom Tal bis zum Grat sind es vier Stunden.",
       "Nach zwei Stunden hört der Wald auf.",
@@ -1033,7 +1033,7 @@
     "id": "sw-02",
     "title": "Das Fernrohr richten",
     "region": "sternwarte",
-    "length": "long",
+    "length": "mittel",
     "beats": [
       "Die Mechanik ist eingefroren, nicht gebrochen.",
       "Du wärmst die Lager und arbeitest sie durch.",
@@ -1046,7 +1046,7 @@
     "id": "sw-03",
     "title": "Kälte",
     "region": "sternwarte",
-    "length": "short",
+    "length": "kundschaft",
     "beats": [
       "Oben ist es zehn Grad kälter als unten.",
       "Man arbeitet in halben Stunden, dann wärmt man die Hände.",
@@ -1057,7 +1057,7 @@
     "id": "sw-04",
     "title": "Die Beobachtungsbücher",
     "region": "sternwarte",
-    "length": "standard",
+    "length": "kurz",
     "beats": [
       "Vierzig Bände, gleichmäßig geführt.",
       "Dann sechs Jahre Lücke.",
@@ -1069,7 +1069,7 @@
     "id": "sw-05",
     "title": "Kuppel drehen",
     "region": "sternwarte",
-    "length": "standard",
+    "length": "kurz",
     "beats": [
       "Die Kuppel läuft auf Rädern, alle sechzehn da.",
       "Vier sind fest, zwölf drehen sich.",
@@ -1081,7 +1081,7 @@
     "id": "sw-06",
     "title": "Eine Nacht messen",
     "region": "sternwarte",
-    "length": "long",
+    "length": "mittel",
     "beats": [
       "Klarer Himmel, kein Wind, keine Ausrede.",
       "Alle zwanzig Minuten ein Eintrag.",
@@ -1094,7 +1094,7 @@
     "id": "sw-07",
     "title": "Die Uhr",
     "region": "sternwarte",
-    "length": "short",
+    "length": "kundschaft",
     "beats": [
       "Eine Pendeluhr, stehengeblieben.",
       "Du ziehst sie auf und stellst sie nach der Sonne.",
@@ -1105,7 +1105,7 @@
     "id": "sw-08",
     "title": "Die falsche Skala",
     "region": "sternwarte",
-    "length": "standard",
+    "length": "kurz",
     "beats": [
       "Die Skala am Fernrohr passt nicht zum Himmel.",
       "Der Unterschied ist überall gleich groß.",
@@ -1117,7 +1117,7 @@
     "id": "sw-09",
     "title": "Der Wetterturm",
     "region": "sternwarte",
-    "length": "standard",
+    "length": "kurz",
     "beats": [
       "Ein zweiter Turm, kleiner, für die Instrumente.",
       "Die Fenster sind ausgeschlagen, die Geräte nicht.",
@@ -1129,7 +1129,7 @@
     "id": "sw-10",
     "title": "Der lange Winter",
     "region": "sternwarte",
-    "length": "long",
+    "length": "mittel",
     "beats": [
       "Im Vorratsraum liegt Holz für drei Monate.",
       "Es ist nicht angerührt worden.",
@@ -1142,7 +1142,7 @@
     "id": "sw-11",
     "title": "Sicht nach Süden",
     "region": "sternwarte",
-    "length": "short",
+    "length": "kundschaft",
     "beats": [
       "Nach Süden liegt das Bruchglastal.",
       "Bei dieser Sonne sieht man es blitzen.",
@@ -1153,7 +1153,7 @@
     "id": "sw-12",
     "title": "Der Spiegel",
     "region": "sternwarte",
-    "length": "standard",
+    "length": "kurz",
     "beats": [
       "Der Hauptspiegel ist blind, nicht gesprungen.",
       "Der Belag ist ab, das Glas ist ganz.",
@@ -1165,7 +1165,7 @@
     "id": "sw-13",
     "title": "Kartieren von oben",
     "region": "sternwarte",
-    "length": "standard",
+    "length": "kurz",
     "beats": [
       "Von hier sieht man sechs der acht Regionen.",
       "Du zeichnest, was du siehst, nicht was du weißt.",
@@ -1177,7 +1177,7 @@
     "id": "sw-14",
     "title": "Signalfeuer",
     "region": "sternwarte",
-    "length": "standard",
+    "length": "kurz",
     "beats": [
       "Auf dem Grat steht eine Feuerpfanne.",
       "Sie ist trocken und würde brennen.",
@@ -1189,7 +1189,7 @@
     "id": "sw-15",
     "title": "Abstieg im Dunkeln",
     "region": "sternwarte",
-    "length": "standard",
+    "length": "kurz",
     "beats": [
       "Der Rückweg beginnt zwei Stunden zu spät.",
       "Die ersten hundert Schritte sind die schwersten.",

@@ -8,7 +8,7 @@
 |---|---|---|
 | Framework | **Next.js 15** (App Router, TypeScript) | Das Hosting-Team deployt auf Vercel; Next ist dort der Pfad des geringsten Widerstands. |
 | Styling | **Tailwind CSS v4** + **shadcn/ui** | shadcn kopiert Komponenten ins Repo statt sie zu verstecken — bei einem so eigenwilligen Look wichtig, weil wir viel überschreiben. |
-| Auth | **Supabase Auth** — Magic Link, Discord OAuth, **Gast** | Discord, weil die Zielgruppe dort ist. Gast-Modus, weil ein Party-Beitritt keinen Account erfordern darf. |
+| Auth | **Supabase Auth** — Magic Link, Discord OAuth | Discord, weil die Zielgruppe dort ist. **Kein Gastzugang** — Konto und Charakter sind Pflicht, weil Fortschritt, Inventar und Level geräteübergreifend erhalten bleiben müssen (Entscheidung zu W5, Issue #30). |
 | Datenbank | **Supabase Postgres** + Row Level Security | RLS macht die Zugriffsregeln zu Datenbank-Constraints statt zu Anwendungslogik. |
 | Realtime | **Supabase Realtime** (Broadcast + Presence) | Siehe [SYNC-PROTOCOL.md](SYNC-PROTOCOL.md). |
 | Hosting | **Vercel** → `pomodoro.lang-jamin.de` | Übergabe an das Hosting-Team, siehe unten. |
@@ -56,7 +56,7 @@ export function remainingSeconds(phase: PartyPhase, now: number): number
 create table profiles (
   id           uuid primary key references auth.users on delete cascade,
   display_name text not null,
-  class_id     text not null default 'fighter',
+  volk_id      text not null default 'mensch',   -- Identität, keine Mechanik
   xp           integer not null default 0,
   gold         integer not null default 0,
   streak_days  integer not null default 0,
@@ -78,12 +78,9 @@ create table parties (
 
 create table party_members (
   party_code   text references parties(code) on delete cascade,
-  member_id    uuid,                          -- null bei Gästen
-  guest_token  text,                          -- für Gäste ohne Account
-  display_name text not null,
-  class_id     text not null,
+  member_id    uuid not null references profiles(id) on delete cascade,
   joined_at    timestamptz not null default now(),
-  primary key (party_code, coalesce(member_id::text, guest_token))
+  primary key (party_code, member_id)
 );
 
 create table quest_log (
@@ -105,8 +102,8 @@ seine eigene Zeit schreiben darf, ist der gesamte Sync manipulierbar.
 
 - **RLS auf allen Tabellen.** Ein Party-Mitglied darf die Party lesen, aber nur der DM
   darf die Phase schreiben — als Policy, nicht als `if` im Frontend.
-- **Gast-Tokens** sind zufällige, an die Party gebundene Werte. Sie geben keinen
-  Zugriff außerhalb dieser einen Party und laufen mit ihr ab.
+- **Jedes Mitglied hat ein Konto.** Es gibt keine anonymen Teilnehmer und damit auch
+  keine Sonderpfade in den Policies — jede Zeile hängt an einer `profiles.id`.
 - **Keine Service-Role-Keys im Client.** Alles, was erhöhte Rechte braucht, läuft in
   Route Handlers.
 - **XP und Loot werden serverseitig berechnet.** Wenn der Client seine eigenen Belohnungen

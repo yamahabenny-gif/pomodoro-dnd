@@ -133,7 +133,7 @@ Aktivität wird nach **30 Tagen** archiviert und ihr Code freigegeben.
 - Parties sind standardmäßig **nicht auffindbar** — es gibt keine Liste, keine Suche.
 - Der DM kann die Party jederzeit schließen (`locked`), dann sind keine Joins mehr möglich.
 - Ein Party-Beitritt gibt **keinen Zugriff auf Accountdaten** anderer Mitglieder,
-  nur auf Anzeigename, Klasse und Party-Status.
+  nur auf Anzeigename, Volk und Party-Status.
 
 ## Transport
 

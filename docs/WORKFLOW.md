@@ -26,7 +26,7 @@ ein Fehler teuer ist:
 
 - Sync-Protokoll, Zeit-Logik, Clock-Skew
 - Datenmodell, Migrationen, Row Level Security
-- Auth-Flows, Gast-Tokens, Rate-Limiting
+- Auth-Flows, Sitzungen, Rate-Limiting
 - Serverseitige Loot- und XP-Berechnung
 - Deployment, Infrastruktur, Secrets
 

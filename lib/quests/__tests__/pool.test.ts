@@ -5,7 +5,12 @@
 import { describe, expect, it } from 'vitest'
 import quests from '../../../content/quests.de.json'
 import regions from '../../../content/regions.de.json'
-import { BEATS_PER_LENGTH, beatIndexAt, pickQuest, type Quest } from '../schema'
+import {
+  BEATS_PER_LENGTH, BOOK_COMPOSITION, LENGTH_LABEL, MINUTES_PER_LENGTH,
+  assembleBook, beatIndexAt, pickQuest, type Quest, type QuestLength,
+} from '../schema'
+
+const LENGTHS: QuestLength[] = ['kundschaft', 'kurz', 'mittel', 'episch']
 
 const pool = quests as Quest[]
 
@@ -34,10 +39,15 @@ describe('Questpool', () => {
     }
   })
 
-  it('bietet zu jeder Länge genug Auswahl für einen Tag ohne Wiederholung', () => {
-    for (const len of ['short', 'standard', 'long'] as const) {
+  it('bietet zu jeder geschriebenen Länge genug Auswahl', () => {
+    // `episch` ist noch nicht geschrieben — siehe Issue #32.
+    for (const len of ['kundschaft', 'kurz', 'mittel'] as const) {
       expect(pool.filter((q) => q.length === len).length).toBeGreaterThanOrEqual(10)
     }
+  })
+
+  it('kennt nur die vier definierten Längen', () => {
+    for (const q of pool) expect(LENGTHS).toContain(q.length)
   })
 
   it('gibt jeder Region mindestens acht Quests', () => {
@@ -47,8 +57,87 @@ describe('Questpool', () => {
   })
 })
 
+describe('Längen', () => {
+  it('gibt jeder Stufe Minuten und einen Anzeigenamen', () => {
+    for (const len of LENGTHS) {
+      expect(MINUTES_PER_LENGTH[len]).toBeGreaterThan(0)
+      expect(LENGTH_LABEL[len].length).toBeGreaterThan(0)
+    }
+  })
+
+  it('steigt in Minuten und Wegabschnitten gleichsinnig an', () => {
+    for (let i = 1; i < LENGTHS.length; i++) {
+      expect(MINUTES_PER_LENGTH[LENGTHS[i]!]).toBeGreaterThan(MINUTES_PER_LENGTH[LENGTHS[i - 1]!])
+      expect(BEATS_PER_LENGTH[LENGTHS[i]!]).toBeGreaterThan(BEATS_PER_LENGTH[LENGTHS[i - 1]!])
+    }
+  })
+
+  it('bietet einen Einstieg unter 25 Minuten', () => {
+    // Konzept V1 §1 adressiert Menschen, die lange Fokusblöcke nicht schaffen.
+    // Wäre 25 die kürzeste Stufe, wäre der Einstieg der erste Misserfolg.
+    expect(Math.min(...LENGTHS.map((l) => MINUTES_PER_LENGTH[l]))).toBeLessThanOrEqual(15)
+  })
+
+  it('nennt nirgends eine Technik statt eines Abenteuers', () => {
+    for (const len of LENGTHS) {
+      expect(LENGTH_LABEL[len].toLowerCase()).not.toContain('pomodoro')
+      expect(LENGTH_LABEL[len]).not.toMatch(/\d/)
+    }
+  })
+})
+
+describe('Abenteuerbuch', () => {
+  const week = '2026-W36'
+
+  it('stellt zehn Quests zusammen, sobald alle Stufen geschrieben sind', () => {
+    const soll = Object.values(BOOK_COMPOSITION).reduce((a, b) => a + b, 0)
+    expect(soll).toBe(10)
+  })
+
+  it('zeigt dieselbe Woche allen gleich', () => {
+    const a = assembleBook(pool, { week }).map((q) => q.id)
+    const b = assembleBook(pool, { week }).map((q) => q.id)
+    expect(a).toEqual(b)
+  })
+
+  it('mischt zur nächsten Woche neu', () => {
+    const a = assembleBook(pool, { week: '2026-W36' }).map((q) => q.id)
+    const b = assembleBook(pool, { week: '2026-W37' }).map((q) => q.id)
+    expect(a).not.toEqual(b)
+  })
+
+  it('führt keine Quest doppelt', () => {
+    const ids = assembleBook(pool, { week }).map((q) => q.id)
+    expect(new Set(ids).size).toBe(ids.length)
+  })
+
+  it('läuft nie leer — das Buch füllt nach', () => {
+    // Der Fall, den Konzept V1 offenlässt: jemand arbeitet die Woche in zwei Tagen ab.
+    const completed: string[] = []
+    for (let runde = 0; runde < 40; runde++) {
+      const book = assembleBook(pool, { week, completed })
+      expect(book.length).toBeGreaterThan(0)
+      for (const q of book) if (!completed.includes(q.id)) completed.push(q.id)
+    }
+    expect(completed.length).toBeGreaterThan(30)
+  })
+
+  it('zeigt nichts erneut, was in dieser Woche schon geschafft wurde', () => {
+    const completed = assembleBook(pool, { week }).map((q) => q.id)
+    const zweites = assembleBook(pool, { week, completed })
+    for (const q of zweites) expect(completed).not.toContain(q.id)
+  })
+
+  it('hält die vorgesehene Mischung ein, solange der Pool reicht', () => {
+    const book = assembleBook(pool, { week })
+    for (const len of ['kundschaft', 'kurz', 'mittel'] as const) {
+      expect(book.filter((q) => q.length === len)).toHaveLength(BOOK_COMPOSITION[len])
+    }
+  })
+})
+
 describe('beatIndexAt', () => {
-  const q = pool.find((x) => x.length === 'long')!
+  const q = pool.find((x) => x.length === 'mittel')!
 
   it('beginnt beim ersten und endet beim letzten Abschnitt', () => {
     expect(beatIndexAt(q, 0)).toBe(0)
@@ -75,28 +164,28 @@ describe('beatIndexAt', () => {
 
 describe('pickQuest', () => {
   it('gibt allen Party-Mitgliedern dieselbe Quest', () => {
-    const a = pickQuest(pool, 'standard', 'H26HE:2026-09-04T10:00:00Z')
-    const b = pickQuest(pool, 'standard', 'H26HE:2026-09-04T10:00:00Z')
+    const a = pickQuest(pool, 'kurz', 'H26HE:2026-09-04T10:00:00Z')
+    const b = pickQuest(pool, 'kurz', 'H26HE:2026-09-04T10:00:00Z')
     expect(a.id).toBe(b.id)
   })
 
   it('wählt nur Quests der verlangten Länge', () => {
     for (let i = 0; i < 200; i++) {
-      expect(pickQuest(pool, 'short', `seed-${i}`).length).toBe('short')
+      expect(pickQuest(pool, 'kundschaft', `seed-${i}`).length).toBe('kundschaft')
     }
   })
 
   it('wiederholt nichts, solange der Pool noch frisch ist', () => {
     const seen: string[] = []
     for (let i = 0; i < 10; i++) {
-      const q = pickQuest(pool, 'long', `seed-${i}`, seen)
+      const q = pickQuest(pool, 'mittel', `seed-${i}`, seen)
       expect(seen).not.toContain(q.id)
       seen.push(q.id)
     }
   })
 
   it('fängt von vorn an, statt aufzugeben, wenn alles gespielt ist', () => {
-    const all = pool.filter((q) => q.length === 'long').map((q) => q.id)
-    expect(() => pickQuest(pool, 'long', 'seed', all)).not.toThrow()
+    const all = pool.filter((q) => q.length === 'mittel').map((q) => q.id)
+    expect(() => pickQuest(pool, 'mittel', 'seed', all)).not.toThrow()
   })
 })

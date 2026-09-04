@@ -375,20 +375,26 @@ fertig spezifiziert und wartet.
 
 ## 6 · Entscheidungstabelle
 
-| Nr. | Frage | Empfehlung | Wer entscheidet |
+| Nr. | Frage | Entscheidung | Stand |
 |---|---|---|---|
-| K1 | Klassen oder Völker? | **Völker**, Dauer an der Quest; Passive später als Ausrüstung | 🔴 Eigentümer |
-| K2 | Lager als Hub? | **Ja** — mit der Regel „diegetisch oben, semantisch darunter" | Team + Release |
-| K3 | Solo zuerst? | **Ja**, Meilensteine umstellen | 🔴 Eigentümer |
-| K4 | DM oder Bereitschaft? | **Bereitschaft**, keine feste Rolle | Team |
-| K5 | Wochenpool? | **Ja, aber nachfüllend** | Team |
-| K6 | Keine Duplikate? | **Ja** — Katalog statt Berechnung | Team |
-| K7 | Vier Stufen? | **Ja**, 60/27/11/2 % | Team |
-| K8 | Tagesserie? | **Streichen** | Team |
-| K9 | Konto-Pflicht? | Konto für Fortschritt, **Gast für die Sitzung** | Team + Release |
-| K10 | Welcher Ton? | **Ruhig kurz/mittel, episch nur beim Boss** | Team |
-| K11 | 90 Minuten? | **Bogen aus 3 × 25 mit Rasten** | Team |
-| W1–W5 | Widersprüche in V1 | siehe Abschnitt 3 | V1-Team |
+| K1 | Klassen oder Völker? | **Völker** — Identität, keine Mechanik. Dauer an der Quest. Fähigkeiten nur als Gewinn | ✅ #27 · ADR-013 |
+| K2 | Lager als Hub? | **Ja** — durch #28 bestätigt („Menschen ins Lager einladen") | ✅ #29 offen für die Umsetzung |
+| K3 | Solo zuerst? | **Ja** — Solo ist Normalzustand, Meilensteine umgestellt | ✅ #28 |
+| K4 | DM oder Bereitschaft? | **Bereitschaftsprüfung**, keine Rolle | ✅ ADR-015 |
+| K5 | Wochenpool? | **Ja, nachfüllend** — läuft nie leer, keine Frist | ✅ ADR-016 |
+| K6 | Keine Duplikate? | **Ja** — Katalog statt Berechnung | ✅ `lib/loot/draw.ts` |
+| K7 | Vier Seltenheitsstufen? | **Ja**, 60/27/11/2 % | ✅ umgesetzt |
+| K8 | Tagesserie? | **Streichen** | ⬜ noch im Charakterbogen |
+| K9 | Konto-Pflicht? | **Konto und Charakter sind Pflicht**, kein Gastzugang | ✅ #30 W5 · ADR-014 |
+| K10 | Welcher Ton? | — | 🔴 **offen** · #31 |
+| K11 | 90 Minuten? | — | 🔴 **offen** · #32 |
+| W1 | Rast interaktiv? | **Eine Handlung, ein Klick**, danach schickt der Screen weg | ✅ #30 |
+| W2 | Wochenpool leerlaufen? | **Nein** — füllt nach | ✅ ADR-016 |
+| W3 | Kürzeste Stufe? | **Kundschaftergang, 15 min** | ✅ ADR-017 |
+| W4 | Mindestgrößen? | **40 / 40 / 12 / 12 je Kategorie** | ✅ als Test hinterlegt |
+| W5 | Gastzugang? | **Nein** | ✅ ADR-014 |
 
-Jede Zeile liegt als Issue vor. Erst wenn K1, K3 und K10 entschieden sind, lohnt sich
-die Überarbeitung des visuellen Drafts — sie hängen alle drei am selben Material.
+**Was noch blockiert:** K10 (#31) entscheidet über den Ton der 100 geschriebenen Quests
+und damit über die Regionen. K11 (#32) entscheidet über die epische Stufe, die als
+einzige noch gar nicht geschrieben ist. Beide hängen am selben Material — solange sie
+offen sind, wird das Lager nicht gezeichnet.

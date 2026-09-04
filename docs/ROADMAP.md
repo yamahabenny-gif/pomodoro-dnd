@@ -2,32 +2,39 @@
 
 Jeder Meilenstein existiert als GitHub-Milestone. Aufgaben liegen als Issues darunter.
 
-> ⚠️ **Diese Reihenfolge steht zur Disposition.** Konzept V1 verlangt Solo zuerst
-> (§11), was M2 bis M4 umstellt — siehe [KONZEPT-ABGLEICH.md §5](KONZEPT-ABGLEICH.md)
-> und Issue #28. Bis dahin gilt die Ordnung unten unverändert.
+Reihenfolge nach der Entscheidung zu K3 (Issue #28): **Solo ist der Normalzustand**,
+die Gruppe kommt danach. Eine Gruppenfunktion ohne Lager hätte keinen Ort, an dem sie
+stattfindet — das Signalhorn steht im Lager.
 
 ## M0 · Draft & Freigabe ← **hier stehen wir**
-Konzept, Architektur, Sync-Protokoll und Design-System sind dokumentiert; der visuelle
-Draft aller Screens liegt vor. **Ergebnis:** Freigabe des Konzepts durch das Release Team.
+Konzept, Architektur, Sync-Protokoll, Design-System und der Abgleich mit Konzept V1
+liegen vor. **Offen:** K10 (Ton der Quests, #31), K11 (90 Minuten, #32), Produktname.
 
 ## M1 · Fundament `#SENDEV`
-Next.js-Projekt, Tailwind, shadcn/ui, Design-Tokens aus dem Design-System, Supabase
-angebunden, Migrationen, RLS-Policies, CI (Lint, Typecheck, Tests).
+Next.js, Tailwind, shadcn/ui, Design-Tokens, Supabase, Migrationen, RLS, CI.
 
-## M2 · Solo-Timer `#SENDEV` `#junDev`
-`lib/timer/` als reine, getestete Logik. Quest-, Rast- und Lange-Rast-Zyklus.
-Klassenwahl. Zustand übersteht Reload und Standby.
-**Abnahme:** Der Timer stimmt nach einem Standby über eine ganze Phase.
+## M2 · Lager und Solo-Schleife `#SENDEV` `#junDev`
+Das Lager als Hub — „die Welt ist das Menü". Abenteuerbuch mit Wochenpool,
+Charaktererstellung (Volk + Name), `lib/timer/` als reine Logik, Quest, Rast, Wanderung.
+**Abnahme:** Man kann sich anmelden, einen Charakter anlegen, eine Quest wählen, sie
+absolvieren und zurück ins Lager kommen — allein, ohne dass irgendwo eine Gruppe nötig wäre.
 
-## M3 · Party-Sync `#SENDEV`
-Party-Codes, Beitritt mit und ohne Account, Broadcast, Presence, Clock-Skew-Abgleich,
-DM-Rolle. **Abnahme:** alle Testfälle aus [SYNC-PROTOCOL.md](SYNC-PROTOCOL.md) grün.
+## M3 · Progression `#SENDEV` `#junDev`
+XP, Level, Gold, Truhen mit der Keine-Duplikate-Ziehung, Item-Katalog, Sammlungssets,
+Inventar, erste Lager-Ausbaustufen.
+**Abnahme:** Fokuszeit erzeugt sichtbaren Fortschritt an Charakter **und** Lager.
 
-## M4 · Spiel-Ebene `#junDev`
-Truhen mit serverseitiger Ziehung, Loot, XP, Streaks, Charakterbogen, Inventar,
-Party-Truhe. Die Truhen-Animation samt Reduced-Motion-Fassung.
+## M4 · Gruppe `#SENDEV`
+Signalhorn im Lager, Party-Codes, Bereitschaftsprüfung, Broadcast, Presence,
+Clock-Skew-Abgleich. Gefährten sitzen sichtbar am Feuer.
+**Abnahme:** alle Testfälle aus [SYNC-PROTOCOL.md](SYNC-PROTOCOL.md) grün.
 
 ## M5 · Release `#release`
 Barrierefreiheits-Durchgang, Performance-Budget, Landing Page, Impressum und
 Datenschutzerklärung, Datenexport und Kontolöschung, Domain `pomodoro.lang-jamin.de`,
 Monitoring. **Abnahme:** Freigabe durch das Release Team.
+
+## M6 · Artwork `#junDev`
+Illustrierte Items, Rive-Animationen, acht Regionen-Kulissen, Lager-Ausbaustufen.
+Läuft ab M2 parallel, blockiert nichts — der Item-Baukasten liefert vom ersten Tag an
+vollwertige Liniengrafiken.

@@ -126,3 +126,58 @@ und Zyklus, zuletzt gespielte ausgeschlossen.
 **Grund:** Kombinierter Text liest sich nach dem dritten Mal wie kombinierter Text.
 Das ist bei Bildern anders (siehe ADR-011) — bei Sprache merkt man das Raster sofort.
 100 Quests decken auch einen sehr langen Tag ohne Wiederholung ab.
+
+### ADR-013 · Ein Volk, dauerhaft, ohne Mechanik
+**Status:** angenommen · 2026-09-04 (Issue #27)
+**Kontext:** Konzept V1 §4 verlangt Völker ohne Klassen; das ursprüngliche Briefing
+sprach von einer Klasse, die auf Quests geht.
+**Entscheidung:** Ein Volk (Mensch, Elf, Zwerg, Goblin, Ork), einmal gewählt, dauerhaft.
+Reine Identität — keine Zeiten, keine Attribute, keine angeborenen Fähigkeiten.
+Besondere Fähigkeiten gibt es **als Gewinn**, nicht als Anlage.
+**Alternative:** Sechs Klassen, die zugleich das Timer-Profil setzen.
+**Grund:** Die Dauer gehört an die Quest, nicht an den Charakter. Wer heute fünfzehn
+Minuten schafft und morgen fünfzig, soll nicht den Charakter wechseln müssen — gerade
+bei einer Zielgruppe, deren Belastbarkeit von Tag zu Tag schwankt.
+
+### ADR-014 · Kein Gastzugang
+**Status:** angenommen · 2026-09-04 (Issue #30, W5)
+**Kontext:** Ein Gastzugang senkt die Hürde für den Gruppenbeitritt erheblich.
+**Entscheidung:** Konto und Charakter sind Pflicht. Kein anonymer Beitritt.
+**Alternative:** Gast für die Sitzung, Belohnungen später gutschreiben.
+**Grund:** Fortschritt, Inventar und Level müssen geräteübergreifend erhalten bleiben,
+und der Charakter muss am Lagerfeuer sitzen können. Ein Gast ohne Charakter hat im
+Lager keinen Platz — die Metapher trägt ihn nicht.
+**Preis, den wir dafür zahlen:** Der Login ist die härteste Hürde der App und steht vor
+dem ersten Erlebnis. Der Login-Screen trägt dafür besondere Verantwortung: kein Passwort,
+keine Bestätigungsmail vor dem Betreten, und der Text nennt den Grund.
+
+### ADR-015 · Bereitschaftsprüfung statt Dungeon Master
+**Status:** angenommen · 2026-09-04 (Issue #28)
+**Kontext:** Wer startet, pausiert und überspringt in einer Gruppe?
+**Entscheidung:** Niemand. Aufbruch, wenn alle bereit sind; Rast folgt automatisch;
+Abbruch gilt nur für einen selbst.
+**Alternative:** Ein Dungeon Master steuert, die Rolle wandert beim Verlassen.
+**Grund:** Beseitigt eine ganze Klasse von Problemen — keine Rolle, die weitergereicht
+werden muss; keine Gruppe, die auf eine Person wartet; kein sozialer Druck durch eine
+Person, die alle anderen steuert.
+
+### ADR-016 · Das Abenteuerbuch läuft nie leer
+**Status:** angenommen · 2026-09-04 (Issue #30, W2)
+**Kontext:** Konzept V1 §5 sieht zehn Quests pro Woche vor.
+**Entscheidung:** Zehn Quests als kuratierte Auswahl, aber abgeschlossene werden
+**ersetzt, nicht gestrichen**. Der Wochenwechsel mischt neu und nimmt nichts weg; es
+gibt keine Frist und keine Ablaufkommunikation.
+**Alternative:** Feste zehn pro Woche, danach leeres Buch.
+**Grund:** Bei sechs Quests am Tag wäre die Woche nach zwei Tagen vorbei — genau bei
+den Nutzern, die am meisten arbeiten. Und „die Quests dieser Woche" erzeugt die Sorge,
+etwas zu verpassen, die Konzept V1 §14 ausschließt.
+
+### ADR-017 · Vier Quest-Längen, kürzeste 15 Minuten
+**Status:** angenommen · 2026-09-04 (Issue #30, W3)
+**Kontext:** Konzept V1 §6 bot 25, 50 und 90 Minuten an.
+**Entscheidung:** Vier Stufen — Kundschaftergang 15, Kurze Quest 25, Mittlere Quest 50,
+Epische Quest 90 (letztere noch in Klärung, Issue #32).
+**Alternative:** Bei drei Stufen ab 25 Minuten bleiben.
+**Grund:** Konzept V1 §1 adressiert ausdrücklich Menschen, die Schwierigkeiten haben,
+lange fokussiert zu bleiben. Wäre 25 Minuten die kürzeste Stufe, wäre der Einstieg für
+einen erheblichen Teil dieser Zielgruppe der erste Misserfolg.

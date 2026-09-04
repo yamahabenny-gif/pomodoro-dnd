@@ -20,27 +20,36 @@ häufigste Besucher hat einen Code von einer Freundin bekommen — der darf nich
 hinter einem Login liegen.
 
 ## 2 · Login (`/login`) — „Die Tavernentür"
-Drei Wege, bewusst in dieser Reihenfolge:
+Zwei Wege:
 
 1. **Discord** — die Zielgruppe hat dort schon einen Account.
 2. **Magic Link** per E-Mail — kein Passwort, das jemand vergessen kann.
-3. **Als Gast** — nur ein Charaktername. Führt direkt in eine Session.
 
-Der Gast-Weg ist gleichwertig gestaltet, nicht kleingedruckt. Ein Login, der zwischen
-einem Menschen und einer gemeinsamen Fokus-Session steht, kostet die Session.
+**Kein Gastzugang.** Konto und Charakter sind Pflicht, damit Fortschritt, Inventar und
+Level geräteübergreifend erhalten bleiben (Entscheidung zu W5, Issue #30).
+
+Weil das die härteste Hürde der App ist und direkt vor dem ersten Erlebnis steht, trägt
+dieser Screen die entsprechende Verantwortung: kein Passwort, keine Bestätigungsmail vor
+dem Betreten, und der Text sagt, **warum** — nicht „Registrieren", sondern „Damit dein
+Charakter dir auf jedem Gerät folgt."
 
 Zustände: `lädt` · `Magic Link verschickt` · `Link abgelaufen` · `OAuth abgebrochen`
 · `offline`.
 
-## 3 · Klassenwahl (`/character`)
-Sechs Klassen. Jede Karte zeigt **das Timer-Profil als Hauptinformation** — „50 / 10"
-groß, das Passiv darunter. Denn genau das wählt man hier aus: einen Arbeitsrhythmus.
+## 3 · Charakter (`/character`)
+**Fünf Völker:** Mensch, Elf, Zwerg, Goblin, Ork. Dazu ein Name.
 
-Kein Raster gleich großer Icon-Karten. Die gewählte Klasse wächst und zeigt eine
-Vorschau des Zyklus als kleine Zeitleiste.
+Die Wahl ist **Identität, keine Mechanik**. Sie bringt keine Fähigkeiten und keine
+Zeiten mit — besondere Fähigkeiten werden später *erspielt*, nicht gewählt
+(Entscheidung zu K1, Issue #27). Der Charakter bleibt dauerhaft, geht auf alle Quests
+und levelt.
 
-Unten, unaufdringlich: *Eigene Zeiten festlegen* — für alle, die genau wissen, was
-sie wollen.
+Weil die Karten damit nichts Zählbares mehr zeigen, tragen sie das Volk selbst: Figur,
+eine Zeile Charakter, sonst nichts. Kein Raster gleich großer Icon-Karten — die gewählte
+Figur wird groß und steht neben dem Namensfeld.
+
+**Die Dauer hängt nicht mehr hier, sondern an der Quest.** Man wählt „Der verlassene
+Wachtturm · Mittlere Quest · 50 Minuten" im Abenteuerbuch — und das ist die Einstellung.
 
 ## 4 · Quest läuft (`/quest`) — Hauptscreen
 Der Bildschirm, den man 25 Minuten lang ansieht. Deshalb: **ruhig**.

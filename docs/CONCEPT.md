@@ -9,7 +9,8 @@ benutzt. Die Gamification hier ist deshalb kein Anstrich, sondern übernimmt zwe
 konkrete Aufgaben:
 
 1. **Sie macht die Timer-Konfiguration zu einer Entscheidung mit Bedeutung.**
-   Niemand stellt gerne Minuten in einem Formular ein. Aber eine Klasse wählt man gern.
+   Niemand stellt gerne Minuten in einem Formular ein. Aber eine Quest wählt man gern —
+   und die Quest bringt ihre Dauer mit.
 2. **Sie gibt der Pause einen Grund.** Der häufigste Fehler beim Pomodoro ist, die
    Pause zu überspringen. Wenn die Pause "Rast" heißt und der Charakter dort etwas
    regeneriert, wird das Überspringen zu einer sichtbaren Entscheidung.
@@ -19,30 +20,45 @@ abbricht, verliert nichts Aufgebautes — er bekommt nur diese eine Truhe nicht.
 
 ---
 
-## 1. Klassen
+## 1. Charakter und Völker
 
-Die Klasse bestimmt das **Timer-Profil** und ein **Passiv**. Sie ist jederzeit
-wechselbar (kein Fortschrittsverlust) — die Wahl soll Spaß machen, nicht binden.
+Beim ersten Start wählt man **ein Volk** und vergibt einen Namen. Das ist die ganze
+Charaktererstellung.
 
-| Klasse | Quest | Rast | Lange Rast | Passiv |
-|---|---:|---:|---:|---|
-| 🛡️ **Krieger** | 25 min | 5 min | 15 min | *Zweiter Wind* — +10 % XP für eine Quest ohne Pause-Skip |
-| 🔮 **Magier** | 50 min | 10 min | 25 min | *Arkane Konzentration* — +15 % Chance auf seltene Truhen-Stufen |
-| 🗡️ **Schurke** | 15 min | 3 min | 12 min | *Flinke Finger* — jede 3. Quest gibt zwei Truhen |
-| ✨ **Kleriker** | 25 min | 8 min | 20 min | *Segen* — in einer Party bekommen **alle** +5 % XP |
-| 🏹 **Waldläufer** | 30 min | 6 min | 18 min | *Fährtenleser* — Streak-Bonus wächst doppelt so schnell |
-| 🎻 **Barde** | 20 min | 5 min | 15 min | *Inspiration* — +3 % XP je aktivem Party-Mitglied (max. +15 %) |
+**Mensch · Elf · Zwerg · Goblin · Ork**
 
-**Warum diese Zahlen?** Sie decken die real existierenden Arbeitsrhythmen ab —
-klassisch (25/5), Deep Work (50/10), ADHS-freundliche Kurzsprints (15/3) — und
-verpacken sie so, dass niemand ein Einstellungsmenü öffnen muss. Die freie Konfiguration
-bleibt trotzdem in den Settings verfügbar, für alle die sie wollen.
+Die Wahl ist **Identität, keine Mechanik**. Sie bringt keine Zeiten, keine Attribute und
+keine Fähigkeiten mit. Der Charakter bleibt dauerhaft, geht auf alle Quests und levelt.
+Besondere Fähigkeiten kann er später erhalten — aber **als Gewinn, nicht als Anlage**
+(Entscheidung zu K1, Issue #27). Individualisiert wird er über erspielte Ausrüstung,
+Kleidung, Begleiter und Kosmetik.
 
-**Balancing-Hinweis für die Umsetzung:** XP wird **pro fokussierter Minute** vergeben,
-nicht pro Quest. Sonst wäre der Schurke mit 15-Minuten-Sprints massiv überlegen.
-Formel und Kalibrierung: siehe Issue `#SENDEV Loot- und XP-Balancing`.
+### Warum die Dauer an der Quest hängt und nicht am Charakter
 
----
+Ein Timer, den man in einem Formular einstellt, wird nicht eingestellt. Deshalb war die
+Dauer in einem früheren Entwurf an eine Klasse gebunden — man wählte einen Charakter und
+bekam einen Arbeitsrhythmus dazu.
+
+Der bessere Weg hängt sie an die **Quest**: Man wählt „Der verlassene Wachtturm ·
+Mittlere Quest · 50 Minuten", und das *ist* die Einstellung. Für die Zielgruppe ist das
+entscheidend — wer heute fünfzehn Minuten schafft und morgen fünfzig, soll nicht seinen
+Charakter wechseln müssen.
+
+### Quest-Längen
+
+| Stufe | Dauer | Wegabschnitte |
+|---|---:|---:|
+| Kundschaftergang | 15 min | 3 |
+| Kurze Quest | 25 min | 4 |
+| Mittlere Quest | 50 min | 5 |
+| Epische Quest | 90 min | 6 |
+
+Der **Kundschaftergang** existiert, weil die Zielgruppe sonst beim Einstieg scheitert.
+Für Menschen, die Schwierigkeiten haben, lange fokussiert zu bleiben, sind 25 Minuten
+nicht der Anfang, sondern schon das Ziel (Entscheidung zu W3, Issue #30).
+
+**XP wird pro fokussierter Minute vergeben**, nicht pro Quest — sonst wäre der
+Kundschaftergang die effizienteste Art zu spielen.
 
 ## 2. Der Zyklus
 
@@ -58,7 +74,10 @@ Formel und Kalibrierung: siehe Issue `#SENDEV Loot- und XP-Balancing`.
 - **Truhe.** Erscheint nach jeder *abgeschlossenen* Quest. Öffnen ist optional und
   jederzeit nachholbar — sie wartet im Inventar.
 - **Rast.** Warme Farben, Lagerfeuer, Atem-Animation. Ein Timer, der zur Pause einlädt
-  statt sie zu bewachen.
+  statt sie zu bewachen. Es gibt **eine** Handlung — Holz auflegen, ein Klick, drei
+  Sekunden — und danach verabschiedet der Screen aktiv: „Das Feuer hält. Geh ruhig."
+  Keine Minispiele: Der Zweck der Rast ist, vom Bildschirm wegzukommen, und eine
+  Tätigkeit, die fünf Minuten füllt, erreicht das Gegenteil (W1, Issue #30).
 - **Lange Rast.** Jede vierte Rast, in der Taverne. Hier gibt es die Zusammenfassung
   des Blocks: geschaffte Quests, verdiente XP, Party-Statistik.
 
@@ -95,8 +114,12 @@ Ein **5-stelliger Code**, z. B. `H26HE`. Zeichensatz: `0-9 A-Z` **ohne `I`, `L`,
 verhindert versehentlich entstehende Wörter. Bleiben 32 Zeichen, also 32⁵ ≈ **33,5 Mio.**
 Kombinationen. Eingabe ist case-insensitive; die Anzeige ist immer Großbuchstaben.
 
-Beitreten geht **ohne Account** — Charaktername eingeben, fertig. Wer die Hürde für
-eine gemeinsame Fokus-Session hoch legt, bekommt keine gemeinsame Fokus-Session.
+Beitreten setzt ein Konto und einen Charakter voraus (Entscheidung zu W5, Issue #30) —
+der Charakter muss ja am Lagerfeuer sitzen und seine XP behalten können. Der Beitritt
+selbst bleibt eine einzige Eingabe: Code eintippen, fertig.
+
+Eingeladen wird **im Lager**, über das Signalhorn. Es gibt keinen getrennten
+Multiplayer-Bereich; die Gefährten setzen sich sichtbar mit ans Feuer.
 
 ### Gemeinsam arbeiten
 
@@ -104,19 +127,29 @@ eine gemeinsame Fokus-Session hoch legt, bekommt keine gemeinsame Fokus-Session.
   Technisch gelöst über Server-Zeitstempel statt Countdown — siehe
   [SYNC-PROTOCOL.md](SYNC-PROTOCOL.md).
 - **Eine gemeinsame Quest.** Die Party ist zusammen unterwegs. Der Party-Screen zeigt
-  alle Mitglieder mit Klasse und Status.
-- **Party-Truhe.** Am Ende einer gemeinsamen Quest gibt es zusätzlich zur eigenen Truhe
-  eine Party-Truhe, deren Stufe mit der Anzahl der Mitglieder steigt, die die Quest
-  komplett durchgezogen haben.
+  alle Mitglieder mit Volk und Status.
+- **Gruppenquests geben dasselbe.** XP, Gold und Loot fallen genauso an wie im
+  Alleingang. Zusätzlich gibt es eine Party-Truhe, deren Stufe mit der Zahl der
+  Mitglieder steigt, die durchgezogen haben — **rein additiv**. Niemand bekommt
+  weniger, weil jemand anderes abbricht.
 
-### Wer steuert?
+### Wer steuert? Niemand.
 
-Die Party hat einen **Dungeon Master** (den Ersteller). Nur er startet, pausiert und
-überspringt Phasen. Bei Verlassen wandert die Rolle automatisch weiter.
+Es gibt **keinen Dungeon Master**. Der Aufbruch geschieht per **Bereitschaftsprüfung**:
+Alle bestätigen, dann bricht die Gruppe gemeinsam auf.
 
-**Bewusst offen gelassen:** ob Mitglieder eine Pause *vorschlagen* können ("Rast
-erbitten") — das ist ein sinnvolles, aber nachgelagertes Feature. Erfasst als
-`#junDev` Issue für M4.
+Das ist nicht nur freundlicher, es beseitigt eine ganze Klasse von Problemen — keine
+Rolle, die weitergereicht werden muss, wenn jemand geht; keine Gruppe, die auf eine
+Person wartet; kein sozialer Druck durch eine Person, die alle anderen steuert.
+
+| Handlung | Regel |
+|---|---|
+| Aufbruch | erst wenn **alle** bereit sind |
+| Rast | folgt automatisch, niemand löst sie aus |
+| Abbruch | gilt **nur für einen selbst** — die anderen laufen weiter |
+| Beitritt während einer Quest | jederzeit, man steigt an der aktuellen Stelle ein |
+
+Niemand verliert XP, Gold oder Loot, weil eine andere Person abbricht.
 
 ---
 
