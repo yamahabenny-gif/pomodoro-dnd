@@ -2,7 +2,7 @@
 
 > Eine Cozy-Fantasy-Fokus-App: Arbeit wird zur Quest, echte Fokuszeit bewegt den Charakter durch eine illustrierte Welt und lässt das persönliche Lager wachsen.
 
-**Ziel-Domain:** `pomodoro.lang-jamin.de`  
+**Ziel-Domain:** `focus.lang-jamin.de`  
 **Status:** Concept V2 ist die verbindliche Produktspezifikation; Umsetzung startet mit einem Vertical Slice.  
 **Owner:** @yamahabenny-gif
 

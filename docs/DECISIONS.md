@@ -61,6 +61,13 @@ Ungefähr zehn sichtbare Quests; abgeschlossene werden nachgefüllt. Keine Frist
 **Status:** angenommen  
 Drei persistente Akte mit Rasten; Boss/Höhepunkt in Akt III. Kein 90-Minuten-Dauerblock.
 
+### ADR-036 · Produktionsziel Hostinger / `focus.lang-jamin.de`
+**Status:** angenommen · 2026-09-04  
+**Kontext:** Die Hostinger-Subdomain-Infrastruktur wurde bereits auf `focus.lang-jamin.de` umgewidmet; die bisherige Repo-Dokumentation nannte weiterhin Vercel und `pomodoro.lang-jamin.de`.  
+**Entscheidung:** Öffentliche Ziel-URL ist `https://focus.lang-jamin.de`; Hostinger ist das vorgesehene Produktionshosting, Supabase bleibt für Auth/Postgres/Realtime. Anbieterabhängige Next.js-Konfiguration und der eigentliche Cutover folgen erst nach nachgewiesener Hostinger-Laufzeitqualifikation und den Gates aus Issue #3.  
+**Alternative:** Vercel und die bisherige Domain unverändert als Produktionsziel beibehalten.  
+**Grund:** Die vorhandene Infrastruktur und Ziel-Domain sollen konsistent dokumentiert werden, ohne unbestätigte Hostinger-Runtime-Eigenschaften oder einen vorzeitigen Produktions-Cutover anzunehmen.
+
 ---
 
 ## Concept-V2-Entscheidungen

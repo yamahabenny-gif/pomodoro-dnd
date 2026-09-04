@@ -1,0 +1,194 @@
+.shell {
+  min-height: 100dvh;
+  background: #111713;
+  color: var(--text);
+}
+
+.stage {
+  position: relative;
+  min-height: 100dvh;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.stage::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgb(10 14 12 / .03) 22%, rgb(10 14 12 / .08) 52%, rgb(10 14 12 / .72) 100%);
+}
+
+.campArt {
+  position: absolute;
+  inset: 50% auto auto 50%;
+  z-index: -2;
+  width: max(100%, 1180px);
+  height: max(100%, 664px);
+  transform: translate(-50%, -50%) scale(1.015);
+  transform-origin: center;
+  animation: campBreathe 20s ease-in-out infinite alternate;
+}
+
+.narration {
+  position: absolute;
+  left: clamp(20px, 5vw, 72px);
+  bottom: clamp(28px, 8vh, 86px);
+  width: min(620px, calc(100% - 40px));
+  padding-left: clamp(18px, 3vw, 32px);
+  text-shadow: 0 2px 16px rgb(0 0 0 / .72);
+}
+
+.narration::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 2px;
+  bottom: 2px;
+  width: 2px;
+  background: rgb(212 167 44 / .62);
+  box-shadow: 0 0 22px rgb(212 167 44 / .25);
+}
+
+.narration h1 {
+  margin: 8px 0 14px;
+  max-width: 12ch;
+  font-size: clamp(2rem, 5vw, 4.4rem);
+  line-height: 1;
+  color: #f4ead8;
+}
+
+.narration p:last-child {
+  max-width: 48ch;
+  margin: 0;
+  color: #ded2be;
+  font-size: clamp(1rem, 2vw, 1.18rem);
+  line-height: 1.55;
+}
+
+.character {
+  position: absolute;
+  left: clamp(8%, 12vw, 18%);
+  bottom: clamp(18%, 20vh, 28%);
+  width: clamp(120px, 16vw, 220px);
+  text-align: center;
+  filter: drop-shadow(0 12px 22px rgb(0 0 0 / .45));
+}
+
+.character svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.character span {
+  display: inline-block;
+  margin-top: 4px;
+  color: #f4ead8;
+  font-weight: 700;
+  text-shadow: 0 2px 10px rgb(0 0 0 / .8);
+}
+
+.bookAction {
+  position: absolute;
+  right: clamp(6%, 10vw, 14%);
+  bottom: clamp(22%, 25vh, 31%);
+  width: clamp(150px, 20vw, 270px);
+  color: #f4ead8;
+  text-decoration: none;
+  text-align: center;
+  filter: drop-shadow(0 12px 24px rgb(0 0 0 / .42));
+}
+
+.bookAction svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 160ms ease-out;
+}
+
+.bookAction span {
+  display: inline-block;
+  margin-top: 6px;
+  border-bottom: 1px solid #d4a72c;
+  padding: 6px 2px;
+  font-weight: 700;
+  text-shadow: 0 2px 10px rgb(0 0 0 / .8);
+}
+
+.bookAction:hover svg {
+  transform: translateY(-3px) scale(1.015);
+}
+
+.bookAction:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 8px;
+  border-radius: 8px;
+}
+
+.lanternSlot {
+  position: absolute;
+  right: clamp(18px, 4vw, 56px);
+  top: clamp(18px, 5vh, 48px);
+  width: min(290px, calc(100% - 36px));
+  padding: 12px 0 12px 18px;
+  border-left: 1px solid rgb(212 167 44 / .44);
+  color: #cfc3ad;
+  font-size: .92rem;
+  line-height: 1.4;
+  text-shadow: 0 2px 10px rgb(0 0 0 / .75);
+}
+
+.lanternSlot[data-unlocked='true'] {
+  color: #f1d783;
+}
+
+.slotLabel {
+  display: block;
+  margin-bottom: 4px;
+  color: #f4ead8;
+  font-weight: 700;
+}
+
+@keyframes campBreathe {
+  from { transform: translate(-50%, -50%) scale(1.015); }
+  to { transform: translate(-50.2%, -50.1%) scale(1.028); }
+}
+
+@media (max-width: 720px) {
+  .character {
+    left: 6%;
+    bottom: 34%;
+    width: clamp(104px, 29vw, 155px);
+  }
+
+  .bookAction {
+    right: 5%;
+    bottom: 36%;
+    width: clamp(130px, 34vw, 180px);
+  }
+
+  .narration {
+    bottom: 24px;
+  }
+
+  .lanternSlot {
+    top: 16px;
+    right: 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .campArt {
+    animation: none;
+  }
+
+  .bookAction svg {
+    transition: none;
+  }
+
+  .bookAction:hover svg {
+    transform: none;
+  }
+}
