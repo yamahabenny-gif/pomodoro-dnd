@@ -23,7 +23,7 @@ jobs:
 
             const title = item.title || "";
             const known = ["#SENDEV", "#junDev", "#release"];
-            const wanted = known.filter((tag) => title.includes(tag)).map((t) => t.slice(1));
+            const wanted = known.filter((tag) => title.includes(tag));
 
             if (wanted.length === 0) return;
 
