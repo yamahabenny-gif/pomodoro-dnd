@@ -1,0 +1,34 @@
+name: Title Hashtag Labels
+
+on:
+  issues:
+    types: [opened, edited, reopened]
+  pull_request_target:
+    types: [opened, edited, reopened]
+
+permissions:
+  issues: write
+  pull-requests: write
+
+jobs:
+  sync-labels:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Labels aus Titel-Hashtags setzen
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const item = context.payload.issue || context.payload.pull_request;
+            if (!item) return;
+
+            const title = item.title || "";
+            const known = ["#SENDEV", "#junDev", "#release"];
+            const wanted = known.filter((tag) => title.includes(tag)).map((t) => t.slice(1));
+
+            if (wanted.length === 0) return;
+
+            const isPR = Boolean(context.payload.pull_request);
+            const common = { owner: context.repo.owner, repo: context.repo.repo, issue_number: item.number };
+
+            await github.rest.issues.addLabels({ ...common, labels: wanted });
+            console.log(`Labels gesetzt auf ${isPR ? "PR" : "Issue"} #${item.number}: ${wanted.join(", ")}`);
