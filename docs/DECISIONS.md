@@ -68,6 +68,13 @@ Drei persistente Akte mit Rasten; Boss/Höhepunkt in Akt III. Kein 90-Minuten-Da
 **Alternative:** Vercel und die bisherige Domain unverändert als Produktionsziel beibehalten.  
 **Grund:** Die vorhandene Infrastruktur und Ziel-Domain sollen konsistent dokumentiert werden, ohne unbestätigte Hostinger-Runtime-Eigenschaften oder einen vorzeitigen Produktions-Cutover anzunehmen.
 
+### ADR-037 · Preview-Deployment ebenfalls ausschließlich über Hostinger, kein Vercel-Runner
+**Status:** angenommen · 2026-09-05  
+**Kontext:** Für #51 wurde zwischenzeitlich ein GitHub-Actions-Workflow vorbereitet, der einen Vercel-Preview-Runner voraussetzt (`VERCEL_TOKEN`/`VERCEL_ORG_ID`/`VERCEL_PROJECT_ID` als GitHub-Environment-Secrets). Das widerspricht sowohl `docs/PREVIEW-DEPLOYMENT.md` ("kein Vercel, kein automatisches Deployment aus GitHub Actions") als auch ADR-036, das Hostinger bereits als Produktionsziel festlegt.  
+**Entscheidung:** Auch der interne Preview-Stand für #51 läuft ausschließlich über den vom Webdesigner betreuten Hostinger-Teststand, wie in `docs/PREVIEW-DEPLOYMENT.md` beschrieben. Kein Vercel-Pfad, keine Vercel-Credentials als Voraussetzung, kein automatisches GitHub-Actions-Deployment. Der zwischenzeitlich vorbereitete Vercel-Workflow gilt als obsolet.  
+**Alternative:** Vercel als separater, schnellerer Preview-Runner neben der Hostinger-Produktion.  
+**Grund:** Zwei parallele Hosting-Pfade (Vercel für Preview, Hostinger für Produktion) erzeugen doppelte Environment-Pflege und ein Preview, das sich vom späteren Produktions-Runtime unterscheidet — genau das Risiko, das #51 eigentlich absichern soll.
+
 ---
 
 ## Concept-V2-Entscheidungen
