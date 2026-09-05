@@ -1,0 +1,263 @@
+.shell {
+  min-height: 100dvh;
+  background: #111713;
+  color: var(--text);
+  display: grid;
+  place-items: center;
+}
+
+.visuallyHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.error {
+  position: fixed;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  background: var(--danger);
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 8px;
+}
+
+.card {
+  position: relative;
+  width: min(100% - 32px, 640px);
+  padding: clamp(24px, 6vw, 56px);
+  border-radius: 14px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  display: grid;
+  gap: 14px;
+  text-align: center;
+  justify-items: center;
+}
+
+.card h1 {
+  margin: 0;
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+}
+
+.rewardList {
+  display: flex;
+  gap: clamp(16px, 4vw, 40px);
+  margin: 8px 0;
+}
+
+.rewardList div {
+  display: grid;
+  gap: 2px;
+}
+
+.rewardList dt {
+  color: var(--text-muted);
+  font-size: .8rem;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+}
+
+.rewardList dd {
+  margin: 0;
+  font-weight: 700;
+  color: var(--accent);
+  font-size: 1.1rem;
+}
+
+.chestArt,
+.resolutionArt {
+  width: min(100%, 420px);
+  aspect-ratio: 16 / 9;
+}
+
+/* Aufbruch */
+
+.departure {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: end center;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.departureArt {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: fadeIn 4s ease-out both;
+}
+
+.departureCopy {
+  padding: clamp(24px, 6vw, 64px);
+  text-align: center;
+  text-shadow: 0 2px 16px rgb(0 0 0 / .72);
+}
+
+.departureCopy h1 {
+  max-width: 24ch;
+  margin: 8px auto 0;
+  font-size: clamp(1.4rem, 3.6vw, 2rem);
+  color: #f4ead8;
+}
+
+/* Fokus */
+
+.focusStage {
+  position: fixed;
+  inset: 0;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.beatLayer {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+}
+
+.beat {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1.6s ease-in-out;
+}
+
+.beat[data-active='true'] {
+  opacity: 1;
+}
+
+.silhouette {
+  position: absolute;
+  left: 50%;
+  bottom: 8%;
+  z-index: -1;
+  width: clamp(80px, 12vw, 140px);
+  transition: transform 1s linear;
+  filter: drop-shadow(0 10px 18px rgb(0 0 0 / .5));
+}
+
+.timerPanel {
+  position: absolute;
+  left: 50%;
+  bottom: clamp(24px, 6vh, 64px);
+  transform: translateX(-50%);
+  width: min(92%, 420px);
+  padding: clamp(16px, 3vw, 28px);
+  border-radius: 14px;
+  background: rgb(17 23 19 / .55);
+  backdrop-filter: blur(6px);
+  text-align: center;
+  color: #f4ead8;
+}
+
+.timer {
+  font-family: var(--font-display), serif;
+  font-size: clamp(2.4rem, 8vw, 3.6rem);
+  margin: 4px 0 12px;
+  font-variant-numeric: tabular-nums;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+
+.controls button {
+  background: transparent;
+  border: 1px solid rgb(212 167 44 / .5);
+  color: #f4ead8;
+  padding: 8px 14px;
+  font-size: .85rem;
+}
+
+.leave {
+  border-color: rgb(217 100 90 / .5) !important;
+  color: #f2b7b1 !important;
+}
+
+/* Rast */
+
+.restStage {
+  position: fixed;
+  inset: 0;
+  isolation: isolate;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+}
+
+.restArt {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: campBreathe 20s ease-in-out infinite alternate;
+}
+
+.restStage[data-reduced='true'] .restArt {
+  animation: none;
+}
+
+.restCopy {
+  width: min(92%, 480px);
+  padding: clamp(20px, 5vw, 40px);
+  border-radius: 14px;
+  background: rgb(17 23 19 / .6);
+  backdrop-filter: blur(6px);
+  text-align: center;
+  color: #f4ead8;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes campBreathe {
+  from { transform: scale(1.01); }
+  to { transform: scale(1.03); }
+}
+
+@media (max-width: 720px) {
+  .silhouette {
+    bottom: 22%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .departureArt {
+    animation: none;
+  }
+
+  .beat {
+    transition: none;
+  }
+
+  .silhouette {
+    transition: none;
+  }
+
+  .restArt {
+    animation: none;
+  }
+}

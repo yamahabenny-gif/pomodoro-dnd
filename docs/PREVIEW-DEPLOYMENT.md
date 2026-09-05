@@ -85,11 +85,13 @@ Damit Magic-Link-/Auth-Callbacks funktionieren, muss die vom Webdesigner bereitg
 
 ## Aktueller Handoff-Stand
 
-Der Lager-Hub aus #29 / PR #57 ist in `main` enthalten. Der aktuelle Testpfad ist damit:
+Der komplette Vertical-Slice-Pfad ist in `main` enthalten. Der aktuelle Testpfad ist damit:
 
-**Waldintro → Account → Charakter → Lager**
+**Waldintro → Account → Charakter → Lager → Abenteuerbuch → Aufbruch → 15-Minuten-Fokus → Questabschluss → Rast → Truhe → Weglaterne im Lager**
 
-Der nächste Feature-Schritt #37 ergänzt anschließend das Abenteuerbuch.
+Damit ist der in #35 beschriebene Vertical Slice erstmals von vorn bis hinten durchspielbar. Migration `20260905090000_focus_session_pause.sql` muss vor dem Deployment auf die Supabase-Instanz angewendet werden (ergänzt Pause/Resume-Spalten und -Funktionen auf `focus_sessions`).
+
+Damit verbleibt für #35 nur noch die tatsächliche Browser-Abnahme durch den Project Lead — technisch ist der Pfad vollständig.
 
 ## Nicht Bestandteil dieses Handoffs
 
