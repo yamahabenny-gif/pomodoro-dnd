@@ -7,13 +7,14 @@
 # Render-Dashboard. Dies ersetzt nicht das Produktionsziel Hostinger
 # (ADR-036) — siehe docs/PREVIEW-DEPLOYMENT.md.
 #
-# Unverifiziert gegen einen echten Render-Account: bitte beim ersten Setup
-# gegen das aktuelle Render-Blueprint-Schema prüfen (https://render.com/docs/blueprint-spec).
+# Geprüft gegen die aktuelle Render-Blueprint-Spec durch Technical-Owner-Review
+# auf PR #70 (https://render.com/docs/blueprint-spec) — `env:` ist dort veraltet,
+# `runtime:` ist das aktuelle, erforderliche Feld.
 
 services:
   - type: web
     name: pomodoro-dnd-preview
-    env: node
+    runtime: node
     plan: free
     branch: main
     buildCommand: npm ci && npm run build
