@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { redirect } from 'next/navigation'
-import { createSupabaseServerClient } from '../../lib/supabase/server'
 import { withBasePath } from '../../lib/base-path'
+import { createSupabaseServerClient } from '../../lib/supabase/server'
 import styles from './camp.module.css'
 
 export const dynamic = 'force-dynamic'
