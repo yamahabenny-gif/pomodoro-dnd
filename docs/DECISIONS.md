@@ -76,12 +76,19 @@ Drei persistente Akte mit Rasten; Boss/Höhepunkt in Akt III. Kein 90-Minuten-Da
 **Grund:** Zwei parallele Hosting-Pfade (Vercel für Preview, Hostinger für Produktion) erzeugen doppelte Environment-Pflege und ein Preview, das sich vom späteren Produktions-Runtime unterscheidet — genau das Risiko, das #51 eigentlich absichern soll.
 
 ### ADR-038 · Render.com als befristete Dev-Preview, SteerCo-Entscheidung wegen Hostinger-Kosten
-**Status:** angenommen · 2026-09-06  
+**Status:** **geändert durch ADR-039** (Ionos-VPS statt Render) · 2026-09-06  
 **Kontext:** Hostingers Node.js-Hosting-Produkt (Voraussetzung für #51, siehe ADR-037/#58) kostet bei monatlicher Laufzeit **18 €/Monat**; der beworbene Preis von 3,99 €/Monat gilt nur bei 48 Monaten Vertragsbindung. Für die aktive, noch unabgeschlossene Entwicklungsphase ist weder die laufende Kostenhöhe noch eine 48-Monats-Bindung angemessen. Diese Kostenfrage wurde im SteerCo besprochen.  
 **Entscheidung:** Für die Dauer der aktiven Entwicklungsphase läuft der interne Preview-Stand für #51 auf **Render.com (Free-Tier)** statt auf Hostinger — echtes Node.js (`npm run build` / `npm run start`, siehe `render.yaml`), kein Vertrags-Lock-in, keine laufenden Kosten. Diese Ausnahme ist **befristet**: Sobald der Produktions-Cutover ansteht (Issue #3), wird auf Hostinger als Produktionsziel umgestellt — daran ändert diese Entscheidung nichts. ADR-036 (Hostinger als Produktionsziel) bleibt vollständig in Kraft. Der in ADR-037 festgehaltene Vercel-Ausschluss bleibt ebenfalls in Kraft — Render wurde bewusst gewählt, weil es echtes Node.js statt einer Edge-Runtime bereitstellt und damit näher an der Ziel-Produktionsumgebung liegt als ein Edge-/Workers-basierter Anbieter.  
 **Alternative 1:** Hostinger Node.js-Hosting sofort buchen (18 €/Monat oder 48-Monats-Bindung) — abgelehnt wegen der Kosten während einer noch offenen Entwicklungsphase ohne festen Zeitrahmen.  
 **Alternative 2:** Cloudflare Pages/Workers (ebenfalls kostenlos) — abgelehnt, weil es auf einer Edge-Runtime statt Node.js läuft und damit stärker von der Ziel-Produktionsumgebung abweicht als Render.  
 **Grund:** Kostenkontrolle während der Entwicklungsphase, ohne die Produktionsentscheidung (Hostinger, ADR-036) oder den Vercel-Ausschluss (ADR-037) aufzugeben. Setup-Details: `docs/PREVIEW-DEPLOYMENT.md`, Abschnitt "Render (befristete Dev-Preview)".
+
+### ADR-039 · Ionos-VPS statt Render als Dev-Preview
+**Status:** angenommen · 2026-09-06  
+**Kontext:** Es steht ein bereits vorhandener, ungenutzter VPS bei **Ionos** zur Verfügung (Ubuntu 24.04, Plesk, 4 vCore, 4 GB RAM, 120 GB NVMe SSD) — eine andere Plattform als sowohl Render (ADR-038) als auch das Produktionsziel Hostinger (ADR-036). Gegenüber Render bietet der VPS echten, unbegrenzten Node.js-Betrieb ohne Cold-Starts und ohne die 512-MB-RAM-Grenze des Render-Free-Tiers — und verursacht keine zusätzlichen Kosten, da er bereits existiert.  
+**Entscheidung:** Der interne Preview-Stand für #51 läuft ab sofort auf dem Ionos-VPS statt auf Render. `render.yaml` wird entfernt. Eine neue `server.js` (Next.js Custom Server) wird ergänzt, da Plesks Node.js-Betrieb eine Startdatei statt eines Startkommandos erwartet — nutzbar über `npm run start:plesk`, ohne das bestehende `npm run start` (next start) für andere Hosts zu verändern. Diese Entscheidung ändert **nichts** an ADR-036: Hostinger bleibt das Produktionsziel für `focus.lang-jamin.de`. Der VPS ist eine dritte, unabhängige Plattform ausschließlich für die Dev-/Preview-Phase.  
+**Alternative:** Render beibehalten — abgelehnt, da der VPS technisch überlegen ist (kein Cold-Start, mehr Ressourcen, volle Kontrolle) und ohnehin bereits verfügbar ist.  
+**Grund:** Bessere technische Eignung bei gleichen Kosten (keine). Wichtig festzuhalten: Der VPS **vereinheitlicht Preview und Produktion nicht** — Ionos und Hostinger bleiben zwei verschiedene Anbieter. Das in ADR-037 benannte Grundrisiko (Preview läuft auf anderer Laufzeitumgebung als Produktion) bleibt bestehen, wird aber durch echtes Node.js auf beiden Seiten deutlich kleiner als bei einer Edge-Runtime.
 
 ---
 
