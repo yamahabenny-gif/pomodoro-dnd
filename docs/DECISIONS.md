@@ -69,11 +69,19 @@ Drei persistente Akte mit Rasten; Boss/Höhepunkt in Akt III. Kein 90-Minuten-Da
 **Grund:** Die vorhandene Infrastruktur und Ziel-Domain sollen konsistent dokumentiert werden, ohne unbestätigte Hostinger-Runtime-Eigenschaften oder einen vorzeitigen Produktions-Cutover anzunehmen.
 
 ### ADR-037 · Preview-Deployment ebenfalls ausschließlich über Hostinger, kein Vercel-Runner
-**Status:** angenommen · 2026-09-05  
+**Status:** **teilweise geändert durch ADR-038** (befristete Dev-Preview-Ausnahme) · 2026-09-05  
 **Kontext:** Für #51 wurde zwischenzeitlich ein GitHub-Actions-Workflow vorbereitet, der einen Vercel-Preview-Runner voraussetzt (`VERCEL_TOKEN`/`VERCEL_ORG_ID`/`VERCEL_PROJECT_ID` als GitHub-Environment-Secrets). Das widerspricht sowohl `docs/PREVIEW-DEPLOYMENT.md` ("kein Vercel, kein automatisches Deployment aus GitHub Actions") als auch ADR-036, das Hostinger bereits als Produktionsziel festlegt.  
 **Entscheidung:** Auch der interne Preview-Stand für #51 läuft ausschließlich über den vom Webdesigner betreuten Hostinger-Teststand, wie in `docs/PREVIEW-DEPLOYMENT.md` beschrieben. Kein Vercel-Pfad, keine Vercel-Credentials als Voraussetzung, kein automatisches GitHub-Actions-Deployment. Der zwischenzeitlich vorbereitete Vercel-Workflow gilt als obsolet.  
 **Alternative:** Vercel als separater, schnellerer Preview-Runner neben der Hostinger-Produktion.  
 **Grund:** Zwei parallele Hosting-Pfade (Vercel für Preview, Hostinger für Produktion) erzeugen doppelte Environment-Pflege und ein Preview, das sich vom späteren Produktions-Runtime unterscheidet — genau das Risiko, das #51 eigentlich absichern soll.
+
+### ADR-038 · Render.com als befristete Dev-Preview, SteerCo-Entscheidung wegen Hostinger-Kosten
+**Status:** angenommen · 2026-09-06  
+**Kontext:** Hostingers Node.js-Hosting-Produkt (Voraussetzung für #51, siehe ADR-037/#58) kostet bei monatlicher Laufzeit **18 €/Monat**; der beworbene Preis von 3,99 €/Monat gilt nur bei 48 Monaten Vertragsbindung. Für die aktive, noch unabgeschlossene Entwicklungsphase ist weder die laufende Kostenhöhe noch eine 48-Monats-Bindung angemessen. Diese Kostenfrage wurde im SteerCo besprochen.  
+**Entscheidung:** Für die Dauer der aktiven Entwicklungsphase läuft der interne Preview-Stand für #51 auf **Render.com (Free-Tier)** statt auf Hostinger — echtes Node.js (`npm run build` / `npm run start`, siehe `render.yaml`), kein Vertrags-Lock-in, keine laufenden Kosten. Diese Ausnahme ist **befristet**: Sobald der Produktions-Cutover ansteht (Issue #3), wird auf Hostinger als Produktionsziel umgestellt — daran ändert diese Entscheidung nichts. ADR-036 (Hostinger als Produktionsziel) bleibt vollständig in Kraft. Der in ADR-037 festgehaltene Vercel-Ausschluss bleibt ebenfalls in Kraft — Render wurde bewusst gewählt, weil es echtes Node.js statt einer Edge-Runtime bereitstellt und damit näher an der Ziel-Produktionsumgebung liegt als ein Edge-/Workers-basierter Anbieter.  
+**Alternative 1:** Hostinger Node.js-Hosting sofort buchen (18 €/Monat oder 48-Monats-Bindung) — abgelehnt wegen der Kosten während einer noch offenen Entwicklungsphase ohne festen Zeitrahmen.  
+**Alternative 2:** Cloudflare Pages/Workers (ebenfalls kostenlos) — abgelehnt, weil es auf einer Edge-Runtime statt Node.js läuft und damit stärker von der Ziel-Produktionsumgebung abweicht als Render.  
+**Grund:** Kostenkontrolle während der Entwicklungsphase, ohne die Produktionsentscheidung (Hostinger, ADR-036) oder den Vercel-Ausschluss (ADR-037) aufzugeben. Setup-Details: `docs/PREVIEW-DEPLOYMENT.md`, Abschnitt "Render (befristete Dev-Preview)".
 
 ---
 
