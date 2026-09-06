@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { redirect } from 'next/navigation'
 import { createSupabaseServerClient } from '../../lib/supabase/server'
+import { QUEST_CATALOG } from '../../lib/quests/catalog'
 import { withBasePath } from '../../lib/base-path'
 import styles from './adventure-book.module.css'
 
@@ -27,38 +28,37 @@ export default async function AdventureBookPage() {
       <section className={styles.book} aria-labelledby="book-title">
         <div className={styles.heading}>
           <p className="eyebrow">Abenteuerbuch</p>
-          <h1 id="book-title">Heute wartet nur ein Weg.</h1>
+          <h1 id="book-title">Welcher Weg passt heute zu dir?</h1>
           <p>
-            Kein Stapel voller Pflichten. Nur eine kleine Spur im Unterholz, die für fünfzehn ruhige Minuten deine
-            Aufmerksamkeit gebrauchen könnte.
+            Sechs kleine Wege liegen offen. Manche sind kurz, andere brauchen etwas mehr Wald — keiner davon hat es eilig.
           </p>
         </div>
 
-        <article className={styles.quest} aria-labelledby="quest-title">
-          <div className={styles.questArt} aria-hidden="true">
-            <svg viewBox="0 0 1600 900" focusable="false">
-              <use href={withBasePath('/assets/phase1-art-pack.svg#quest-light-undergrowth-beat-01')} />
-            </svg>
-          </div>
+        <div className={styles.catalog} aria-label="Verfügbare Quests">
+          {QUEST_CATALOG.map((quest, index) => (
+            <article className={styles.quest} aria-labelledby={`quest-title-${quest.key}`} key={quest.key}>
+              <div className={styles.questArt} aria-hidden="true">
+                <svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" focusable="false">
+                  <use href={withBasePath(`/assets/phase1-art-pack.svg#quest-light-undergrowth-beat-0${(index % 4) + 1}`)} />
+                </svg>
+              </div>
 
-          <div className={styles.questCopy}>
-            <div className={styles.meta}>
-              <span>Erste Quest</span>
-              <strong>15 Minuten</strong>
-            </div>
-            <h2 id="quest-title">Ein Licht im Unterholz</h2>
-            <p>
-              Zwischen Farnen flackert ein schwaches Licht. Folge ihm ein Stück und widme dich dabei genau einer Sache,
-              die heute wirklich weiterkommen soll.
-            </p>
-            <p>Du musst nichts beweisen. Fünfzehn Minuten reichen für diesen Abschnitt des Weges.</p>
+              <div className={styles.questCopy}>
+                <div className={styles.meta}>
+                  <span>{quest.region} · {quest.location}</span>
+                  <strong>{quest.durationMinutes} Minuten</strong>
+                </div>
+                <h2 id={`quest-title-${quest.key}`}>{quest.title}</h2>
+                {quest.assignment.map((paragraph) => paragraph ? <p key={paragraph}>{paragraph}</p> : null)}
 
-            <Link className={styles.departure} href="/quest/first-light">
-              Zum Aufbruch
-              <span aria-hidden="true">→</span>
-            </Link>
-          </div>
-        </article>
+                <Link className={styles.departure} href={quest.href}>
+                  Diesen Weg wählen
+                  <span aria-hidden="true">→</span>
+                </Link>
+              </div>
+            </article>
+          ))}
+        </div>
 
         <Link className={styles.back} href="/camp">
           Zurück ans Feuer
