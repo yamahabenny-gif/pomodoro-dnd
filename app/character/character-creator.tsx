@@ -3,6 +3,7 @@
 import { FormEvent, useMemo, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { createSupabaseBrowserClient } from '../../lib/supabase/client'
+import { withBasePath } from '../../lib/base-path'
 import styles from './character.module.css'
 
 const ancestries = [
@@ -135,7 +136,7 @@ export function CharacterCreator({ userId, initialCharacter }: { userId: string;
                 onClick={() => update('ancestry', ancestry.id)}
               >
                 <svg viewBox="0 0 220 260" aria-hidden="true" focusable="false">
-                  <use href={`/assets/phase1-art-pack.svg#${ancestry.asset}`} />
+                  <use href={withBasePath(`/assets/phase1-art-pack.svg#${ancestry.asset}`)} />
                 </svg>
                 <strong>{ancestry.label}</strong>
                 <span>{ancestry.note}</span>
@@ -197,7 +198,7 @@ function CharacterPreview({ draft, asset }: { draft: CharacterDraft; asset: stri
   return (
     <svg className={styles.characterPreview} viewBox="0 0 512 512" focusable="false">
       <g transform={`translate(256 0) scale(${bodyScale} 1) translate(-256 0)`}>
-        <use href={`/assets/phase1-art-pack.svg#${asset}`} />
+        <use href={withBasePath(`/assets/phase1-art-pack.svg#${asset}`)} />
       </g>
       <circle className={styles.skinLayer} cx="256" cy="150" r={draft.ancestry === 'goblin' ? 60 : 69} fill={skinColor} />
       {draft.ancestry === 'elf' ? (
