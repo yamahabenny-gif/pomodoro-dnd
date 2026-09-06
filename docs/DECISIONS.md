@@ -90,6 +90,14 @@ Drei persistente Akte mit Rasten; Boss/Höhepunkt in Akt III. Kein 90-Minuten-Da
 **Alternative:** Render beibehalten — abgelehnt, da der VPS technisch überlegen ist (kein Cold-Start, mehr Ressourcen, volle Kontrolle) und ohnehin bereits verfügbar ist.  
 **Grund:** Bessere technische Eignung bei gleichen Kosten (keine). Wichtig festzuhalten: Der VPS **vereinheitlicht Preview und Produktion nicht** — Ionos und Hostinger bleiben zwei verschiedene Anbieter. Das in ADR-037 benannte Grundrisiko (Preview läuft auf anderer Laufzeitumgebung als Produktion) bleibt bestehen, wird aber durch echtes Node.js auf beiden Seiten deutlich kleiner als bei einer Edge-Runtime.
 
+### ADR-040 · Supabase-Aktivitäts-Heartbeat gegen automatisches Pausieren
+**Status:** angenommen · 2026-09-06  
+**Kontext:** Supabase pausiert Free-Plan-Projekte nach etwa sieben Tagen ohne Aktivität automatisch. Während einer offenen, nicht terminierten Entwicklungsphase ist das ein reales Betriebsrisiko — HERMES (Webadmin) hat es auf #51 aufgeworfen und nach Freigabe umgesetzt, direkt gegen die Live-Instanz, **ohne begleitende Migration im Repository**.  
+**Entscheidung:** Alle drei Kalendertage schreibt ein Betriebsjob genau einen Datensatz (`service = 'pomodoro-dnd'`, aktueller Git-Commit, Zeitstempel) in eine dedizierte Tabelle `public.ops_heartbeats` — siehe Migration `20260906143000_ops_heartbeats.sql` (nachträglich ins Repo aufgenommen, damit Schema und Git wieder übereinstimmen; das eigentliche `create table` wurde bereits vorher live angewendet). Ausdrücklich **keine** Berührung von `profiles`, `characters`, `focus_sessions` oder `unlocks`. Jede DB-Schreiboperation außerhalb dieses einen Heartbeat-Datensatzes bleibt freigabepflichtig durch den Account-Owner.  
+**Alternative:** Rein lesende API-Aktivität ohne DB-Schreibvorgang — laut Supabase-Doku unter Umständen ausreichend, aber nicht zuverlässig genug geprüft, um sich allein darauf zu verlassen.  
+**Grund:** Verhindert ein unbeabsichtigtes Pausieren des Projekts während längerer Entwicklungspausen, mit minimaler, klar abgegrenzter Schreibfläche.  
+**Offener Punkt:** Das ausführende Script (\`~/.hermes/scripts/pomodoro_dnd_heartbeat.py\`) läuft aktuell außerhalb dieses Repositories, in HERMES' eigener Umgebung, mit dem vollprivilegierten \`service_role\`-Key — für niemand sonst einsehbar oder review-fähig. Sollte perspektivisch als Skript ins Repo (z. B. \`scripts/\`) überführt werden, damit auch der Automatisierungscode selbst der "Was nicht in GitHub steht, existiert nicht"-Regel aus `docs/WORKFLOW.md` folgt.
+
 ---
 
 ## Concept-V2-Entscheidungen
