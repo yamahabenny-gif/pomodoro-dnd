@@ -88,7 +88,7 @@ describe('Reichweite unter echter Nutzung', () => {
         }
       }
     }
-    // Kein einziges Duplikat in 240 Truhen — das ist die Regel aus Konzept V1 §10.
+    // Kein einziges Duplikat in 240 Truhen — das ist die Regel aus docs/CONCEPT.md §4.
     expect(goldStattItem).toBe(0)
     expect(owned.size).toBe(240)
   })
