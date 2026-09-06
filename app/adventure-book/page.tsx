@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { redirect } from 'next/navigation'
 import { createSupabaseServerClient } from '../../lib/supabase/server'
+import { withBasePath } from '../../lib/base-path'
 import styles from './adventure-book.module.css'
 
 export const dynamic = 'force-dynamic'
@@ -36,7 +37,7 @@ export default async function AdventureBookPage() {
         <article className={styles.quest} aria-labelledby="quest-title">
           <div className={styles.questArt} aria-hidden="true">
             <svg viewBox="0 0 1600 900" focusable="false">
-              <use href="/assets/phase1-art-pack.svg#quest-light-undergrowth-beat-01" />
+              <use href={withBasePath('/assets/phase1-art-pack.svg#quest-light-undergrowth-beat-01')} />
             </svg>
           </div>
 
