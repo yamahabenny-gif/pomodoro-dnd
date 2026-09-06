@@ -1,5 +1,9 @@
 node_modules/
 .next/
+# Von Next.js bei jedem build/dev neu geschrieben (Next 15 ergaenzt bei
+# aktivem Typed-Routes-Feature eine Triple-Slash-Referenz, die gegen
+# @typescript-eslint/triple-slash-reference verstoesst - siehe #73).
+next-env.d.ts
 out/
 build/
 .env
