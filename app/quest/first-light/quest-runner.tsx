@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { withBasePath } from '../../../lib/base-path'
 import { createSupabaseBrowserClient } from '../../../lib/supabase/client'
 import { useSceneAudio } from '../../../lib/audio/use-scene-audio'
 import { useReducedMotion } from '../../../lib/hooks/use-reduced-motion'
@@ -31,11 +32,11 @@ async function callRpc<T>(
 
 const BEAT_COUNT = 4
 const AUDIO = {
-  departure: '/audio/audio-departure-motif-01.ogg',
-  focus: '/audio/audio-focus-light-undergrowth-01.ogg',
-  resolve: '/audio/audio-completion-resolve-01.ogg',
-  rest: '/audio/audio-rest-campfire-ambience-01.ogg',
-  chest: '/audio/sfx-chest-lantern-material-01.ogg',
+  departure: withBasePath('/audio/audio-departure-motif-01.ogg'),
+  focus: withBasePath('/audio/audio-focus-light-undergrowth-01.ogg'),
+  resolve: withBasePath('/audio/audio-completion-resolve-01.ogg'),
+  rest: withBasePath('/audio/audio-rest-campfire-ambience-01.ogg'),
+  chest: withBasePath('/audio/sfx-chest-lantern-material-01.ogg'),
 } as const
 
 type Stage = 'briefing' | 'departure' | 'focus' | 'resolution' | 'resting' | 'chest' | 'done'
@@ -173,7 +174,7 @@ export function QuestRunner({
   async function leaveQuest() {
     if (!session) return
     await callRpc(supabase, 'cancel_focus_session', { p_session_id: session.id })
-    window.location.href = '/camp'
+    window.location.href = withBasePath('/camp')
   }
 
   async function finishRest() {
@@ -288,7 +289,7 @@ function Departure() {
         focusable="false"
         className={styles.departureArt}
       >
-        <use href="/assets/phase1-art-pack.svg#quest-light-undergrowth-beat-01" />
+        <use href={withBasePath('/assets/phase1-art-pack.svg#quest-light-undergrowth-beat-01')} />
       </svg>
       <div className={styles.departureCopy}>
         <p className="eyebrow">Aufbruch</p>
@@ -330,7 +331,7 @@ function FocusScene({
             className={styles.beat}
             data-active={index === beat}
           >
-            <use href={`/assets/phase1-art-pack.svg#quest-light-undergrowth-beat-0${index + 1}`} />
+            <use href={withBasePath(`/assets/phase1-art-pack.svg#quest-light-undergrowth-beat-0${index + 1}`)} />
           </svg>
         ))}
       </div>
@@ -342,7 +343,7 @@ function FocusScene({
         className={styles.silhouette}
         style={{ transform: `translateX(${silhouetteX}px)` }}
       >
-        <use href="/assets/phase1-art-pack.svg#journey-silhouette" />
+        <use href={withBasePath('/assets/phase1-art-pack.svg#journey-silhouette')} />
       </svg>
 
       <div className={styles.timerPanel}>
@@ -383,7 +384,7 @@ function Resolution({
   return (
     <section className={styles.card} aria-labelledby="resolution-title">
       <svg viewBox="0 0 1600 900" aria-hidden="true" focusable="false" className={styles.resolutionArt}>
-        <use href="/assets/phase1-art-pack.svg#quest-light-undergrowth-beat-04" />
+        <use href={withBasePath('/assets/phase1-art-pack.svg#quest-light-undergrowth-beat-04')} />
       </svg>
       <p className="eyebrow">Questabschluss</p>
       <h1 id="resolution-title">Das Licht ist erreicht.</h1>
@@ -431,7 +432,7 @@ function Rest({
         focusable="false"
         className={styles.restArt}
       >
-        <use href="/assets/phase1-art-pack.svg#rest-campfire" />
+        <use href={withBasePath('/assets/phase1-art-pack.svg#rest-campfire')} />
       </svg>
       <div className={styles.restCopy}>
         <p className="eyebrow" id="rest-title">
@@ -460,7 +461,7 @@ function ChestReady({ onOpen }: { onOpen: () => void }) {
   return (
     <section className={styles.card} aria-labelledby="chest-title">
       <svg viewBox="0 0 1600 900" aria-hidden="true" focusable="false" className={styles.chestArt}>
-        <use href="/assets/phase1-art-pack.svg#chest-closed" />
+        <use href={withBasePath('/assets/phase1-art-pack.svg#chest-closed')} />
       </svg>
       <p className="eyebrow">Nach der Rast</p>
       <h1 id="chest-title">Deine erste Truhe wartet.</h1>
@@ -475,7 +476,7 @@ function Done() {
   return (
     <section className={styles.card} aria-labelledby="done-title">
       <svg viewBox="0 0 1600 900" aria-hidden="true" focusable="false" className={styles.chestArt}>
-        <use href="/assets/phase1-art-pack.svg#chest-open" />
+        <use href={withBasePath('/assets/phase1-art-pack.svg#chest-open')} />
       </svg>
       <p className="eyebrow">Alte Weglaterne gefunden</p>
       <h1 id="done-title">Der Weg zurück ist erhellt.</h1>

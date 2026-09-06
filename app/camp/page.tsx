@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { redirect } from 'next/navigation'
+import { withBasePath } from '../../lib/base-path'
 import { createSupabaseServerClient } from '../../lib/supabase/server'
 import styles from './camp.module.css'
 
@@ -40,13 +41,13 @@ export default async function CampPage() {
     <main id="main-content" className={styles.shell}>
       <section className={styles.stage} aria-labelledby="camp-title">
         <svg className={styles.campArt} viewBox="0 0 1600 900" aria-hidden="true" focusable="false">
-          <use href="/assets/phase1-art-pack.svg#camp-stage-01-base" />
-          {lanternVisible ? <use href="/assets/phase1-art-pack.svg#camp-stage-01-lantern" /> : null}
+          <use href={withBasePath('/assets/phase1-art-pack.svg#camp-stage-01-base')} />
+          {lanternVisible ? <use href={withBasePath('/assets/phase1-art-pack.svg#camp-stage-01-lantern')} /> : null}
         </svg>
 
         <div className={styles.character} aria-label={`${character.name}, dein Charakter`}>
           <svg viewBox="0 0 220 260" aria-hidden="true" focusable="false">
-            <use href={`/assets/phase1-art-pack.svg#${characterAsset}`} />
+            <use href={withBasePath(`/assets/phase1-art-pack.svg#${characterAsset}`)} />
           </svg>
           <span>{character.name}</span>
         </div>
@@ -61,7 +62,7 @@ export default async function CampPage() {
 
         <Link className={styles.bookAction} href="/adventure-book" aria-label="Abenteuerbuch öffnen">
           <svg viewBox="0 0 320 220" aria-hidden="true" focusable="false">
-            <use href="/assets/phase1-art-pack.svg#camp-adventure-book" />
+            <use href={withBasePath('/assets/phase1-art-pack.svg#camp-adventure-book')} />
           </svg>
           <span>Abenteuerbuch öffnen</span>
         </Link>

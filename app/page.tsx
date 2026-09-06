@@ -1,9 +1,10 @@
 import Link from 'next/link'
+import { withBasePath } from '../lib/base-path'
 
 function ForestLayer({ id, className }: { id: string; className: string }) {
   return (
     <svg className={className} viewBox="0 0 1600 900" aria-hidden="true" focusable="false">
-      <use href={`/assets/phase1-art-pack.svg#${id}`} />
+      <use href={withBasePath(`/assets/phase1-art-pack.svg#${id}`)} />
     </svg>
   )
 }
