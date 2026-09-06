@@ -8,6 +8,7 @@ import { useReducedMotion } from '../../../lib/hooks/use-reduced-motion'
 import { deriveQuestPhase, FocusSessionRow, toRestSession, toTimerSession } from '../../../lib/timer/first-light'
 import { formatRemaining, snapshot } from '../../../lib/timer/session'
 import { layerOffset } from '../../../lib/timer/journey'
+import { withBasePath } from '../../../lib/base-path'
 import styles from './first-light.module.css'
 
 type SupabaseClient = ReturnType<typeof createSupabaseBrowserClient>
@@ -173,7 +174,7 @@ export function QuestRunner({
   async function leaveQuest() {
     if (!session) return
     await callRpc(supabase, 'cancel_focus_session', { p_session_id: session.id })
-    window.location.href = '/camp'
+    window.location.href = withBasePath('/camp')
   }
 
   async function finishRest() {
