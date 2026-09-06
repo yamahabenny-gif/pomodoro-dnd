@@ -22,7 +22,7 @@ jobs:
             if (!item) return;
 
             const title = item.title || "";
-            const known = ["#SENDEV", "#junDev", "#release"];
+            const known = ["#SENDEV", "#junDev", "#release", "#art"];
             const wanted = known.filter((tag) => title.includes(tag));
 
             if (wanted.length === 0) return;

@@ -14,10 +14,12 @@ Das ist keine Bürokratie, sondern eine Notwendigkeit: Dieses Projekt wird spät
 **anderen Team** übernommen und gehostet. Alles, was nur in einem Kopf existiert, geht bei
 der Übergabe verloren.
 
-## Die drei Hashtags
+## Die Hashtags
 
 Jedes Issue und jeder Pull Request trägt Hashtags im Titel. Sie sind gleichzeitig als
-GitHub-Labels gesetzt, damit man filtern kann.
+GitHub-Labels gesetzt, damit man filtern kann. `.github/workflows/title-labels.yml`
+setzt sie automatisch, sobald der Hashtag im Titel steht — ein Hashtag, der hier nicht
+gelistet ist, wird nicht automatisch gelabelt.
 
 ### `#SENDEV` — Senior Development
 
@@ -46,6 +48,23 @@ des Produkts:
 Jedes `#junDev`-Issue **muss** enthalten: Akzeptanzkriterien, betroffene Dateien und
 einen benannten Ansprechpartner für Rückfragen. Ein Issue, das diese drei Dinge nicht
 hat, ist noch kein `#junDev`-Issue.
+
+### `#art` — Art-/Audio-Produktion
+
+Kreative Bildgenerierung/-produktion, ausdrücklich **kein** Entwicklungsauftrag. Kein
+Developer ist für die kreative Produktion verantwortlich — die Rolle heißt hier
+"Art Agent", nicht Developer/Senior Developer. Beispiele:
+
+- Regionen-Kulissen, Key Visuals, Journey-Hintergründe
+- Truhen-/Item-Illustrationen, Charaktervarianten
+- Audio-Cues (Ambience, Motive, SFX)
+
+`#art`-Issues **müssen** enthalten: verbindliche Art Direction (Referenz auf
+`docs/ART-DIRECTION.md`), benötigte Assets/Formate, Konsistenzanforderungen zu
+bestehender Art, und eine explizite Freigabe-Instanz (i. d. R. Project Lead) vor der
+technischen Integration durch einen Developer in einem separaten Folgeauftrag.
+`#art` ersetzt `#junDev`/`#SENDEV` nicht dadurch, dass später jemand die Assets
+einbaut — die Integration selbst bekommt ihr eigenes `#junDev`/`#SENDEV`-Issue.
 
 ### `#release` — Freigabe durch das Release Team
 
