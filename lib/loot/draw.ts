@@ -1,34 +1,35 @@
 /**
- * Truhenziehung nach der zentralen Loot-Regel aus Konzept V1 §10:
+ * Truhenziehung nach der zentralen Loot-Regel aus Concept V2, docs/CONCEPT.md §4:
  *
- *   „Keine Duplikate. Eine Truhe enthält grundsätzlich etwas Neues,
- *    solange innerhalb des jeweiligen Pools noch etwas Neues verfügbar ist."
+ *   „Wenn eine Truhe ein Item enthält, ist es neu. Keine Duplikate."
  *
  * Das ist der Grund, warum Gegenstände nicht mehr aus einer Kennung errechnet
  * werden können (so machte es lib/loot/items.ts): Gezogen wird aus einem Katalog,
  * und zwar aus dem, was noch nicht besessen wird. Der Baukasten aus items.ts
  * bleibt — er liefert jetzt das Aussehen eines Katalogeintrags ohne Illustration.
  *
- * Siehe docs/KONZEPT-ABGLEICH.md, K6.
- *
  * Rein: keine React-Importe, kein Math.random(), keine Uhr. Die Ziehung ist
- * deterministisch aus einem Seed — damit sehen alle Party-Mitglieder dieselbe
- * Party-Truhe, ohne dass sie jemand verteilen muss.
+ * deterministisch aus einem Seed — dieselbe Eingabe ergibt reproduzierbar dasselbe
+ * Ergebnis, was eine serverseitige Ziehung testbar und nachvollziehbar macht. Das
+ * ist unabhängig von Party-Fragen: Nach ADR-025 gibt es keine Party-Truhe, jede
+ * Person erhält eine eigene, individuelle Ziehung.
  */
 
 export type Category = 'charakter' | 'lager' | 'begleiter' | 'atmosphaere'
 
-/** Vier Stufen nach Konzept V1 §10 — siehe K7 im Abgleich. */
-export type Rarity = 'gewoehnlich' | 'selten' | 'episch' | 'legendaer'
+/** Vier Stufen nach Concept V2, ADR-021. */
+export type Rarity = 'gewoehnlich' | 'ungewoehnlich' | 'selten' | 'aussergewoehnlich'
 
-export const RARITIES: readonly Rarity[] = ['gewoehnlich', 'selten', 'episch', 'legendaer']
+export const RARITIES: readonly Rarity[] = [
+  'gewoehnlich', 'ungewoehnlich', 'selten', 'aussergewoehnlich',
+]
 
-/** Summiert sich auf 1. Angepasst von fünf auf vier Stufen. */
+/** Summiert sich auf 1. Werte nach ADR-021: 60 / 27 / 11 / 2 %. */
 export const RARITY_CHANCE: Record<Rarity, number> = {
   gewoehnlich: 0.6,
-  selten: 0.27,
-  episch: 0.11,
-  legendaer: 0.02,
+  ungewoehnlich: 0.27,
+  selten: 0.11,
+  aussergewoehnlich: 0.02,
 }
 
 export interface CatalogueItem {
@@ -46,7 +47,8 @@ export interface CatalogueItem {
  * Was eine Truhe hergibt.
  *
  * `item: null` heißt: Der Topf ist leer. Dann gibt es Gold statt eines Gegenstands —
- * niemals ein Duplikat. Das ist der Fall, den Konzept V1 offenlässt (W4 im Abgleich).
+ * niemals ein Duplikat. Dieser Fall ist in docs/CONCEPT.md nicht spezifiziert; die
+ * Herleitung der Ersatzregel steht in docs/KONZEPT-ABGLEICH.md, W4.
  */
 export interface Drop {
   item: CatalogueItem | null
@@ -66,11 +68,34 @@ function hash(seed: string): number {
 }
 
 /**
+ * Würfelt deterministisch aus einem Seed eine Seltenheitsstufe, gewichtet nach
+ * RARITY_CHANCE (ADR-021: 60 / 27 / 11 / 2 %).
+ *
+ * Wie `hash()` selbst: kein `Math.random()`, derselbe Seed ergibt immer dieselbe
+ * Stufe. Das macht die Ziehung serverseitig nachvollziehbar und die Verteilung
+ * automatisiert testbar (Akzeptanzkriterium aus #15) — mit `Math.random()` ließe
+ * sich zwar auch eine korrekte Verteilung erzeugen, aber kein einzelnes Ergebnis
+ * im Nachhinein reproduzieren oder in einem Test gezielt herbeiführen.
+ */
+export function rollRarity(seed: string): Rarity {
+  // hash() liefert einen vollen 32-Bit-Wert; Teilen durch 2^32 ergibt eine Zahl
+  // in [0, 1) — dieselbe Bühne, auf der RARITY_CHANCE seine Prozente definiert.
+  const roll = hash(seed) / 0x1_0000_0000
+  let acc = 0
+  for (const step of RARITIES) {
+    acc += RARITY_CHANCE[step]
+    if (roll < acc) return step
+  }
+  // Nur als Schutz gegen Gleitkomma-Rundung, falls acc knapp unter 1 bleibt.
+  return RARITIES[RARITIES.length - 1] ?? 'gewoehnlich'
+}
+
+/**
  * Zieht einen noch nicht besessenen Gegenstand.
  *
  * Läuft der verlangte Topf leer, wird **nicht** auf ein Duplikat ausgewichen. Es
  * wird zuerst in der nächstniedrigeren Stufe derselben Kategorie gesucht — wer eine
- * epische Truhe öffnet, soll nicht leer ausgehen, nur weil die epischen Umhänge alle
+ * seltene Truhe öffnet, soll nicht leer ausgehen, nur weil die seltenen Umhänge alle
  * sind. Erst wenn auch dort nichts frei ist, gibt es Gold.
  */
 export function drawLoot(
@@ -81,11 +106,11 @@ export function drawLoot(
   seed: string,
 ): Drop {
   const goldFor: Record<Rarity, number> = {
-    gewoehnlich: 20, selten: 60, episch: 160, legendaer: 400,
+    gewoehnlich: 20, ungewoehnlich: 60, selten: 160, aussergewoehnlich: 400,
   }
 
-  // Von der verlangten Stufe abwärts, nie aufwärts: eine leere epische Kiste
-  // darf keinen legendären Gegenstand ausschütten.
+  // Von der verlangten Stufe abwärts, nie aufwärts: eine leere seltene Kiste
+  // darf keinen außergewöhnlichen Gegenstand ausschütten.
   const start = RARITIES.indexOf(rarity)
   for (let i = start; i >= 0; i--) {
     const step = RARITIES[i]
@@ -127,10 +152,11 @@ export function setCompletedBy(
 /**
  * Wie lange die Keine-Duplikate-Regel in einem Topf noch trägt.
  *
- * Konzept V1 verlangt die Regel, sagt aber nicht, wie groß die Töpfe sein müssen.
- * Vier Kategorien × vier Stufen sind sechzehn Töpfe; bei acht Quests am Tag ist ein
- * Topf mit zwanzig Einträgen in gut zwei Wochen leer. Diese Funktion macht das
- * messbar, statt es zu schätzen — sie gehört in einen Test, nicht in eine Annahme.
+ * Concept V2 verlangt die Regel (docs/CONCEPT.md §4), sagt aber nicht, wie groß die
+ * Töpfe sein müssen. Vier Kategorien × vier Stufen sind sechzehn Töpfe; bei acht
+ * Quests am Tag ist ein Topf mit zwanzig Einträgen in gut zwei Wochen leer. Diese
+ * Funktion macht das messbar, statt es zu schätzen — sie gehört in einen Test,
+ * nicht in eine Annahme.
  */
 export function drawsRemaining(
   catalogue: readonly CatalogueItem[],
@@ -154,7 +180,7 @@ export function drawsRemaining(
  */
 export const MIN_POOL_SIZE: Record<Rarity, number> = {
   gewoehnlich: 40,
-  selten: 20,
-  episch: 12,
-  legendaer: 12,
+  ungewoehnlich: 20,
+  selten: 12,
+  aussergewoehnlich: 12,
 }
