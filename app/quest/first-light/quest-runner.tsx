@@ -2,13 +2,13 @@
 
 import Link from 'next/link'
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { withBasePath } from '../../../lib/base-path'
 import { createSupabaseBrowserClient } from '../../../lib/supabase/client'
 import { useSceneAudio } from '../../../lib/audio/use-scene-audio'
 import { useReducedMotion } from '../../../lib/hooks/use-reduced-motion'
 import { deriveQuestPhase, FocusSessionRow, toRestSession, toTimerSession } from '../../../lib/timer/first-light'
 import { formatRemaining, snapshot } from '../../../lib/timer/session'
 import { layerOffset } from '../../../lib/timer/journey'
-import { withBasePath } from '../../../lib/base-path'
 import styles from './first-light.module.css'
 
 type SupabaseClient = ReturnType<typeof createSupabaseBrowserClient>
@@ -32,11 +32,11 @@ async function callRpc<T>(
 
 const BEAT_COUNT = 4
 const AUDIO = {
-  departure: '/audio/audio-departure-motif-01.ogg',
-  focus: '/audio/audio-focus-light-undergrowth-01.ogg',
-  resolve: '/audio/audio-completion-resolve-01.ogg',
-  rest: '/audio/audio-rest-campfire-ambience-01.ogg',
-  chest: '/audio/sfx-chest-lantern-material-01.ogg',
+  departure: withBasePath('/audio/audio-departure-motif-01.ogg'),
+  focus: withBasePath('/audio/audio-focus-light-undergrowth-01.ogg'),
+  resolve: withBasePath('/audio/audio-completion-resolve-01.ogg'),
+  rest: withBasePath('/audio/audio-rest-campfire-ambience-01.ogg'),
+  chest: withBasePath('/audio/sfx-chest-lantern-material-01.ogg'),
 } as const
 
 type Stage = 'briefing' | 'departure' | 'focus' | 'resolution' | 'resting' | 'chest' | 'done'

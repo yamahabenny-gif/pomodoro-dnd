@@ -2,8 +2,8 @@
 
 import { FormEvent, useMemo, useState } from 'react'
 import { useRouter } from 'next/navigation'
-import { createSupabaseBrowserClient } from '../../lib/supabase/client'
 import { withBasePath } from '../../lib/base-path'
+import { createSupabaseBrowserClient } from '../../lib/supabase/client'
 import styles from './character.module.css'
 
 const ancestries = [

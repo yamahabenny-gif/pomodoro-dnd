@@ -1,14 +1,15 @@
 import { NextResponse } from 'next/server'
+import { getAccountExpiredUrl, getCharacterUrl } from '../../../lib/auth-redirect'
+import { getAuthRequestOrigin } from '../../../lib/auth-request-origin'
 import { createSupabaseServerClient } from '../../../lib/supabase/server'
-import { withBasePath } from '../../../lib/base-path'
 
 export async function GET(request: Request) {
   const url = new URL(request.url)
   const code = url.searchParams.get('code')
-  const origin = url.origin
+  const origin = getAuthRequestOrigin(request)
 
   if (!code) {
-    return NextResponse.redirect(`${origin}${withBasePath('/account?error=expired')}`)
+    return NextResponse.redirect(getAccountExpiredUrl(origin))
   }
 
   try {
@@ -16,11 +17,11 @@ export async function GET(request: Request) {
     const { error } = await supabase.auth.exchangeCodeForSession(code)
 
     if (error) {
-      return NextResponse.redirect(`${origin}${withBasePath('/account?error=expired')}`)
+      return NextResponse.redirect(getAccountExpiredUrl(origin))
     }
 
-    return NextResponse.redirect(`${origin}${withBasePath('/character')}`)
+    return NextResponse.redirect(getCharacterUrl(origin))
   } catch {
-    return NextResponse.redirect(`${origin}${withBasePath('/account?error=expired')}`)
+    return NextResponse.redirect(getAccountExpiredUrl(origin))
   }
 }

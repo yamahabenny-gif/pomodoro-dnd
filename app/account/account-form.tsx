@@ -1,8 +1,8 @@
 'use client'
 
 import { FormEvent, useEffect, useState } from 'react'
+import { getAuthCallbackUrl } from '../../lib/auth-redirect'
 import { createSupabaseBrowserClient } from '../../lib/supabase/client'
-import { withBasePath } from '../../lib/base-path'
 
 type Status = 'idle' | 'loading' | 'sent' | 'offline' | 'error'
 
@@ -46,7 +46,7 @@ export function AccountForm({ expired }: { expired: boolean }) {
       const supabase = createSupabaseBrowserClient()
       const { error } = await supabase.auth.signInWithOtp({
         email,
-        options: { emailRedirectTo: `${window.location.origin}${withBasePath('/auth/callback')}` },
+        options: { emailRedirectTo: getAuthCallbackUrl(window.location.origin) },
       })
 
       if (error) throw error
