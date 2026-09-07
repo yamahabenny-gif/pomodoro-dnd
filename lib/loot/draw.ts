@@ -13,6 +13,28 @@
  * Ergebnis, was eine serverseitige Ziehung testbar und nachvollziehbar macht. Das
  * ist unabhängig von Party-Fragen: Nach ADR-025 gibt es keine Party-Truhe, jede
  * Person erhält eine eigene, individuelle Ziehung.
+ *
+ * SEED-HERKUNFTS-CONTRACT (siehe #75, ADR-041) — bindend für jeden künftigen Aufrufer:
+ *
+ *   1. Der `seed` MUSS serverseitig erzeugt werden, und zwar erst im Moment der
+ *      tatsächlichen Ziehung — frisch per kryptografischem Zufall (z. B.
+ *      `gen_random_uuid()`/`gen_random_bytes()` innerhalb der `security definer`-
+ *      Funktion, die die Truhe öffnet). `hash()` selbst ist absichtlich kein
+ *      kryptografischer Hash — die Sicherheit der Ziehung hängt vollständig davon
+ *      ab, dass der `seed` bereits unvorhersagbar ist, bevor er hier ankommt.
+ *   2. Der `seed` DARF NIEMALS aus einem Wert abgeleitet werden, der dem Client vor
+ *      der Ziehung schon bekannt ist oder von ihm billig neu erzeugt werden kann.
+ *      Explizit ausgeschlossen: `focus_sessions.id` (wird per RPC-Rückgabewert an
+ *      den Client ausgeliefert), Zeitstempel, sowie jeder Client-Parameter.
+ *   3. Der Seed bzw. ein Vorschau-Ergebnis der Ziehung DARF NIEMALS an den Client
+ *      ausgeliefert werden, bevor der Reward persistiert ist — kein "Preview"-
+ *      Endpunkt.
+ *
+ *   Diese drei Punkte sind eine Anforderung an den künftigen Aufrufer (die noch zu
+ *   bauende Chest-Open-RPC), NICHT an diese Datei: `hash()`, `rollRarity()` und
+ *   `drawLoot()` bleiben pure, deterministische Funktionen ohne Math.random(),
+ *   CSPRNG-Aufruf, Uhr oder neue Parameter — genau das macht sie testbar
+ *   (`lib/loot/__tests__/draw.test.ts`).
  */
 
 export type Category = 'charakter' | 'lager' | 'begleiter' | 'atmosphaere'
