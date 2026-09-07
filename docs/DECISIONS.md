@@ -98,6 +98,13 @@ Drei persistente Akte mit Rasten; Boss/Höhepunkt in Akt III. Kein 90-Minuten-Da
 **Grund:** Verhindert ein unbeabsichtigtes Pausieren des Projekts während längerer Entwicklungspausen, mit minimaler, klar abgegrenzter Schreibfläche.  
 **Offener Punkt:** Das ausführende Script (\`~/.hermes/scripts/pomodoro_dnd_heartbeat.py\`) läuft aktuell außerhalb dieses Repositories, in HERMES' eigener Umgebung, mit dem vollprivilegierten \`service_role\`-Key — für niemand sonst einsehbar oder review-fähig. Sollte perspektivisch als Skript ins Repo (z. B. \`scripts/\`) überführt werden, damit auch der Automatisierungscode selbst der "Was nicht in GitHub steht, existiert nicht"-Regel aus `docs/WORKFLOW.md` folgt.
 
+### ADR-041 · Seed-Erzeugung für Loot-Ziehung bleibt außerhalb von `draw.ts`, serverseitig, per CSPRNG
+**Status:** angenommen · 2026-09-07  
+**Kontext:** `lib/loot/draw.ts` zieht Loot deterministisch aus einem `seed`-String über einen öffentlich nachvollziehbaren, nicht-kryptografischen 32-Bit-Hash. Das ist beabsichtigt für Testbarkeit, macht aber die Herkunft des `seed` sicherheitskritisch: Wer den Wert kennt oder billig neu erzeugen kann, kann das Ziehungsergebnis vorausberechnen. `draw.ts` ist noch an keinen echten Endpunkt angebunden (siehe #75).  
+**Entscheidung:** Die Erzeugung des `seed` bleibt außerhalb von `draw.ts` — Aufgabe der künftigen, noch zu bauenden Chest-Open-RPC. Sie muss serverseitig, per CSPRNG (`gen_random_uuid()`/`gen_random_bytes()`) und erst zum tatsächlichen Ziehungszeitpunkt erfolgen, niemals abgeleitet aus einem dem Client vorab bekannten Wert wie `focus_sessions.id`. `draw.ts` selbst dokumentiert diesen Contract (siehe Kommentar über `hash()`/`rollRarity()`/`drawLoot()`), ändert aber weder Signatur noch Verhalten.  
+**Alternative:** CSPRNG direkt in `draw.ts` einbauen, z. B. `seed` optional selbst erzeugen lassen.  
+**Grund:** Würde Determinismus, Testbarkeit und Nachvollziehbarkeit der reinen Funktion zerstören, ohne die eigentliche Schwachstelle — die Seed-Herkunft beim künftigen Aufrufer — zu beheben.
+
 ---
 
 ## Concept-V2-Entscheidungen
