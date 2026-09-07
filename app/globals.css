@@ -38,6 +38,23 @@ html { background: var(--bg); color-scheme: dark light; }
 body { margin: 0; min-height: 100dvh; background: var(--bg); color: var(--text); font-family: var(--font-ui), sans-serif; caret-color: var(--accent); }
 ::selection { background: var(--selection); color: var(--selection-ink); }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; box-shadow: 0 0 0 2px var(--bg); }
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 12px;
+  z-index: 100;
+  padding: 12px 20px;
+  background: var(--bg);
+  color: var(--text);
+  border: 1px solid var(--border-strong);
+  border-radius: 8px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: top 160ms ease-out;
+}
+.skip-link:focus-visible {
+  top: 12px;
+}
 * { scrollbar-color: var(--border-strong) var(--bg); }
 h1, h2, h3 { font-family: var(--font-display), serif; letter-spacing: .02em; text-wrap: balance; }
 p { color: var(--text-muted); text-wrap: pretty; max-width: 70ch; }

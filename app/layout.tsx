@@ -43,7 +43,10 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="de" suppressHydrationWarning>
       <head><script dangerouslySetInnerHTML={{ __html: themeScript }} /></head>
-      <body className={`${ui.variable} ${display.variable}`}>{children}</body>
+      <body className={`${ui.variable} ${display.variable}`}>
+        <a href="#main-content" className="skip-link">Zum Inhalt springen</a>
+        {children}
+      </body>
     </html>
   )
 }

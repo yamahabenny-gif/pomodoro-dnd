@@ -347,7 +347,10 @@ function FocusScene({
       </svg>
 
       <div className={styles.timerPanel}>
-        <p className="eyebrow" id="focus-title">
+        <h1 id="focus-title" className={styles.visuallyHidden}>
+          Ein Licht im Unterholz
+        </h1>
+        <p className="eyebrow">
           Ein Licht im Unterholz
         </p>
         <p className={styles.timer} aria-hidden="true">

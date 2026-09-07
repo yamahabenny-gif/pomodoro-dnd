@@ -3,7 +3,7 @@
   padding: clamp(24px, 5vw, 72px);
   background:
     radial-gradient(circle at 50% 18%, rgb(212 167 44 / .08), transparent 32%),
-    #14110d;
+    var(--bg);
   color: var(--text);
 }
 
