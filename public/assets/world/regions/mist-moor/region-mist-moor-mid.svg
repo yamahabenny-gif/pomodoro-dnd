@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" role="img" aria-label="Nebelmoor Mittelgrund">
+  <title>Nebelmoor Mittelgrund</title>
+  <desc>Pomodoro DnD #22 mist-moor layer. Adult cozy fantasy. Mystisch, nicht Horror. No text/UI. Safe zones: bottom ~20%, sides 5%, top-right calm.</desc>
+  <defs>
+    <linearGradient id="water" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4a6068" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#2a3840" stop-opacity="0.75"/>
+    </linearGradient>
+    <linearGradient id="plank" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5a4a38"/>
+      <stop offset="100%" stop-color="#3a3024"/>
+    </linearGradient>
+  </defs>
+  <!-- water pools -->
+  <ellipse cx="480" cy="720" rx="220" ry="70" fill="url(#water)"/>
+  <ellipse cx="1100" cy="700" rx="280" ry="80" fill="url(#water)"/>
+  <ellipse cx="1500" cy="760" rx="180" ry="55" fill="url(#water)"/>
+  <!-- soft peat mounds -->
+  <g fill="#3a483e" opacity="0.85">
+    <ellipse cx="320" cy="780" rx="140" ry="50"/>
+    <ellipse cx="700" cy="800" rx="120" ry="45"/>
+    <ellipse cx="1280" cy="790" rx="150" ry="52"/>
+  </g>
+  <!-- boardwalk / stege -->
+  <g>
+    <path d="M700 640 L920 700 L1140 740 L1360 780" fill="none" stroke="#2a2218" stroke-width="54" stroke-linecap="round"/>
+    <path d="M700 640 L920 700 L1140 740 L1360 780" fill="none" stroke="url(#plank)" stroke-width="36" stroke-linecap="round"/>
+    <!-- plank marks -->
+    <g stroke="#6a5a48" stroke-width="2" opacity="0.5">
+      <line x1="760" y1="650" x2="780" y2="668"/>
+      <line x1="860" y1="678" x2="880" y2="696"/>
+      <line x1="980" y1="710" x2="1000" y2="726"/>
+      <line x1="1100" y1="732" x2="1120" y2="748"/>
+      <line x1="1220" y1="756" x2="1240" y2="772"/>
+    </g>
+  </g>
+  <!-- Weglichter (posts) — mid height, not in timer band -->
+  <g>
+    <rect x="818" y="620" width="8" height="70" rx="2" fill="#2a241c"/>
+    <circle cx="822" cy="618" r="10" fill="#d4a72c" opacity="0.55"/>
+    <circle cx="822" cy="618" r="22" fill="#d4a72c" opacity="0.12"/>
+    <rect x="1110" y="660" width="8" height="70" rx="2" fill="#2a241c"/>
+    <circle cx="1114" cy="658" r="10" fill="#e08a4c" opacity="0.5"/>
+    <circle cx="1114" cy="658" r="22" fill="#e08a4c" opacity="0.1"/>
+  </g>
+  <!-- dead tree / willow mid-left silhouette -->
+  <g fill="none" stroke="#1e262e" stroke-width="14" stroke-linecap="round">
+    <path d="M420 420 C430 520 410 620 415 760"/>
+    <path d="M420 500 C360 540 340 580 320 620"/>
+    <path d="M425 480 C490 510 520 560 540 600"/>
+  </g>
+
+</svg>
