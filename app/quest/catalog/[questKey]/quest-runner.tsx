@@ -150,7 +150,8 @@ export function CatalogQuestRunner({ quest, initialSession }: { quest: QuestDefi
             <use href={withBasePath('/assets/phase1-art-pack.svg#journey-silhouette')} />
           </svg>
           <div className={styles.timerPanel}>
-            <p className="eyebrow" id="catalog-focus-title">{quest.title}</p>
+            <h1 id="catalog-focus-title" className={styles.visuallyHidden}>{quest.title}</h1>
+            <p className="eyebrow">{quest.title}</p>
             <p className={styles.timer} aria-hidden="true">{formatRemaining(focusSnapshot.remaining_ms)}</p>
             <div className={styles.controls}>
               <button type="button" onClick={togglePause}>{focusSnapshot.is_paused ? 'Weiter' : 'Pause'}</button>
