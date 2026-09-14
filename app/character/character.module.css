@@ -91,7 +91,7 @@
   gap: clamp(24px, 5vw, 48px);
   padding: clamp(22px, 4vw, 36px);
   border: 1px solid var(--border);
-  border-radius: 16px;
+  border-radius: 14px;
   background: var(--surface);
 }
 
