@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" role="img" aria-label="Nebelmoor Key Visual 16:9">
+  <title>Nebelmoor Key Visual 16:9</title>
+  <desc>Pomodoro DnD #22 mist-moor layer. Adult cozy fantasy. Mystisch, nicht Horror. No text/UI. Safe zones: bottom ~20%, sides 5%, top-right calm.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1c2230"/>
+      <stop offset="40%" stop-color="#2a3340"/>
+      <stop offset="75%" stop-color="#3a4550"/>
+      <stop offset="100%" stop-color="#4a5560"/>
+    </linearGradient>
+    <linearGradient id="ground" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3a4848" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#2a3838" stop-opacity="0.5"/>
+    </linearGradient>
+    <linearGradient id="water" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4a6068" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#2a3840" stop-opacity="0.75"/>
+    </linearGradient>
+    <linearGradient id="plank" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5a4a38"/>
+      <stop offset="100%" stop-color="#3a3024"/>
+    </linearGradient>
+    <linearGradient id="fogGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#a8b4c0" stop-opacity="0.08"/>
+      <stop offset="40%" stop-color="#9aa8b4" stop-opacity="0.28"/>
+      <stop offset="70%" stop-color="#8a98a4" stop-opacity="0.32"/>
+      <stop offset="100%" stop-color="#7a8894" stop-opacity="0.1"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#d4a72c" stop-opacity="0.4"/>
+      <stop offset="55%" stop-color="#d4a72c" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#d4a72c" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1920" height="1080" fill="url(#sky)"/>
+  <g fill="#232b34" opacity="0.8">
+    <ellipse cx="200" cy="560" rx="180" ry="90"/>
+    <ellipse cx="520" cy="540" rx="200" ry="100"/>
+    <ellipse cx="900" cy="550" rx="220" ry="95"/>
+    <ellipse cx="1300" cy="545" rx="190" ry="100"/>
+    <ellipse cx="1680" cy="560" rx="200" ry="90"/>
+  </g>
+  <g fill="#1a222a" opacity="0.7">
+    <path d="M0 580 Q200 520 400 580 Q600 640 800 560 Q1000 500 1200 580 Q1400 650 1600 570 Q1800 510 1920 590 L1920 700 L0 700 Z"/>
+  </g>
+  <rect width="1920" height="1080" fill="url(#ground)"/>
+  <ellipse cx="480" cy="720" rx="220" ry="70" fill="url(#water)"/>
+  <ellipse cx="1100" cy="700" rx="280" ry="80" fill="url(#water)"/>
+  <ellipse cx="1500" cy="760" rx="180" ry="55" fill="url(#water)"/>
+  <g fill="#3a483e" opacity="0.85">
+    <ellipse cx="320" cy="780" rx="140" ry="50"/>
+    <ellipse cx="700" cy="800" rx="120" ry="45"/>
+    <ellipse cx="1280" cy="790" rx="150" ry="52"/>
+  </g>
+  <path d="M700 640 L920 700 L1140 740 L1360 780" fill="none" stroke="#2a2218" stroke-width="54" stroke-linecap="round"/>
+  <path d="M700 640 L920 700 L1140 740 L1360 780" fill="none" stroke="url(#plank)" stroke-width="36" stroke-linecap="round"/>
+  <g stroke="#6a5a48" stroke-width="2" opacity="0.5">
+    <line x1="760" y1="650" x2="780" y2="668"/>
+    <line x1="860" y1="678" x2="880" y2="696"/>
+    <line x1="980" y1="710" x2="1000" y2="726"/>
+    <line x1="1100" y1="732" x2="1120" y2="748"/>
+    <line x1="1220" y1="756" x2="1240" y2="772"/>
+  </g>
+  <rect x="818" y="620" width="8" height="70" rx="2" fill="#2a241c"/>
+  <circle cx="822" cy="618" r="10" fill="#d4a72c" opacity="0.55"/>
+  <circle cx="822" cy="618" r="22" fill="#d4a72c" opacity="0.12"/>
+  <rect x="1110" y="660" width="8" height="70" rx="2" fill="#2a241c"/>
+  <circle cx="1114" cy="658" r="10" fill="#e08a4c" opacity="0.5"/>
+  <circle cx="1114" cy="658" r="22" fill="#e08a4c" opacity="0.1"/>
+  <g fill="none" stroke="#1e262e" stroke-width="14" stroke-linecap="round">
+    <path d="M420 420 C430 520 410 620 415 760"/>
+    <path d="M420 500 C360 540 340 580 320 620"/>
+    <path d="M425 480 C490 510 520 560 540 600"/>
+  </g>
+  <ellipse cx="822" cy="618" rx="80" ry="60" fill="url(#glow)"/>
+  <ellipse cx="1114" cy="658" rx="70" ry="50" fill="url(#glow)"/>
+  <ellipse cx="1100" cy="720" rx="90" ry="18" fill="#d4a72c" opacity="0.08"/>
+  <ellipse cx="600" cy="620" rx="500" ry="140" fill="#b0bcc8" opacity="0.28"/>
+  <ellipse cx="1200" cy="680" rx="560" ry="160" fill="#a8b4c0" opacity="0.26"/>
+  <ellipse cx="960" cy="540" rx="640" ry="120" fill="#b8c4d0" opacity="0.18"/>
+  <ellipse cx="400" cy="740" rx="300" ry="80" fill="#a0acb8" opacity="0.2"/>
+  <rect width="1920" height="1080" fill="url(#fogGrad)"/>
+  <g fill="#2a3a34" opacity="0.9">
+    <path d="M60 1000 L80 780 L100 1000Z"/>
+    <path d="M100 1000 L125 740 L145 1000Z"/>
+    <path d="M150 1000 L170 800 L190 1000Z"/>
+    <path d="M200 1000 L230 760 L250 1000Z"/>
+    <path d="M280 1000 L300 820 L320 1000Z"/>
+    <path d="M1860 1000 L1840 780 L1820 1000Z"/>
+    <path d="M1820 1000 L1795 740 L1775 1000Z"/>
+    <path d="M1770 1000 L1750 800 L1730 1000Z"/>
+    <path d="M1720 1000 L1690 760 L1670 1000Z"/>
+    <path d="M1640 1000 L1620 820 L1600 1000Z"/>
+  </g>
+  <g fill="#344840" opacity="0.85">
+    <ellipse cx="180" cy="990" rx="170" ry="45"/>
+    <ellipse cx="1740" cy="995" rx="160" ry="42"/>
+  </g>
+  <rect x="0" y="980" width="1920" height="100" fill="#12181a" opacity="0.4"/>
+
+</svg>
