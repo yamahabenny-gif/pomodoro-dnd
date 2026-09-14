@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" role="img" aria-label="Nebelmoor Vordergrund">
+  <title>Nebelmoor Vordergrund</title>
+  <desc>Pomodoro DnD #22 mist-moor layer. Adult cozy fantasy. Mystisch, nicht Horror. No text/UI. Safe zones: bottom ~20%, sides 5%, top-right calm.</desc>
+  <g fill="#2a3a34" opacity="0.9">
+    <!-- left reeds -->
+    <path d="M60 1000 L80 780 L100 1000Z"/>
+    <path d="M100 1000 L125 740 L145 1000Z"/>
+    <path d="M150 1000 L170 800 L190 1000Z"/>
+    <path d="M200 1000 L230 760 L250 1000Z"/>
+    <path d="M280 1000 L300 820 L320 1000Z"/>
+    <!-- right reeds -->
+    <path d="M1860 1000 L1840 780 L1820 1000Z"/>
+    <path d="M1820 1000 L1795 740 L1775 1000Z"/>
+    <path d="M1770 1000 L1750 800 L1730 1000Z"/>
+    <path d="M1720 1000 L1690 760 L1670 1000Z"/>
+    <path d="M1640 1000 L1620 820 L1600 1000Z"/>
+  </g>
+  <g fill="#344840" opacity="0.85">
+    <ellipse cx="180" cy="990" rx="170" ry="45"/>
+    <ellipse cx="1740" cy="995" rx="160" ry="42"/>
+  </g>
+  <!-- wet ground vignette, quiet center -->
+  <rect x="0" y="980" width="1920" height="100" fill="#12181a" opacity="0.4"/>
+
+</svg>

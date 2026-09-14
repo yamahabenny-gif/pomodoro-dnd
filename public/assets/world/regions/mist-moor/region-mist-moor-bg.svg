@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" role="img" aria-label="Nebelmoor Hintergrund">
+  <title>Nebelmoor Hintergrund</title>
+  <desc>Pomodoro DnD #22 mist-moor layer. Adult cozy fantasy. Mystisch, nicht Horror. No text/UI. Safe zones: bottom ~20%, sides 5%, top-right calm.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1c2230"/>
+      <stop offset="40%" stop-color="#2a3340"/>
+      <stop offset="75%" stop-color="#3a4550"/>
+      <stop offset="100%" stop-color="#4a5560"/>
+    </linearGradient>
+    <linearGradient id="ground" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3a4848" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#2a3838" stop-opacity="0.5"/>
+    </linearGradient>
+  </defs>
+  <rect width="1920" height="1080" fill="url(#sky)"/>
+  <!-- far reed / willow band -->
+  <g fill="#232b34" opacity="0.8">
+    <ellipse cx="200" cy="560" rx="180" ry="90"/>
+    <ellipse cx="520" cy="540" rx="200" ry="100"/>
+    <ellipse cx="900" cy="550" rx="220" ry="95"/>
+    <ellipse cx="1300" cy="545" rx="190" ry="100"/>
+    <ellipse cx="1680" cy="560" rx="200" ry="90"/>
+  </g>
+  <g fill="#1a222a" opacity="0.7">
+    <path d="M0 580 Q200 520 400 580 Q600 640 800 560 Q1000 500 1200 580 Q1400 650 1600 570 Q1800 510 1920 590 L1920 700 L0 700 Z"/>
+  </g>
+  <rect width="1920" height="1080" fill="url(#ground)"/>
+
+</svg>

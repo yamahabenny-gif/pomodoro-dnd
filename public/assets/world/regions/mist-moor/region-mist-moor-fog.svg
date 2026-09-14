@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" role="img" aria-label="Nebelmoor Nebel Overlay">
+  <title>Nebelmoor Nebel Overlay</title>
+  <desc>Pomodoro DnD #22 mist-moor layer. Adult cozy fantasy. Mystisch, nicht Horror. No text/UI. Safe zones: bottom ~20%, sides 5%, top-right calm.</desc>
+  <defs>
+    <linearGradient id="fogGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#a8b4c0" stop-opacity="0.08"/>
+      <stop offset="40%" stop-color="#9aa8b4" stop-opacity="0.28"/>
+      <stop offset="70%" stop-color="#8a98a4" stop-opacity="0.32"/>
+      <stop offset="100%" stop-color="#7a8894" stop-opacity="0.1"/>
+    </linearGradient>
+  </defs>
+  <ellipse cx="600" cy="620" rx="500" ry="140" fill="#b0bcc8" opacity="0.28"/>
+  <ellipse cx="1200" cy="680" rx="560" ry="160" fill="#a8b4c0" opacity="0.26"/>
+  <ellipse cx="960" cy="540" rx="640" ry="120" fill="#b8c4d0" opacity="0.18"/>
+  <ellipse cx="400" cy="740" rx="300" ry="80" fill="#a0acb8" opacity="0.2"/>
+  <rect width="1920" height="1080" fill="url(#fogGrad)"/>
+
+</svg>
