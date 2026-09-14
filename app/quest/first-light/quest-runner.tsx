@@ -438,7 +438,10 @@ function Rest({
         <use href={withBasePath('/assets/phase1-art-pack.svg#rest-campfire')} />
       </svg>
       <div className={styles.restCopy}>
-        <p className="eyebrow" id="rest-title">
+        <h1 id="rest-title" className={styles.visuallyHidden}>
+          Rast
+        </h1>
+        <p className="eyebrow">
           Rast
         </p>
         <p>Das Feuer knistert. Es gibt gerade nichts zu tun, und das ist genau richtig so.</p>
