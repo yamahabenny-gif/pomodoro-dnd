@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" role="img" aria-label="Bergpfad Vordergrund">
+  <title>Bergpfad Vordergrund</title>
+  <desc>Pomodoro DnD #22 mountain-path layer. Adult cozy fantasy. Ruhig-offen, Horizont, Hochland. No text/UI. Safe zones bottom ~20%, sides 5%, top-right calm.</desc>
+  <!-- rocky foreground sides; center bottom quiet for timer -->
+  <g fill="#3a4038">
+    <path d="M0 860 L180 780 L280 900 L120 1040 L0 1040 Z"/>
+    <path d="M1920 860 L1740 780 L1640 900 L1800 1040 L1920 1040 Z"/>
+  </g>
+  <g fill="#4a5048" opacity="0.9">
+    <ellipse cx="140" cy="980" rx="160" ry="55"/>
+    <ellipse cx="1780" cy="985" rx="150" ry="50"/>
+    <ellipse cx="320" cy="1000" rx="90" ry="36"/>
+    <ellipse cx="1600" cy="1005" rx="95" ry="38"/>
+  </g>
+  <!-- sparse grass tufts sides -->
+  <g fill="#3a5a42" opacity="0.75">
+    <path d="M80 960 L90 900 L100 960Z"/>
+    <path d="M120 970 L135 910 L145 970Z"/>
+    <path d="M1820 960 L1830 900 L1840 960Z"/>
+    <path d="M1780 970 L1795 910 L1805 970Z"/>
+  </g>
+  <rect x="0" y="990" width="1920" height="90" fill="#1a1e1a" opacity="0.35"/>
+
+</svg>

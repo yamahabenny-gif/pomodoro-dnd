@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" role="img" aria-label="Bergpfad Mittelgrund">
+  <title>Bergpfad Mittelgrund</title>
+  <desc>Pomodoro DnD #22 mountain-path layer. Adult cozy fantasy. Ruhig-offen, Horizont, Hochland. No text/UI. Safe zones bottom ~20%, sides 5%, top-right calm.</desc>
+  <defs>
+    <linearGradient id="ridge" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5a6a5a"/>
+      <stop offset="100%" stop-color="#3a4a42"/>
+    </linearGradient>
+    <linearGradient id="path" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#6a5a48" stop-opacity="0.3"/>
+      <stop offset="50%" stop-color="#7a6a54" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#6a5a48" stop-opacity="0.3"/>
+    </linearGradient>
+  </defs>
+  <!-- mid ridges / slopes -->
+  <path d="M0 700 Q400 620 700 680 Q1000 740 1300 660 Q1600 600 1920 680 L1920 860 L0 860 Z" fill="url(#ridge)"/>
+  <path d="M0 760 Q500 700 900 760 Q1300 820 1920 740 L1920 900 L0 900 Z" fill="#4a5a50" opacity="0.85"/>
+  <!-- stone path climbing gently, center calm toward bottom -->
+  <path d="M820 560 C880 620 940 680 1000 740 C1060 800 1120 820 1180 840" fill="none" stroke="#2a241c" stroke-width="90" stroke-linecap="round" opacity="0.35"/>
+  <path d="M830 570 C890 630 950 690 1010 745 C1070 800 1125 818 1180 835" fill="none" stroke="url(#path)" stroke-width="56" stroke-linecap="round"/>
+  <!-- rocks along path (mid height) -->
+  <g fill="#5a6058">
+    <ellipse cx="780" cy="640" rx="40" ry="28"/>
+    <ellipse cx="920" cy="700" rx="50" ry="32"/>
+    <ellipse cx="1080" cy="760" rx="45" ry="30"/>
+    <ellipse cx="1240" cy="700" rx="55" ry="34"/>
+  </g>
+  <g fill="#6a7068" opacity="0.7">
+    <ellipse cx="780" cy="628" rx="28" ry="14"/>
+    <ellipse cx="1080" cy="748" rx="30" ry="14"/>
+  </g>
+  <!-- sparse highland pines mid-left/right -->
+  <g fill="#2a3a30">
+    <path d="M360 520 L400 680 L320 680 Z"/>
+    <path d="M420 560 L450 700 L390 700 Z"/>
+    <path d="M1560 540 L1600 700 L1520 700 Z"/>
+    <path d="M1640 580 L1670 720 L1610 720 Z"/>
+  </g>
+  <g fill="#1a241c">
+    <rect x="372" y="680" width="16" height="40"/>
+    <rect x="428" y="700" width="14" height="36"/>
+    <rect x="1572" y="700" width="16" height="40"/>
+    <rect x="1648" y="720" width="14" height="32"/>
+  </g>
+
+</svg>

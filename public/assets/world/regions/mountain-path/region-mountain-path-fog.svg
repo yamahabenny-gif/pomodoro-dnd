@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" role="img" aria-label="Bergpfad Dunst Overlay">
+  <title>Bergpfad Dunst Overlay</title>
+  <desc>Pomodoro DnD #22 mountain-path layer. Adult cozy fantasy. Ruhig-offen, Horizont, Hochland. No text/UI. Safe zones bottom ~20%, sides 5%, top-right calm.</desc>
+  <defs>
+    <linearGradient id="fogGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#c0c8d0" stop-opacity="0.06"/>
+      <stop offset="45%" stop-color="#a8b4c0" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#8894a0" stop-opacity="0.08"/>
+    </linearGradient>
+  </defs>
+  <!-- light highland haze in valleys, thinner than mist-moor -->
+  <ellipse cx="700" cy="600" rx="420" ry="70" fill="#b8c4d0" opacity="0.16"/>
+  <ellipse cx="1300" cy="580" rx="400" ry="65" fill="#b0bcc8" opacity="0.14"/>
+  <rect width="1920" height="1080" fill="url(#fogGrad)"/>
+
+</svg>
