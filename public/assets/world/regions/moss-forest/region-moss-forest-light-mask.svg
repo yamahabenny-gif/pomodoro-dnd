@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" role="img" aria-label="Mooswald Lichtmaske">
+  <title>Mooswald Lichtmaske</title>
+  <desc>Pomodoro DnD #22 moss-forest layer. Adult cozy fantasy. No text/UI. Safe zones: bottom ~20%, side 5%, top-right calm.</desc>
+  <defs>
+    <radialGradient id="glow1" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#d4a72c" stop-opacity="0.35"/>
+      <stop offset="60%" stop-color="#d4a72c" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#d4a72c" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="shaft" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e8c56a" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#d4a72c" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <ellipse cx="720" cy="520" rx="90" ry="70" fill="url(#glow1)"/>
+  <ellipse cx="1100" cy="480" rx="70" ry="55" fill="url(#glow1)"/>
+  <path d="M680 120 L760 620 L700 620 Z" fill="url(#shaft)" opacity="0.55"/>
+  <path d="M1060 100 L1130 560 L1080 560 Z" fill="url(#shaft)" opacity="0.4"/>
+  <!-- tiny mushroom glow suggestion mid-left, not in timer band -->
+  <circle cx="600" cy="740" r="8" fill="#d4a72c" opacity="0.45"/>
+  <circle cx="620" cy="755" r="5" fill="#e08a4c" opacity="0.4"/>
+
+</svg>

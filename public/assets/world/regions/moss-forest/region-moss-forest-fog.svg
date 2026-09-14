@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" role="img" aria-label="Mooswald Nebel Overlay">
+  <title>Mooswald Nebel Overlay</title>
+  <desc>Pomodoro DnD #22 moss-forest layer. Adult cozy fantasy. No text/UI. Safe zones: bottom ~20%, side 5%, top-right calm.</desc>
+  <defs>
+    <linearGradient id="fogGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#9aaba8" stop-opacity="0.05"/>
+      <stop offset="50%" stop-color="#8a9a96" stop-opacity="0.22"/>
+      <stop offset="85%" stop-color="#7a8a86" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#6a7a76" stop-opacity="0.05"/>
+    </linearGradient>
+  </defs>
+  <ellipse cx="700" cy="640" rx="420" ry="120" fill="#a0b0aa" opacity="0.18"/>
+  <ellipse cx="1200" cy="700" rx="480" ry="140" fill="#98a8a4" opacity="0.16"/>
+  <ellipse cx="960" cy="580" rx="560" ry="100" fill="#a8b8b4" opacity="0.12"/>
+  <rect width="1920" height="1080" fill="url(#fogGrad)"/>
+
+</svg>
