@@ -167,7 +167,8 @@
 }
 
 .timer {
-  font-family: var(--font-display), serif;
+  font-family: var(--font-ui), sans-serif;
+  font-weight: 700;
   font-size: clamp(2.4rem, 8vw, 3.6rem);
   margin: 4px 0 12px;
   font-variant-numeric: tabular-nums;
