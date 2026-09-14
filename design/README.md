@@ -13,7 +13,6 @@ erzeugt.
 |---|---|
 | `Landing.dc.html` | Landing für `focus.lang-jamin.de` |
 | `Login.dc.html` | Login — „Die Tavernentür" |
-| `Klassen.dc.html` | Klassenwahl |
 | `Main.dc.html` | Quest-Screen (Haupt-Timer) |
 | `Rast.dc.html` | Rast am Lagerfeuer |
 | `Truhe.dc.html` | Truhe geöffnet |
@@ -30,7 +29,7 @@ erzeugt.
   [`docs/DESIGN-SYSTEM.md`](../docs/DESIGN-SYSTEM.md) als Token-Satz mit nachgerechneten
   Kontrasten spezifiziert, aber noch nicht gezeichnet.
 - Die **Wortmarke ist ein Platzhalter** — der Produktname steht noch aus.
-- Alle Klassen-Sigel sind gezeichnete SVGs mit 1,5&nbsp;px Strichstärke. Kein Emoji.
+- Klassen-Sigel sind **deprecated / nicht produktrelevant** (CONCEPT.md §5: keine Klassen; Leitung 2026-09-14). Nicht in Produkt-UI verdrahten; Abschnitt im Designsystem nur noch historisch. `Klassen.dc.html` existiert nicht mehr im Repo.
 - Der Timer zeigt auf Solo-, Party- und Landing-Screen bewusst dieselbe Zahl:
   eine Uhr, aus einem Server-Zeitstempel berechnet.
 
