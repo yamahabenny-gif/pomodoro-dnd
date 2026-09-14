@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" role="img" aria-label="Bergpfad Hintergrund">
+  <title>Bergpfad Hintergrund</title>
+  <desc>Pomodoro DnD #22 mountain-path layer. Adult cozy fantasy. Ruhig-offen, Horizont, Hochland. No text/UI. Safe zones bottom ~20%, sides 5%, top-right calm.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a2838"/>
+      <stop offset="35%" stop-color="#2a3a4a"/>
+      <stop offset="70%" stop-color="#4a5a68"/>
+      <stop offset="100%" stop-color="#6a7a82"/>
+    </linearGradient>
+    <linearGradient id="farPeak" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#8a9aaa"/>
+      <stop offset="100%" stop-color="#5a6a78"/>
+    </linearGradient>
+  </defs>
+  <rect width="1920" height="1080" fill="url(#sky)"/>
+  <!-- distant mountain silhouettes — open horizon -->
+  <path d="M0 620 L280 420 L520 580 L760 380 L980 560 L1220 360 L1480 540 L1720 400 L1920 580 L1920 700 L0 700 Z" fill="#3a4a58" opacity="0.75"/>
+  <path d="M0 660 L320 500 L580 640 L860 460 L1100 620 L1400 480 L1680 600 L1920 520 L1920 720 L0 720 Z" fill="url(#farPeak)" opacity="0.55"/>
+  <!-- soft atmospheric band -->
+  <rect x="0" y="560" width="1920" height="200" fill="#7a8a96" opacity="0.15"/>
+
+</svg>

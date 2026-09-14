@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" role="img" aria-label="Bergpfad Key Visual 16:9">
+  <title>Bergpfad Key Visual 16:9</title>
+  <desc>Pomodoro DnD #22 mountain-path layer. Adult cozy fantasy. Ruhig-offen, Horizont, Hochland. No text/UI. Safe zones bottom ~20%, sides 5%, top-right calm.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a2838"/>
+      <stop offset="35%" stop-color="#2a3a4a"/>
+      <stop offset="70%" stop-color="#4a5a68"/>
+      <stop offset="100%" stop-color="#6a7a82"/>
+    </linearGradient>
+    <linearGradient id="farPeak" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#8a9aaa"/>
+      <stop offset="100%" stop-color="#5a6a78"/>
+    </linearGradient>
+    <linearGradient id="ridge" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5a6a5a"/>
+      <stop offset="100%" stop-color="#3a4a42"/>
+    </linearGradient>
+    <linearGradient id="path" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#6a5a48" stop-opacity="0.3"/>
+      <stop offset="50%" stop-color="#7a6a54" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#6a5a48" stop-opacity="0.3"/>
+    </linearGradient>
+    <linearGradient id="fogGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#c0c8d0" stop-opacity="0.06"/>
+      <stop offset="45%" stop-color="#a8b4c0" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#8894a0" stop-opacity="0.08"/>
+    </linearGradient>
+    <radialGradient id="sunGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#e8d4a0" stop-opacity="0.35"/>
+      <stop offset="50%" stop-color="#d4a72c" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#d4a72c" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="shaft" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e8d4a0" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#d4a72c" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1920" height="1080" fill="url(#sky)"/>
+  <path d="M0 620 L280 420 L520 580 L760 380 L980 560 L1220 360 L1480 540 L1720 400 L1920 580 L1920 700 L0 700 Z" fill="#3a4a58" opacity="0.75"/>
+  <path d="M0 660 L320 500 L580 640 L860 460 L1100 620 L1400 480 L1680 600 L1920 520 L1920 720 L0 720 Z" fill="url(#farPeak)" opacity="0.55"/>
+  <rect x="0" y="560" width="1920" height="200" fill="#7a8a96" opacity="0.15"/>
+  <path d="M0 700 Q400 620 700 680 Q1000 740 1300 660 Q1600 600 1920 680 L1920 860 L0 860 Z" fill="url(#ridge)"/>
+  <path d="M0 760 Q500 700 900 760 Q1300 820 1920 740 L1920 900 L0 900 Z" fill="#4a5a50" opacity="0.85"/>
+  <path d="M820 560 C880 620 940 680 1000 740 C1060 800 1120 820 1180 840" fill="none" stroke="#2a241c" stroke-width="90" stroke-linecap="round" opacity="0.35"/>
+  <path d="M830 570 C890 630 950 690 1010 745 C1070 800 1125 818 1180 835" fill="none" stroke="url(#path)" stroke-width="56" stroke-linecap="round"/>
+  <g fill="#5a6058">
+    <ellipse cx="780" cy="640" rx="40" ry="28"/>
+    <ellipse cx="920" cy="700" rx="50" ry="32"/>
+    <ellipse cx="1080" cy="760" rx="45" ry="30"/>
+    <ellipse cx="1240" cy="700" rx="55" ry="34"/>
+  </g>
+  <g fill="#6a7068" opacity="0.7">
+    <ellipse cx="780" cy="628" rx="28" ry="14"/>
+    <ellipse cx="1080" cy="748" rx="30" ry="14"/>
+  </g>
+  <g fill="#2a3a30">
+    <path d="M360 520 L400 680 L320 680 Z"/>
+    <path d="M420 560 L450 700 L390 700 Z"/>
+    <path d="M1560 540 L1600 700 L1520 700 Z"/>
+    <path d="M1640 580 L1670 720 L1610 720 Z"/>
+  </g>
+  <g fill="#1a241c">
+    <rect x="372" y="680" width="16" height="40"/>
+    <rect x="428" y="700" width="14" height="36"/>
+    <rect x="1572" y="700" width="16" height="40"/>
+    <rect x="1648" y="720" width="14" height="32"/>
+  </g>
+  <ellipse cx="1180" cy="420" rx="160" ry="100" fill="url(#sunGlow)"/>
+  <path d="M1120 200 L1240 620 L1160 620 Z" fill="url(#shaft)" opacity="0.45"/>
+  <ellipse cx="1000" cy="720" rx="100" ry="30" fill="#d4a72c" opacity="0.08"/>
+  <ellipse cx="700" cy="600" rx="420" ry="70" fill="#b8c4d0" opacity="0.16"/>
+  <ellipse cx="1300" cy="580" rx="400" ry="65" fill="#b0bcc8" opacity="0.14"/>
+  <rect width="1920" height="1080" fill="url(#fogGrad)"/>
+  <g fill="#3a4038">
+    <path d="M0 860 L180 780 L280 900 L120 1040 L0 1040 Z"/>
+    <path d="M1920 860 L1740 780 L1640 900 L1800 1040 L1920 1040 Z"/>
+  </g>
+  <g fill="#4a5048" opacity="0.9">
+    <ellipse cx="140" cy="980" rx="160" ry="55"/>
+    <ellipse cx="1780" cy="985" rx="150" ry="50"/>
+    <ellipse cx="320" cy="1000" rx="90" ry="36"/>
+    <ellipse cx="1600" cy="1005" rx="95" ry="38"/>
+  </g>
+  <g fill="#3a5a42" opacity="0.75">
+    <path d="M80 960 L90 900 L100 960Z"/>
+    <path d="M120 970 L135 910 L145 970Z"/>
+    <path d="M1820 960 L1830 900 L1840 960Z"/>
+    <path d="M1780 970 L1795 910 L1805 970Z"/>
+  </g>
+  <rect x="0" y="990" width="1920" height="90" fill="#1a1e1a" opacity="0.35"/>
+
+</svg>
