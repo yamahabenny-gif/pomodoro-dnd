@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" role="img" aria-label="Account Login Am Feuer 16:9">
+  <title>Account Login Am Feuer 16:9</title>
+  <desc>Pomodoro DnD account/login shell background "Am Feuer". Adult cozy fantasy camp diorama. Warm firelight. Center safe zone for login card. No text/UI.</desc>
+  <defs>
+    <linearGradient id="night" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0e1218"/>
+      <stop offset="45%" stop-color="#141a14"/>
+      <stop offset="100%" stop-color="#1a1410"/>
+    </linearGradient>
+    <radialGradient id="fireGlow" cx="42%" cy="68%" r="45%">
+      <stop offset="0%" stop-color="#e08a4c" stop-opacity="0.55"/>
+      <stop offset="25%" stop-color="#d4a72c" stop-opacity="0.28"/>
+      <stop offset="55%" stop-color="#8a4a28" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#14110d" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="cardSafe" cx="50%" cy="48%" r="38%">
+      <stop offset="0%" stop-color="#14110d" stop-opacity="0.55"/>
+      <stop offset="60%" stop-color="#14110d" stop-opacity="0.28"/>
+      <stop offset="100%" stop-color="#14110d" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="flame" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#d9645a"/>
+      <stop offset="40%" stop-color="#e08a4c"/>
+      <stop offset="75%" stop-color="#d4a72c"/>
+      <stop offset="100%" stop-color="#ede4d3" stop-opacity="0.85"/>
+    </linearGradient>
+    <linearGradient id="wood" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5a4030"/>
+      <stop offset="100%" stop-color="#2a1c14"/>
+    </linearGradient>
+  </defs>
+  <rect width="1920" height="1080" fill="url(#night)"/>
+  <!-- distant tree silhouettes -->
+  <g fill="#0a100c" opacity="0.95">
+    <ellipse cx="120" cy="520" rx="160" ry="280"/>
+    <ellipse cx="320" cy="500" rx="140" ry="260"/>
+    <ellipse cx="1600" cy="510" rx="150" ry="270"/>
+    <ellipse cx="1800" cy="530" rx="140" ry="250"/>
+  </g>
+  <g fill="#121a14" opacity="0.9">
+    <ellipse cx="220" cy="560" rx="110" ry="220"/>
+    <ellipse cx="1700" cy="550" rx="120" ry="230"/>
+  </g>
+  <!-- canopy edge -->
+  <path d="M0 280 C300 220 600 300 960 240 C1320 180 1620 260 1920 220 L1920 0 L0 0 Z" fill="#080c0a" opacity="0.7"/>
+  <!-- ground / clearing -->
+  <ellipse cx="960" cy="980" rx="980" ry="220" fill="#1a1612"/>
+  <ellipse cx="900" cy="920" rx="520" ry="140" fill="#241c16" opacity="0.8"/>
+  <!-- fire glow wash -->
+  <ellipse cx="820" cy="740" rx="520" ry="320" fill="url(#fireGlow)"/>
+  <!-- stone ring -->
+  <g fill="#3a3834">
+    <ellipse cx="760" cy="820" rx="36" ry="22"/>
+    <ellipse cx="820" cy="845" rx="40" ry="24"/>
+    <ellipse cx="890" cy="850" rx="38" ry="22"/>
+    <ellipse cx="950" cy="830" rx="34" ry="20"/>
+    <ellipse cx="720" cy="780" rx="32" ry="18"/>
+    <ellipse cx="980" cy="790" rx="30" ry="18"/>
+  </g>
+  <g fill="#4a4842" opacity="0.7">
+    <ellipse cx="760" cy="812" rx="24" ry="12"/>
+    <ellipse cx="890" cy="842" rx="26" ry="12"/>
+  </g>
+  <!-- logs -->
+  <g>
+    <rect x="780" y="800" width="120" height="22" rx="10" transform="rotate(-18 840 811)" fill="url(#wood)"/>
+    <rect x="820" y="810" width="110" height="20" rx="10" transform="rotate(22 875 820)" fill="url(#wood)"/>
+  </g>
+  <!-- flames -->
+  <g>
+    <path d="M840 800 C820 760 830 720 845 690 C860 720 880 750 860 800 Z" fill="url(#flame)" opacity="0.95"/>
+    <path d="M860 805 C850 770 855 735 868 710 C878 740 890 770 875 805 Z" fill="#e08a4c" opacity="0.85"/>
+    <path d="M820 808 C805 775 812 745 825 720 C835 750 845 780 832 808 Z" fill="#d4a72c" opacity="0.7"/>
+  </g>
+  <!-- sparks -->
+  <g fill="#ede4d3" opacity="0.55">
+    <circle cx="850" cy="680" r="2.5"/>
+    <circle cx="880" cy="700" r="2"/>
+    <circle cx="810" cy="720" r="1.8"/>
+    <circle cx="900" cy="740" r="2.2"/>
+  </g>
+  <!-- tent hint left mid -->
+  <path d="M280 780 L380 560 L480 780 Z" fill="#2a2218" opacity="0.75"/>
+  <path d="M300 780 L380 590 L460 780 Z" fill="#3a3024" opacity="0.5"/>
+  <!-- soft card safe zone (center) — keeps login card readable -->
+  <ellipse cx="960" cy="520" rx="420" ry="320" fill="url(#cardSafe)"/>
+  <!-- side vignette -->
+  <rect width="1920" height="1080" fill="url(#cardSafe)" opacity="0.35"/>
+
+</svg>

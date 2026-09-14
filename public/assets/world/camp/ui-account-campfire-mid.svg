@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" role="img" aria-label="Account Campfire Mittelgrund">
+  <title>Account Campfire Mittelgrund</title>
+  <desc>Pomodoro DnD account/login shell background "Am Feuer". Adult cozy fantasy camp diorama. Warm firelight. Center safe zone for login card. No text/UI.</desc>
+  <g fill="#0a100c" opacity="0.9">
+    <ellipse cx="100" cy="540" rx="150" ry="260"/>
+    <ellipse cx="1820" cy="540" rx="150" ry="260"/>
+  </g>
+  <path d="M260 800 L360 580 L460 800 Z" fill="#2a2218" opacity="0.7"/>
+  <ellipse cx="960" cy="1000" rx="900" ry="160" fill="#1a1612" opacity="0.5"/>
+
+</svg>

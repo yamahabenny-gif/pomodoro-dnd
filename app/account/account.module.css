@@ -3,7 +3,21 @@
   display: grid;
   place-items: center;
   padding: 24px;
-  background: radial-gradient(circle at 50% 20%, rgb(212 167 44 / .08), transparent 38%), var(--bg);
+  position: relative;
+  isolation: isolate;
+  background-color: var(--bg);
+  background-image:
+    linear-gradient(rgb(20 17 13 / .45), rgb(20 17 13 / .45)),
+    var(--account-campfire-image);
+  background-size: cover;
+  background-position: center 40%;
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 720px) {
+  .shell {
+    background-position: 45% 55%;
+  }
 }
 
 .card {
@@ -12,6 +26,8 @@
   border: 1px solid var(--border);
   border-radius: 14px;
   background: var(--surface);
+  position: relative;
+  z-index: 1;
 }
 
 :global(html[data-theme="light"]) .card {
