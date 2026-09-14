@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" role="img" aria-label="Mooswald Hintergrund">
+  <title>Mooswald Hintergrund</title>
+  <desc>Pomodoro DnD #22 moss-forest layer. Adult cozy fantasy. No text/UI. Safe zones: bottom ~20%, side 5%, top-right calm.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a2433"/>
+      <stop offset="45%" stop-color="#243528"/>
+      <stop offset="100%" stop-color="#2a3a2e"/>
+    </linearGradient>
+    <linearGradient id="haze" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#6a7a82" stop-opacity="0"/>
+      <stop offset="70%" stop-color="#6a7a82" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#4a5a52" stop-opacity="0.35"/>
+    </linearGradient>
+  </defs>
+  <rect width="1920" height="1080" fill="url(#sky)"/>
+  <!-- distant tree band -->
+  <g fill="#1e2c24" opacity="0.85">
+    <ellipse cx="180" cy="520" rx="140" ry="220"/>
+    <ellipse cx="420" cy="500" rx="160" ry="250"/>
+    <ellipse cx="680" cy="510" rx="150" ry="230"/>
+    <ellipse cx="960" cy="490" rx="180" ry="270"/>
+    <ellipse cx="1240" cy="505" rx="155" ry="240"/>
+    <ellipse cx="1520" cy="515" rx="165" ry="235"/>
+    <ellipse cx="1780" cy="530" rx="140" ry="210"/>
+  </g>
+  <g fill="#16241c" opacity="0.9">
+    <ellipse cx="300" cy="540" rx="120" ry="200"/>
+    <ellipse cx="560" cy="530" rx="130" ry="220"/>
+    <ellipse cx="860" cy="520" rx="145" ry="245"/>
+    <ellipse cx="1160" cy="535" rx="125" ry="215"/>
+    <ellipse cx="1460" cy="545" rx="135" ry="205"/>
+  </g>
+  <!-- soft canopy edge -->
+  <path d="M0 380 C200 340 400 400 600 360 C800 320 1000 390 1200 350 C1400 310 1600 380 1920 340 L1920 0 L0 0 Z" fill="#121c18" opacity="0.55"/>
+  <rect width="1920" height="1080" fill="url(#haze)"/>
+
+</svg>

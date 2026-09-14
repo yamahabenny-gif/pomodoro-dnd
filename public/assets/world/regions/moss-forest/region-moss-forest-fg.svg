@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" role="img" aria-label="Mooswald Vordergrund">
+  <title>Mooswald Vordergrund</title>
+  <desc>Pomodoro DnD #22 moss-forest layer. Adult cozy fantasy. No text/UI. Safe zones: bottom ~20%, side 5%, top-right calm.</desc>
+  <!-- left fern cluster -->
+  <g fill="#2d4a32" opacity="0.92">
+    <path d="M40 900 C80 760 140 720 180 820 C120 780 90 860 40 900Z"/>
+    <path d="M80 940 C140 780 220 740 260 860 C180 820 140 900 80 940Z"/>
+    <path d="M120 980 C200 820 280 800 300 920 C220 880 180 960 120 980Z"/>
+  </g>
+  <!-- right fern cluster -->
+  <g fill="#2a4530" opacity="0.92">
+    <path d="M1880 900 C1840 760 1780 720 1740 820 C1800 780 1830 860 1880 900Z"/>
+    <path d="M1840 940 C1780 780 1700 740 1660 860 C1740 820 1780 900 1840 940Z"/>
+    <path d="M1800 980 C1720 820 1640 800 1620 920 C1700 880 1740 960 1800 980Z"/>
+  </g>
+  <!-- moss cushions sides -->
+  <g fill="#3a5c3e">
+    <ellipse cx="200" cy="980" rx="160" ry="50"/>
+    <ellipse cx="1720" cy="985" rx="150" ry="48"/>
+    <ellipse cx="360" cy="1000" rx="100" ry="36"/>
+    <ellipse cx="1560" cy="1005" rx="110" ry="38"/>
+  </g>
+  <!-- roots hint mid-low sides only; bottom center kept quieter for timer -->
+  <g fill="none" stroke="#1a140e" stroke-width="10" stroke-linecap="round" opacity="0.7">
+    <path d="M120 920 C200 940 240 960 280 1000"/>
+    <path d="M1800 925 C1720 945 1680 965 1640 1005"/>
+  </g>
+  <!-- soft ground vignette without busy detail in timer band center -->
+  <rect x="0" y="980" width="1920" height="100" fill="#0f1410" opacity="0.35"/>
+
+</svg>
