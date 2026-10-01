@@ -6,6 +6,15 @@ import { createSupabaseBrowserClient } from '../../lib/supabase/client'
 
 type Status = 'idle' | 'loading' | 'sent' | 'offline' | 'error'
 
+// Supabase meldet Rate-Limits als HTTP 429 bzw. mit einem `*rate_limit*`-Code
+// (z. B. `over_email_send_rate_limit`). Dafür eine eigene Meldung, damit man
+// sofort sieht, dass Warten hilft und nicht die Adresse falsch ist.
+function isRateLimited(error: unknown): boolean {
+  if (!error || typeof error !== 'object') return false
+  const { status, code } = error as { status?: unknown; code?: unknown }
+  return status === 429 || (typeof code === 'string' && code.includes('rate_limit'))
+}
+
 export function AccountForm({ expired }: { expired: boolean }) {
   const [email, setEmail] = useState('')
   const [status, setStatus] = useState<Status>(expired ? 'error' : 'idle')
@@ -52,9 +61,13 @@ export function AccountForm({ expired }: { expired: boolean }) {
       if (error) throw error
       setStatus('sent')
       setMessage('Der Wegweiser ist unterwegs. Schau in dein Postfach und öffne den Link auf diesem Gerät.')
-    } catch {
+    } catch (error) {
       setStatus('error')
-      setMessage('Der Link konnte nicht verschickt werden. Prüfe deine Adresse und versuch es noch einmal.')
+      setMessage(
+        isRateLimited(error)
+          ? 'Zu viele Versuche, warte kurz. In ein paar Minuten kannst du dir einen neuen Link schicken lassen.'
+          : 'Der Link konnte nicht verschickt werden. Prüfe deine Adresse und versuch es noch einmal.',
+      )
     }
   }
 
