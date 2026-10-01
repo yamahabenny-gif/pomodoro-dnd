@@ -1,13 +1,14 @@
 .shell {
   min-height: 100dvh;
   display: grid;
-  place-items: center;
-  padding: 24px;
+  /* Card oben, damit das Feuer (im SVG bei ca. x 44 %, y 75 %) unter ihr sichtbar bleibt. */
+  place-items: start center;
+  padding: clamp(48px, 9vh, 112px) 24px 24px;
   position: relative;
   isolation: isolate;
   background-color: var(--bg);
   background-image:
-    linear-gradient(rgb(20 17 13 / .45), rgb(20 17 13 / .45)),
+    linear-gradient(rgb(20 17 13 / .30), rgb(20 17 13 / .30)),
     var(--account-campfire-image);
   background-size: cover;
   background-position: center 40%;
@@ -16,7 +17,16 @@
 
 @media (max-width: 720px) {
   .shell {
-    background-position: 45% 55%;
+    padding-top: max(24px, 6dvh);
+    background-position: 42% 50%;
+  }
+}
+
+/* Niedrige Viewports: Card geht vor, Feuer darf verdeckt sein. */
+@media (max-height: 640px) {
+  .shell {
+    place-items: center;
+    padding: 24px;
   }
 }
 
